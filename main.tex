@@ -3,7 +3,10 @@
 \usepackage{amsthm, amsmath, amssymb}
 \usepackage[a4paper]{geometry}
 \usepackage{enumitem}
-
+\usepackage{stmaryrd}
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
+\usepackage{float}
 \theoremstyle{definition}
 
 \newtheorem{definition}{Definição}[section]
@@ -14,10 +17,14 @@
 \newtheorem{theorem}[definition]{Teorema}
 
 \DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\dg}{dg}
+\DeclareMathOperator{\id}{id}
 \author{Vinicius Rodrigues}
 \title{Notas}
 \begin{document}
 \maketitle
 
 \include{pt1.tex}
+\include{polinomio.tex}
 \end{document} 
