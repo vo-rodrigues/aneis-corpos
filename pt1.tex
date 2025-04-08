@@ -1,4 +1,9 @@
-\section{Noções de Grupos}
+
+\section{Pré-Requisitos Conjuntistas}
+Antes de descrevermos grupos, precisamos de algumas definições e resultados básicos envolvendo noções básicas sobre conjuntos e funções. Para isso, utilizaremos a notação usual de conjuntos, como $\mathcal P(X)$ para o conjunto das partes de $X$, $X^n$ para o produto cartesiano de $n$ cópias de $X$, e assim por diante.
+
+Não é objetivo deste texto desenvolver a parte inicial da Teoria dos Conjuntos. Apenas apresentaremos algumas definições, notações e resultados básicos que utilizaremos ao longo do texto.
+\subsection{Operações}
 
 \begin{definition}[Operações $n$-árias]
     Se $X$ é um conjunto e $n \in \mathbb N$, uma operação $n$-ária em $X$ é uma função $f:X^n\rightarrow X$.
@@ -9,6 +14,67 @@ Operações $2$-árias e $1$-árias são frequentemente chamadas de \emph{binár
 Caso $*$ seja uma operação binária, a notação $x*y$ é frequentemente utilizada para denotar $x*y$.
 
 Caso $*$ seja uma operação unária, a notação $*x$ é frequentemente utilizada para denotar $*(x)$.
+\subsection{Produto cartesiano de conjuntos generalizado}
+
+Famílias são funções com notação especial. Tal notação é utilizada quando pensamos em uma função como um ``conjunto indexado de valores'' ao invés de um ``dispositivo de entrada/saída''.
+
+Matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lllll}
+        \hline
+        \textbf{Conceito} & \textbf{Função} & \textbf{Família} \\ \hline
+        Mapa & $u:I\rightarrow A$ & $(u_i)_{i \in I}=(u_i: i \in I)$ \\
+        Valor & $u(i)$ & $u_i$ \\
+        Imagem & $\ran u$ & $\{u_i: i \in I\}$\\
+        Intuição & objeto dinâmico & objeto estático \\
+        Inputs & domínio $I$ & conjunto de índices $I$ \\
+        \hline
+    \end{tabular}
+    \caption{Comparativo de família e função}
+\end{table}
+
+Exemplo: sequências. Uma sequência é uma família cujo conjunto de índices é $\mathbb N$. Compare a intuição que passa as notações:
+\begin{itemize}
+\item Considere a sequência $u=(\frac{1}{2^n}))_{n \in \mathbb N}$...
+\item Considere a função $u:\mathbb N\rightarrow \mathbb R$ dada por $u(n)=\frac{1}{2^n}$...
+\end{itemize}
+
+Exemplo: sequências finitas. Se $n\geq 1$, identificamos $n=\{0, 1, \dots, n-1\}$. Assim:
+\begin{itemize}
+\item Uma família com $n$ elementos é uma família $(a_i)_{i<n}=(a_i)_{i \in n}=(a_0, \dots, a_{n-1})$.
+\end{itemize}
+
+\begin{definition}[Produto cartesiano de conjuntos]
+Seja $(A_i)_{i \in I}$ uma família de conjuntos. O produto cartesiano de conjuntos é o conjunto $\prod_{i \in I} A_i$ definido como o conjunto de todas as famílias $(a_i: i \in I)$ tais que para cada $i \in I$, $a_i \in A_i$.
+$$\prod_{i \in I} A_i=\{(a_i)_{i \in I}: \forall i \in I\, a_i \in A_i\}.$$
+\end{definition}
+
+
+\begin{definition}[Exponenciação de conjuntos]
+    Sejam $A, I$ conjuntos. O conjunto $A^I$ é o conjunto de todas as funções de $I$ em $A$. Ou seja, $A^I=\{f:I\rightarrow A\}$. Note que:
+
+    $$A^I=\prod_{i \in I}A=\{(a_i)_{i \in I}: \forall i \in I\,  a_i\in A\}.$$
+    \end{definition}
+
+    Na notação anterior, se $n\geq 1$ $$A^n=\{(a_i)_{i<n}:\forall i<n\, a_i \in A\}=\{(a_0, \dots, a_{n-1}):a_0, \dots, a_{n-1}\in A\}\approx A\times \dots \times A \,(n \text{ vezes}).$$
+    \subsection{Produtos de anéis}
+
+    \begin{definition}[Produto Direto de dois anéis]
+        Sejam $R, S$ anéis. O produto direto de $R$ e $S$ é o conjunto $R\times S$ munido das operações ``ponto à ponto'': dados $a=(a_1, a_2)\in R\times S$ e $b=(b_1, b_2)\in R\times S$, temos:
+        $$a+b=(a_1+b_1, a_2+b_2)$$
+        $$a\cdot b=(a_1\cdot b_1, a_2\cdot b_2)$$
+        $$0=(0_R, 0_S)$$
+        $$1=(1_R, 1_S)$$
+    \end{definition}
+    
+    Exemplo: Seja $R=\mathbb Z_3$ e $S=\mathbb Z_4$. Então $(2, 2)\in R\times S$ e $(1, 2)\in R\times S$. Temos:
+    $$(2, 2)+(1, 2)=(2+ 1, 2+ 2)=(0, 0)$$
+    $$(2, 2)\cdot (2, 2)=(2\cdot 2, 2\cdot 2)=(1, 0)$$
+\section{Noções de Grupos}
+
+
+\subsection{Definição e Propriedades Básicas}
 \begin{definition}
 Um grupo é uma quadrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é uma operação binária em $G$ e $0 \in G$, e satisfazem:
 
@@ -19,7 +85,7 @@ Um grupo é uma quadrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é 
 \end{itemize}
 Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comunmente, \emph{abeliano}:
 \begin{itemize}
-    \item (\textbf{Comutatividade}) Para todo $a, b \in G$, temos $a \cdot b = b \cdot a$.
+    \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
 \end{itemize}
 \end{definition}
 Algumas observações:
@@ -29,6 +95,15 @@ Algumas observações:
 \item Caso o grupo não seja abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
 \end{itemize}
 
+Alguns exemplos:
+
+\begin{itemize}
+    \item Com a soma usual, $\mathbb{Z, Q, R, C}$ são grupos abelianos.
+    \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo abeliano com elemento neutro $1$. De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro. Note que $1\in \mathbb T$ e $0\notin \mathbb T$. Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$. Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
+    \item Os inteiros módulo $n$ ($n\geq 1$), dados por $\mathbb Z_n=\{0, \dots, n-1\}$ com a soma dada pela aritmética módulo $n$, são grupos.
+\end{itemize}
+
+Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
 \begin{prop}[Unicidade do elemento neutro]
     Seja $(G,\cdot,e)$ um grupo. Então, o elemento neutro $e$ é único. Isto é, se $h \in G$ é tal que $\forall a \in G$ $h \cdot a = a \cdot h = a$, então $h = e$.
 \end{prop}
@@ -82,9 +157,48 @@ Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
 
 \end{proof}
 
+\subsection{Somatórios}
+
+Nessa seção, formalizaremos somatórios.
+
+\begin{definition}[Soma de sequência finita]
+Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Define-se, recursivamente para $n\geq 0$, o somatório de sequências de $n$ elementos de $G$ como se segue:
+
+\begin{itemize}
+\item \textbf{Notação:} se $a=(a_i)_{i<n}$ é uma sequência de elementos de $G$, então usamos as notações:
+$$\sum a=\sum(a_i: i<n)=\sum_{i<n} a_i= \sum_{i=0}^{n-1} a_i$$
+\item Caso base $n=0$: só existe uma sequência com $0$ elementos, que é a sequência vazia $a=()=\emptyset=(a_i:i<0)$. Definimos: $$\sum a=\sum(a_i: i<0)=\sum_{i<0} a_i=\sum_{i=0}^{-1}a_n=0$$.
+\item Passo recursivo $n\rightarrow n+1$: considere uma sequência $(a_i)_{i<n+1}=(a_i)_{i\leq n}$ de elementos de $G$. Define-se:
+$$\sum_a=\sum_{i=0}^{n}=\left(\sum_{i=0}^{n-1}\right)+a_n.$$
+\end{itemize}
+
+\end{definition}
+
+\textbf{Observação:} Se temos uma sequência unitária $(a_i: i\leq 0)=(a)$, estamos no caso $n=1$, então:
+
+$$\sum_{i=0}^{0}a_i=\sum_{i=0}^{-1}a=a.$$
+Muitas pessoas consideram que não é muito natural apresentar a definição acima incluindo o caso $n=0$, tomando como base o caso $1$, definindo-se que a soma unitária é igual ao valor de seu único elemento. A observação acima mostra que a definição apresentada não é inconsistente com essa visão. Como vantagem da notação apresentada, ela possibilita falar em somas vazias, que, em alguns pontos da teoria, são úteis para simplificar a notação (porém nunca imprescindíveis). Como desvantagem, a definição apresentada exige que o conjunto em questão possua o elemento neutro $0$, enquanto a outra, não.
+
+\begin{definition}[Soma de uma família finita]
+    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in F)$ uma família finita. Define-se:
+    
+$$\sum_{i \in F} a_i=\sum_{i=0}^{n-1} a_\phi^{-1}(i),$$
+
+onde $\phi:\{0, \dots, n-1\}\rightarrow F$ é uma bijeção.  
+\end{definition}
+
+Qual $\phi$ escolher? É indiferente.
+
+\begin{prop}
+    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in F)$ uma família finita. Sejam $\phi:\{0, \dots, n-1\}\rightarrow F$ e $\psi:\{0, \dots, n-1\}\rightarrow F$ bijeções. Então:
+
+    $$\sum_{i=0}^{n-1} a_\phi^{-1}(i)=\sum_{i=0}^{n-1} a_\psi^{-1}(i).$$
+\end{prop}
+
 \section{Anéis}
+Nesta seção, começaremos a discutir a noção matemática de anel, uma das principais estruturas que serão estudadas.
 \begin{definition}[Anel]
-    Um anel é uma tripa $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
+    Um anel é uma $4$-upla $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
     \begin{itemize}
         \item $(A, +, 0)$ é um grupo abeliano.
         \item (\textbf{Associatividade}) Para todo $a, b \in A$, temos $(a \cdot b)\cdot c = a\cdot(b\cdot c)$.
@@ -97,15 +211,15 @@ Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
     \end{itemize}
     Se, adicionalmente, a seguinte propriedade é satisfeita, o anel é chamado de \emph{comutativo}.
     \begin{itemize}
-        \item (\textbf{Comutatividade}) Para todo $a, b \in G$, temos $a \cdot b = b \cdot a$.
+        \item (\textbf{Comutatividade}) $\forall a, b \in A$ $a \cdot b = b \cdot a$.
     \end{itemize}
 \end{definition}
 
 Algumas observações:
 \begin{itemize}
     \item Como em grupos, ao discursar sobre anéis é comum omitir as operações, referindo-se apenas ao conjunto $A$.
-    \item Ao discursar sobre anéis, e a exemplo do que foi feito ao enunciar as propriedades dsitributivas, são utilizadas as convenções usuais sobre precedência de operações envolvidas por parenteses. Assim, $a + b \cdot c$ é interpretado como $a + (b \cdot c)$.
-    \item Há textos que definem anéis sem incluir o elemento identidade $1$. Nestes textos, a definição acima dá nome ao que chamam de \emph{anéis com identidade}, ou \emph{anéis com 1}. Nesse curso, não usaremos essa convenção, de modo que \textbf{todos nossos anéis possuem identidade}.
+    \item Ao discursar sobre anéis, e a exemplo do que foi feito ao enunciar as propriedades dsitributivas, são utilizadas as convenções usuais sobre precedência de operações envolvidas por parênteses. Assim, $a + b \cdot c$ é interpretado como $a + (b \cdot c)$.
+    \item Há textos que definem anéis sem incluir o elemento identidade $1$. Nestes textos, a definição acima dá nome ao que chamam de \emph{anéis com identidade}, ou \emph{anéis com 1}. Nesse curso, não usaremos essa convenção, de modo que \textbf{todos nossos anéis possuem identidade}. De modo similar, alguns textos definem anéis como sendo comutativos. Também não adotaremos essa convenção. \textbf{Os nossos anéis podem ser não comutativos}.
     \item A definição de anel não exige que $0=1$.
     \item $0$ é chamado de elemento nulo, e $1$ de elemento identidade.
 \end{itemize}
@@ -116,7 +230,7 @@ Algumas observações:
 \begin{proof}
 Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
 
-Temos que $0\cdot a=(0+0)\cdot a=0\cdot +0\cdot$. Cancelando, segue que $0=0\cdot a$.
+Temos que $0\cdot a=(0+0)\cdot a=0\cdot a +0\cdot a$. Cancelando, segue que $0=0\cdot a$.
 \end{proof}
 
 \begin{prop}[Anel trivial]
@@ -319,7 +433,7 @@ Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal d
 
 \end{definition}
 \section{Quocientes e homomorfismos}
-\subsection{homomorfismos}
+\subsection{Homomorfismos}
 \begin{definition}
 Sejam $A$, $R$ aneis. Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
 \begin{itemize}
@@ -390,7 +504,7 @@ Portanto, $\ran f$ é um subanel de $R$. Se $A$ é comutativo, $\ran(f)$ também
 \begin{proof}
     Se $f$ é um homomorfismo, então as duas propriedades acima são satisfeitas. Reciprocamente, se as duas propriedades acima são satisfeitas, então:
     \begin{itemize}
-    \item $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)=0_R+0_R=0_R$.
+    \item $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$. Cancelando, temos $0_R=f(0_A)$.
     \item $f(-a)+f(a)=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
     \end{itemize} $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)=0_R$, e $f(-a)=f(0_A-a)=f(0_A)+f(-a)=0_R-f(a)=-f(a)$ para todo $a \in A$. Assim, $f$ é um homomorfismo.
 \end{proof}

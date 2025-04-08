@@ -1,61 +1,5 @@
 \section{Produtos de anéis}
-\subsection{Produto cartesiano de conjuntos generalizado}
 
-Famílias são funções com notação especial. Tal notação é utilizada quando pensamos em uma função como um ``conjunto indexado de valores'' ao invés de um ``dispositivo de entrada/saída''.
-
-Matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
-\begin{table}[h]
-    \centering
-    \begin{tabular}{lllll}
-        \hline
-        \textbf{Conceito} & \textbf{Função} & \textbf{Família} \\ \hline
-        Mapa & $u:I\rightarrow A$ & $(u_i)_{i \in I}=(u_i: i \in I)$ \\
-        Valor & $u(i)$ & $u_i$ \\
-        Imagem & $\ran u$ & $\{u_i: i \in I\}$\\
-        Intuição & objeto dinâmico & objeto estático \\
-        Inputs & domínio $I$ & conjunto de índices $I$ \\
-        \hline
-    \end{tabular}
-    \caption{Comparativo de família e função}
-\end{table}
-
-Exemplo: sequências. Uma sequência é uma família cujo conjunto de índices é $\mathbb N$. Compare a intuição que passa as notações:
-\begin{itemize}
-\item Considere a sequência $u=(\frac{1}{2^n}))_{n \in \mathbb N}$...
-\item Considere a função $u:\mathbb N\rightarrow \mathbb R$ dada por $u(n)=\frac{1}{2^n}$...
-\end{itemize}
-
-Exemplo: sequências finitas. Se $n\geq 1$, identificamos $n=\{0, 1, \dots, n-1\}$. Assim:
-\begin{itemize}
-\item Uma família com $n$ elementos é uma família $(a_i)_{i<n}=(a_i)_{i \in n}=(a_0, \dots, a_{n-1})$.
-\end{itemize}
-
-\begin{definition}[Produto cartesiano de conjuntos]
-Seja $(A_i)_{i \in I}$ uma família de conjuntos. O produto cartesiano de conjuntos é o conjunto $\prod_{i \in I} A_i$ definido como o conjunto de todas as famílias $(a_i: i \in I)$ tais que para cada $i \in I$, $a_i \in A_i$.
-$$\prod_{i \in I} A_i=\{(a_i)_{i \in I}: \forall i \in I\, a_i \in A_i\}.$$
-\end{definition}
-
-
-\begin{definition}[Exponenciação de conjuntos]
-    Sejam $A, I$ conjuntos. O conjunto $A^I$ é o conjunto de todas as funções de $I$ em $A$. Ou seja, $A^I=\{f:I\rightarrow A\}$. Note que:
-
-    $$A^I=\prod_{i \in I}A=\{(a_i)_{i \in I}: \forall i \in I\,  a_i\in A\}.$$
-    \end{definition}
-
-    Na notação anterior, se $n\geq 1$ $$A^n=\{(a_i)_{i<n}:\forall i<n\, a_i \in A\}=\{(a_0, \dots, a_{n-1}):a_0, \dots, a_{n-1}\in A\}\approx A\times \dots \times A \,(n \text{ vezes}).$$
-    \subsection{Produtos de anéis}
-
-    \begin{definition}[Produto Direto de dois anéis]
-        Sejam $R, S$ anéis. O produto direto de $R$ e $S$ é o conjunto $R\times S$ munido das operações ``ponto à ponto'': dados $a=(a_1, a_2)\in R\times S$ e $b=(b_1, b_2)\in R\times S$, temos:
-        $$a+b=(a_1+b_1, a_2+b_2)$$
-        $$a\cdot b=(a_1\cdot b_1, a_2\cdot b_2)$$
-        $$0=(0_R, 0_S)$$
-        $$1=(1_R, 1_S)$$
-    \end{definition}
-    
-    Exemplo: Seja $R=\mathbb Z_3$ e $S=\mathbb Z_4$. Então $(2, 2)\in R\times S$ e $(1, 2)\in R\times S$. Temos:
-    $$(2, 2)+(1, 2)=(2+ 1, 2+ 2)=(0, 0)$$
-    $$(2, 2)\cdot (2, 2)=(2\cdot 2, 2\cdot 2)=(1, 0)$$
 
 \begin{definition}[Produtos de anéis]
     Seja $(R_i)_{i \in I}$ uma família de anéis, onde cada $R_i$ tem as operações $+_i, \cdot_i$ e constantes $0_i, 1_i$.
@@ -188,6 +132,7 @@ Notação: se $R, S$ são anéis, o produto direto de $(R, S)$ é denotado tamb�
 
 \section{Polinômios}
 
+\subsection{Séries Formais}
 Se $R$ é um anel comutativo, intuitivamente uma série formal é um objeto que se escreve na forma:
 $$a_0+a_1x+a_2x^2+\dots=\sum_{i=0}^\infty a_ix^i$$
 onde $a_i\in R$.
@@ -239,5 +184,131 @@ $$0_{R\llbracket x\rrbracket}=(0, 0, 0, \dots)$$
     \begin{itemize}
         \item \textbf{Distributividade:} $$p\cdot (q+r)=p\cdot(q_i+r_i)_{i \in \mathbb N}=\left(\sum_{j=0}^i p_{i-j}(q_j+r_j)\right)_{i \in \mathbb N}$$$$=\left(\sum_{j=0}^i p_{i-j}q_j\right)_{i \in \mathbb N}+\left(\sum_{j=0}^i p_{i-j}r_j\right)_{i \in \mathbb N}=p\cdot q+p\cdot r.$$
         \item \textbf{Elemento Neutro:} $$p\cdot 1=\left(\sum_{j=0}^i p_{i-j}\delta_{0j}\right)_{i\in \mathbb N}=(p_i)_{i \in \mathbb N}.$$
+        \item \textbf{Comutatividade:} A $i$-ésima coordenada de $p\cdot q$ é $\sum_{j=0}^i p_{i-j}q_j=\sum(p_{i_j}q_j: j \in A_j)$, onde $A_j=\{0, \dots, i\}$. A função $\phi: A_j:\rightarrow A_j$ dada por $\phi(j)=i-j$ é bijetora, pois é injetora e $A_j$ é finito. Assim:
+        $$\sum_{j=0}^i p_{i-j}q_j=\sum_{j=0}^ip_{i-\phi(j)}q_{\phi(j)}=\sum_{j=0}^ip_{j}q_{i-j}=\sum_{j=0}^iq_{i-j}p_{j}$$
+
+        E esta é a $i$-ésima coordenada de $q\cdot p$.
+
+        \item \textbf{Associatividade:} Temos que a $i$-ésima coordenada de $(p\cdot q)\cdot r$ é dada por:
+
+        $$\pi_i((p\cdot q)\cdot r)=\sum_{j=0}^i\pi_{i-j}(p\cdot q)\cdot q_j=\sum_{j=0}^i\left(\sum_{k=0}^{i-j}p_{i-j-k}q_k\right)\cdot q_j$$
+        $$=\sum_{j=0}^{i}\sum_{k=0}^{i-j}p_{i-j-k}q_kq_j=\sum\left(p_{i-j-k}q_kr_j:(j, k)\in A\right)$$
+
+        Onde $A=\{(j, k): 0\leq j\leq i, 0\leq k\leq i-j\}$.
+
+        Temos que a $i$-ésima coordenada de $p\cdot (q\cdot r)$ é dada por:
+
+        $$\pi_i(p\cdot (q\cdot r))=\sum_{s=0}^ip_{i-s}\pi_s(q\cdot r)=\sum_{s=0}^ip_{i-s}\left(\sum_{t=0}^sq_{s-t}r_t\right)$$
+        $$=\sum_{s=0}^i\sum_{t=0}^sp_{i-s}q_{s-t}r_t=\sum\left(q_{i-s}q_{s-t}r_t:(s, t)\in B\right)$$
+        
+        onde $B=\{(s, t): 0\leq t\leq s\leq i\}$. A função $\phi: A\rightarrow B$ dada por $\phi(j, k)=(j+k, j)$ é bijetora: é em $B$, pois $0\leq j\leq j+k\leq j+(i-j)=i$. É injetora, pois se $(j+k, j)=(j'+k', j')$ então $j=j'$ e, cancelando, $k=k'$. Finalmente, é sobrejetora, pois se $0\leq t\leq s\leq i$, sendo $j=t$ e $k=s-t$, temos que $0\leq j\leq i$, $0\leq k=s-t\leq i-t=i-j$ e $j+k=s$. Assim, $\phi$ é bijetora. Portanto:
+
+        $$\sum\left(q_{i-s}q_{s-t}r_t:(s, t)\in B\right)=\sum\left(q_{i-(j+k)}q_{(j+k)-j}r_j:(j, k)\in A\right)$$$$=\sum\left(q_{i-j-k}q_{k}r_j:(j, k)\in A\right).$$
     \end{itemize}
 \end{proof}
+
+Dado $p \in \mathbb R_x$, utilizamos a notação $$p=p(x)=\sum_{i=0}^\infty p_ix^i.$$
+
+É importante observar que não há, de fato, uma ``soma infinita'' acontecendo aqui. É possível dar sentido à essa soma infinita utilizando a teoria de limites diretos de anéis, mas não faremos isso aqui. Por ora, isso é apenas uma notação especial para tratar desses objetos. Note que, ao menos por enquanto, a letra $x$ é apenas parte da notação, e que não faz sentido, por enquanto, ``substituir $x$'' por algo.
+\subsection{Anéis de Polinômios}
+Na subseção anterior, introduzimos o anel das séries formais de um anel comutativo dado. Vimos que tal anel é um anel comutativo.
+
+Deste anel, podemos extrair o anel de polinômios.
+
+\begin{definition}
+Seja $R$ um anel comutativo. O anel de polinômios $R[x]$ é o subconjunto de $R\llbracket x \rrbracket$ dado por:
+$$R[x]=\{p \in R\llbracket x \rrbracket: \deg(p) < \infty\}$$
+\end{definition}
+
+Note que uma série formal tem grau $<\infty$ se, e somente se, todos os coeficientes, a partir de algum ponto, são nulos.
+
+\begin{lemma}
+    Seja $R$ um anel comutativo. O anel de polinômios $R[x]$ é um subanel de $R\llbracket x \rrbracket$. Mais especificamente, dados $p(x), q(x) \in R\llbracket x \rrbracket$, temos que, se $\gr(p(x)) < \infty$ e $\gr(q(x)) < \infty$, então:
+
+    \begin{enumerate}[label=\alph*)]
+        \item $\gr p(x)q(x)\leq\gr p(x)+\gr q(x)$ caso ambos sejam não nulos, e a igualdade vale se $R$ for um domínio de integridade.
+        \item $\gr p(x)+q(x)\leq \max\{\gr p(x),\gr(q(x))\}$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    Para a primeira afirmação, sejam $n, m$ os graus de $p(x)$ e $q(x)$, respectivamente.
+    
+    Calculemos o coeficiente $n+m$ de $p(x)q(x)$. 
+
+    $$\pi_{n+m}(p(x)q(x))=\sum_{j=0}^{n+m}p_{n+m-j}q_j.$$
+
+    Se $0\leq j< m$ temos que $n+m-j>0$, e $p_{n+m-j}=0$. Se $j>m$, temos que $q_j=0$. Assim, o único termo não nulo da soma é quando $j=m$, e temos que $p_{n+m-m}q_m=p_nq_m$, que é não nulo se $R$ for um domínio. Por outro lado, se $l>n+m$ temos que:
+
+    $$\pi_{l}(p(x)q(x))=\sum_{j=0}^{l}p_{l-j}q_j.$$
+
+    Se $0\leq j\leq m$ temos que $l-j>m+n-m=n$, e $p_{l-j}=0$. Se $j>m$, temos que $q_j=0$. Assim, todos os coeficientes da soma são $0$.
+
+
+    Para a segunda afirmação, se $l>\max\{\gr p(x), \gr q(x)\}$, temos que o $l$-ésimo coeficiente de $p(x)+q(x)$ é $0$, pois este é $p_l+q_l=0+0$.
+
+    Agora, para a afirmação principal, as duas afirmações itemizadas nos mostram que $R[x]$ é fechado pela soma e produto de $R\llbracket x \rrbracket$. Finalmente, note que o grau da série $1=(1, 0, 0, \dots)$ é $0$, logo, $1\in R[x]$.
+\end{proof}
+
+Agora vamos trabalhar um pouco mais nossa notação.
+
+\begin{definition}
+    Seja $R$ um anel comutativo. Em $R[x]$, seja $x=(0, 1, 0, 0, \dots)$ e, para cada $r \in R$, seja $\hat r=(\hat r, 0, 0, \dots)$.
+\end{definition}
+
+\begin{lemma}
+    Na notação anterior, para todo $r \in R$ e $n, i\geq 0$:
+
+    $$\pi_i(\hat r x^n)(i)=\begin{cases}
+        0 & \text{se } i\neq n\\
+        r & \text{se } i=n.
+    \end{cases}$$
+    Ou seja, $\hat r x^n=(0, 0, \dots, r, 0, \dots)$ onde o $r$ está na posição $n$.
+\end{lemma}
+
+\begin{proof}
+    Fixe $r$ Seguimos por indução. Para $n=0$, temos que $\hat rx^0=\hat r=(r, 0, 0, \dots)$ e para $n=1$ temos que $\hat r x^1=x=(0, r, 0, \dots)$.
+
+    Para o passo $n+1$, onde $n\geq 1$, temos que, sendo $i\geq 1$:
+
+    $$\pi_i(\hat rx^{n+1})=\pi_i((\hat rx^n)\cdot x)=\sum_{j=0}^i\pi_{i-j}(\hat r x^n)\cdot \pi_j(x)=\pi_{i-1}^{\hat r x^n}$$
+
+    Assim, se $i=n+1$, temos que a coordenada é $r$, e $0$ caso contrário. Resta apenas verificar que a coordenada $0$ é $0$. Ora, a coordenada $0$ se dá por $\pi_0(\hat r x^n)\pi_0(x)=0$.
+\end{proof}
+
+\begin{lemma}
+    Na notação anterior, seja $h:R\rightarrow R[x]$ dada por $h(r)=\hat r$. Então $h$ é um homomorfismo injetor.
+\end{lemma}
+    
+\begin{proof}
+    Sejam $r, s \in R$. Então:
+    \begin{itemize}
+        \item $h(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=h(r)+h(s)$
+        \item $h(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=h(r)\cdot h(s)$
+        \item $h(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
+    \end{itemize}
+
+    A injetividade é óbvia.
+\end{proof}
+
+\begin{prop}
+    Na notação anterior, para todo $p(x)\in R[x]$, existem $n\geq 0$ e $r_0, r_1, \dots, r_n\in R$ tais que $p(x)=\sum_{i=0}^n \hat r_ix^i$.
+\end{prop}
+    
+\begin{proof}
+    Se $p(x)=0$, seja $n=0$ e $r_0=0$. Caso contrário, seja $n=\gr p(x)$ e $r_i=p_i$ para todo $i\leq n$. Então:
+
+    $$p(x)=(p_0, \dots, p_n, 0, \dots, 0)=(r_0, \dots, r_n, 0, \dots, 0)=\sum_{i=0}^n\hat r_ix^i$$
+\end{proof}
+
+\begin{prop}
+    Na notação anterior, se $r_1, \dots, r_n$ e $s_1, \dots, s_n$ são elementos de $R$, então:
+
+    $\sum_{i=0}^n \hat r_i x^i=\sum_{i=0}^n \hat s_i x^i$ se, e somente se, $r_i=s_i$ para todo $i\leq n$.
+\end{prop}
+    
+\begin{proof}
+A recíproca é imediata. Para a implicação direta, note que a igualdade nos diz que $(r_0, \dots, r_n, 0, 0, \dots)=(s_0, \dots, s_n, 0, 0, \dots)$, ou seja, $r_i=s_i$ para todo $i\leq n$.
+\end{proof}
+
+Notação: abandona-se $\hat r$ em favor de $r$, mesmo havendo ambiguidade de notação.
