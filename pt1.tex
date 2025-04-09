@@ -162,38 +162,45 @@ Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
 Nessa seção, formalizaremos somatórios.
 
 \begin{definition}[Soma de sequência finita]
-Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Define-se, recursivamente para $n\geq 0$, o somatório de sequências de $n$ elementos de $G$ como se segue:
+Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in F)$, onde $F$ é um conjunto de $n$ índices e $a_i \in G$ para todo $i \in F$, como se segue:
 
 \begin{itemize}
-\item \textbf{Notação:} se $a=(a_i)_{i<n}$ é uma sequência de elementos de $G$, então usamos as notações:
-$$\sum a=\sum(a_i: i<n)=\sum_{i<n} a_i= \sum_{i=0}^{n-1} a_i$$
-\item Caso base $n=0$: só existe uma sequência com $0$ elementos, que é a sequência vazia $a=()=\emptyset=(a_i:i<0)$. Definimos: $$\sum a=\sum(a_i: i<0)=\sum_{i<0} a_i=\sum_{i=0}^{-1}a_n=0$$.
-\item Passo recursivo $n\rightarrow n+1$: considere uma sequência $(a_i)_{i<n+1}=(a_i)_{i\leq n}$ de elementos de $G$. Define-se:
-$$\sum_a=\sum_{i=0}^{n}=\left(\sum_{i=0}^{n-1}\right)+a_n.$$
+\item \textbf{Notação:} se $a=(a_i)_{i\in F}$ é uma sequência de elementos de $G$, então usamos as notações:
+$$\sum a=\sum(a_i: i\in F)=\sum_{i\in F} a_i.$$
+\item Caso base $n=0$: só existe uma família com $0$ elementos, que é a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$. Definimos: $$\sum a=0$$.
+\item Passo recursivo $n\rightarrow n+1$: considere uma família $(a_i)_{i\in F}$, onde $|F|=n+1$. Define-se:
+$$\sum(a_i: i \in F)=\sum(a_i: i \in F\setminus\{j\})+a_j,$$
+
+onde $j \in I$ é qualquer elemento.
 \end{itemize}
-
 \end{definition}
+É claro que, para mostrar que a definição acima é consistente, precisamos mostrar que a soma não depende da escolha de $j$.
 
-\textbf{Observação:} Se temos uma sequência unitária $(a_i: i\leq 0)=(a)$, estamos no caso $n=1$, então:
+\begin{lemma}
+Qualquer que seja o tamanho (finito) de $F$, $\sum(a_i)_{i\in F}$ está bem definido.
+\end{lemma}
 
-$$\sum_{i=0}^{0}a_i=\sum_{i=0}^{-1}a=a.$$
-Muitas pessoas consideram que não é muito natural apresentar a definição acima incluindo o caso $n=0$, tomando como base o caso $1$, definindo-se que a soma unitária é igual ao valor de seu único elemento. A observação acima mostra que a definição apresentada não é inconsistente com essa visão. Como vantagem da notação apresentada, ela possibilita falar em somas vazias, que, em alguns pontos da teoria, são úteis para simplificar a notação (porém nunca imprescindíveis). Como desvantagem, a definição apresentada exige que o conjunto em questão possua o elemento neutro $0$, enquanto a outra, não.
+\begin{proof}
+    Seja $F$ um conjunto finito. Se $|F|=0$, então $F=\emptyset$, e a soma é $0$. Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$. Se $|F|=n+1$ para $n\geq 1$, tome $j, k \in F$. Devemos ver que $\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k$. Com efeito:
 
-\begin{definition}[Soma de uma família finita]
-    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in F)$ uma família finita. Define-se:
-    
-$$\sum_{i \in F} a_i=\sum_{i=0}^{n-1} a_\phi^{-1}(i),$$
+    $$\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_k\right)+a_j=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_k+a_j)$$
 
-onde $\phi:\{0, \dots, n-1\}\rightarrow F$ é uma bijeção.  
-\end{definition}
-
-Qual $\phi$ escolher? É indiferente.
+        $$=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.$$
+\end{proof}
 
 \begin{prop}
-    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in F)$ uma família finita. Sejam $\phi:\{0, \dots, n-1\}\rightarrow F$ e $\psi:\{0, \dots, n-1\}\rightarrow F$ bijeções. Então:
+    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora. Então:
 
-    $$\sum_{i=0}^{n-1} a_\phi^{-1}(i)=\sum_{i=0}^{n-1} a_\psi^{-1}(i).$$
+    $$\sum_{i \in I}a_i=\sum_{j \in J}a_{\phi(j)}.$$
+
 \end{prop}
+\begin{proof}
+Novamente, procedemos por indução no tamanho de $|I|=|J|$. A base de tamanho $0$ é trivial, já que ambos os lados da igualdade são $0$.
+
+Para o passo indutivo em que $|I|=|J|=n+1$, considere $\phi:J\rightarrow I$ como no enunciado. Fixe $k \in J$ qualquer e sejam $I'=I\setminus\{\phi(k)\}, J'=J\setminus\{k\}$ e $\phi'=\phi|_{J'}:J'\rightarrow I'$, que é bijetora. Como $|J'|=|I'|=n$, por hipótese indutiva temos que $\sum_{j \in J'}a_{\phi(j)}=\sum_{i \in I'}a_i$. Segue que:
+
+$$\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.$$
+\end{proof}
 
 \section{Anéis}
 Nesta seção, começaremos a discutir a noção matemática de anel, uma das principais estruturas que serão estudadas.
