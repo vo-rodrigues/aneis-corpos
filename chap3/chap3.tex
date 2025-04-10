@@ -112,6 +112,31 @@ Um anel de divisão é um anel não trivial para o qual todo elemento não nulo 
 \begin{proof}
 Sabemos que $K$ é um anel comutativo não trivial. Sejam $a, b \in K$ tais que $ab=0$. Se $a=0$, então segue a tese. Caso contrário, como $K$ é um corpo, $a^{-1}$ existe. Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 \end{proof}
+
+
+\section{Subanéis}
+Em matemática, é comum que as estruturas estudadas possuam uma noção de subestrutura. Em geral, uma subestrutura de uma estrutura data é um subconjunto desta que seja, de forma natural, uma estrutura da mesma natureza daquela.
+
+Veremos que, quando tratamos de anéis, nem todo subconjunto pode ser visto como uma subestrutura.
+\begin{definition}[Subanel]
+    Seja $A$ um anel e $B\subseteq A$.
+    Dizemos que $B$ é um \emph{subanel} de $A$ se:
+    
+    \begin{itemize}
+        \item $0_A, 1_A \in B$
+        \item Para todos $a, b \in B$, $a+b \in B$.
+        \item Para todos $a, b \in B$, $ab\in B$
+        \item Para todo $a \in B$, $-a \in B$.
+    \end{itemize}
+
+\end{definition}
+
+O ponto chave da definição é que:
+
+\begin{prop}[Subanel]
+    Seja $A$ um anel e $B$ um subanel de $A$. Então $(B, +|_{B^2}, \cdot|_{B^2}, 0_B, 1_B)$ é um anel, onde $+|_{B^2}:B^2\rightarrow B$ e $\cdot|_{B^2}:B^2\rightarrow B$ são as restrições das operações de $A$ À $B^2$.
+
+\end{prop}
 \section{Ideais}
 \begin{definition}[Ideal à esquerda]
     Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à esquerda} se:
@@ -182,11 +207,10 @@ Note que se $A$ é um anel comutativo, então $I$ é um ideal à esquerda se, e 
 
 Observação: note que o menor ideal contendo $B=\emptyset$ é o ideal nulo, $\{0\}$.
 
-\begin{prop}[Ideal principal]
+\begin{definition}[Ideal principal]
     Seja $A$ um anel. Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à direita de $A$. O ideal $xA$ é chamado de \emph{ideal principal à direita gerado por $x$}.
     Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à esquerda de $A$, e é chamado de \emph{ideal principal à esquerda gerado por $x$}.
-    Se $A$ é comutativo, o ideal $xA=Ax$ é chamado de \emph{ideal principal gerado por $x$}.
-\end{prop}
+\end{definition}
 \begin{proof}
 Mostraremos que $xA$ é um ideal à direita. As demais afirmações ficam como exercício.
 
@@ -235,17 +259,3 @@ Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal d
     Portanto, $I\subseteq n\mathbb Z$.
     Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
 \end{proof}
-
-\section{Subanéis}
-\begin{definition}[Subanel]
-    Seja $A$ um anel.
-    Um subanel de $A$ é um conjunto $B\subseteq A$, com as operações de $A$ restritas à $B$ e com mesmo $0$ e $1$ de $A$, é um anel.
-    Note que, para isso, é necessário e suficiente que:
-    
-    \begin{itemize}
-        \item $1 \in B$
-        \item $a-b \in B$ para todo $a, b \in B$.
-        \item $ab \in B$ para todo $a, b \in B$.
-    \end{itemize}
-
-\end{definition}
