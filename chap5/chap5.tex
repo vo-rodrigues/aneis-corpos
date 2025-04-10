@@ -1,0 +1,131 @@
+\chapter{Produtos de anéis}
+
+
+\begin{definition}[Produtos de anéis]
+    Seja $(R_i)_{i \in I}$ uma família de anéis, onde cada $R_i$ tem as operações $+_i, \cdot_i$ e constantes $0_i, 1_i$.
+    
+    O produto (direto) de $(R_i)_{i \in I}$ é o conjunto $\prod_{i \in I} R_i$ munido das operações ``ponto à ponto'': dados $a=(a_i: i \in I), b=(b_i: i \in I)$ em $\prod_{i \in I}R_i$:
+
+    $$a+b=(a_i: i \in I)+(b_i: i \in I)=(a_i+_i b_i: i \in I)=(a_i+_ib_i)_{i \in I}$$
+    $$a\cdot b=(a_i: i \in I)\cdot (b_i: i \in I)=(a_i\cdot _i b_i: i \in I)=(a_i\cdot _ib_i)_{i \in I}$$
+
+\end{definition}
+
+\begin{lemma}[O produto de anéis está bem definido]
+    Seja $(R_i)_{i \in I}$ uma família de anéis. Então seu produto direto $\prod_{i \in I}R_i$ é um anel com $0=(0_i: i \in I)$ e $1=(1_i: i \in I)$.
+\end{lemma}
+
+\begin{proof}
+    Sejam $a=(a_i: i \in I), b=(b_i: i \in I)$ e $c=(c_i: i \in I)$ em $\prod_{i \in I}R_i$.
+    \begin{itemize}
+        \item \textbf{Associatividade da soma:} $(a+b)+c=(a_i+_i b_i)_{i \in I}+c=((a_i+_i b_i)+_ic_i)_{i \in I}=(a_i+_i (b_i+_i c_i))_{i \in I}=a+(b+c)$
+        \item \textbf{Associatividade do produto:} Análogo.
+        \item \textbf{Comutatividade da soma:} $a+b=(a_i+_i b_i)_{i \in I}=(b_i+_i a_i)_{i \in I}=b+a$
+        \item \textbf{Neutro da soma:} $a+0=(a_i+_i 0_i)_{i \in I}=(a_i)_{i \in I}=a$
+        \item \textbf{Inverso da soma:} Dado $a=(a_i)_{i \in I}$, considere $-a=(-a_i)_{i \in I}$. Então $a+(-a)=(a_i+_i (-a_i))_{i \in I}=(0_i)_{i \in I}=0$.
+        \item \textbf{Distributividade:} $a\cdot (b+c)=(a_i\cdot _i (b_i+c_i))_{i \in I}=(a_i\cdot _i b_i+a_i\cdot _i c_i)_{i \in I}=a\cdot b+a\cdot c$.
+        \item \textbf{Distributividade II:} $(a+b)\cdot c=((a_i+b_i)\cdot _i c_i)_{i \in I}=(a_i\cdot _i c_i+b_i\cdot _i c_i)_{i \in I}=a\cdot c+b\cdot c$.
+        \item \textbf{Neutro do produto:} $a\cdot 1=(a_i\cdot _i 1_i)_{i \in I}=(a_i)_{i \in I}=a$ e $1\cdot a=(1_i\cdot _i a_i)_{i \in I}=(a_i)_{i \in I}=a$.
+    \end{itemize}
+\end{proof}
+\begin{definition}[Os mapas de projeção]
+    Seja $(R_i)_{i \in I}$ uma família de anéis e seja $R=\prod_{i \in I}R_i$. Para cada $i \in I$, o mapa de projeção $\pi_i:R\rightarrow R_i$ é dado por $\pi_i(a)=a_i$.
+
+    Escrevendo de outra forma, $\pi_i((a_j: j \in I))=a_i$.
+\end{definition}
+
+\begin{lemma}[Os mapas de projeção são homomorfismos]
+    Seja $(R_i)_{i \in I}$ uma família de anéis e seja $R=\prod_{i \in I}R_i$. Para cada $i \in I$, o mapa de projeção $\pi_i:R\rightarrow R_i$ é um homomorfismo de anéis.
+\end{lemma}
+\begin{proof}
+    Sejam $a=(a_j: j \in I), b=(b_j: j \in I)$ em $R$. Então:
+    \begin{itemize}
+        \item $\pi_i(a+b)=\pi_i((a_j+b_j)_{j \in I})=a_i+b_i=\pi_i(a)+\pi_i(b)$
+        \item $\pi_i(a\cdot b)=\pi_i((a_j\cdot b_j)_{j \in I})=a_i\cdot b_i=\pi_i(a)\cdot \pi_i(b)$
+        \item $\pi_i(1_R)=\pi_i((1_j)_{j \in I})=1_{i}$
+    \end{itemize}
+\end{proof}
+Notação: se $R, S$ são anéis, o produto direto de $(R, S)$ é denotado também como $R\times S$. Assim, se $(r, s), (r', s')\in R\times S$ e 
+
+\section{A propriedade universal do produto direto de anéis}
+\begin{theorem}[Propriedade universal do produto direto de anéis]
+    Seja $(R_i)_{i \in I}$ uma família de anéis e seja $R=\prod_{i \in I}R_i$ seu produto direto. Então, para cada anel $S$ e cada família de homomorfismos de anéis $f_i:R_i\rightarrow S$, existe um único homomorfismo de anéis $f:R\rightarrow S$ tal que $\pi_i\circ f=f_i$ para todo $i \in I$.
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}[column sep=1.5cm,row sep=1.2cm]
+        & S\arrow[ld, "f_i"']\arrow[d, dashed, "\exists! f"]\\
+        R_i  & \arrow[l, "\pi_i"]R\\
+    \end{tikzcd}
+    \end{figure}
+
+    Além disso, se $R'$ e $(p_i:R'\rightarrow R)_{i \in I}$ é um anel e uma família de homomorfismos de anéis, respectivamente, tal que para cada anel $S$ e cada família de homomorfismos de anéis $f_i:R_i\rightarrow S$, existe um único homomorfismo de anéis $f:R'\rightarrow S$ tal que $p_i\circ f=f_i$ para todo $i \in I$., então existe um único isomorfismo de anéis $\phi: R\rightarrow R'$ tal que $p_i\circ \phi=\pi_i$ para todo $i \in I$.
+\end{theorem}
+
+\begin{proof}
+    Seja $R=\prod_{i \in I}R_i$ e seja $S$ um anel comutativo. Para cada $i \in I$, considere $f_i:S\rightarrow R_i$ um homomorfismo de anéis. Defina $f:S\rightarrow R$ tal que, dado $s \in S$:
+    $$f(s)=(f_i(s))_{i \in I}.$$
+
+    Então, para cada $i \in I$, $\pi_i\circ f(s)=\pi_i(f_j(s): j \in I)=f_i(s)$, ou seja, $\pi_i\circ f=f_i$.
+    Vejamos que $f$ é homomorfismo de anéis. Dados $s, t \in S$, temos:
+    \begin{itemize}
+        \item $f(s+t)=(f_i(s+t))_{i \in I}=(f_i(s)+f_i(t))_{i \in I}=(f_i(s))_{i \in I}+(f_i(t))_{i \in I}=f(s)+f(t)$.
+        \item $f(s\cdot t)=(f_i(s\cdot t))_{i \in I}=(f_i(s)\cdot f_i(t))_{i \in I}=(f_i(s))_{i \in I}\cdot (f_i(t))_{i \in I}=f(s)\cdot f(t)$.
+        \item $f(1_S)=(f_i(1_S))_{i \in I}=(1_i)_{i \in I}=1_R$.  
+    \end{itemize}
+    Vejamos que $f$ é único. Se $g:R\rightarrow S$ é um homomorfismo de anéis tal que $\pi_i\circ g=f_i$, então, para cada $s \in S$, temos, que, para cada $i \in I$:
+    $$\pi_i(g(s))=f_i(s).$$
+
+    Assim: $$g(s)=(\pi_i(g(s)): i \in I)=(f_i(s): i \in I)=f(s).$$
+    Portanto, $g=f$.
+
+    Agora suponha que $R'$ e $(p_i:R'\rightarrow R)_{i \in I}$ são como no enunciado.
+
+    Aplicando a propriedade de $R'$ para $(\pi_i: i \in I)$, existe um homomorfismo de anéis $\phi: R'\rightarrow R$ tal que $p_i\circ \phi=f_i$ para todo $i \in I$.
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}[column sep=1.5cm,row sep=1.2cm]
+        & R\arrow[ld, "\pi_i"']\arrow[d, dashed, "\exists! \phi"]\\
+        R_i  & \arrow[l, "p_i"]R'\\
+    \end{tikzcd}
+    \end{figure}
+
+    Nosso objetivo é mostrar que $\phi$ é isomorfismo. Construiremos uma inversa.
+
+    Aplicando a propriedade de $R$ para $(\pi_i: i \in I)$, existe um homomorfismo de anéis $\psi: R'\rightarrow R$ tal que $\pi_i\circ \psi=p_i$ para todo $i \in I$.  
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}[column sep=1.5cm,row sep=1.2cm]
+        & R'\arrow[ld, "p_i"']\arrow[d, dashed, "\exists! \psi"]\\
+        R_i  & \arrow[l, "\pi_i"]R\\
+    \end{tikzcd}
+    \end{figure}
+
+    Tanto os mapas $\phi\circ \psi$ quanto a identidade $\id_{R'}:R'\rightarrow R'$ são homomorfismos de anéis que satisfazem o seguinte diagrama:
+
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}[column sep=1.5cm,row sep=1.2cm]
+        & R'\arrow[ld, "p_i"']\arrow[d, "\id_{R'}",  "\phi\circ\psi"']\\
+        R_i  & \arrow[l, "p_i"]R'\\
+    \end{tikzcd}
+    \end{figure}
+
+    Pois $p_i\circ \id_{R'}=p_i$ e $p_i\circ \phi\circ\psi=\pi_i\circ \psi=p_i$.
+    Assim, pela unicidade do homomorfismo de anéis, $\phi\circ \psi=\id_{R'}$.
+
+    Analogamente, tanto os mapas $\psi\circ \phi$ quanto a identidade $\id_{R}:R\rightarrow R$ são homomorfismos de anéis que satisfazem o seguinte diagrama:
+    \begin{figure}[H]
+        \centering
+    \begin{tikzcd}[column sep=1.5cm,row sep=1.2cm]
+        & R\arrow[ld, "\pi_i"']\arrow[d, "\id_{R}",  "\psi\circ\phi"']\\
+        R_i  & \arrow[l, "\pi_i"]R\\
+    \end{tikzcd}
+    \end{figure}
+
+    Pois $\pi_i\circ \id_{R}=\pi_i$ e $\pi_i\circ \psi\circ\phi=p_i\circ \phi=\pi$.
+    Assim, pela unicidade do homomorfismo de anéis, $\psi\circ \phi=\id_{R}$. Assim, $\psi$ e $\phi$ são isomorfismos inversos.
+
+    A unicidade de $\phi$ como isomorfismo vem de sua unicidade como homomorfismo.
+\end{proof}

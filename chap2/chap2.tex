@@ -1,0 +1,130 @@
+\chapter{Noções de Grupos}
+
+
+\section{Definição e Propriedades Básicas}
+\begin{definition}
+Um grupo é uma quadrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é uma operação binária em $G$ e $0 \in G$, e satisfazem:
+
+\begin{itemize}
+    \item (\textbf{Propriedade associativa}) $\forall a, b, c \in G$ $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+    \item (\textbf{Elemento neutro}) $\forall a \in G$  $e \cdot a = a \cdot e = a$.
+    \item (\textbf{Elemento inverso}) $\forall a \in G$ $\exists b \in G$ $a \cdot b = b \cdot a = e$.
+\end{itemize}
+Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comunmente, \emph{abeliano}:
+\begin{itemize}
+    \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
+\end{itemize}
+\end{definition}
+Algumas observações:
+\begin{itemize}
+\item Ao discursar sobre grupos, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$.
+\item Caso o grupo seja abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
+\item Caso o grupo não seja abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
+\end{itemize}
+
+Alguns exemplos:
+
+\begin{itemize}
+    \item Com a soma usual, $\mathbb{Z, Q, R, C}$ são grupos abelianos.
+    \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo abeliano com elemento neutro $1$. De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro. Note que $1\in \mathbb T$ e $0\notin \mathbb T$. Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$. Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
+    \item Os inteiros módulo $n$ ($n\geq 1$), dados por $\mathbb Z_n=\{0, \dots, n-1\}$ com a soma dada pela aritmética módulo $n$, são grupos.
+\end{itemize}
+
+Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
+\begin{prop}[Unicidade do elemento neutro]
+    Seja $(G,\cdot,e)$ um grupo. Então, o elemento neutro $e$ é único. Isto é, se $h \in G$ é tal que $\forall a \in G$ $h \cdot a = a \cdot h = a$, então $h = e$.
+\end{prop}
+\begin{proof}
+    Note que $h=he$, pois $e$ é elemento neutro. Por outro lado, $e=he$, pois $h$ é elemento neutro. Assim, $h=he=e$.
+\end{proof}
+
+\begin{prop}[Unicidade dos inversos]\label{prop:inverso_unico_grupo}
+    Seja $(G,\cdot,e)$ um grupo. Então todo $a \in G$ possui um único elemento inverso, ou seja, para todo $g \in G$,  é único. Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
+\end{prop}
+\begin{proof}
+    A existência do inverso é garantida pela definição de grupo. Para provar a unicidade, suponha que $b, c$ são inversos de $a$, ou seja, $a \cdot b = b \cdot a = e$ e $a \cdot c = c \cdot a = e$.
+    Então, temos:
+    $$b=be=b(ac)=(ba)c=ec=c.$$
+\end{proof}
+
+A unicidade do elemento neutro e dos inversos nos permite definir a notação $a^{-1}$ para o inverso de $a$ em um grupo $(G,\cdot,e)$. Caso $(G, +, 0)$ seja um grupo abeliano, a notação $-a$ é frequentemente utilizada para denotar o inverso de $a$, e, nesse caso, $-a$ é chamado de \emph{oposto} de $a$.
+
+Note que assim, ficam definidos operadores unários $(\,)^{-1}:G\rightarrow G$ (ou $-:G\rightarrow G$). Para o segundo caso, define-se também que $a-b=a+(-b)$.
+
+\begin{prop}[Cancelamento]
+    Seja $(G,\cdot,e)$ um grupo. Então, se $a,b,c \in G$ e $a \cdot b = a \cdot c$, então $b=c$. Analogamente, se$b \cdot a = c \cdot a$, então $b=c$.
+\end{prop}
+\begin{proof}
+Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
+    Suponha que $ba=ca$. Então $b=be=b(aa^{-1})=(ba)a^{-1}=(ca)a^{-1}=c(aa^{-1})=ce=c$. Assim, $b=c$.
+\end{proof}
+
+\begin{corol}[Cancelamento II]
+    Seja $(G,\cdot,e)$ um grupo. Para todos $a, b \in G$, se $ab=a$, então $b=e$. Analogamente, se $ba=a$, então $b=e$.
+\end{corol}
+\begin{proof}
+    Para a primeira afirmação, note que $ab=ae$, logo, pela proposição anterior, $b=e$. A segunda afirmação é análoga.
+\end{proof}
+
+\begin{prop}[Regras de sinal]\label{prop:regraSinal}
+    Seja $G$ um grupo e $a, b \in G$. Então:
+    \begin{enumerate}[label=\alph*)]
+        \item $((a)^{-1})^{-1}=a$ [na notação aditiva, $-(-a)=a$]. \label{prop:regraSinal_A}
+        \item $(ab)^{-1}=b^{-1}a^{-1}$ [na notação aditiva, $-(a+b)=(-b)+(-a)]$.\label{prop:regraSinal_B}
+        \item $e^{-1}=e$ [na notação aditiva, $-0=0$].\label{prop:regraSinal_C}
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \ref{prop:regraSinal_A}: Temos que $(a^{-1})^{-1}a^{-1}=e=aa^{-1}$. Cancelando $a^{-1}$, segue.
+    
+    \ref{prop:regraSinal_B}: Temos que $(ab)^{-1}(ab)=e=(b^{-1}a^{-1})ab$. Cancelando $ab$, segue que $(ab)^{-1}=b^{-1}a^{-1}$. Analogamente, $(ba)^{-1}=a^{-1}b^{-1}$.
+
+    \ref{prop:regraSinal_C}: Temos que $(e^{-1})e=e=ee$. Cancelando $e$ à direita, segue.
+
+
+\end{proof}
+
+\section{Somatórios}
+
+Nessa seção, formalizaremos somatórios.
+
+\begin{definition}[Soma de sequência finita]
+Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in F)$, onde $F$ é um conjunto de $n$ índices e $a_i \in G$ para todo $i \in F$, como se segue:
+
+\begin{itemize}
+\item \textbf{Notação:} se $a=(a_i)_{i\in F}$ é uma sequência de elementos de $G$, então usamos as notações:
+$$\sum a=\sum(a_i: i\in F)=\sum_{i\in F} a_i.$$
+\item Caso base $n=0$: só existe uma família com $0$ elementos, que é a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$. Definimos: $$\sum a=0$$.
+\item Passo recursivo $n\rightarrow n+1$: considere uma família $(a_i)_{i\in F}$, onde $|F|=n+1$. Define-se:
+$$\sum(a_i: i \in F)=\sum(a_i: i \in F\setminus\{j\})+a_j,$$
+
+onde $j \in I$ é qualquer elemento.
+\end{itemize}
+\end{definition}
+É claro que, para mostrar que a definição acima é consistente, precisamos mostrar que a soma não depende da escolha de $j$.
+
+\begin{lemma}
+Qualquer que seja o tamanho (finito) de $F$, $\sum(a_i)_{i\in F}$ está bem definido.
+\end{lemma}
+
+\begin{proof}
+    Seja $F$ um conjunto finito. Se $|F|=0$, então $F=\emptyset$, e a soma é $0$. Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$. Se $|F|=n+1$ para $n\geq 1$, tome $j, k \in F$. Devemos ver que $\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k$. Com efeito:
+
+    $$\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_k\right)+a_j=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_k+a_j)$$
+
+        $$=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.$$
+\end{proof}
+
+\begin{prop}
+    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$. Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora. Então:
+
+    $$\sum_{i \in I}a_i=\sum_{j \in J}a_{\phi(j)}.$$
+
+\end{prop}
+\begin{proof}
+Novamente, procedemos por indução no tamanho de $|I|=|J|$. A base de tamanho $0$ é trivial, já que ambos os lados da igualdade são $0$.
+
+Para o passo indutivo em que $|I|=|J|=n+1$, considere $\phi:J\rightarrow I$ como no enunciado. Fixe $k \in J$ qualquer e sejam $I'=I\setminus\{\phi(k)\}, J'=J\setminus\{k\}$ e $\phi'=\phi|_{J'}:J'\rightarrow I'$, que é bijetora. Como $|J'|=|I'|=n$, por hipótese indutiva temos que $\sum_{j \in J'}a_{\phi(j)}=\sum_{i \in I'}a_i$. Segue que:
+
+$$\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.$$
+\end{proof}

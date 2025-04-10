@@ -1,4 +1,4 @@
-\documentclass{amsbook}
+\documentclass{book}
 \usepackage[brazil]{babel}
 \usepackage{amsthm, amsmath, amssymb}
 \usepackage[a4paper]{geometry}
@@ -6,6 +6,7 @@
 \usepackage{stmaryrd}
 \usepackage{tikz-cd}
 \usepackage{indentfirst}
+\usepackage{hyperref}
 \usetikzlibrary{babel}
 \usepackage{float}
 \theoremstyle{definition}
@@ -24,8 +25,18 @@
 \author{Prof. Vinicius Rodrigues}
 \title{Notas da disciplina MAT0264 - Anéis e Corpos}
 \begin{document}
-\maketitle
-
-\include{pt1.tex}
-\include{polinomio.tex}
+\frontmatter
+\begin{titlepage}
+    \maketitle
+\end{titlepage}
+\tableofcontents
+\chapter{Prefácio}
+\mainmatter
+\include{./chap1/chap1.tex}
+\include{./chap2/chap2.tex}
+\include{./chap3/chap3.tex}
+\include{./chap4/chap4.tex}
+\include{./chap5/chap5.tex}
+\include{./chap6/chap6.tex}
+\backmatter
 \end{document} 

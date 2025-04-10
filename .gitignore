@@ -6,3 +6,5 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.toc
+*.out

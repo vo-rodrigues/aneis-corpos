@@ -1,0 +1,151 @@
+\chapter{Quocientes e homomorfismos}
+\section{Homomorfismos}
+\begin{definition}
+Sejam $A$, $R$ aneis. Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
+\begin{itemize}
+    \item $f(a+b)=f(a)+f(b)$ para todo $a, b \in A$.
+    \item $f(-a)=-f(a)$ para todo $a \in A$.
+    \item $f(0_A)=0_R$
+    \item $f(ab)=f(a)f(b)$ para todo $a, b \in A$.
+    \item $f(1_A)=1_R$.
+\end{itemize}
+
+Caso $f$ seja injetora, dizemos que $f$ é um \emph{monomorfismo}. Caso $f$ seja sobrejetora, dizemos que $f$ é um \emph{epimorfismo}. Caso $f$ seja bijetora, dizemos que $f$ é um \emph{isomorfismo}.
+\end{definition}
+
+\begin{prop}[Propriedades de homomorfismos]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então:
+    \begin{enumerate}[label=\alph*)]
+        \item Para todo $a \in A^*$, temos $f(a)\in  R^*$ e $f(a^{-1})=f(a)^{-1}$. \label{prop:homomorfismo_a}
+        \item O núcleo de $f$, definido como $\ker f=f^{-1}(\{0_R\})=\{a \in A: f(a)=0_R\}$, é um ideal de $A$.\label{prop:homomorfismo_b}
+        \item A imagem de $f$, $\ran f=\{f(a): a \in A\}$, é um subanel de $R$. Se $A$ é comutativo, $\ran f$ também é.  \label{prop:homomorfismo_c}
+        \item Se $f$ é injetora se, e somente se $\ker f=\{0_A\}$. \label{prop:homomorfismo_d}
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+\ref{prop:homomorfismo_a} Se $a \in A^*$, então $f(a)f(a^{-1})=f(aa^{-1})=f(1_A)=1_R$ e $f(a^{-1})f(a)=f(aa^{-1})=f(1_A)=1_R$ . Assim, $f(a^{-1})=f(a)^{-1}$ e $f(a)\in R^*$.
+
+\ref{prop:homomorfismo_b} Temos que $0_A \in \ker f$, pois $f(0_A)=0_R$. Sejam $a, b \in \ker f$. Então $f(a)=f(b)=0_R$, logo, $f(a+b)=f(a)+f(b)=0_R+0_R=0_R$. Assim, $a+b \in \ker f$.
+
+Se $a \in \ker f$ e $x \in A$, vejamos que $ax, xa \in \ker f$: $f(ax)=f(a)f(x)=0_Rf(x)=0_R$ e $f(xa)=f(x)f(a)=f(x)0_R=0_R$. Assim, $ax, xa \in \ker f$.
+
+Portanto, $\ker f$ é um ideal de $A$.
+
+\ref{prop:homomorfismo_c} Seja $a, b \in \ran f$. Então existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$. Assim, $a-b=f(x)-f(y)=f(x-y)$. Logo, $a-b \in \ran f$. Similarmente, $ab=f(x)f(y)=f(xy)\in \ran f$, e $1_R=f(1_A)\in \ran f$.
+
+Portanto, $\ran f$ é um subanel de $R$. Se $A$ é comutativo, $\ran(f)$ também é comutativo, pois dados $a, b \in \ran f$, existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$. Assim, $ab=f(x)f(y)=f(xy)=f(yx)=f(y)f(x)=ba$.
+
+\ref{prop:homomorfismo_d} Se $f$ é injetora, então $f(a)=0_R=f(0_A)$ implica que $a=0_A$, logo, $\ker f=\{0_A\}$. Reciprocamente, se $\ker f=\{0_A\}$, então $f(a)=f(b)$ implica que $f(a-b)=0_R$, logo, $a-b=0_A$, ou seja, $a=b$. Assim, $f$ é injetora.
+\end{proof}
+
+\begin{prop}[Critério de homomorfismo]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então, $f$ é um homomorfismo se, e somente se:
+    \begin{itemize}
+        \item $f(a+b)=f(a)+f(b)$ para todo $a, b \in A$.
+        \item $f(ab)=f(a)f(b)$ para todo $a, b \in A$.
+        \item $f(1_A)=1_R$.
+    \end{itemize}
+\end{prop}
+\begin{proof}
+    Se $f$ é um homomorfismo, então as duas propriedades acima são satisfeitas. Reciprocamente, se as duas propriedades acima são satisfeitas, então:
+    \begin{itemize}
+    \item $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$. Cancelando, temos $0_R=f(0_A)$.
+    \item $f(-a)+f(a)=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
+    \end{itemize} $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)=0_R$, e $f(-a)=f(0_A-a)=f(0_A)+f(-a)=0_R-f(a)=-f(a)$ para todo $a \in A$. Assim, $f$ é um homomorfismo.
+\end{proof}
+
+\section{Quocientes}
+\begin{definition}
+    Seja $A$ um anel. Uma relação de congruência em $A$ é uma relação de equivalência $\sim$ em $A$ que ``preserva operações''. Explcitamente, tal que para todos $a, b, c, d \in A$, se Se $a\sim b$ e $c\sim d$, então $a+c\sim b+d$ e $ac\sim bd$.
+\end{definition}
+
+Quais são todas as relações de congruência em $A$? A proposição abaixo classifica-as a partir dos ideais de $A$.
+\begin{prop}[Relações de congruência vs ideais]
+    Seja $A$ um anel, $\mathcal R(A)$ o conjunto de todas as relações de congruência em $A$ e $\mathcal I(A)$ o conjunto de todos os ideais de $A$. Então, existe uma bijeção entre $\mathcal R(A)$ e $\mathcal I(A)$ dada por
+    $\sim \mapsto I_{\sim}=\{a \in A: a\sim 0\}$,
+    cuja inversa se dá por $I\mapsto \sim_I=\{(a, b) \in A^2: a-b \in I\}$.
+\end{prop}
+\begin{proof}
+Primeiro, vejamos que se $\sim$ é uma relação de congruência, então $I_\sim$ é um ideal de $A$.
+
+\begin{itemize}
+\item $0 \in I_\sim$, pois $0\sim 0$.
+\item Se $a, b \in I_\sim$, então $a\sim 0$ e $b\sim 0$, logo $a+b\sim 0+0=0$, portanto, $a+b \in I_\sim$.
+\item Se $x \in A$ e $a \in I_\sim$, então $a\sim 0$ e $x\sim 0$, logo $ax\sim a0=0$ e $xa=0a=0$, portanto, $ax, xa \in I_\sim$.
+\end{itemize}
+
+Agora, vejamos que se $I$ é um ideal, então $\sim_I$ é uma relação de congruência. De fato, temos que, para todos $a, b, c, d \in A$:
+\begin{itemize}
+    \item $a\sim_I a$ pois $a-a=0\in I$.
+    \item Se $a\sim_I b$, então $a-b \in I$, logo $(-1)(a-b)=b-a\in I$, e, portanto, $b\sim_I a$.
+    \item Se $a\sim_I b$ e $b\sim_I c$, então $a-b \in I$ e $b-c \in I$, logo, $(a-b)+(b-c)=a-c \in I$, portanto, $a\sim_I c$.
+    \item Se $a\sim_I b$ e $c\sim_I d$, então $a-b \in I$ e $c-d \in I$, logo, $(a-b)+(c-d)=(a+c)-(b+d)\in I$, portanto, $a+c\sim_I b+d$.
+    \item Se $a\sim_I b$ e $c\sim_I d$, então $a-b \in I$ e $c-d \in I$, logo, $(a-b)c=ac-bc\in I$ e $b(c-d)=bc-bd\in I$, logo $(ac-bc)+(bc-bd)=ac-bd\in I$, portanto, $ac\sim_I bd$.
+    \end{itemize}
+
+Se $I$ é ideal, $I_{\sim_I}=I$, pois, para todo $a\in A$:
+
+$$a\in I_{\sim_I}\Leftrightarrow a\sim_I 0\Leftrightarrow a-0\in I\Leftrightarrow a\in I.$$
+
+Finalmente, se $\sim$ é relação de congruência, $\sim_{I_\sim}=\sim$, pois, para todos $a, b \in A$:
+
+$$a\sim_{I_\sim} b\Leftrightarrow a-b\in I_\sim \Leftrightarrow a-b\sim 0\Leftrightarrow a\sim b.$$
+
+Justificando a última equivalência: se $a-b\sim 0$, como $b\sim b$, temos que $a-b+b\sim b$, ou seja, que $a\sim b$. Reciprocamente, se $a\sim b$, como $(-b)\sim (-b)$, segue que $a+(-b)\sim b+(-b)$, ou seja, que $a-b\sim 0$.
+\end{proof}
+
+Como feito nos inteiros, podemos, ao invés de trabalhar com relações de congruência, encontrar anéis em que a congruência corresponda exatamente à igualdade.
+
+\begin{definition}
+Seja $A$ um anel e $\sim$ uma relação de congruência. Define-se que $A/\sim$ é $A/\sim=\{[a]_\sim: a \in A\}$, onde $[a]_\sim=\{b\in A: b\sim a\}$ é a classe de equivalência de $a$ com relação a $\sim$.
+
+Define-se que $[a]_\sim+[b]_\sim=[a+b]_\sim$ e que $[a]_\sim[b]_\sim=[ab]\sim$.
+
+Se $I$ é um ideal, $A/I=A/\sim_I$, e o mapa quociente de $A$ em $A/I$ se dá por $q:A\longrightarrow A/I$ dada por $q(a)=[a]_{\sim_I}$.
+\end{definition}
+
+Pelas propriedades das relações de congruência, a soma e produto de $A/\sim$ (ou $A/I$) estão bem definidas. Além disso:
+
+\begin{lemma}[Propriedades do quociente]
+    Na notação acima:
+    \begin{enumerate}[label=\alph*)]
+        \item $q$ é epimorfismo de anéis. \label{lemma:propriedadesQuociente_a}
+        \item $\ker q = I$. \label{lemma:propriedadesQuociente_b}
+        \item $q(a)=a+I=\{a+x: x \in I\}$ para todo $a \in A$. \label{lemma:propriedadesQuociente_c}
+        \item Se $A$ é anel comutativo, $A/I$ também é. \label{lemma:propriedadesQuociente_d}
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \ref{lemma:propriedadesQuociente_a} Seja $a, b, c, d \in A$. Temos que $q(a+b)=q(a)+q(b)$ e $q(ab)=q(a)q(b)$ por definição da soma em $A/I$, e $q$ é sobrejetora pela definição de $q$. Finalmente, $q(1_A)$ é identidade pois para todo $a \in A$, $q(1_A)q(a)=q(1_Aa)=q(a)$ e $q(a)q(1_A)=q(a1_A)=q(a)$, logo, $q(1_A)=1_{A/I}$.
+
+    \ref{lemma:propriedadesQuociente_b} Temos que $\ker q=\{a \in A: q(a)=q(0)\}=\{a \in A: a\sim_I 0\}=\{a \in A: a\in I\}=I$.
+
+    \ref{lemma:propriedadesQuociente_c} Temos que $q(a)=[a]_{\sim_I}=\{b \in A: b\sim_I a\}=\{b \in A: b-a\in I\}=\{a+x: x \in I\}$ pois se $b-a \in I$ se, e somente se $a-b=x$ para algum $x \in I$.
+
+    \ref{lemma:propriedadesQuociente_d} Se $A$ é comutativo, então $A/I=\ran q$ também é, pois $q$ é homomorfismo de anéis.
+\end{proof}
+
+\section{Teoremas do isomorfismo}
+\begin{theorem}[Teorema do homomorfismo]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis e $J$ um ideal tal que $J\subseteq \ker f$. Então, existe um único homomorfismo de anéis $g:A/J\rightarrow R$ tal que $g\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$.
+\end{theorem}
+\begin{proof}
+    Definimos $g:A/J\rightarrow R$ por $g(a+J)=f(a)$. Então, $g$ é bem definido, pois se $a+J=b+J$, então $a-b \in J\subseteq \ker f$, logo, $f(a-b)=0_R$, ou seja, $f(a)=f(b)$.
+
+    Agora, vejamos que $g$ é um homomorfismo de anéis. De fato, para todo $a', b' \in A/J$, sendo $a'=a+J$ e $b'=b+J$, temos que:
+    \begin{itemize}
+        \item $g(a'+b')=g((a+J)+(b+J))=g((a+b)+J)=f(a+b)=f(a)+f(b)=g(a+J)+g(b+J)$.
+        \item $g(a'b')=g((a+J)(b+J))=g(ab+J)=f(ab)=f(a)f(b)=g(a+J)g(b+J)$.
+        \item $g(1_{A/J})=g(1_A+J)=f(1_A)=1_R$.
+    \end{itemize}
+\end{proof}
+
+\begin{theorem}[Primeiro Teorema do Isomorfismo]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então, existe um único homomorfismo de anéis $g:A/\ker f\rightarrow R$ tal que $g\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$, e $g:A\ker f\rightarrow \ran f$ é isomorfismo.
+\end{theorem}
+\begin{proof}
+    Pelo Teorema do homomorfismo com $J=\ker f$, existe um único homomorfismo de anéis $g:A/\ker f\rightarrow \ran f$ tal que $g\circ q=f$. Como $g\circ q=f$ e $q$ é sobrejetora, então $\ran g=\ran (g\circ q)=\ran f$, logo, $q$ é sobre $\ran f$.
+    
+    Resta ver que $g$ é injetora. De fato, seja $q(a)\in A/\ker f$ tal que $g(q(a))=0_R$. Então, $f(a)=0_R$, logo, $a\in \ker f=J$. ou seja, $a\sim_I 0$, logo $q(a)=q(0)=0_{A/\ker f}$. Assim, $g$ é injetora.
+\end{proof}
