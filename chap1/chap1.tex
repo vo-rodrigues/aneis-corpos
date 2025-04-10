@@ -2,13 +2,18 @@
 \chapter{Pré-Requisitos Conjuntistas}
 Durante o texto, precisamos de algumas definições e resultados envolvendo noções básicas sobre conjuntos e funções.
 
-Não é objetivo deste texto desenvolver a parte inicial da Teoria dos Conjuntos. Também não é o objetivo desta seção explicar toda a notação de conjuntos utilizada. Assumimos familiaridade do leitor com funções e com manipulação de conjuntos a nível básico. Apenas apresentaremos algumas definições, notações e resultados básicos que utilizaremos ao longo do texto.
+Não é objetivo deste texto desenvolver a parte inicial da Teoria dos Conjuntos.
+Também não é o objetivo desta seção explicar toda a notação de conjuntos utilizada.
+Assumimos familiaridade do leitor com funções e com manipulação de conjuntos a nível básico. Apenas apresentaremos algumas definições, notações e resultados básicos que utilizaremos ao longo do texto.
 
 \section{Famílias e produtos cartesianos}
 
-Famílias são funções com notação especial. Muitas vezes, ao pensar em funções, pensamos em um ``dispositivo de entrada/saída''. Quando, ao invés disso, estamos pensando apenas em um  ``conjunto indexado de valores'', a notação de família pode ser mais conveniente.
+Famílias são funções com notação especial.
+Muitas vezes, ao pensar em funções, pensamos em um ``dispositivo de entrada/saída''.
+Quando, ao invés disso, estamos pensando apenas em um  ``conjunto indexado de valores'', a notação de família pode ser mais conveniente.
 
-No quadro abaixo, apresentamos uma comparação entre as duas notações. Enfatizamos que, matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
+No quadro abaixo, apresentamos uma comparação entre as duas notações.
+Enfatizamos que, matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
 \begin{table}[h]
     \centering
     \begin{tabular}{lllll}
@@ -24,18 +29,40 @@ No quadro abaixo, apresentamos uma comparação entre as duas notações. Enfati
     \caption{Comparativo de família e função}
 \end{table}
 
+Como exemplos, consideremos sequências infinitas e finitas:
+
 \begin{exemplo}[Sequências]
-    Uma sequência é uma família cujo conjunto de índices é $\mathbb N$. Compare a intuição que passa as notações:
+    Uma sequência é uma família cujo conjunto de índices é $\mathbb N$.
+    Compare a intuição que passa as notações:
     \begin{itemize}
     \item Considere a sequência $u=(\frac{1}{2^n}))_{n \in \mathbb N}$...
     \item Considere a função $u:\mathbb N\rightarrow \mathbb R$ dada por $u(n)=\frac{1}{2^n}$...
     \end{itemize}
     
-    Exemplo: sequências finitas. Se $n\geq 1$, identificamos $n=\{0, 1, \dots, n-1\}$. Assim:
+
+\end{exemplo}
+
+\begin{exemplo}[Sequências finitas]
+    Se $n\geq 1$, identificamos $n=\{0, 1, \dots, n-1\}$.
+    Assim:
     \begin{itemize}
     \item Uma família com $n$ elementos é uma família $(a_i)_{i<n}=(a_i)_{i \in n}=(a_0, \dots, a_{n-1})$.
     \end{itemize}
+
+    Essa notação é bastante funcional no sentido de que dá significado como conjunto aos números naturais, e corresponde à construção usual dos números naturais na Teoria dos Conjuntos.
+    Como desvantagem, seus contadores se iniciam no $0$, e não no $1$, o que pode ser pouco intuitivo e não coincidir com a notação da maioria dos textos de matemática, apesar de ser muito adotada em textos mais próximos de Teoria dos Conjuntos.
 \end{exemplo}
+
+Agora vamos seguir para a definição de produto cartesiano.
+Primeiro, vamos lembrar a definição de produto cartesiano de dois conjuntos.
+
+\begin{definition}[Produto cartesiano de dois conjuntos]
+    Sejam $A, B$ conjuntos. Então $A\times B=\{(a, b): a\in A, b \in B\}$ é o \emph{produto cartesiano de $A$ e $B$}.
+    Ou seja, o conjunto de todos os pares ordenados $(a, b)$ tais que $a\in A$ e $b\in B$.
+\end{definition}
+
+Pares ordenados são conjuntos especiais que carregam duas coordenadas de modo a permitem distinguir a ordem dos elementos. Sua propriedade principal é a de se $a, b, c, d$ são conjuntos,então $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$. Uma construção usual, chamada de par de Kuratowski, para a qual não é difícil provar que vale essa propriedade, é dada por $(a, b)=\{\{a\}, \{a, b\}\}$. Porém, isso não será importante neste texto.
+
 
 \begin{definition}[Produto cartesiano de conjuntos]
 Seja $(A_i)_{i \in I}$ uma família de conjuntos. O produto cartesiano de conjuntos é o conjunto $\prod_{i \in I} A_i$ definido como o conjunto de todas as famílias $(a_i: i \in I)$ tais que para cada $i \in I$, $a_i \in A_i$.
