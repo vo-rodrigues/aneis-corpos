@@ -10,8 +10,13 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
+      - name: Move pdf
+        run: |
+          mkdir ./output
+          mv main.pdf ./output/main.pdf
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: PDF
-          path: main.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          
