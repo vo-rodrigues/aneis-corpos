@@ -129,12 +129,12 @@ Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in
 
 \begin{itemize}
     \item \textbf{Notação:} se $a=(a_i)_{i\in F}$ é uma sequência de elementos de $G$, então usamos as notações:
-    $$\sum a=\sum(a_i: i\in F)=\sum_{i\in F} a_i.$$
-    \item Caso base $n=0$: só existe uma família com $0$ elementos, que é a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$.
-    Definimos: $$\sum a=0$$.
+    \[\sum a=\sum(a_i: i\in F)=\sum_{i\in F} a_i.\]
+    \item Caso base $n=0$ (soma vazia): só existe uma família com $0$ elementos, que é a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$.
+    Definimos: \[\sum a=\sum_{i \in \emptyset}a_i=0\].
     \item Passo recursivo $n\rightarrow n+1$: considere uma família $(a_i)_{i\in F}$, onde $|F|=n+1$.
     Define-se:
-    $$\sum(a_i: i \in F)=\sum(a_i: i \in F\setminus\{j\})+a_j,$$
+    \[\sum(a_i: i \in F)=\sum(a_i: i \in F\setminus\{j\})+a_j,\]
     onde $j \in I$ é qualquer elemento.
 \end{itemize}
 \end{definition}
@@ -152,9 +152,9 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
     Devemos ver que $\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k$.
     Com efeito:
 
-    $$\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_k\right)+a_j=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_k+a_j)$$
+    \[\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_k\right)+a_j=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_k+a_j)\]
 
-        $$=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.$$
+    \[=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.\]
 \end{proof}
 
 \begin{prop}
@@ -162,7 +162,7 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
 Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
 Então:
 
-    $$\sum_{i \in I}a_i=\sum_{j \in J}a_{\phi(j)}.$$
+    \[\sum_{i \in I}a_i=\sum_{j \in J}a_{\phi(j)}.\]
 
 \end{prop}
 \begin{proof}
@@ -174,5 +174,5 @@ Fixe $k \in J$ qualquer e sejam $I'=I\setminus\{\phi(k)\}, J'=J\setminus\{k\}$ e
 Como $|J'|=|I'|=n$, por hipótese indutiva temos que $\sum_{j \in J'}a_{\phi(j)}=\sum_{i \in I'}a_i$.
 Segue que:
 
-$$\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.$$
+\[\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.\]
 \end{proof}
