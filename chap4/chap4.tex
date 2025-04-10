@@ -155,42 +155,125 @@ Como um isomorfismo é um homomorfismo bijetor, segue que a composição de dois
         \item $\id_A(1_A)=1_A$.
     \end{itemize}
 
-    \section{Ideais}
-\begin{definition}[Ideal à esquerda]
-    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à esquerda} se:
-    \begin{itemize}
-        \item $0 \in I$.
-        \item Para todos $a, b \in I$, temos $a+b\in I$.
-        \item $\forall a \in A$ e $\forall b \in I$, temos $ab \in I$.
-    \end{itemize}
-\end{definition}
+    Agora introduziremos o núcleo de um homomorfismo.
+    \begin{definition}
+        Seja $f: A\rightarrow R$ um homomorfismo de anéis.
+        Definimos o \emph{núcleo} de $f$, também chamado de $\emph{kernel}$ de $f$, como sendo o conjunto dos zeros de $f$.
+        Em símbolos:
+    
+        \[\ker f=\{a \in A: f(a)=0_R\}.\]
+    \end{definition}
+    Uma importante relação entre o homomorfismo e seu núcleo é dado como se segue:
+    
+    \begin{prop}
+    Sejam $A, R$ anéis e $f:A\rightarrow R$ um homomorfismo. Então $f:A\rightarrow R$ é injetor (um monomorfismo) se, e somente se $\ker f = \{0_A\}$.
+    \end{prop}
+    
+    \begin{proof}
+        Primeiro, suponha que $f$ é um monomorfismo.
+        Sabemos que $f(0_A)=0_R$, pois $f$ é homomorfismo, e, portanto, $\{0_A\}\subseteq \ker f$.
+        Reciprocamente, seja $a \in \ker f$.
+        Temos que $f(a)=0_R=f(0_A)$. Pela injetividade de $f$ segue que $a=0_A\in \{0_A\}$.
+    
+        Agora suponha que $\ker f=\{0_A\}$.
+        Veremos que $f$ é injetora.
+        Para tanto, sejam $a, b \in A$ e suponha que $f(a)=f(b)$.
+        Temos que $f(a-b)=f(a)-f(b)=0_R$, assim, $a-b\in \ker_f = \{0_A\}$, o que implica em $a-b=0_A$, e, portanto, $a=b$.
+    \end{proof}
+\section{Ideais}
+Ideais são as estruturas responsáveis pela noção de quociente em anéis, assunto que será estudado no próximo capítulo.
+Introduziremos a noção de ideal neste capítulo pois ela tem interações fundamentais com a noção de homomorfismo, porém, apenas no próximo capítulo ficará clara a sua enorme importância para esta teoria.
+Nesta seção, motivaremos, nesta seção, a noção de ideal, a partir do núcleo de homomorfismos.
 
-\begin{definition}[Ideal à direita]
-    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à direita} se:
-    \begin{itemize}
-        \item $0 \in I$.
-        \item Para todos $a, b \in I$, temos $a+b\in I$.
-        \item $\forall a \in I$ e $\forall b \in A$, temos $ab \in I$.
-    \end{itemize}
-\end{definition}
+Para começar, notemos algumas propriedades do núcleo.
+
+\begin{prop}
+Seja $f:A\rightarrow R$ um homomorfismo de anéis. Seja $I=\ker f$. Então:
+
+\begin{enumerate}[label=\alph*)]
+    \item $0_A \in I$.
+    \item Para todos $a, b \in I$, $a+b \in I$.
+    \item Para todos $a \in I$ e $x \in A$, $ax \in I$.
+    \item Para todos $a \in I$ e $x \in A$, $xa \in I$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+    \begin{enumerate}[label=\alph*)]
+        \item $0_A \in I$ pois $f(0_A)=0_R$.
+        \item Se $a, b \in I$, então $f(a)=0_R$ e $f(b)=0_R$. Assim, $f(a+b)=f(a)+f(b)=0_R+0_R=0_R$, logo, $a+b\in I$.
+        \item Se $a \in I$ e $x \in A$, então $f(a)=0_R$. Assim, $f(ax)=f(a)f(x)=0_Rf(x)=0_R$, logo, $ax\in I$.
+        \item Se $a \in I$ e $x \in A$, então $f(a)=0_R$. Assim, $f(xa)=f(x)f(a)=f(x)0_R=0_R$, logo, $xa\in I$.
+    \end{enumerate}
+\end{proof}
+
+É possível indagar se $\ker f$ é um subanel de $A$. Observemos que as propriedades c) e d) são mais fortes do que a propriedade exigida para produto para ser um subanel. Além disso, $\ker f$ é fechado por diferenças, pois se $a, b \in \ker f$, pela propriedade d), $(-1)b=-b\in \ker f$, e, portanto, $a-b \in \ker f$. Porém, $1_A$ raramente está em $\ker f$, como vemos a seguir:
+
+\begin{prop}
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Se $1_A \in \ker f$, então $R$ é o anel trivial, ou seja, $R=\{0_R\}$.
+\end{prop}
+
+\begin{proof}
+    Se $1_A \in \ker f$, então $f(1_A)=0_R$.
+    Como $f$ é um homomorfismo, temos que $f(1_A)=f(1_A\cdot 1_A)=f(1_A)f(1_A)=0_R\cdot 0_R=0_R$.
+    Como $1_R=0_R$, segue que $R=\{0_R\}$, pois dado $x \in R$ temos $x=x\cdot 1_R=x\cdot 0_R=0_R$.
+\end{proof}
+
+Como recíproca, notemos que um homomorfismo acima existe para qualquer anel $A$:
+
+\begin{prop}
+    Seja $A$ um anel e $R=\{0_R\}$ um anel trivial.
+    
+    Então $f:A\rightarrow R$ dado por $f(x)=0_R$ para todo $x \in A$ é um homomorfismo de anéis, e $\ker f=A$.
+\end{prop}
+
+\begin{proof}
+    Temos que $f$ é um homomorfismo de anéis, já que dados $a, b \in R$, temos $f(a+b)=0_R=0_R+0_R=f(a)+f(b)$, $f(ab)=0_R=0_R\cdot 0_R=f(a)f(b)$, $f(1_A)=0_R=1_R$.
+    Como $f$ é a função nula, $\ker f=A$.
+\end{proof}
+
+Podemos ver $\ker f$, em algum sentido, como uma medida do quão longe um homomorfismo $f$ está de ser injetor: temos que $\{0\}\ker f\subseteq A$.
+Como vimos, $f$ ser injetor é equivalente à $f=\{0\}$.
+No outro extremo, $f$ ser constante significa que $\ker f = A$.
+
+Vimos ainda que $\ker f$ não é um subanel, mas que possui propriedades especiais. Tais propriedades são a definição de ideal.
 
 \begin{definition}[Ideal]
-    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal} se for um ideal à esquerda e um ideal à direita. Ou seja, $I$ é um ideal se:
-    \begin{itemize}
-        \item $0 \in I$.
-        \item Para todos $a, b \in I$, temos $a+b\in I$.
-        \item $\forall a \in A$ e $\forall b \in I$, temos $ab \in I$.
-        \item $\forall a \in I$ e $\forall b \in A$, temos $ab \in I$.
-    \end{itemize}
+    Seja $A$ um anel.
+    Um subconjunto $I \subseteq A$ é dito \emph{ideal}, ou um \emph{ideal bilateral} se:
+
+    \begin{enumerate}[label=\alph*)]
+        \item $0_A \in I$.
+        \item Para todos $a, b \in I$, $a+b \in I$.
+        \item Para todos $a \in I$ e $x \in A$, $ax \in I$.
+        \item Para todos $a \in I$ e $x \in A$, $xa \in I$.
+    \end{enumerate}
+
+    Caso $I$ satisfaça todas as propriedades menos d), $I$ é dito um ideal à direita.
+    De forma similar, caso $I$ satisfaça todas as propriedades menos c), $I$ é dito um ideal à esquerda.
 \end{definition}
+
+Note que se $A$ é um anel comutativo, então $I$ é um ideal à esquerda se, e somente se, $I$ é um ideal à direita.
+Assim, em anéis comutativos, a noção de ideal é equivalente à de ideal à esquerda ou à de ideal à direita.
+Por simplicidade, neste texto, focaremos nosso estudo em ideais bilaterais.
+Porém, muitos resultados aqui expressados possuem versões para ideais à esquerda e à direita.
+
+Da discussão anterior, temos:
+
+\begin{corol}
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então $\ker f$ é um ideal de $A$.
+\end{corol}
+
+Então, todo núcleo é um ideal.
+No próximo capítulo, veremos que vale uma recíproca: todo ideal é um núcleo de algum homomorfismo.
+
+Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
 
 \begin{prop}[Ideal trivial]Seja $A$ um anel. Então $\{0\}$ e $A$ são ideais de $A$. Estes ideais são chamados de \emph{ideais principais}
 \end{prop}
 \begin{proof}
     Exercício.
 \end{proof}
-
-Note que se $A$ é um anel comutativo, então $I$ é um ideal à esquerda se, e somente se, $I$ é um ideal à direita. Assim, em anéis comutativos, a noção de ideal é equivalente à de ideal à esquerda ou à de ideal à direita.
 
 \begin{prop}[Interseção de ideais]
     Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais à esquerda de $A$. Então $\bigcap_{I \in \mathcal F}I=\bigcap \mathcal F$ é um ideal de $A$. O mesmo vale para ideais à direita e ideais.
