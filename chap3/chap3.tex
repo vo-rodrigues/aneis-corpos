@@ -219,15 +219,28 @@ Seja $K$ um corpo e $I$ um ideal de $K$. Se $I=\{0\}$, então $I$ é trivial. Se
 Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal de $A$ é trivial, e fixe $x \in A\setminus \{0\}$. Como $Ax$ é um ideal trivial e $0\neq x \in Ax$, temos que $Ax=A$. Logo, existe $a \in A$ tal que $ax=1$. Assim, $x$ é invertível. Portanto, $A$ é um corpo.
 \end{proof}
 
-\begin{prop}[$\mathbb Z$ é um DIP que não é um corpo]
-    Seja $I$ um ideal de $\mathbb Z$. Veremos que $I$ é um ideal principal. Se $I=\{0\}$, então $I$ é principal. Caso contrário, $I$ contém ao menos um elemento positivo, já que, sendo $x\in I\setminus\{0\}$, temos que $-x \in I$ e um dos $x, -x$ é positivo.
-
-
-    Seja $n$ o menor inteiro positivo de $I$. Afirmamos que $I=n\mathbb Z$. De fato, se $x \in I$, então escreva $x=qn+r$, onde $q,r \in \mathbb Z$ e $0\leq r<n$. Como $x \in I$, temos que $r=x-qn \in I$. Assim, $r=0$, ou violaríamos a minimalidade de $n$. Logo, $x=qn\in n\mathbb Z$. Portanto, $I\subseteq n\mathbb Z$. Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
+\begin{prop}[Um DIP que não é um corpo] O anel dos inteiros $\mathbb Z$ é um domínio de ideais principais que não é um corpo.
 \end{prop}
+\begin{proof}
+    Seja $I$ um ideal de $\mathbb Z$.
+    Veremos que $I$ é um ideal principal.
+    Se $I=\{0\}$, então $I$ é principal.
+    Caso contrário, $I$ contém ao menos um elemento positivo, já que, sendo $x\in I\setminus\{0\}$, temos que $-x \in I$ e um dos $x, -x$ é positivo.
+
+    Seja $n$ o menor inteiro positivo de $I$.
+    Afirmamos que $I=n\mathbb Z$.
+    De fato, se $x \in I$, então escreva $x=qn+r$, onde $q,r \in \mathbb Z$ e $0\leq r<n$.
+    Como $x \in I$, temos que $r=x-qn \in I$. Assim, $r=0$, ou violaríamos a minimalidade de $n$.
+    Logo, $x=qn\in n\mathbb Z$.
+    Portanto, $I\subseteq n\mathbb Z$.
+    Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
+\end{proof}
+
 \section{Subanéis}
 \begin{definition}[Subanel]
-    Seja $A$ um anel. Um subanel de $A$ é um conjunto $B\subseteq A$, com as operações de $A$ restritas à $B$ e com mesmo $0$ e $1$ de $A$, é um anel. Note que, para isso, é necessário e suficiente que:
+    Seja $A$ um anel.
+    Um subanel de $A$ é um conjunto $B\subseteq A$, com as operações de $A$ restritas à $B$ e com mesmo $0$ e $1$ de $A$, é um anel.
+    Note que, para isso, é necessário e suficiente que:
     
     \begin{itemize}
         \item $1 \in B$
