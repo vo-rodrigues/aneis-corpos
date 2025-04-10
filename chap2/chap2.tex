@@ -43,8 +43,9 @@ Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
     Note que $h=he$, pois $e$ é elemento neutro. Por outro lado, $e=he$, pois $h$ é elemento neutro. Assim, $h=he=e$.
 \end{proof}
 
-\begin{prop}[Unicidade dos inversos]\lAbel{prop:inverso_unico_grupo}
-    Seja $(G,\cdot,e)$ um grupo. Então todo $a \in G$ possui um único elemento inverso, ou seja, para todo $g \in G$,  é único. Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
+\begin{prop}[Unicidade dos inversos]\label{prop:inverso_unico_grupo}
+    Seja $(G,\cdot,e)$ um grupo.
+    Então todo $a \in G$ possui um único elemento inverso, ou seja, para todo $g \in G$,  é único. Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
 \end{prop}
 \begin{proof}
     A existência do inverso é garantida pela definição de grupo. Para provar a unicidade, suponha que $b, c$ são inversos de $a$, ou seja, $a \cdot b = b \cdot a = e$ e $a \cdot c = c \cdot a = e$.
@@ -71,12 +72,12 @@ Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
     Para a primeira afirmação, note que $ab=ae$, logo, pela proposição anterior, $b=e$. A segunda afirmação é análoga.
 \end{proof}
 
-\begin{prop}[Regras de sinal]\lAbel{prop:regraSinal}
+\begin{prop}[Regras de sinal]\label{prop:regraSinal}
     Seja $G$ um grupo e $a, b \in G$. Então:
-    \begin{enumerate}[lAbel=\alph*)]
-        \item $((a)^{-1})^{-1}=a$ [na notação aditiva, $-(-a)=a$]. \lAbel{prop:regraSinal_A}
-        \item $(ab)^{-1}=b^{-1}a^{-1}$ [na notação aditiva, $-(a+b)=(-b)+(-a)]$.\lAbel{prop:regraSinal_B}
-        \item $e^{-1}=e$ [na notação aditiva, $-0=0$].\lAbel{prop:regraSinal_C}
+    \begin{enumerate}[label=\alph*)]
+        \item $((a)^{-1})^{-1}=a$ [na notação aditiva, $-(-a)=a$]. \label{prop:regraSinal_A}
+        \item $(ab)^{-1}=b^{-1}a^{-1}$ [na notação aditiva, $-(a+b)=(-b)+(-a)]$.\label{prop:regraSinal_B}
+        \item $e^{-1}=e$ [na notação aditiva, $-0=0$].\label{prop:regraSinal_C}
     \end{enumerate}
 \end{prop}
 \begin{proof}
