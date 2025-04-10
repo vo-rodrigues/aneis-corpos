@@ -1,19 +1,9 @@
 
 \chapter{Pré-Requisitos Conjuntistas}
-Antes de descrevermos grupos, precisamos de algumas definições e resultados básicos envolvendo noções básicas sobre conjuntos e funções. Para isso, utilizaremos a notação usual de conjuntos, como $\mathcal P(X)$ para o conjunto das partes de $X$, $X^n$ para o produto cartesiano de $n$ cópias de $X$, e assim por diante.
+Durante o texto, precisamos de algumas definições e resultados envolvendo noções básicas sobre conjuntos e funções.
 
 Não é objetivo deste texto desenvolver a parte inicial da Teoria dos Conjuntos. Apenas apresentaremos algumas definições, notações e resultados básicos que utilizaremos ao longo do texto.
-\section{Operações}
 
-\begin{definition}[Operações $n$-árias]
-    Se $X$ é um conjunto e $n \in \mathbb N$, uma operação $n$-ária em $X$ é uma função $f:X^n\rightarrow X$.
-\end{definition}
-
-Operações $2$-árias e $1$-árias são frequentemente chamadas de \emph{binárias} e \emph{unárias}, respectivamente.
-
-Caso $*$ seja uma operação binária, a notação $x*y$ é frequentemente utilizada para denotar $x*y$.
-
-Caso $*$ seja uma operação unária, a notação $*x$ é frequentemente utilizada para denotar $*(x)$.
 \section{Produtos cartesianos de conjuntos}
 
 Famílias são funções com notação especial. Tal notação é utilizada quando pensamos em uma função como um ``conjunto indexado de valores'' ao invés de um ``dispositivo de entrada/saída''.
@@ -58,16 +48,15 @@ $$\prod_{i \in I} A_i=\{(a_i)_{i \in I}: \forall i \in I\, a_i \in A_i\}.$$
     \end{definition}
 
     Na notação anterior, se $n\geq 1$ $$A^n=\{(a_i)_{i<n}:\forall i<n\, a_i \in A\}=\{(a_0, \dots, a_{n-1}):a_0, \dots, a_{n-1}\in A\}\approx A\times \dots \times A \,(n \text{ vezes}).$$
-    \subsection{Produtos de anéis}
 
-    \begin{definition}[Produto Direto de dois anéis]
-        Sejam $R, S$ anéis. O produto direto de $R$ e $S$ é o conjunto $R\times S$ munido das operações ``ponto à ponto'': dados $a=(a_1, a_2)\in R\times S$ e $b=(b_1, b_2)\in R\times S$, temos:
-        $$a+b=(a_1+b_1, a_2+b_2)$$
-        $$a\cdot b=(a_1\cdot b_1, a_2\cdot b_2)$$
-        $$0=(0_R, 0_S)$$
-        $$1=(1_R, 1_S)$$
-    \end{definition}
-    
-    Exemplo: Seja $R=\mathbb Z_3$ e $S=\mathbb Z_4$. Então $(2, 2)\in R\times S$ e $(1, 2)\in R\times S$. Temos:
-    $$(2, 2)+(1, 2)=(2+ 1, 2+ 2)=(0, 0)$$
-    $$(2, 2)\cdot (2, 2)=(2\cdot 2, 2\cdot 2)=(1, 0)$$
+    \section{Operações}
+
+\begin{definition}[Operações $n$-árias]
+    Se $X$ é um conjunto e $n \in \mathbb N$, uma operação $n$-ária em $X$ é uma função $f:X^n\rightarrow X$.
+\end{definition}
+
+Operações $2$-árias e $1$-árias são frequentemente chamadas de \emph{binárias} e \emph{unárias}, respectivamente.
+
+Caso $*$ seja uma operação binária, a notação $x*y$ é frequentemente utilizada para denotar $x*y$.
+
+Caso $*$ seja uma operação unária, a notação $*x$ é frequentemente utilizada para denotar $*(x)$.
