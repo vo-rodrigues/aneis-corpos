@@ -154,4 +154,127 @@ Como um isomorfismo é um homomorfismo bijetor, segue que a composição de dois
         \item $\id_A(ab)=ab=\id_A(a)\id_A(b)$.
         \item $\id_A(1_A)=1_A$.
     \end{itemize}
+
+    \section{Ideais}
+\begin{definition}[Ideal à esquerda]
+    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à esquerda} se:
+    \begin{itemize}
+        \item $0 \in I$.
+        \item Para todos $a, b \in I$, temos $a+b\in I$.
+        \item $\forall a \in A$ e $\forall b \in I$, temos $ab \in I$.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Ideal à direita]
+    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à direita} se:
+    \begin{itemize}
+        \item $0 \in I$.
+        \item Para todos $a, b \in I$, temos $a+b\in I$.
+        \item $\forall a \in I$ e $\forall b \in A$, temos $ab \in I$.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Ideal]
+    Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal} se for um ideal à esquerda e um ideal à direita. Ou seja, $I$ é um ideal se:
+    \begin{itemize}
+        \item $0 \in I$.
+        \item Para todos $a, b \in I$, temos $a+b\in I$.
+        \item $\forall a \in A$ e $\forall b \in I$, temos $ab \in I$.
+        \item $\forall a \in I$ e $\forall b \in A$, temos $ab \in I$.
+    \end{itemize}
+\end{definition}
+
+\begin{prop}[Ideal trivial]Seja $A$ um anel. Então $\{0\}$ e $A$ são ideais de $A$. Estes ideais são chamados de \emph{ideais principais}
+\end{prop}
+\begin{proof}
+    Exercício.
+\end{proof}
+
+Note que se $A$ é um anel comutativo, então $I$ é um ideal à esquerda se, e somente se, $I$ é um ideal à direita. Assim, em anéis comutativos, a noção de ideal é equivalente à de ideal à esquerda ou à de ideal à direita.
+
+\begin{prop}[Interseção de ideais]
+    Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais à esquerda de $A$. Então $\bigcap_{I \in \mathcal F}I=\bigcap \mathcal F$ é um ideal de $A$. O mesmo vale para ideais à direita e ideais.
+\end{prop}
+\begin{proof}
+    Provaremos para ideais à esquerda. A prova para ideais à direita é análoga e fica como exercício.
+
+    Seja $I=\bigcap \mathcal F$. Então $0 \in I$, pois $0 \in I$ para todo $I \in \mathcal F$.
+
+    Sejam $a, b \in I$. Então, para todo $I \in \mathcal F$, temos que $a, b \in I$, logo, $a+b\in I$. Assim, $a+b\in \bigcap \mathcal F$.
+
+    Finalmente, seja $a \in A$ e $b \in I$. Então, para todo $I \in \mathcal F$, temos que $b \in I$, logo, $ab\in I$. Assim, $ab\in \bigcap \mathcal F$.
+\end{proof}
+
+\begin{prop}[Ideal gerado]
+    Seja $A$ um anel comutativo e $B\subseteq A$ um conjunto não vazio. Então, o conjunto $I=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$ é o menor ideal à esquerda $A$ que contém $B$ (ou seja, além de ser um ideal contendo $B$, se $J$ é qualquer ideal contendo $B$, então $I\subseteq J$). O ideal $I$ é chamado de \emph{ideal gerado por $B$}, e denotado por $\langle B \rangle$.
+    
+    Se $B=\{x_0, \dots, x_n\}$, então abreviamos $\langle B \rangle$ como $\langle x_0, \dots, x_n \rangle$.
+\end{prop}
+\begin{proof}
+    Primeiro, verificaremos que $I$ é um ideal.
+
+    $0 \in I$, pois $0=0b$ para todo $b \in B$.
+
+    Sejam $x, y \in I$. Então existem $n, m\geq 1$, $a_1, \dots, a_n \in A$, $b_1, \dots, b_n \in B$, $c_1, \dots, c_m \in A$ e $d_1, \dots, d_m \in B$ tais que $x=a_1b_1+\cdots+a_nb_n$ e $y=c_1d_1+\cdots+c_md_m$. Assim, $x+y=(a_1b_1+\cdots+a_nb_n)+(c_1d_1+\cdots+c_md_m)=(a_1b_1+\cdots+a_nb_n)+(c_1d_1+\cdots+c_md_m) \in I$.
+
+    Finalmente, seja $a \in A$ e $b \in I$. Então existem $n\geq 1$, $a_1, \dots, a_n \in A$ e $b_1, \dots, b_n \in B$ tais que $b=a_1b_1+\cdots+a_nb_n$. Assim, $ab=(a_1b_1+\cdots+a_nb_n)a=a_1(b_1a)+\cdots+a_n(b_na) \in I$.
+
+    Agora, seja $J$ um ideal de $A$ que contém $B$. Então, como $J$ é um ideal de $A$, temos que $\forall a_i\in A$, $\forall b_i\in B$, temos que $(a_i b_i)\in J$. Logo, $I\subseteq J$. Portanto, $I$ é o menor ideal de $A$ que contém $B$.
+\end{proof}
+
+Observação: note que o menor ideal contendo $B=\emptyset$ é o ideal nulo, $\{0\}$.
+
+\begin{definition}[Ideal principal]
+    Seja $A$ um anel. Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à direita de $A$. O ideal $xA$ é chamado de \emph{ideal principal à direita gerado por $x$}.
+    Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à esquerda de $A$, e é chamado de \emph{ideal principal à esquerda gerado por $x$}.
+\end{definition}
+\begin{proof}
+Mostraremos que $xA$ é um ideal à direita. As demais afirmações ficam como exercício.
+
+Note que $0 \in xA$, pois $x0=0$.
+
+Sejam $a, b \in xA$. Então, existem $a_1, a_2 \in A$ tais que $a=xa_1$ e $b=xa_2$. Assim, $a+b=xa_1+xa_2=x(a_1+a_2) \in xA$.
+
+Finalmente, seja $a \in A$ e $b \in xA$. Então, existe $b_1 \in A$ tal que $b=xb_1$. Assim, $ab=(xa)b_1=x(ab_1) \in xA$.
+\end{proof}
+\begin{definition}[Ideal principal]
+    Seja $A$ um anel. Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à esquerda de $A$. O ideal $xA$ é chamado de \emph{ideal principal à esquerda gerado por $x$}.
+    Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à direita de $A$, e é chamado de \emph{ideal principal à direita gerado por $x$}.
+    Se $A$ é comutativo, o ideal $xA=Ax$ é chamado de \emph{ideal principal gerado por $x$}.
+\end{definition}
+
+Observação: note que, comparando as definições, se $A$ é um anel comutativo com unidade, $xA=\langle x\rangle$.
+
+Notemos que ideais triviais são principais à esquerda e à direita, pois $0A=\{0\}=A0$ e $A1=A=1A$.
+
+\begin{definition}[Domínio de ideais principais]
+    Um domínio de ideais principais (DIP), ou anel principal, é um domínio de integridade $A$ tal que todo ideal de $A$ é principal.
+\end{definition}
+
+\begin{prop}[Ideais de um corpo são triviais]
+    Todo ideal de um corpo é trivial. Em particular, todo corpo é um DIP. Reciprocamente, se $A$ é um anel comutativo não trivial cujo todo ideal é trivial, então $A$ é um corpo.
+\end{prop}
+\begin{proof}
+Seja $K$ um corpo e $I$ um ideal de $K$. Se $I=\{0\}$, então $I$ é trivial. Se $I\neq \{0\}$, então existe $a \in I$ tal que $a \neq 0$. Daí $1=a^{-1}a=\in I$. Logo, para todo $k \in K$, $k=1k\in I$.
+
+Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal de $A$ é trivial, e fixe $x \in A\setminus \{0\}$. Como $Ax$ é um ideal trivial e $0\neq x \in Ax$, temos que $Ax=A$. Logo, existe $a \in A$ tal que $ax=1$. Assim, $x$ é invertível. Portanto, $A$ é um corpo.
+\end{proof}
+
+\begin{prop}[Um DIP que não é um corpo] O anel dos inteiros $\mathbb Z$ é um domínio de ideais principais que não é um corpo.
+\end{prop}
+\begin{proof}
+    Seja $I$ um ideal de $\mathbb Z$.
+    Veremos que $I$ é um ideal principal.
+    Se $I=\{0\}$, então $I$ é principal.
+    Caso contrário, $I$ contém ao menos um elemento positivo, já que, sendo $x\in I\setminus\{0\}$, temos que $-x \in I$ e um dos $x, -x$ é positivo.
+
+    Seja $n$ o menor inteiro positivo de $I$.
+    Afirmamos que $I=n\mathbb Z$.
+    De fato, se $x \in I$, então escreva $x=qn+r$, onde $q,r \in \mathbb Z$ e $0\leq r<n$.
+    Como $x \in I$, temos que $r=x-qn \in I$. Assim, $r=0$, ou violaríamos a minimalidade de $n$.
+    Logo, $x=qn\in n\mathbb Z$.
+    Portanto, $I\subseteq n\mathbb Z$.
+    Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
+\end{proof}
+
 \end{proof}
