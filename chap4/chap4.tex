@@ -154,32 +154,33 @@ Como um isomorfismo é um homomorfismo bijetor, segue que a composição de dois
         \item $\id_A(ab)=ab=\id_A(a)\id_A(b)$.
         \item $\id_A(1_A)=1_A$.
     \end{itemize}
+\end{proof}
 
-    Agora introduziremos o núcleo de um homomorfismo.
-    \begin{definition}
-        Seja $f: A\rightarrow R$ um homomorfismo de anéis.
-        Definimos o \emph{núcleo} de $f$, também chamado de $\emph{kernel}$ de $f$, como sendo o conjunto dos zeros de $f$.
-        Em símbolos:
-    
-        \[\ker f=\{a \in A: f(a)=0_R\}.\]
-    \end{definition}
-    Uma importante relação entre o homomorfismo e seu núcleo é dado como se segue:
-    
-    \begin{prop}
-    Sejam $A, R$ anéis e $f:A\rightarrow R$ um homomorfismo. Então $f:A\rightarrow R$ é injetor (um monomorfismo) se, e somente se $\ker f = \{0_A\}$.
-    \end{prop}
-    
-    \begin{proof}
-        Primeiro, suponha que $f$ é um monomorfismo.
-        Sabemos que $f(0_A)=0_R$, pois $f$ é homomorfismo, e, portanto, $\{0_A\}\subseteq \ker f$.
-        Reciprocamente, seja $a \in \ker f$.
-        Temos que $f(a)=0_R=f(0_A)$. Pela injetividade de $f$ segue que $a=0_A\in \{0_A\}$.
-    
-        Agora suponha que $\ker f=\{0_A\}$.
-        Veremos que $f$ é injetora.
-        Para tanto, sejam $a, b \in A$ e suponha que $f(a)=f(b)$.
-        Temos que $f(a-b)=f(a)-f(b)=0_R$, assim, $a-b\in \ker_f = \{0_A\}$, o que implica em $a-b=0_A$, e, portanto, $a=b$.
-    \end{proof}
+Agora introduziremos o núcleo de um homomorfismo.
+\begin{definition}
+    Seja $f: A\rightarrow R$ um homomorfismo de anéis.
+    Definimos o \emph{núcleo} de $f$, também chamado de $\emph{kernel}$ de $f$, como sendo o conjunto dos zeros de $f$.
+    Em símbolos:
+
+    \[\ker f=\{a \in A: f(a)=0_R\}.\]
+\end{definition}
+Uma importante relação entre o homomorfismo e seu núcleo é dado como se segue:
+
+\begin{prop}
+Sejam $A, R$ anéis e $f:A\rightarrow R$ um homomorfismo. Então $f:A\rightarrow R$ é injetor (um monomorfismo) se, e somente se $\ker f = \{0_A\}$.
+\end{prop}
+
+\begin{proof}
+    Primeiro, suponha que $f$ é um monomorfismo.
+    Sabemos que $f(0_A)=0_R$, pois $f$ é homomorfismo, e, portanto, $\{0_A\}\subseteq \ker f$.
+    Reciprocamente, seja $a \in \ker f$.
+    Temos que $f(a)=0_R=f(0_A)$. Pela injetividade de $f$ segue que $a=0_A\in \{0_A\}$.
+
+    Agora suponha que $\ker f=\{0_A\}$.
+    Veremos que $f$ é injetora.
+    Para tanto, sejam $a, b \in A$ e suponha que $f(a)=f(b)$.
+    Temos que $f(a-b)=f(a)-f(b)=0_R$, assim, $a-b\in \ker_f = \{0_A\}$, o que implica em $a-b=0_A$, e, portanto, $a=b$.
+\end{proof}
 \section{Ideais}
 Ideais são as estruturas responsáveis pela noção de quociente em anéis, assunto que será estudado no próximo capítulo.
 Introduziremos a noção de ideal neste capítulo pois ela tem interações fundamentais com a noção de homomorfismo, porém, apenas no próximo capítulo ficará clara a sua enorme importância para esta teoria.
@@ -301,6 +302,7 @@ Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
 
     Além disso, se $B\subseteq Z(R)$, onde $Z(R)$ denota o centro de $R$, então $I=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$.
 \end{prop}
+
 \begin{proof}
     Primeiro, verificaremos que $I$ é um ideal.
 
@@ -328,29 +330,24 @@ Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
     Reciprocamente, se $x=a_1b_1c_1+\cdots+a_nb_nc_n \in I$ com $n\geq 1$, $a_1,\dots, a_n, c_1, \dots, c_n \in A$ e $b_1, \dots, b_n \in B\subseteq Z(A)$, temos que $x=(a_1c_1)b_1+\dots+(a_nc_n)b_n\in I'$.
 \end{proof}
 
+
+\begin{definition}
+    Na notação da proposição acima, $I$ é chamado de \emph{ideal gerado por $B$} e denotamos por $\langle B \rangle$. 
+    
+    Caso $B=\{x_1, \dots, x_n\}$, denotamos o ideal gerado por $B$ como $\langle x_1, \dots, x_n \rangle$.
+    Em particular, se $B=\{x\}$, denotamos o ideal gerado por $B$ como $\langle x \rangle$.
+    
+    Caso $B$ seja a imagem de uma família $(x_i: i \in Z)$, denotamos o ideal gerado por $B$ como $\langle x_i: i \in Z \rangle$. 
+
+    Em qualquer um desses casos, $B$ é dito um gerador do ideal.
+\end{definition}
+
 Observação: note que o menor ideal contendo $B=\emptyset$ é o ideal nulo, $\{0\}$.
+Escrevemos $\langle \emptyset\rangle=\{0\}$.
 
 \begin{definition}[Ideal principal]
-    Seja $A$ um anel.
-    Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à direita de $A$. O ideal $xA$ é chamado de \emph{ideal principal à direita gerado por $x$}.
-    Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à esquerda de $A$, e é chamado de \emph{ideal principal à esquerda gerado por $x$}.
+    Um \em{ideal principal} é um ideal gerado por um único elemento.
 \end{definition}
-\begin{proof}
-Mostraremos que $xA$ é um ideal à direita. As demais afirmações ficam como exercício.
-
-Note que $0 \in xA$, pois $x0=0$.
-
-Sejam $a, b \in xA$. Então, existem $a_1, a_2 \in A$ tais que $a=xa_1$ e $b=xa_2$. Assim, $a+b=xa_1+xa_2=x(a_1+a_2) \in xA$.
-
-Finalmente, seja $a \in A$ e $b \in xA$. Então, existe $b_1 \in A$ tal que $b=xb_1$. Assim, $ab=(xa)b_1=x(ab_1) \in xA$.
-\end{proof}
-\begin{definition}[Ideal principal]
-    Seja $A$ um anel. Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à esquerda de $A$. O ideal $xA$ é chamado de \emph{ideal principal à esquerda gerado por $x$}.
-    Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à direita de $A$, e é chamado de \emph{ideal principal à direita gerado por $x$}.
-    Se $A$ é comutativo, o ideal $xA=Ax$ é chamado de \emph{ideal principal gerado por $x$}.
-\end{definition}
-
-Observação: note que, comparando as definições, se $A$ é um anel comutativo com unidade, $xA=\langle x\rangle$.
 
 Notemos que ideais triviais são principais à esquerda e à direita, pois $0A=\{0\}=A0$ e $A1=A=1A$.
 
@@ -358,14 +355,29 @@ Notemos que ideais triviais são principais à esquerda e à direita, pois $0A=\
     Um domínio de ideais principais (DIP), ou anel principal, é um domínio de integridade $A$ tal que todo ideal de $A$ é principal.
 \end{definition}
 
+Em um anel comutativo $A$, como um domínio de integridade, pelo exposto acima, para todo $x \in A$, o conjunto $xA=\{xa: a \in A\}$ é o conjunto $\langle x\rangle$.
+Assim, um domínio de ideais principais é um domínio cujos ideais são exatamente os conjuntos da forma $xA$ para algum $x \in A$. Note que os ideais principais são sempre triviais, pois $\langle 0\rangle=\{0\}$ e $\langle 1\rangle = A$.
+
+Quais são exemplos de DIPs? Para começar, qualquer corpo é um DIP. Mais especificamente:
+
 \begin{prop}[Ideais de um corpo são triviais]
-    Todo ideal de um corpo é trivial. Em particular, todo corpo é um DIP. Reciprocamente, se $A$ é um anel comutativo não trivial cujo todo ideal é trivial, então $A$ é um corpo.
+    Os únicos ideais de qualquer corpo são os triviais.
+    Em particular, todo corpo é um DIP.
+    Reciprocamente, se $A$ é um anel comutativo não trivial cujo todo ideal é trivial, então $A$ é um corpo.
 \end{prop}
 \begin{proof}
-Seja $K$ um corpo e $I$ um ideal de $K$. Se $I=\{0\}$, então $I$ é trivial. Se $I\neq \{0\}$, então existe $a \in I$ tal que $a \neq 0$. Daí $1=a^{-1}a=\in I$. Logo, para todo $k \in K$, $k=1k\in I$.
+    Seja $K$ um corpo e $I$ um ideal de $K$.
+    Se $I=\{0\}$, então $I$ é trivial.
+    Se $I\neq \{0\}$, então existe $a \in I$ tal que $a \neq 0$. Daí $1=a^{-1}a=\in I$.
+    Logo, para todo $k \in K$, $k=1k\in I$.
 
-Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal de $A$ é trivial, e fixe $x \in A\setminus \{0\}$. Como $Ax$ é um ideal trivial e $0\neq x \in Ax$, temos que $Ax=A$. Logo, existe $a \in A$ tal que $ax=1$. Assim, $x$ é invertível. Portanto, $A$ é um corpo.
+    Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal de $A$ é trivial, e fixe $x \in A\setminus \{0\}$.
+    Como $Ax$ é um ideal trivial e $0\neq x \in Ax$, temos que $Ax=A$.
+    Logo, existe $a \in A$ tal que $ax=1$. Assim, $x$ é invertível.
+    Portanto, $A$ é um corpo.
 \end{proof}
+
+Porém, nem todo DIP é um corpo, como exemplificado pelo anel dos números inteiros.
 
 \begin{prop}[Um DIP que não é um corpo] O anel dos inteiros $\mathbb Z$ é um domínio de ideais principais que não é um corpo.
 \end{prop}
@@ -384,4 +396,3 @@ Para a recíproca, seja $A$ um anel comutativo não trivial tal que todo ideal d
     Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
 \end{proof}
 
-\end{proof}
