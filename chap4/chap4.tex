@@ -1,10 +1,13 @@
-\chapter{Homomorfismos de anéis}
+\chapter{Homomorfismos e Ideais}
 Em matemática, boa parte das coleções de estruturas estudadas possui uma classe de funções que preservam, em algum sentido, suas propriedades.
 O estudo generalizado destas estruturas é o que chamamos de \emph{teoria de categorias}, tema que não será tratado neste texto.
 Na classe dos anéis, estas funções são o que chamamos de \emph{homomorfismos}.
-\section{Homomorfismos}
+\section{Definição de homomorfismo}
+Homomorfismos são funções que preservam a estrutura de anéis.
+Formalmente:
 \begin{definition}
-Sejam $A$, $R$ aneis. Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
+Sejam $A$, $R$ aneis.
+Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
 \begin{itemize}
     \item $f(a+b)=f(a)+f(b)$ para todo $a, b \in A$.
     \item $f(-a)=-f(a)$ para todo $a \in A$.
@@ -13,36 +16,60 @@ Sejam $A$, $R$ aneis. Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} 
     \item $f(1_A)=1_R$.
 \end{itemize}
 
-Caso $f$ seja injetora, dizemos que $f$ é um \emph{monomorfismo}. Caso $f$ seja sobrejetora, dizemos que $f$ é um \emph{epimorfismo}. Caso $f$ seja bijetora, dizemos que $f$ é um \emph{isomorfismo}.
+Caso $f$ seja injetora, dizemos que $f$ é um \emph{monomorfismo}.
+Caso $f$ seja sobrejetora, dizemos que $f$ é um \emph{epimorfismo}.
+Caso $f$ seja bijetora, dizemos que $f$ é um \emph{isomorfismo}.
 \end{definition}
 
-\begin{prop}[Propriedades de homomorfismos]
-    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então:
-    \begin{enumerate}[label=\alph*)]
-        \item Para todo $a \in A^*$, temos $f(a)\in  R^*$ e $f(a^{-1})=f(a)^{-1}$. \label{prop:homomorfismo_a}
-        \item O núcleo de $f$, definido como $\ker f=f^{-1}(\{0_R\})=\{a \in A: f(a)=0_R\}$, é um ideal de $A$.\label{prop:homomorfismo_b}
-        \item A imagem de $f$, $\ran f=\{f(a): a \in A\}$, é um subanel de $R$. Se $A$ é comutativo, $\ran f$ também é.  \label{prop:homomorfismo_c}
-        \item Se $f$ é injetora se, e somente se $\ker f=\{0_A\}$. \label{prop:homomorfismo_d}
-    \end{enumerate}
-\end{prop}
-\begin{proof}
-\ref{prop:homomorfismo_a} Se $a \in A^*$, então $f(a)f(a^{-1})=f(aa^{-1})=f(1_A)=1_R$ e $f(a^{-1})f(a)=f(aa^{-1})=f(1_A)=1_R$ . Assim, $f(a^{-1})=f(a)^{-1}$ e $f(a)\in R^*$.
+A noção de isomorfismo é extremamente importante na Teoria de Anéis. Muitas vezes, temos dois anéis que ``deveriam ser a mesma coisa'', mas, como objetos matemáticos, não são iguais. A noção de isomorfismo entra em campo para dizer que, mesmo que dois anéis não sejam o mesmo objeto, eles possuem exatamente as mesmas propriedades algébricas e operacionais. Para darmos um exemplo concreto:
 
-\ref{prop:homomorfismo_b} Temos que $0_A \in \ker f$, pois $f(0_A)=0_R$. Sejam $a, b \in \ker f$. Então $f(a)=f(b)=0_R$, logo, $f(a+b)=f(a)+f(b)=0_R+0_R=0_R$. Assim, $a+b \in \ker f$.
+\begin{exemplo}
+Seja $A=\{0, 1\}$ e $R=\{Z, U\}$, onde $Z, U$ são objetos diferentes, e diferentes de $0, 1$. Defina em $A$ as operações $\cdot$ e $+$ dadas pelas seguintes tabelas:
 
-Se $a \in \ker f$ e $x \in A$, vejamos que $ax, xa \in \ker f$: $f(ax)=f(a)f(x)=0_Rf(x)=0_R$ e $f(xa)=f(x)f(a)=f(x)0_R=0_R$. Assim, $ax, xa \in \ker f$.
+Em $A$:
+\begin{multicols}{2}\centering
+    \begin{tabular}{c|cc}
+        $+$ & 0 & 1 \\ \hline
+        0 & 0 & 1 \\
+        1 & 1 & 0 \\
+    \end{tabular}
 
-Portanto, $\ker f$ é um ideal de $A$.
+    \begin{tabular}{c|cc}
+        $\cdot$ & 0 & 1 \\ \hline
+        0 & 0 & 0 \\
+        1 & 0 & 1 \\
+    \end{tabular}
+\end{multicols}
 
-\ref{prop:homomorfismo_c} Seja $a, b \in \ran f$. Então existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$. Assim, $a-b=f(x)-f(y)=f(x-y)$. Logo, $a-b \in \ran f$. Similarmente, $ab=f(x)f(y)=f(xy)\in \ran f$, e $1_R=f(1_A)\in \ran f$.
+Em $R$:
+\begin{multicols}{2}\centering
+    \begin{tabular}{c|cc}
+        $+$ & Z & U \\ \hline
+        Z & Z & U \\
+        U & U & Z \\
+    \end{tabular}
 
-Portanto, $\ran f$ é um subanel de $R$. Se $A$ é comutativo, $\ran(f)$ também é comutativo, pois dados $a, b \in \ran f$, existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$. Assim, $ab=f(x)f(y)=f(xy)=f(yx)=f(y)f(x)=ba$.
+    \begin{tabular}{c|cc}
+        $\cdot$ & Z & U \\ \hline
+        Z & Z & Z \\
+        U & Z & U \\
+    \end{tabular}
+\end{multicols}
 
-\ref{prop:homomorfismo_d} Se $f$ é injetora, então $f(a)=0_R=f(0_A)$ implica que $a=0_A$, logo, $\ker f=\{0_A\}$. Reciprocamente, se $\ker f=\{0_A\}$, então $f(a)=f(b)$ implica que $f(a-b)=0_R$, logo, $a-b=0_A$, ou seja, $a=b$. Assim, $f$ é injetora.
-\end{proof}
+Intuitivamente, $A$ e $R$ correspondem a duas apresentações de uma mesma estrutura algébrica, porém, como $A\cap R=\emptyset$, estes dois anéis não são o mesmo anel.
+Como formalizar este fato?
+Ora, há uma relação biunívoca (uma bijeção) entre $A$ e $R$ que preserva suas operações, e ela é dada por $\phi(0)=Z$ e $\phi(1)=U$.
+Tal $\phi$ é um isomorfismo.
+\end{exemplo}
 
-\begin{prop}[Critério de homomorfismo]
-    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então, $f$ é um homomorfismo se, e somente se:
+Para todos os fins que interessam à Álgebra, anéis isomorfos tem exatamente as mesmas propriedades, e, assim, são considerados como sendo, em algum sentido, a mesma estrutura.
+
+A definição de homomorfismo, por possuir várias cláusulas, pode parecer de longa verificação.
+A proposição abaixo encurta esta verificação substancialmente.
+
+\begin{prop}
+    Sejam $A, R$ anéis e $f:A\rightarrow R$ uma função.
+    Então $f$ é um homomorfismo se, e somente se:
     \begin{itemize}
         \item $f(a+b)=f(a)+f(b)$ para todo $a, b \in A$.
         \item $f(ab)=f(a)f(b)$ para todo $a, b \in A$.
@@ -50,9 +77,81 @@ Portanto, $\ran f$ é um subanel de $R$. Se $A$ é comutativo, $\ran(f)$ também
     \end{itemize}
 \end{prop}
 \begin{proof}
-    Se $f$ é um homomorfismo, então as duas propriedades acima são satisfeitas. Reciprocamente, se as duas propriedades acima são satisfeitas, então:
+    Provaremos o lado que não é imediatamente trivial.
+    Começaremos mostrando que $f(0_A)=0_R$.
+    Temos que $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$, logo, cancelando, $f(0_A)=0_R$.
+
+    Agora, vejamos que $f(-a)=-f(a)$ para todo $a \in A$.
+    Temos que $f(a)+f(-a)=f(a+(-a))=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
+
+    Assim, $f$ é um homomorfismo.
+\end{proof}
+
+\section{Propriedades elementares}
+\begin{lemma}
+    Sejam $f:A\rightarrow R$ e $g:R\rightarrow S$ homomorfismos de anéis.
+    Então a composição $g\circ f:A\rightarrow S$ é um homomorfismo de anéis.
+\end{lemma}
+
+\begin{proof}
+    Sejam $a, b \in A$. Então:
     \begin{itemize}
-    \item $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$. Cancelando, temos $0_R=f(0_A)$.
-    \item $f(-a)+f(a)=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
-    \end{itemize} $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)=0_R$, e $f(-a)=f(0_A-a)=f(0_A)+f(-a)=0_R-f(a)=-f(a)$ para todo $a \in A$. Assim, $f$ é um homomorfismo.
+        \item $g\circ f(a+b)=g(f(a+b))=g(f(a)+f(b))=g(f(a))+g(f(b))=(g\circ f)(a)+(g\circ f)(b)$.
+        \item $g\circ f(ab)=g(f(ab))=g(f(a)f(b))=g(f(a))g(f(b))=(g\circ f)(a)(g\circ f)(b)$.
+        \item $g\circ f(1_A)=g(f(1_A))=g(1_R)=1_S$.
+    \end{itemize}
+    Assim, $g\circ f$ é um homomorfismo de anéis.
+\end{proof}
+
+\begin{prop}[Propriedades de homomorfismos]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então:
+    \begin{enumerate}[label=\alph*)]
+        \item Para todo $a \in A^*$, temos $f(a)\in  R^*$ e $f(a^{-1})=f(a)^{-1}$. \label{prop:homomorfismo_a}
+        \item A imagem de $f$, $\ran f=\{f(a): a \in A\}$, é um subanel de $R$. Se $A$ é comutativo, $\ran f$ também é.  \label{prop:homomorfismo_b}
+        \item Se $f$ é injetora, a imagem de $f$ é um subanel de $R$ isomorfo a $A$. \label{prop:homomorfismo_c}
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+\ref{prop:homomorfismo_a} Se $a \in A^*$, então $f(a)f(a^{-1})=f(aa^{-1})=f(1_A)=1_R$ e $f(a^{-1})f(a)=f(aa^{-1})=f(1_A)=1_R$. Assim, $f(a^{-1})=f(a)^{-1}$ e $f(a)\in R^*$.
+
+\ref{prop:homomorfismo_b} Seja $a, b \in \ran f$. Então existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$.
+Assim, $a-b=f(x)-f(y)=f(x-y)$. Logo, $a-b \in \ran f$.
+Similarmente, $ab=f(x)f(y)=f(xy)\in \ran f$, e $1_R=f(1_A)\in \ran f$.
+
+Portanto, $\ran f$ é um subanel de $R$.
+Se $A$ é comutativo, $\ran(f)$ também é comutativo, pois dados $a, b \in \ran f$, existem $x, y \in A$ tais que $a=f(x)$ e $b=f(y)$.
+Assim, $ab=f(x)f(y)=f(xy)=f(yx)=f(y)f(x)=ba$.
+
+\ref{prop:homomorfismo_c} Se $f$ é injetora, então $f$ é bijetora entre $A$ e $\ran f$. Assim, $f$ é um isomorfismo entre $A$ e $\ran f$, dado que é um homomorfismo.
+\end{proof}
+
+A noção de isomorfismo é uma relação de equivalência na classe dos anéis.
+
+\begin{prop}[Propriedades de isomorfismo]
+    Sejam $A, R, S$ anéis e $f:A\rightarrow R$ e $g:R\rightarrow S$ isomorfismos de anéis.
+    Então:
+    \begin{enumerate}[label=\alph*)]
+        \item $g\circ f$ é um isomorfismo de anéis. \label{prop:isomorfismo_a}
+        \item $f^{-1}:R\rightarrow A$ é um isomorfismo de anéis. \label{prop:isomorfismo_b}
+        \item $\id_A:A\rightarrow A$ é um isomorfismo de anéis. \label{prop:isomorfismo_c}
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+\ref{prop:isomorfismo_a} A composição de funções bijetoras é bijetora, e a composição de homomorfismos é homomorfismo.
+Como um isomorfismo é um homomorfismo bijetor, segue que a composição de dois isomorfismos é um isomorfismo.
+
+\ref{prop:isomorfismo_b} Como $f$ é um isomorfismo, $f$ é bijetora, assim, $f^{-1}:R\rightarrow A$ está bem definida e é bijetora. Verificaremos que $f^{-1}$ é um homomorfismo. Dados $r, s \in R$, sejam $a, b \in A$ tais que $f(a)=r$ e $f(b)=s$. Temos que:
+\begin{itemize}
+    \item $f^{-1}(r+s)=f^{-1}(f(a)+f(b))=f^{-1}(f(a+b))=a+b=f^{-1}(r)+f^{-1}(s)$.
+    \item $f^{-1}(rs)=f^{-1}(f(a)f(b))=f^{-1}(f(ab))=a\cdot b=f^{-1}(r)f^{-1}(s)$.
+    \item $f^{-1}(1_R)=f^{-1}(f(1_A))=1_A$.
+\end{itemize}
+
+\ref{prop:isomorfismo_c} A função identidade $\id_A$ é claramente bijetora, e é um homomorfismo, pois, para todos $a, b \in A$:
+    \begin{itemize}
+        \item $\id_A(a+b)=a+b=\id_A(a)+\id_A(b)$.
+        \item $\id_A(ab)=ab=\id_A(a)\id_A(b)$.
+        \item $\id_A(1_A)=1_A$.
+    \end{itemize}
 \end{proof}
