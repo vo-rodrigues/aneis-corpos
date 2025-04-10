@@ -12,11 +12,16 @@
 \theoremstyle{definition}
 
 \newtheorem{definition}{Definição}[section]
+\AtEndEnvironment{definition}{\null\hfill\qedsymbol}%
+
 \newtheorem{prop}[definition]{Proposição}
 \newtheorem{corol}[definition]{Corolário}
 \newtheorem{exer}[definition]{Exercício}
 \newtheorem{lemma}[definition]{Lema}
 \newtheorem{theorem}[definition]{Teorema}
+\newtheorem{exemplo}[definition]{Exemplo}
+\AtEndEnvironment{eexemplo}{\null\hfill\qedsymbol}%
+
 
 \DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator{\supp}{supp}
