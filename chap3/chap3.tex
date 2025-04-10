@@ -115,28 +115,62 @@ Sabemos que $K$ é um anel comutativo não trivial. Sejam $a, b \in K$ tais que 
 
 
 \section{Subanéis}
-Em matemática, é comum que as estruturas estudadas possuam uma noção de subestrutura. Em geral, uma subestrutura de uma estrutura data é um subconjunto desta que seja, de forma natural, uma estrutura da mesma natureza daquela.
+Em matemática, é comum que as estruturas estudadas possuam uma noção de subestrutura.
+Em geral, uma subestrutura de uma estrutura data é um subconjunto desta que seja, de forma natural, uma estrutura da mesma natureza daquela.
 
 Veremos que, quando tratamos de anéis, nem todo subconjunto pode ser visto como uma subestrutura.
-\begin{definition}[Subanel]
-    Seja $A$ um anel e $B\subseteq A$.
-    Dizemos que $B$ é um \emph{subanel} de $A$ se:
-    
-    \begin{itemize}
-        \item $0_A, 1_A \in B$
-        \item Para todos $a, b \in B$, $a+b \in B$.
-        \item Para todos $a, b \in B$, $ab\in B$
-        \item Para todo $a \in B$, $-a \in B$.
-    \end{itemize}
 
+\begin{definition}[Subanel]
+    Seja $A$ um anel e $B \subseteq A$. Dizemos que $B$ é subanel de $A$ se, e somente se $(B, +|_{B^2}, \cdot|_{B^2}, 0_A, 1_A)$ é um anel, onde $+|_{B^2}:B^2\rightarrow B$ e $\cdot|_{B^2}:B^2\rightarrow B$ são as restrições das operações de $A$ à $B^2$.
 \end{definition}
 
-O ponto chave da definição é que:
+Na definição acima, estamos pedindo que $B$ seja um subconjunto de $A$ que possua as mesmas operações que $A$, e que essas operações sejam restritas a $B$ e satisfaçam todas as cláusulas da definição de anel. Aparentemente, na prática, provar que um dado subconjunto de $A$ é um subanel pode parecer uma tarefa longa. Porém, a seguinte proposição encurta esta tarefa significativamente: 
 
-\begin{prop}[Subanel]
-    Seja $A$ um anel e $B$ um subanel de $A$. Então $(B, +|_{B^2}, \cdot|_{B^2}, 0_B, 1_B)$ é um anel, onde $+|_{B^2}:B^2\rightarrow B$ e $\cdot|_{B^2}:B^2\rightarrow B$ são as restrições das operações de $A$ À $B^2$.
+\begin{definition}[Subanel]
+    Seja $A$ um anel e $B\subseteq A$. Então $B$ é um subanel de $A$ se, e somente se:
+    \begin{itemize}
+        \item $1_A \in B$
+        \item Para todos $a, b \in B$, $a-b \in B$.
+        \item Para todos $a, b \in B$, $ab\in B$
+    \end{itemize}
 
-\end{prop}
+    Além disso, caso $B$ seja um subanel de $A$, os opostos aditivos de $B$ são os mesmos que os de $A$, ou seja, que $-b \in B$ para todo $B \in B$.
+\end{definition}
+
+\begin{proof}
+    Primeiro, notemos suponhamos que $B$ seja um subanel de $A$. Então $B$ é fechado por $+, \cdot$ e $1_A\in B$. Resta apenas ver que para todos $a, b \in B$, $a-b \in B$.
+    Como $B$ é fechado por soma, basta provar a última afirmação: que para todo $b \in B$, $-b \in B$.
+    Fixe $b \in B$. Como $(B, +|_B^2, 0_A)$ é um grupo abeliano, existe $x \in B$ tal que $b+x=0_B$. Então, em $a$, segue que $b+x=x+b=0_A$. Pela unicidade dos opostos em $A$, segue que $-b=x\in B$.
+
+    Reciprocamente, provaremos que se $B$ possui $1_B$ como elemento e é fechado por diferença e por produto, então $B$ é um subanel de $A$. Iniciaremos verificando que $B$ é fechado por soma, por opostos e que tem $0_A$ como elemento.
+
+    Como $1_A$ é elemento de $B$, temos que $0_A=1_A-1_A\in B$. Assim, $B$ possui $0_A$ como elemento. Agora, dado $b \in B$, $0_A-b=-b \in B$, o que mostra que $B$ é fechado por opostos. Finalmente, dados $a, b \in B$, $a-(-b)=a+b\in B$, o que mostra que $B$ é fechado para soma.
+
+    As propriedades associativas, comutativas, distributivas e de identidade valem em $B$, pois valem em $A$ e as operações de $B$ são as mesmas de $A$, restritas. Para finalizar, basta observar que dado $a \in B$, $(-a)\in B$, como já mostrado, e que $a+(-a)=(-a)+a=0_A$, o que mostra que $B$ possui opostos aditivos.
+\end{proof}
+
+\begin{exemplo}
+$\mathbb N$ não é um subanel de $\mathbb Z$, pois $-1 \notin \mathbb Z$.
+Porém, note que $\mathbb N$ tem $1$ e é fechado por soma e produto, o que mostra que na proposição anterior, a expressão $a-b$ não pode ser substituída por $a+b$.
+\end{exemplo}
+
+\begin{exemplo}[Subanel trivial]
+    Para todo $A$, temos que $A$ é subanel de si mesmo.
+\end{exemplo}
+
+\begin{exemplo}
+O único subanel de $\mathbb Z$ é $\mathbb Z$: se $B$ é um subanel de $\mathbb Z$, então $0, 1 \in B$.
+Por indução, para todo $n\geq 1$ temos que $n \in \mathbb B$: com efeito, $1\in B$, e, se $n \in B$, $n+1\in B$, logo vale o passo indutivo. Finalmente, $-n\in B$ para todo $n\geq 1$. Como $\mathbb Z=\{0\}\cup\{n \in \mathbb Z: n\geq 1\}\cup \{-n \in \mathbb Z: n\geq 1\}$, temos que $B=\mathbb Z$.
+\end{exemplo}
+
+Como as operações de um subanel são as mesmas de um anel, um subanel de um anel comutativo é comutativo.
+
+\begin{proposition}
+    Subanéis de aneis comutativos são comutativos.
+\end{proposition}
+\begin{proof}
+Seja $A$ um anel comutativo e $B$ um subanel de $A$. Para todos $a, b \in B$, temos que o produto $a\cdot b$ em $B$ é dado pelo produto (comutativo) $a\cdot b$ em $A$, logo $a\cdot b=b\cdot a$.
+\end{proof}
 \section{Ideais}
 \begin{definition}[Ideal à esquerda]
     Seja $A$ um anel. Um subconjunto $I \subseteq A$ é dito \emph{ideal à esquerda} se:
