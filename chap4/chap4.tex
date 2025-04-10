@@ -276,39 +276,63 @@ Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
 \end{proof}
 
 \begin{prop}[Interseção de ideais]
-    Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais à esquerda de $A$. Então $\bigcap_{I \in \mathcal F}I=\bigcap \mathcal F$ é um ideal de $A$. O mesmo vale para ideais à direita e ideais.
+    Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais de $A$. Então $\bigcap_{I \in \mathcal F}I=\bigcap \mathcal F$ é um ideal de $A$.
 \end{prop}
 \begin{proof}
-    Provaremos para ideais à esquerda. A prova para ideais à direita é análoga e fica como exercício.
 
-    Seja $I=\bigcap \mathcal F$. Então $0 \in I$, pois $0 \in I$ para todo $I \in \mathcal F$.
+    Seja $I=\bigcap \mathcal F$.
 
-    Sejam $a, b \in I$. Então, para todo $I \in \mathcal F$, temos que $a, b \in I$, logo, $a+b\in I$. Assim, $a+b\in \bigcap \mathcal F$.
+    Então $0 \in I$, pois $0 \in I$ para todo $I \in \mathcal F$.
 
-    Finalmente, seja $a \in A$ e $b \in I$. Então, para todo $I \in \mathcal F$, temos que $b \in I$, logo, $ab\in I$. Assim, $ab\in \bigcap \mathcal F$.
+    Sejam $a, b \in I$.
+    Então, para todo $I \in \mathcal F$, temos que $a, b \in I$, logo, $a+b\in I$.
+    Assim, $a+b\in \bigcap \mathcal F$.
+
+    Seja $a \in A$ e $b \in I$.
+    Então, para todo $I \in \mathcal F$, temos que $b \in I$, logo, $ab\in I$.
+    Assim, $ab\in \bigcap \mathcal F$.
+
+    Analogamente, se $a \in I$ e $b \in A$, então $ba\in I$.
 \end{proof}
 
 \begin{prop}[Ideal gerado]
-    Seja $A$ um anel comutativo e $B\subseteq A$ um conjunto não vazio. Então, o conjunto $I=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$ é o menor ideal à esquerda $A$ que contém $B$ (ou seja, além de ser um ideal contendo $B$, se $J$ é qualquer ideal contendo $B$, então $I\subseteq J$). O ideal $I$ é chamado de \emph{ideal gerado por $B$}, e denotado por $\langle B \rangle$.
-    
-    Se $B=\{x_0, \dots, x_n\}$, então abreviamos $\langle B \rangle$ como $\langle x_0, \dots, x_n \rangle$.
+    Seja $A$ um anel e $B\subseteq A$ um conjunto não vazio.
+    Então, o conjunto $I=\{a_1b_1c_1+\cdots+a_nb_nc_n: n\geq 1, a_i, c_i \in A, b_i \in B\}$ é o menor ideal $A$ que contém $B$ (ou seja, além de ser um ideal contendo $B$, se $J$ é qualquer ideal contendo $B$, então $I\subseteq J$).
+
+    Além disso, se $B\subseteq Z(R)$, onde $Z(R)$ denota o centro de $R$, então $I=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$.
 \end{prop}
 \begin{proof}
     Primeiro, verificaremos que $I$ é um ideal.
 
-    $0 \in I$, pois $0=0b$ para todo $b \in B$.
+    $0 \in I$, pois $0=0b0$ para todo $b \in B$.
 
-    Sejam $x, y \in I$. Então existem $n, m\geq 1$, $a_1, \dots, a_n \in A$, $b_1, \dots, b_n \in B$, $c_1, \dots, c_m \in A$ e $d_1, \dots, d_m \in B$ tais que $x=a_1b_1+\cdots+a_nb_n$ e $y=c_1d_1+\cdots+c_md_m$. Assim, $x+y=(a_1b_1+\cdots+a_nb_n)+(c_1d_1+\cdots+c_md_m)=(a_1b_1+\cdots+a_nb_n)+(c_1d_1+\cdots+c_md_m) \in I$.
+    Considere $x, y \in I$.
+    Então existem $n, m\geq 1$, $a_1, \dots, a_n, c_1, \dots, c_n \in A$, $b_1, \dots, b_n \in B$, $a_1', \dots, a_m', c_1', \dots, c_m' \in A$ e $b_1', \dots, b_m' \in B$ tais que $x=a_1b_1c_1+\cdots+a_nb_nc_n$ e $y=a_1'b_1c_1'+\cdots+a_m'b_m'd_m'$.
+    Assim, $x+y=(a_1b_1+\cdots+a_nb_n)+(a_1'b_1c_1+\cdots+c_md_m)=(a_1b_1c_1+\cdots+a_nb_nc_n)+(a_1'b_1'c_1'+\cdots+a_m'b_m'd_m') \in I$.
+    Concatenando as sequências, vemos que $x+y\in I$.
 
-    Finalmente, seja $a \in A$ e $b \in I$. Então existem $n\geq 1$, $a_1, \dots, a_n \in A$ e $b_1, \dots, b_n \in B$ tais que $b=a_1b_1+\cdots+a_nb_n$. Assim, $ab=(a_1b_1+\cdots+a_nb_n)a=a_1(b_1a)+\cdots+a_n(b_na) \in I$.
+    Seja $x \in A$ e $b \in I$.
+    Então existem $n\geq 1$, $a_1, \dots, a_n, c_1, \dots, c_n \in A$ e $b_1, \dots, b_n \in B$ tais que $b=a_1b_1c_n+\cdots+a_nb_nc_n$. Assim, $xb=(xa_1)b_1c_1+\cdots+(xa_n)b_nc_n\in I$.
+    Analogamente, $bx \in I$.
 
-    Agora, seja $J$ um ideal de $A$ que contém $B$. Então, como $J$ é um ideal de $A$, temos que $\forall a_i\in A$, $\forall b_i\in B$, temos que $(a_i b_i)\in J$. Logo, $I\subseteq J$. Portanto, $I$ é o menor ideal de $A$ que contém $B$.
+    Agora, seja $J$ um ideal de $A$ que contém $B$.
+    Fixe $x \in I$.
+    Existem $n\geq 1$, $a_1, \dots, a_n, c_1, \dots, c_n\in A$ e $b_1, \dots, b_n \in B$ tais que $x=a_1b1c_1+\dots+a_nb_nc_n$.
+    Como $J$ é um ideal de $A$ e $B\subseteq A$, para cada $i \in \{1, \dots, n\}$ temos que $a_ib_ic_i \in J$.
+    Somando, segue que $x \in J$.
+
+    Finalmente, provaremos a afirmação final para quando $B\subseteq Z(R)$. Seja $I'=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$.
+    Veremos que $I=I'$.
+    Pondo $c_1=\cdots=c_n=1$, vemos que que $I'\subseteq I$.
+
+    Reciprocamente, se $x=a_1b_1c_1+\cdots+a_nb_nc_n \in I$ com $n\geq 1$, $a_1,\dots, a_n, c_1, \dots, c_n \in A$ e $b_1, \dots, b_n \in B\subseteq Z(A)$, temos que $x=(a_1c_1)b_1+\dots+(a_nc_n)b_n\in I'$.
 \end{proof}
 
 Observação: note que o menor ideal contendo $B=\emptyset$ é o ideal nulo, $\{0\}$.
 
 \begin{definition}[Ideal principal]
-    Seja $A$ um anel. Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à direita de $A$. O ideal $xA$ é chamado de \emph{ideal principal à direita gerado por $x$}.
+    Seja $A$ um anel.
+    Para todo $x \in A$, o conjunto $xA=\{xa:a \in A\}$ é um ideal à direita de $A$. O ideal $xA$ é chamado de \emph{ideal principal à direita gerado por $x$}.
     Analogamente, o conjunto $Ax=\{ax:a \in A\}$ é um ideal à esquerda de $A$, e é chamado de \emph{ideal principal à esquerda gerado por $x$}.
 \end{definition}
 \begin{proof}
