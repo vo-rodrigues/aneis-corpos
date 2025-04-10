@@ -15,23 +15,23 @@ Um grupo é uma quadrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é 
     \item (\textbf{Elemento neutro}) $\forall a \in G$  $e \cdot a = a \cdot e = a$.
     \item (\textbf{Elemento inverso}) $\forall a \in G$ $\exists b \in G$ $a \cdot b = b \cdot a = e$.
 \end{itemize}
-Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comunmente, \emph{abeliano}:
+Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comunmente, \emph{Abeliano}:
 \begin{itemize}
     \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
 \end{itemize}
 \end{definition}
-Algumas observações:
+Algumas observações importantes sobre a notação utilizada no estudo de grupos:
 \begin{itemize}
 \item Ao discursar sobre grupos, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$.
-\item Caso o grupo seja abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
-\item Caso o grupo não seja abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
+\item Caso o grupo seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
+\item Caso o grupo não seja Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar. Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
 \end{itemize}
 
 Alguns exemplos:
 
 \begin{itemize}
-    \item Com a soma usual, $\mathbb{Z, Q, R, C}$ são grupos abelianos.
-    \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo abeliano com elemento neutro $1$. De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro. Note que $1\in \mathbb T$ e $0\notin \mathbb T$. Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$. Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
+    \item Com a soma usual, $\mathbb{Z, Q, R, C}$ são grupos Abelianos.
+    \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo Abeliano com elemento neutro $1$. De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro. Note que $1\in \mathbb T$ e $0\notin \mathbb T$. Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$. Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
     \item Os inteiros módulo $n$ ($n\geq 1$), dados por $\mathbb Z_n=\{0, \dots, n-1\}$ com a soma dada pela aritmética módulo $n$, são grupos.
 \end{itemize}
 
@@ -43,7 +43,7 @@ Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
     Note que $h=he$, pois $e$ é elemento neutro. Por outro lado, $e=he$, pois $h$ é elemento neutro. Assim, $h=he=e$.
 \end{proof}
 
-\begin{prop}[Unicidade dos inversos]\label{prop:inverso_unico_grupo}
+\begin{prop}[Unicidade dos inversos]\lAbel{prop:inverso_unico_grupo}
     Seja $(G,\cdot,e)$ um grupo. Então todo $a \in G$ possui um único elemento inverso, ou seja, para todo $g \in G$,  é único. Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
 \end{prop}
 \begin{proof}
@@ -52,7 +52,7 @@ Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
     $$b=be=b(ac)=(ba)c=ec=c.$$
 \end{proof}
 
-A unicidade do elemento neutro e dos inversos nos permite definir a notação $a^{-1}$ para o inverso de $a$ em um grupo $(G,\cdot,e)$. Caso $(G, +, 0)$ seja um grupo abeliano, a notação $-a$ é frequentemente utilizada para denotar o inverso de $a$, e, nesse caso, $-a$ é chamado de \emph{oposto} de $a$.
+A unicidade do elemento neutro e dos inversos nos permite definir a notação $a^{-1}$ para o inverso de $a$ em um grupo $(G,\cdot,e)$. Caso $(G, +, 0)$ seja um grupo Abeliano, a notação $-a$ é frequentemente utilizada para denotar o inverso de $a$, e, nesse caso, $-a$ é chamado de \emph{oposto} de $a$.
 
 Note que assim, ficam definidos operadores unários $(\,)^{-1}:G\rightarrow G$ (ou $-:G\rightarrow G$). Para o segundo caso, define-se também que $a-b=a+(-b)$.
 
@@ -71,12 +71,12 @@ Provaremos a primeira afirmação. A segunda é análoga e fica como exercício.
     Para a primeira afirmação, note que $ab=ae$, logo, pela proposição anterior, $b=e$. A segunda afirmação é análoga.
 \end{proof}
 
-\begin{prop}[Regras de sinal]\label{prop:regraSinal}
+\begin{prop}[Regras de sinal]\lAbel{prop:regraSinal}
     Seja $G$ um grupo e $a, b \in G$. Então:
-    \begin{enumerate}[label=\alph*)]
-        \item $((a)^{-1})^{-1}=a$ [na notação aditiva, $-(-a)=a$]. \label{prop:regraSinal_A}
-        \item $(ab)^{-1}=b^{-1}a^{-1}$ [na notação aditiva, $-(a+b)=(-b)+(-a)]$.\label{prop:regraSinal_B}
-        \item $e^{-1}=e$ [na notação aditiva, $-0=0$].\label{prop:regraSinal_C}
+    \begin{enumerate}[lAbel=\alph*)]
+        \item $((a)^{-1})^{-1}=a$ [na notação aditiva, $-(-a)=a$]. \lAbel{prop:regraSinal_A}
+        \item $(ab)^{-1}=b^{-1}a^{-1}$ [na notação aditiva, $-(a+b)=(-b)+(-a)]$.\lAbel{prop:regraSinal_B}
+        \item $e^{-1}=e$ [na notação aditiva, $-0=0$].\lAbel{prop:regraSinal_C}
     \end{enumerate}
 \end{prop}
 \begin{proof}
