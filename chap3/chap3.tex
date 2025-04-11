@@ -173,7 +173,7 @@ Seja $A$ um anel e $n, m \in \mathbb{N}$. Então, o conjunto $M_{n \times m}(A)$
     \begin{enumerate}
         \item \textbf{Fechamento:} Para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in M_{n \times m}(A)$, temos que $(a_{ij} + b_{ij})_{i,j} \in M_{n \times m}(A)$, pois $A$ é fechado sob adição.
     
-        \item \textbf{Associatividade:} A soma de matrizes é associativa, pois, para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j}, (c_{ij})_{i,j} \in M_{n \times m}(A)$, temos:
+        \item \textbf{Associatividade:} para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j}, (c_{ij})_{i,j} \in M_{n \times m}(A)$, temos:
         \[
         \big((a_{ij}) + (b_{ij})\big) + (c_{ij}) = (a_{ij} + b_{ij}) + c_{ij} = a_{ij} + (b_{ij} + c_{ij}) = (a_{ij}) + \big((b_{ij}) + (c_{ij})\big).
         \]
@@ -396,6 +396,93 @@ Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 
 Porém, nem todo domínio de integridade é um corpo: por exemplo, $\mathbb Z$ é um domínio que não é um corpo, pois $2$ não possui inverso multiplicativo em $\mathbb Z$.
 
+\section{O corpo dos números reais}
+Assim como fizemos com $\mathbb Z$, assumiremos a existência do corpo dos números reais.
+
+O corpo dos números reais é um corpo ordenado que satisfaz a propriedade de ser Dedekind-completo.
+
+Formalmente:
+
+\begin{prop}
+    O corpo dos números reais $\mathbb R$ é um corpo ordenado, e satisfaz a propriedade de ser Dedekind-completo.
+    Ou seja, tal que para todo $A\subseteq \mathbb R$ não vazio, se $A$ é limitado superiormente (ou seja, se existe $a \in \mathbb R$ tal que $\forall x \in A, x\leq a$), então $A$ admite um supremo (um menor limitante superior, ou seja, existe $b \in \mathbb R$ tal que $\forall x \in A, x\leq b$ e $\forall c \in \mathbb R$, se $x\leq c$ para todo $x\in A$, então $b\leq c$).
+\end{prop}
+
+O estudo das propriedades dos números reais é um assunto central de um curso básico de Análise Real.
+
+Nesse texto, detalharemos tais propriedades somente de acordo com nossa necessidade.
+
+\section{O Anel dos Quaternions}
+Discutimos as noções de corpo e de anel de divisão.
+Por definição, todo corpo é um anel de divisão.
+Um dos primeiros exemplos de um anel de divisão que não é um corpo é o anel dos quaternions $\mathbb H$, que descreveremos abaixo.
+
+A ideia é que adiciona-se em $\mathbb R$ três elementos distintos: $i, j, k$, para os quais valem as propriedades de que $i^2=j^2=k^2=-1$, e $ij=k$, $jk=i$ e $ki=j$, e para o qual as demais propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi+cj+dk$, onde $a,b,c,d\in \mathbb R$.
+
+Apresentaremos uma construção a seguir. Antes disso, note que, como $k=ij$, multiplicando ambos os lados por $i$ à esquerda, supondo que a propriedade associativa ainda valha, temos que $ik=-j$.
+
+Multiplicando por $j$ à direita, temos que $kj=-1$.
+
+Além disso, multiplicando por $i=jk$ à esquerda por $j$, temos que $ji=-1$. Assim, temos que $ij=k$, $jk=i$, $ki=j$, $ji=-k$, $kj=-i$ e $ik=-j$.
+
+Assumindo que $-i\neq i$, $-j\neq j$ e $-k\neq k$, temos que $i,j,k$ vêmos que a nossa estrutura deverá ser não comutativa.
+
+\begin{definition}[Quaternions]
+    Definimos $\mathbb H=\mathbb R^4$.
+    
+    Se $a \in \mathbb R$, seja $a=(a, 0, 0, 0)$, $i=(0, 1, 0, 0)$, $j=(0, 0, 1, 0)$ e $k=(0, 0, 0, 1)$.
+
+    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, exisem únicos $a, b, c, d \in \mathbb R$ tais que $x=a+bi+cj+dk$.
+
+    Em $\mathbb H$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo abeliano.
+
+    Define-se também a multiplicação, inspirada pela discussão acima, como se segue: para $a, b, c, d, u, v, z, w \in \mathbb R$:
+
+    \begin{equation*}
+        (a, b, c, d)(u, v, z, w)=(au-bv-cz-dw, av+bu+cw-dz, az+bw-cu+dv, aw+bz+cv-du).
+    \end{equation*}
+
+    Ou, em outra notação:
+
+    \begin{align*}
+    (a+bi+cj+dk)(u+vi+zj+kw)& \\
+    &=(au-bv-cz-dw)+(av+bu+cw-dz)i\\
+    &+(az+bw-cu+dv)j+(aw+bz+cv-du)k.
+    \end{align*}
+\end{definition}
+
+Note que, com isso, temos $i^2=j^2=k^2=-1$, $ij=k$, $jk=i$ e $ki=j$, além de $i\neq -i$, $j\neq -j$ e $k\neq -k$.
+
+Porém, $\mathbb H$ é um anel de divisão. Primeiro, provaremos que:
+
+\begin{prop}
+    $\mathbb H$ é um domínio de integridade.
+\end{prop}
+\begin{proof}
+    $1$ é neutro multiplicativo: dado $a+bi+cj+dk=(a, b, c, d)\in \mathbb H$, pela definição, temos que $(1, 0, 0, 0)(a, b, c, d)=(a, b, c, d)$, pois as demais parcelas zeram. Analogamente, $(a, b, c, d)(1, 0, 0, 0)=(a, b, c, d)$.
+    
+    A multiplicação é associativa:
+    Para $x, y, z \in \mathbb H$, temos que $x=(a, b, c, d)$, $y=(u, v, z, w)$ e $z=(p, q, r, s)$. Temos que:
+    \begin{align*}
+        (xy)z &=(au-bv-cz-dw, av+bu+cw-dz, az+bw-cu+dv, aw+bz+cv-du)(p,q,r,s)
+    \end{align*}
+    e $x(yz)$ é dado por:
+    \begin{align*}
+    x(yz) &=(a, b, c, d)(up-vq-zr-sw, uq+vp+zs-tw, ur+vq-pw+zt, us+vq+pw-qt)\\
+    \end{align*}
+    Expandindo os últimos produtos e comparando-os, vê-se que são iguais. Os detalhes ficam a cargo do leitor.
+
+    De maneira igualmente trabalhosa, porém mecânica, verifica-se às duas propriedades distributivas.
+\end{proof}
+
+Mais interessante é demonstrar que $\mathbb H$ é um anel de divisão. Para isso, precisamos mostrar que todo elemento não nulo de $\mathbb H$ é invertível.
+
+\begin{prop}
+    $\mathbb H$ é um anel de divisão.
+\end{prop}
+\begin{proof}
+    Fica a cargo do leitor. Para um guia, ver o Exercício~\ref{exer:quaternion}
+\end{proof}
 \section{Subanéis}
 Em Matemática, é comum que as estruturas estudadas possuam uma noção de subestrutura.
 Em geral, uma subestrutura de uma estrutura data é um subconjunto desta que seja, de forma natural, uma estrutura da mesma natureza daquela.
@@ -483,6 +570,28 @@ O centro de um anel sempre é um subanel.
 
 \section{Exercícios}
 
+\begin{exer} Seja $R$ um anel com identidade e seja $S$ um subanel de $R$ que contém a identidade de $R$.
+Prove que se $u$ é uma unidade em $S$, então $u$ é uma unidade em $R$.
+Apresente um exemplo que demonstre que a recíproca é falsa.
+
+\end{exer} 
 \begin{exer}
     Seja $A$ um anel. Mostre que um anel $A$ é um anel de divisão se, e somente se $A^*=A\setminus\{0\}$.
+\end{exer}
+
+\begin{exer}\label{exer:quaternion}
+    No anel dos quaternions $\mathbb H$, identifique $x \in \mathbb R$ com $(x, 0, 0, 0)=x+0i+0j+0k$.
+
+    Mostre que $\mathbb R=Z(\mathbb H)$.
+
+    (Dica: após mostrar que $\mathbb R\subseteq Z(\mathbb H)$, tome um elemento arbitrário de $Z(\mathbb H)$ e estude sua multiplicação por $i$, $j$ e $k$.)
+\end{exer}
+\begin{exer}\label{exer:quaternion}
+    No anel dos quaternions, dado $q \in \mathbb H$, seu conjugado é definido como $\bar q = a + bi + cj + dk$.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Calcule  $q\bar q$ e $q\bar q$.
+        \item Prove que, se $q\neq 0$,  $\bar q(q\bar q)^{-1}$ é inverso multiplicativo de $q$.
+        Conclua que $\mathbb H$ é anel de divisão.
+    \end{enumerate}
 \end{exer}
