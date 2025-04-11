@@ -87,6 +87,216 @@ Todo anel satisfaz as conhecidas regras de sinais referentes à multiplicação 
 
     \ref{prop:regraSinal2_C}: Temos que $(-1)a=-(1a)=-a$.
 \end{proof}
+\section{Anéis de Matrizes}
+Dado qualquer anel $A$ e $n, m \in \mathbb N$, podemos construir o conjunto das matrizes com coeficientes em $A$.
+
+\begin{definition}
+    Seja $A$ um anel e $n, m$ inteiros positivos. O conjunto $M_{n\times m}(A)$ é o conjunto de matrizes $n\times m$ cujos coeficientes estão em $A$. Formalmente, $M_{n\times m}$ é o conjunto de todas as famílias $(a_{ij})_{i,j}=(a_{ij}: (i, j) \in \{1, \dots, n\}\times \{1, \dots, m\})$. Quando conveniente, representamos a tal matriz de qualquer uma das duas formas a seguir:
+\begin{multicols}{2}
+    \centering
+    \begin{equation*}
+        \begin{pmatrix}
+            a_{11} & \cdots & a_{1m}\\
+            \vdots & \ddots & \vdots\\
+            a_{n1} & \cdots & a_{nm}
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{equation*}
+        \begin{bmatrix}
+            a_{11} & \cdots & a_{1m}\\
+            \vdots & \ddots & \vdots\\
+            a_{n1} & \cdots & a_{nm}
+        \end{bmatrix}
+    \end{equation*}
+\end{multicols}
+
+Se $(a_{i, j})_{i,j}$ e $(b_{i, j})_{i,j}$ são matrizes $n\times m$ em $M_{n\times m}(A)$, definimos sua \emph{soma} como $(a_{i, j})+(b_{i, j})_{i,j}=(a_{i, j}+b_{i, j})_{i,j}$.
+Em outra notação:
+
+\begin{equation*}
+    \begin{pmatrix}
+        a_{11} & \cdots & a_{1m}\\
+        \vdots & \ddots & \vdots\\
+        a_{n1} & \cdots & a_{nm}
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+        b_{11} & \cdots & b_{1m}\\
+        \vdots & \ddots & \vdots\\
+        b_{n1} & \cdots & b_{nm}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        a_{11}+b_{11} & \cdots & a_{1m}+b_{1m}\\
+        \vdots & \ddots & \vdots\\
+        a_{n1}+b_{n1} & \cdots & a_{nm}+b_{nm}
+    \end{pmatrix}
+\end{equation*}
+
+Se $(a_{ij})_{i, j}\in M_{n\times m}(A)$ e $(b_{ij})_{i, j}\in M_{m\times p}(A)$, definimos o produto de matrizes como $(a_{ij})_{i,j}\cdot(b_{ij})_{i,j}=(c_{ij})_{i,j}$, onde $c_{ij}=\sum_{k=1}^m a_{ik}b_{kj}$.
+Em outra notação:
+\begin{equation*}
+    \begin{pmatrix}
+        a_{11} & \cdots & a_{1m}\\
+        \vdots & \ddots & \vdots\\
+        a_{n1} & \cdots & a_{nm}
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        b_{11} & \cdots & b_{1p}\\
+        \vdots & \ddots & \vdots\\
+        b_{m1} & \cdots & b_{mp}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        c_{11} & \cdots & c_{1p}\\
+        \vdots & \ddots & \vdots\\
+        c_{n1} & \cdots & c_{np}
+    \end{pmatrix}
+\end{equation*}
+
+A matriz nula de $M_{n\times m}(A)$ é a matriz cuja todas as entradas são $0\in A$, e é denotada por $0_{n\times m}$, ou, simplesmente, $0$.
+
+Caso $n=m$, abreviamos $M_{n\times n}(A)$ como $M_n(A)$.
+\end{definition}
+
+Sobre a aditividade, independente de $m, n$, sempre temos um grupo Abeliano:
+
+\begin{prop}
+Seja $A$ um anel e $n, m \in \mathbb{N}$. Então, o conjunto $M_{n \times m}(A)$, munido da operação de soma de matrizes, é um grupo abeliano.
+\end{prop}
+
+\begin{proof}
+    Sejam $(a_{ij})_{i,j}, (b_{ij})_{i,j}, (c_{ij})_{i,j} \in M_{n \times m}(A)$. Mostraremos que $(M_{n \times m}(A), +)$ satisfaz as propriedades de um grupo abeliano:
+    
+    \begin{enumerate}
+        \item \textbf{Fechamento:} Para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in M_{n \times m}(A)$, temos que $(a_{ij} + b_{ij})_{i,j} \in M_{n \times m}(A)$, pois $A$ é fechado sob adição.
+    
+        \item \textbf{Associatividade:} A soma de matrizes é associativa, pois, para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j}, (c_{ij})_{i,j} \in M_{n \times m}(A)$, temos:
+        \[
+        \big((a_{ij}) + (b_{ij})\big) + (c_{ij}) = (a_{ij} + b_{ij}) + c_{ij} = a_{ij} + (b_{ij} + c_{ij}) = (a_{ij}) + \big((b_{ij}) + (c_{ij})\big).
+        \]
+    
+        \item \textbf{Elemento neutro:} A matriz nula é o elemento neutro.
+        Com efeito, dado $(a_{ij})_{i,j} \in M_{n \times m}(A)$, temos:
+        \[
+        (a_{ij}) + 0_{m\times n} = (a_{ij} + 0) = (a_{ij}).
+        \]
+    
+        \item \textbf{Elemento inverso:} Para cada $(a_{ij})_{i,j} \in M_{n \times m}(A)$, a matriz $(-a_{ij})_{i,j}$, é oposto aditivo, pois:
+        \[
+        (a_{ij}) + (-a_{ij}) = (a_{ij} +(-a_{ij})) = 0
+        \]
+    
+        \item \textbf{Comutatividade:} A soma de matrizes é comutativa, pois, para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in M_{n \times m}(A)$, temos:
+        \[
+        (a_{ij}) + (b_{ij}) = (a_{ij} + b_{ij}) = (b_{ij} + a_{ij}) = (b_{ij}) + (a_{ij}).
+        \]
+    \end{enumerate}
+    
+    Portanto, $(M_{n \times m}(A), +)$ é um grupo abeliano.
+\end{proof}
+
+A multiplicação de matrizes é associativa e distributiva sobre a soma. Formalmente:
+
+\begin{prop}
+Seja $A$ um anel e $n, m, p, q \geq 1$. Então:
+\begin{enumerate}[label=\alph*)]
+\item (\textbf{Associatividade}) Para todos $(a_{ij})_{i,j} \in M_{n \times m}(A)$, $(b_{jk})_{j,k} \in M_{m \times p}(A)$ e $(c_{kl})_{k,l} \in M_{p \times q}(A)$, temos:
+\[
+\big((a_{ij}) \cdot (b_{jk})\big) \cdot (c_{kl}) = (a_{ij}) \cdot \big((b_{jk}) \cdot (c_{kl})\big).
+\]
+
+\item (\textbf{Distributividade}) Para todos $(a_{ij})_{i,j} \in M_{n \times m}(A)$, $(b_{jk})_{j,k}, (c_{jk})_{j,k} \in M_{m \times p}(A)$, temos:
+\[
+(a_{ij}) \cdot\left((b_{jk}) + (c_{jk})\right)
+= (a_{ij}) \cdot (b_{jk}) + (a_{ij}) \cdot (c_{jk}).
+\]
+E, para todos $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in M_{n \times m}(A)$ e $(c_{jk})_{j,k} \in M_{m \times p}(A)$, temos:
+\[
+\left((a_{ij}) + (b_{ij})\right) \cdot (c_{jk})
+= (a_{ij}) \cdot (c_{jk}) + (b_{ij}) \cdot (c_{jk}).
+\]
+\end{enumerate}
+\end{prop}
+\begin{proof}
+    \textbf{a)} Sejam $(a_{ij})_{i,j} \in M_{n \times m}(A)$, $(b_{jk})_{j,k} \in M_{m \times p}(A)$ e $(c_{kl})_{k,l} \in M_{p \times q}(A)$. Considere o elemento $(i,l)$ da matriz resultante de $\big((a_{ij}) \cdot (b_{jk})\big) \cdot (c_{kl})$.
+    Pela propriedade distributiva, temos:
+    \[
+    \sum_{k=1}^p \left( \sum_{j=1}^m a_{ij} b_{jk} \right) c_{kl}
+    =\sum_{k=1}^p \left( \sum_{j=1}^m a_{ij} b_{jk}c_{kl} \right) .
+    \]
+    Comutando os somatórios e novamente pela propriedade distributiva, isso é:
+    \[
+    \sum_{j=1}^m\left( \sum_{k=1}^p  a_{ij} b_{jk} c_{kl} \right),
+    =\sum_{j=1}^m a_{ij} \left( \sum_{k=1}^p b_{jk} c_{kl} \right),
+    \]
+    que é exatamente o elemento $(i,l)$ da matriz $(a_{ij}) \cdot \big((b_{jk}) \cdot (c_{kl})\big)$. Assim, a associatividade é satisfeita.
+
+    \textbf{b)} Para a distributividade, considere $(a_{ij})_{i,j} \in M_{n \times m}(A)$, $(b_{jk})_{j,k}, (c_{jk})_{j,k} \in M_{m \times p}(A)$. O elemento $(i,k)$ da matriz resultante de $(a_{ij}) \cdot \big((b_{jk}) + (c_{jk})\big)$ é dado por:
+    \[
+    \sum_{j=1}^m a_{ij} (b_{jk} + c_{jk})
+    =\sum_{j=1}^m (a_{ij}b_{jk} + a_{ij}c_{jk})
+    =\sum_{j=1}^m a_{ij}b_{jk} + \sum_{j=1}^ma_{ij}c_{jk}
+    \]
+
+    Isso corresponde ao elemento $(i,k)$ da matriz $(a_{ij}) \cdot (b_{jk}) + (a_{ij}) \cdot (c_{jk})$. A outra distributividade é provada de forma análoga.
+\end{proof}
+
+Como o produto de uma matriz de $M_{n\times m}(A)$ com uma matriz de $M_{m\times p}(A)$ é uma matriz de $M_{n\times p}(A)$, em geral, não há uma propriedade de fechamento para o produto de matrizes.
+
+Lembremos que a matriz identidade de $M_{n\times n}(A)$ é a matriz cujos elementos da diagonal principal são $1$ e os demais são $0$.
+Utilizando a notação do delta de Kronecker, em que $\delta_{ij}$ é $1$ caso $i=j$ e $0$ caso contrário, a matriz identidade é a matriz $I_n=(\delta_{ij})_{i,j}\in M_{n}(A)$.
+
+Porém, tal fato acontece para matrizes quadradas. De fato, temos:
+
+\begin{prop}[Anéis de matrizes]
+    Seja $A$ um anel e $n\geq 1$. Com as operações de soma e multiplicação definidas acima, e com a identidade $I_n$ como a matriz identidade de $M_{n}(A)$, o conjunto $M_{n}(A)$ é um anel, denominado \emph{anel das matrizes $n\times n$ de $A$}.
+
+    Se $n\geq 2$ e $A$ é um anel não trivial, $M_n(A)$ não é comutativo.
+\end{prop}
+
+\begin{proof}
+Para a verificação das propriedades de anel, resta apenas ver que a matriz identidade $I_n$ é uma identidade multiplicativa.
+Com efeito, dado $(a_{ij})_{i,j} \in M_n(A)$, temos:
+\begin{align*}
+    (a_{ij}) \cdot I_n &= \left( \sum_{k=1}^n a_{ik} \delta_{kj} \right)_{i,j} \\
+    &= \left( a_{ij} \right)_{i,j},
+\end{align*}
+
+e:
+
+\begin{align*}
+    I_n \cdot (a_{ij}) &= \left( \sum_{k=1}^n \delta_{ik} a_{kj} \right)_{i,j} \\
+    &= \left( a_{ij} \right)_{i,j}.
+\end{align*}
+
+Para a última afirmação, considere $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in M_n(A)$ definidos por:
+\begin{multicols}{2}
+\centering
+\[a_{ij}=\begin{cases}
+    1 & \text{se } i=j=1\\
+    0 & \text{caso contrário}
+\end{cases}\]
+
+\[b_{ij}=\begin{cases}
+    1 & \text{se } i=1, j=n\\
+    0 & \text{caso contrário}
+\end{cases}\]
+\end{multicols}
+
+Temos que o elemento $(1,n)$ da matriz $(a_{ij})(b_{ij})$ é dado por $\sum_{k=1}^n a_{1k}b_{kn}=1$, enquanto o elemento $(1,n)$ da matriz $(b_{ij})(a_{ij})$ é dado por $\sum_{k=1}^n b_{1k}a_{kn}=1$.
+\end{proof}
+
+Assim, os anéis de matrizes nos dão uma ampla gama de anéis não comutativos.
+\section{Domínios de Integridade}
+O anel dos números inteiros, bem como o anel dos racionais reais, possuem a seguinte importante propriedade:
+\begin{definition}
+Seja $A$ um anel comutativo. Dizemos que $A$ é um \emph{domínio de integridade} se, e somente se, $\forall a, b \in A$, se $ab=0$, então $a=0$ ou $b=0$.
+\end{definition}
+
+Nem todos os anéis comutativos são domínios de integridade. Por exemplo, no anel dos inteiros módulo $4$, $\mathbb Z_4$, temos que $2\cdot 2=4=0$, e $2\neq 0$.
 
 \section{Elementos invertíveis}
 Um anel, com sua soma, é um grupo Abeliano, e, portanto, possui opostos aditivos. Porém, não necessita possuir opostos multiplicativos. Os elementos de um anel que possuem inversos no anel são os chamados \emph{elementos invertíveis} ou \emph{unidades}.
@@ -123,23 +333,55 @@ Além disso, $A^*$ é, com a restrição da operação de multiplicação do ane
 
     Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
+\section{O anel dos números inteiros}
+Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
 
-\section{Mais estruturas}
+Primeiramente, reconheçamos que $\mathbb Z$ possui, além da estrutura de domínio de integridade, uma estrutura de ordem.
+
+\begin{definition}
+    Um anel ordenado é uma tupla $(A, +, \cdot, 0, 1, \leq)$ tal que $(A, +, \cdot, 0, 1)$ é um anel comutativo tal que $\leq$ é uma relação de ordem total (também chamada de ordem linear) em $A$, ou seja, que satisfaça:
+
+    \begin{itemize}
+        \item (Propriedade reflexiva) $\forall a \in A$, $a \leq a$.
+        \item (Propriedade antissimétrica) $\forall a, b \in A$, se $a \leq b$ e $b \leq a$, então $a=b$.
+        \item (Propriedade transitiva) $\forall a, b, c \in A$, se $a \leq b$ e $b \leq c$, então $a \leq c$.
+        \item (Linearidade) $\forall a, b \in A$, $a \leq b$ ou $b \leq a$.
+    \end{itemize}
+
+    e tal que:
+
+    \begin{itemize}
+        \item (Compatibilidade da soma) $\forall a, b, c \in A$, se $a \leq b$, então $a+c \leq b+c$ e $ac \leq bc$.
+        \item (Compatibilidade da multiplicação) $\forall a, b, c \in A$, se $a \leq b$ e $0 \leq c$, então $ac \leq bc$.
+    \end{itemize}
+
+    Nesse caso, dizemos que $a<b$ se $a\leq b$ e $a\neq b$.
+    
+    Os elementos positivos de $A$ são os elementos maiores do que $0$.
+    
+    Os negativos são os menores do que $0$.
+\end{definition}
+
+Assumiremos, sem demonstração (por fugir do escopo do texto), que existe uma estrutura $\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ como abaixo:
+
+\begin{definition}[Inteiros, anel ordenado]
+$\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ é um domínio de integridade ordenado cujos elementos positivos possuem a propriedade da boa ordenação:
+
+Qualquer subconjunto não vazio de inteiros positivos possui elemento mínimo.
+\end{definition}
+
+Assumiremos todos os fatos elementares sobre $\mathbb Z$ que não foram provados, inclusive o fato de que $\mathbb Z=\{\dots, -2, -1, 0, 1, 2, \dots, \}$.
+\section{Corpos e anéis de divisão}
 
 Abaixo, segue a definição de anel de divisão e corpo.
 A noção de corpo será uma das noções mais importantes deste texto.
-\begin{definition}[Anel de divisão]
+\begin{definition}[Corpo e Anel de Divisão]
 Um \emph{anel de divisão} é um anel não trivial para o qual todo elemento não nulo é invertível.
 Um \emph{corpo} é um anel de divisão comutativo.
 \end{definition}
 
-\begin{exer}
-    Mostre que um anel $A$ é um anel de divisão se, e somente se $A^*=A\setminus\{0\}$.
-\end{exer}
-\begin{definition}
-    Um domínio de integridade é um anel comutativo não trivial $A$ tal que $\forall a, b \in A$, se $ab=0$, então $a=0$ ou $b=0$.
-\end{definition}
-
+Todo corpo é um domínio de integridade.
+De fato:
 \begin{prop}
     Seja $K$ um corpo.
     Então $K$ é um domínio de integridade.
@@ -152,19 +394,7 @@ Caso contrário, como $K$ é um corpo, $a^{-1}$ existe.
 Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 \end{proof}
 
-\section{O anel dos números inteiros}
-[SUBSEÇÃO EM CONSTRUÇÃO]
-
-Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
-
-Assumiremos, sem demonstração (por fugir do escopo do texto), que existe uma estrutura $\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ como abaixo:
-
-\begin{definition}[Inteiros, anel ordenado]
-$\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ é uma estrutura tal que $\mathbb Z=(\mathbb Z,+,\cdot,0,1)$ é um \emph{anel ordenado} cujos elementos positivos são bem ordenados.
-\end{definition}
-
-
-
+Porém, nem todo domínio de integridade é um corpo: por exemplo, $\mathbb Z$ é um domínio que não é um corpo, pois $2$ não possui inverso multiplicativo em $\mathbb Z$.
 
 \section{Subanéis}
 Em Matemática, é comum que as estruturas estudadas possuam uma noção de subestrutura.
@@ -223,3 +453,6 @@ Como as operações de um subanel são as mesmas de um anel, um subanel de um an
 \begin{proof}
 Seja $A$ um anel comutativo e $B$ um subanel de $A$. Para todos $a, b \in B$, temos que o produto $a\cdot b$ em $B$ é dado pelo produto (comutativo) $a\cdot b$ em $A$, logo $a\cdot b=b\cdot a$.
 \end{proof}
+\begin{exer}
+    Mostre que um anel $A$ é um anel de divisão se, e somente se $A^*=A\setminus\{0\}$.
+\end{exer}
