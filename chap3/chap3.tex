@@ -1,6 +1,15 @@
 
 \chapter{Anéis e subanéis}
-Nesta seção, começaremos a discutir a noção matemática de anel, uma das principais estruturas que serão estudadas.
+Nesta seção, iniciaremos o estudo dos anéis e de estruturas relacionadas. Apresentaremos as definições dessas estruturas e suas propriedades mais elementares.
+
+\section{A definição de anel}
+No Capítulo 2, conhecemos, por alto, a definição de grupo.
+Um grupo é um conjunto munido de uma operação binária que satisfaz algumas propriedades.
+Ele pode ser Abeliano ou não Abeliano, e, quando é Abeliano, lembra-nos da adição de inteiros.
+Porém, estururas como inteiros, racionais e reais não são apenas grupos Abelianos, pois possuem também outra operação binária -- a multiplicação.
+Esta operação se relaciona com a soma através das propriedades distributivas.
+
+A noção de anel visa capturar parte desas ideias, de modo a generalizar o estudo das estruturas citadas acima.
 \begin{definition}[Anel]
     Um anel é uma $4$-upla $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
     \begin{itemize}
@@ -62,6 +71,7 @@ Cancelando, segue que $0=0\cdot a$.
     Assim, $A$ é o conjunto unitário $\{0\}$, que é um anel trivial.
 \end{proof}
 
+Todo anel satisfaz as conhecidas regras de sinais referentes à multiplicação e adição, como:
 \begin{prop}[Regras de sinal II]\label{prop:regraSinal2}
     Seja $A$ um anel e $a, b \in A$. Então:
     \begin{enumerate}[label=\alph*)]
@@ -79,6 +89,7 @@ Cancelando, segue que $0=0\cdot a$.
 \end{proof}
 
 \section{Elementos invertíveis}
+Um anel, com sua soma, é um grupo Abeliano, e, portanto, possui opostos aditivos. Porém, não necessita possuir opostos multiplicativos. Os elementos de um anel que possuem inversos no anel são os chamados \emph{elementos invertíveis} ou \emph{unidades}.
 \begin{definition}[Elemento invertível]
     Seja $A$ um anel.
     Um elemento $a \in A$ é dito \emph{invertível}, ou uma \emph{unidade} se $\exists b \in A$ tal que $a \cdot b = b \cdot a = 1$.
@@ -101,7 +112,7 @@ Seja $A$ um anel. Para todos $a, b \in A^*$, temos:
     \item $a^{-1}\in A^U$ e $(a^{-1})^{-1}=a$.\label{prop:unidadeProduto_b}
     \item $1^{-1}=1$.\label{prop:unidadeProduto_c}
 \end{enumerate}
-Além disso, $A^*$ é, com a restrição da operação de multiplicação do anel, um grupo com identidade $1$. Caso $A$ seja abeliano, $A^*$ é um grupo abeliano.
+Além disso, $A^*$ é, com a restrição da operação de multiplicação do anel, um grupo com identidade $1$. Caso $A$ é um anel comutativo, $A^*$ é um grupo abeliano.
 \end{prop}
 \begin{proof}
     \ref{prop:unidadeProduto_a}: Sejam $a, b \in A^*$. Pela associatividade, $(ab)(b^{-1}a^{-1})=1=(b^{-1}a^{-1})(ab)$, logo, pela unicidade do inverso, $(ab)^{-1}=b^{-1}a^{-1}$.
@@ -110,8 +121,10 @@ Além disso, $A^*$ é, com a restrição da operação de multiplicação do ane
 
     \ref{prop:unidadeProduto_c}: Note que $1\cdot 1=1=1\cdot 1$, logo, pela unicidade do inverso, $1^{-1}=1$.
 
-    A última afirmação é imediata e fica como exercício.
+    Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
+
+\section{Mais estruturas}
 
 Abaixo, segue a definição de anel de divisão e corpo.
 A noção de corpo será uma das noções mais importantes deste texto.
@@ -138,6 +151,19 @@ Se $a=0$, então segue a tese.
 Caso contrário, como $K$ é um corpo, $a^{-1}$ existe.
 Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 \end{proof}
+
+\section{O anel dos números inteiros}
+[SUBSEÇÃO EM CONSTRUÇÃO]
+
+Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
+
+Assumiremos, sem demonstração (por fugir do escopo do texto), que existe uma estrutura $\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ como abaixo:
+
+\begin{definition}[Inteiros, anel ordenado]
+$\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ é uma estrutura tal que $\mathbb Z=(\mathbb Z,+,\cdot,0,1)$ é um \emph{anel ordenado} cujos elementos positivos são bem ordenados.
+\end{definition}
+
+
 
 
 \section{Subanéis}
