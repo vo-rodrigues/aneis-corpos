@@ -80,34 +80,68 @@ Se $n\geq 1$, $\sim_n$ corresponde à relação de congruência módulo $n$, poi
 Como feito nos inteiros, podemos, ao invés de trabalhar com relações de congruência, encontrar anéis em que a congruência corresponda exatamente à igualdade.
 
 \begin{definition}
-Seja $A$ um anel e $\sim$ uma relação de congruência. Define-se que $A/\sim$ é $A/\sim=\{[a]_\sim: a \in A\}$, onde $[a]_\sim=\{b\in A: b\sim a\}$ é a classe de equivalência de $a$ com relação a $\sim$.
+Seja $A$ um anel e $\sim$ uma relação de congruência.
 
-Define-se que $[a]_\sim+[b]_\sim=[a+b]_\sim$ e que $[a]_\sim[b]_\sim=[ab]\sim$.
+Lembremos que o conjunto das classes de equivalência de $\sim$ é denotado por $A/\sim$, e este corresponde, portanto, à $\{[a]_\sim: a \in A\}$, onde $[a]_\sim=\{b\in A: b\sim a\}$ é a classe de equivalência de $a$ com relação a $\sim$.
 
-Se $I$ é um ideal, $A/I=A/\sim_I$, e o mapa quociente de $A$ em $A/I$ se dá por $q:A\longrightarrow A/I$ dada por $q(a)=[a]_{\sim_I}$.
+Define-se que $[a]_\sim+[b]_\sim=[a+b]_\sim$ e que $[a]_\sim[b]_\sim=[ab]_\sim$. Com essas operações, $(A/\sim, +, \cdot, [0]_\sim, [1]_\sim)$ é chamado de \emph{anel quociente} de $A$ por $\sim$.
+
+Se $I$ é um ideal define-se $A/I=A/\sim_I$, e este é munido das operações anteriores. Com essas operações, $A/I=A/{\sim_I}$ como descrito acima é chamado de \emph{anel quociente} de $A$ por $I$.
+
+Define-se o \emph{mapa quociente} de $A$ em $A/I$ se dá por $q:A\longrightarrow A/I$ dada por $q(a)=[a]_{\sim_I}$.
 \end{definition}
 
-Pelas propriedades das relações de congruência, a soma e produto de $A/\sim$ (ou $A/I$) estão bem definidas. Além disso:
+É claro que precisamos mostrar que as operações acima estão bem definidas e torna estes, de fato, anéis.
+\begin{lemma}
+    As operações dos anéis quocientes estão bem definidas e os tornam anéis. Além disso, o mapa quociente é um epimorfismo (homomorfismo sobrejetor).
+\end{lemma}
+
+\begin{proof}
+    Como as relações de congruência estão em bijeção com os ideais, podemos tratar de um quociente arbitrário da forma $A/\sim$.
+    
+    Primeiro, vejamos que as operações estão bem definidas, ou seja, que se $a\sim b$ e $c\sim d$, então $[ac]_\sim=[bd]_\sim$ e $[a+b]_\sim=[b+d]_\sim$.
+    
+    De fato, como $\sim$ é uma relação de congruência e $a\sim b$ e $c\sim d$, temos que $ac\sim bc$ e $a+c\sim b+d$, logo, $[ac]_\sim=[bc]_\sim$ e $[a+c]_\sim=[b+d]_\sim$. Note ainda que como $[a]_\sim=q(a)$ e $q(1_A)=[1_A]_\sim$, assim, segue que, caso $A/\sim$ seja anel, $q$ é homomorfismo sobrejetor.
+
+    Agora devemos ver que $A/\sim$ é um anel. Temos que:
+
+    \begin{itemize}
+        \item Comutatividade da soma: $q(a)+q(b)=q(a+b)=q(b+a)=q(b)+q(a)$.
+        \item Associatividade da soma: $(q(a)+q(b))+q(c)=q(a+b)+q(c)=q((a+b)+c)=q(a+(b+c))=q(a)+q(b+c)=q(a)+(q(b)+q(c))$.
+        \item Neutro da soma: $q(0)+q(a)=q(0+a)=q(a)$.
+        \item Opostos: $q(a)+q(-a)=q(a+(-a))=q(0)=0$.
+        \item Associatividade do produto:$(q(a)q(b))q(c)=q(ab)q(c)=q((ab)c)=q(a(bc))=q(a)q(bc)=q(a)(q(b)q(c))$.
+        \item Neutro do produto: $q(1)q(a)=q(1a)=q(a)$, e $q(a)q(1)=q(a1)=q(a)$.
+        \item Distributividade: $q(a)(q(b)+q(c))=q(a)q(b+c)=q(a(b+c))=q(ab+ac)=q(ab)+q(ac)=q(a)q(b)+q(a)q(c)$.
+        \item Distributividade II: $(q(a)+q(b))q(c)=q(a+b)q(c)=q((a+b)c)=q(ac+bc)=q(ac)+q(bc)=q(a)q(c)+q(b)q(c)$.
+    \end{itemize}
+        
+\end{proof}
+
+Algumas propriedades particulares do quociente:
 
 \begin{lemma}[Propriedades do quociente]
     Na notação acima:
     \begin{enumerate}[label=\alph*)]
-        \item $q$ é epimorfismo de anéis. \label{lemma:propriedadesQuociente_a}
-        \item $\ker q = I$. \label{lemma:propriedadesQuociente_b}
-        \item $q(a)=a+I=\{a+x: x \in I\}$ para todo $a \in A$. \label{lemma:propriedadesQuociente_c}
-        \item Se $A$ é anel comutativo, $A/I$ também é. \label{lemma:propriedadesQuociente_d}
+        \item $\ker q = I$. \label{lemma:propriedadesQuociente_a}
+        \item $q(a)=a+I=\{a+x: x \in I\}$ para todo $a \in A$. \label{lemma:propriedadesQuociente_b}
+        \item Se $A$ é anel comutativo, $A/I$ também é. \label{lemma:propriedadesQuociente_c}
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    \ref{lemma:propriedadesQuociente_a} Seja $a, b, c, d \in A$. Temos que $q(a+b)=q(a)+q(b)$ e $q(ab)=q(a)q(b)$ por definição da soma em $A/I$, e $q$ é sobrejetora pela definição de $q$. Finalmente, $q(1_A)$ é identidade pois para todo $a \in A$, $q(1_A)q(a)=q(1_Aa)=q(a)$ e $q(a)q(1_A)=q(a1_A)=q(a)$, logo, $q(1_A)=1_{A/I}$.
+    \ref{lemma:propriedadesQuociente_a} Temos que $\ker q=\{a \in A: q(a)=q(0)\}=\{a \in A: a\sim_I 0\}=\{a \in A: a\in I\}=I$.
 
-    \ref{lemma:propriedadesQuociente_b} Temos que $\ker q=\{a \in A: q(a)=q(0)\}=\{a \in A: a\sim_I 0\}=\{a \in A: a\in I\}=I$.
+    \ref{lemma:propriedadesQuociente_b} Temos que $q(a)=[a]_{\sim_I}=\{b \in A: b\sim_I a\}=\{b \in A: b-a\in I\}=\{a+x: x \in I\}$ pois se $b-a \in I$ se, e somente se $a-b=x$ para algum $x \in I$.
 
-    \ref{lemma:propriedadesQuociente_c} Temos que $q(a)=[a]_{\sim_I}=\{b \in A: b\sim_I a\}=\{b \in A: b-a\in I\}=\{a+x: x \in I\}$ pois se $b-a \in I$ se, e somente se $a-b=x$ para algum $x \in I$.
-
-    \ref{lemma:propriedadesQuociente_d} Se $A$ é comutativo, então $A/I=\ran q$ também é, pois $q$ é homomorfismo de anéis.
+    \ref{lemma:propriedadesQuociente_c} Se $A$ é comutativo, então $A/I=\ran q$ também é, pois $q$ é homomorfismo de anéis.
 \end{proof}
+
+Em particular, temos:
+
+\begin{corol}
+    Todo ideal é o núcleo de algum homomorfismo.
+\end{corol}
 
 \section{Teoremas do isomorfismo}
 \begin{theorem}[Teorema do homomorfismo]
