@@ -453,6 +453,36 @@ Como as operações de um subanel são as mesmas de um anel, um subanel de um an
 \begin{proof}
 Seja $A$ um anel comutativo e $B$ um subanel de $A$. Para todos $a, b \in B$, temos que o produto $a\cdot b$ em $B$ é dado pelo produto (comutativo) $a\cdot b$ em $A$, logo $a\cdot b=b\cdot a$.
 \end{proof}
+
+\section{O centro de um anel}
+Apesar de nem todo anel ser comutativo, todos os anéis possuem elementos que comutam com qualquer outro elemento -- ao menos o elemento $1$.
+
+O centro do anel é o conjunto de tais elementos.
+
+\begin{definition}[Centro de um anel]
+    Seja $A$ um anel.
+
+    O \emph{centro} de $A$, denotado por $Z(A)$, é o conjunto dos elementos de $A$ que comutam com todos os outros elementos de $A$.
+
+    Formalmente, $Z(A)=\{a \in A: \forall b \in A, ab=ba\}$.
+\end{definition}
+
+O centro de um anel sempre é um subanel.
+
+\begin{prop}
+    Para todo anel $A$, o conjunto $Z(A)$ é um subanel de $A$.
+\end{prop}
+
+\begin{proof}
+    Temos que $1 \in Z(A)$ pois para todo $b \in A$, $1a=a1=a$.
+
+    Se $a, a' \in A$, temos que $aa' \in Z(A)$ pois para todo $b \in A$, $(aa')b=a(a'b)=a(ba')=(ab)a'=(ba)a'=b(a'a)$.
+
+    Finalmente, se $a, a' \in A$, temos que $a-a' \in Z(A)$, pois para todo $b \in A$, $(a-a')b=ab-a'b=ba-ba'=b(a-a')$.
+\end{proof}
+
+\section{Exercícios}
+
 \begin{exer}
-    Mostre que um anel $A$ é um anel de divisão se, e somente se $A^*=A\setminus\{0\}$.
+    Seja $A$ um anel. Mostre que um anel $A$ é um anel de divisão se, e somente se $A^*=A\setminus\{0\}$.
 \end{exer}
