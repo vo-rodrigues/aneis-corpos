@@ -8,13 +8,17 @@ Neste capítulo, estudaremos quocientes de anéis de forma generalizada, e suas 
 As relações de congruência de anéis são relações que generalizam a noção de ``congruência módulo $n$'' do anel dos inteiros.
 
 \begin{definition}
-    Seja $A$ um anel. Uma relação de congruência em $A$ é uma relação de equivalência $\sim$ em $A$ que ``preserva operações''. Explicitamente, tal que para todos $a, b, c, d \in A$, se $a\sim b$ e $c\sim d$, então $a+c\sim b+d$ e $ac\sim bd$.
+    Seja $A$ um anel. Uma relação de congruência em $A$ é uma relação de equivalência $\sim$ em $A$ que ``preserva operações''.
+    Explicitamente, tal que para todos $a, b, c, d \in A$, se $a\sim b$ e $c\sim d$, então $a+c\sim b+d$ e $ac\sim bd$.
 \end{definition}
 
-Todo homomorfismo induz naturalmente uma relação de congruência. Explicitamente:
+Todo homomorfismo induz naturalmente uma relação de congruência.
+Explicitamente:
 
 \begin{prop}
-Seja $f: A\rightarrow R$ um homomorfismo de anéis. Então $\sim_f=\{(a, b) \in A^2: f(a)=f(b)\}$ é uma relação de congruência em $A$. De outro modo, a relação $\sim_f$ em $A^2$ dada por $a \sim_f b$ se, e somente se $f(a)=f(b)$, é uma relação de congruência em $A$.
+Seja $f: A\rightarrow R$ um homomorfismo de anéis.
+Então $\sim_f=\{(a, b) \in A^2: f(a)=f(b)\}$ é uma relação de congruência em $A$.
+De outro modo, a relação $\sim_f$ em $A^2$ dada por $a \sim_f b$ se, e somente se $f(a)=f(b)$, é uma relação de congruência em $A$.
 \end{prop}
 
 \begin{proof}
@@ -31,7 +35,8 @@ Seja $f: A\rightarrow R$ um homomorfismo de anéis. Então $\sim_f=\{(a, b) \in 
 
 A proposição abaixo classifica todas as relações de congruência a partir dos ideais de um anel.
 \begin{prop}[Relações de congruência vs ideais]
-    Seja $A$ um anel, $\mathcal R(A)$ o conjunto de todas as relações de congruência em $A$ e $\mathcal I(A)$ o conjunto de todos os ideais de $A$. Então, existe uma bijeção entre $\mathcal R(A)$ e $\mathcal I(A)$ dada por
+    Seja $A$ um anel, $\mathcal R(A)$ o conjunto de todas as relações de congruência em $A$ e $\mathcal I(A)$ o conjunto de todos os ideais de $A$.
+    Então, existe uma bijeção entre $\mathcal R(A)$ e $\mathcal I(A)$ dada por
     $\sim \mapsto I_{\sim}=\{a \in A: a\sim 0\}$,
     cuja inversa se dá por $I\mapsto \sim_I=\{(a, b) \in A^2: a-b \in I\}$.
 \end{prop}
@@ -65,12 +70,15 @@ Justificando a última equivalência: se $a-b\sim 0$, como $b\sim b$, temos que 
 \end{proof}
 
 \begin{exemplo}
-Como vimos, $\mathbb Z$ é um domínio de ideais principais. Assim, todo ideal de $\mathbb Z$ é da forma $n\mathbb Z$. Como para todo $n$, $n\mathbb Z=(-n)\mathbb Z$, temos que $\{n\mathbb Z: n\geq 0\}$ é a coleção de todos os ideais de $\mathbb Z$.
+Como vimos, $\mathbb Z$ é um domínio de ideais principais.
+Assim, todo ideal de $\mathbb Z$ é da forma $n\mathbb Z$.
+Como para todo $n$, $n\mathbb Z=(-n)\mathbb Z$, temos que $\{n\mathbb Z: n\geq 0\}$ é a coleção de todos os ideais de $\mathbb Z$.
 
 Quais são todas as relações de congruência em $\mathbb Z$?
 Denotemos por $\sim_n$ a relação $\sim_{n\mathbb Z}$.
 
-Temos que $\sim_0$ corresponde à relação de igualdade, pois $a\sim_0 b$ se, e somente se, $a-b=0$, ou seja, $a=b$. Note que a relação de igualdade sempre é uma relação de congruência, em qualquer anel.
+Temos que $\sim_0$ corresponde à relação de igualdade, pois $a\sim_0 b$ se, e somente se, $a-b=0$, ou seja, $a=b$.
+Note que a relação de igualdade sempre é uma relação de congruência, em qualquer anel.
 
 Se $n\geq 1$, $\sim_n$ corresponde à relação de congruência módulo $n$, pois $a\sim_n b$ se, e somente se, $a-b\in n\mathbb Z$, ou seja, $a-b=kn$ para algum $k\in \mathbb Z$.
 \end{exemplo}
@@ -84,16 +92,19 @@ Seja $A$ um anel e $\sim$ uma relação de congruência.
 
 Lembremos que o conjunto das classes de equivalência de $\sim$ é denotado por $A/\sim$, e este corresponde, portanto, à $\{[a]_\sim: a \in A\}$, onde $[a]_\sim=\{b\in A: b\sim a\}$ é a classe de equivalência de $a$ com relação a $\sim$.
 
-Define-se que $[a]_\sim+[b]_\sim=[a+b]_\sim$ e que $[a]_\sim[b]_\sim=[ab]_\sim$. Com essas operações, $(A/\sim, +, \cdot, [0]_\sim, [1]_\sim)$ é chamado de \emph{anel quociente} de $A$ por $\sim$.
+Define-se que $[a]_\sim+[b]_\sim=[a+b]_\sim$ e que $[a]_\sim[b]_\sim=[ab]_\sim$.
+Com essas operações, $(A/\sim, +, \cdot, [0]_\sim, [1]_\sim)$ é chamado de \emph{anel quociente} de $A$ por $\sim$.
 
-Se $I$ é um ideal define-se $A/I=A/\sim_I$, e este é munido das operações anteriores. Com essas operações, $A/I=A/{\sim_I}$ como descrito acima é chamado de \emph{anel quociente} de $A$ por $I$.
+Se $I$ é um ideal define-se $A/I=A/\sim_I$, e este é munido das operações anteriores.
+Com essas operações, $A/I=A/{\sim_I}$ como descrito acima é chamado de \emph{anel quociente} de $A$ por $I$.
 
 Define-se o \emph{mapa quociente} de $A$ em $A/I$ se dá por $q:A\longrightarrow A/I$ dada por $q(a)=[a]_{\sim_I}$.
 \end{definition}
 
 É claro que precisamos mostrar que as operações acima estão bem definidas e torna estes, de fato, anéis.
 \begin{lemma}
-    As operações dos anéis quocientes estão bem definidas e os tornam anéis. Além disso, o mapa quociente é um epimorfismo (homomorfismo sobrejetor).
+    As operações dos anéis quocientes estão bem definidas e os tornam anéis.
+    Além disso, o mapa quociente é um epimorfismo (homomorfismo sobrejetor).
 \end{lemma}
 
 \begin{proof}
@@ -101,7 +112,8 @@ Define-se o \emph{mapa quociente} de $A$ em $A/I$ se dá por $q:A\longrightarrow
     
     Primeiro, vejamos que as operações estão bem definidas, ou seja, que se $a\sim b$ e $c\sim d$, então $[ac]_\sim=[bd]_\sim$ e $[a+b]_\sim=[b+d]_\sim$.
     
-    De fato, como $\sim$ é uma relação de congruência e $a\sim b$ e $c\sim d$, temos que $ac\sim bc$ e $a+c\sim b+d$, logo, $[ac]_\sim=[bc]_\sim$ e $[a+c]_\sim=[b+d]_\sim$. Note ainda que como $[a]_\sim=q(a)$ e $q(1_A)=[1_A]_\sim$, assim, segue que, caso $A/\sim$ seja anel, $q$ é homomorfismo sobrejetor.
+    De fato, como $\sim$ é uma relação de congruência e $a\sim b$ e $c\sim d$, temos que $ac\sim bc$ e $a+c\sim b+d$, logo, $[ac]_\sim=[bc]_\sim$ e $[a+c]_\sim=[b+d]_\sim$.
+    Note ainda que como $[a]_\sim=q(a)$ e $q(1_A)=[1_A]_\sim$, assim, segue que, caso $A/\sim$ seja anel, $q$ é homomorfismo sobrejetor.
 
     Agora devemos ver que $A/\sim$ é um anel. Temos que:
 
@@ -156,14 +168,20 @@ Os teoremas do homomorfismo dizem que certos homomorfismos ``fatoram'' para quoc
     \end{figure}
 \end{theorem}
 \begin{proof}
-    Definimos $\bar f:A/J\rightarrow R$ por $\bar f(a+J)=f(a)$. Então, $g$ é bem definido, pois se $a+J=b+J$, então $a-b \in J\subseteq \ker f$, logo, $f(a-b)=0_R$, ou seja, $f(a)=f(b)$.
+    Definimos $\bar f:A/J\rightarrow R$ por $\bar f(a+J)=f(a)$.
+    Então, $g$ é bem definido, pois se $a+J=b+J$, então $a-b \in J\subseteq \ker f$, logo, $f(a-b)=0_R$, ou seja, $f(a)=f(b)$.
 
-    Agora, vejamos que $\bar f$ é um homomorfismo de anéis. De fato, para todo $a', b' \in A/J$, sendo $a'=a+J$ e $b'=b+J$, temos que:
+    Agora, vejamos que $\bar f$ é um homomorfismo de anéis.
+    De fato, para todo $a', b' \in A/J$, sendo $a'=a+J$ e $b'=b+J$, temos que:
     \begin{itemize}
         \item $\bar f(a'+b')=\bar f((a+J)+(b+J))=\bar f((a+b)+J)=f(a+b)=f(a)+f(b)=\bar f(a+J)+\bar f(b+J)$.
         \item $\bar f(a'b')=\bar f((a+J)(b+J))=\bar f(ab+J)=f(ab)=f(a)f(b)=\bar f(a+J)\bar f(b+J)$.
         \item $\bar f(1_{A/J})=\bar f(1_A+J)=f(1_A)=1_R$.
     \end{itemize}
 
-    Temos que $\bar f\circ q=f$ por definição de $\bar f$. Para a unicidade, se $g:A/J\rightarrow R$ é um homomorfismo tal que $g\circ q=f$, fixe $a'\in A/J$. Fixe $a \in A$ tal que $a'=q(a)$. Então $g(a')=g(q(a))=f(a)=\bar \bar f(q(a))=\bar f(a')$. Assim, $g=\bar f$.
+    Temos que $\bar f\circ q=f$ por definição de $\bar f$.
+    Para a unicidade, se $g:A/J\rightarrow R$ é um homomorfismo tal que $g\circ q=f$, fixe $a'\in A/J$.
+    Fixe $a \in A$ tal que $a'=q(a)$.
+    Então $g(a')=g(q(a))=f(a)=\bar \bar f(q(a))=\bar f(a')$.
+    Assim, $g=\bar f$.
 \end{proof}
