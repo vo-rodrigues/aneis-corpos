@@ -1,0 +1,32 @@
+% Pacotes.
+\usepackage[brazil]{babel} % Idioma do documento
+\usepackage{amsthm, amsmath, amssymb} % Pacotes para teoremas, símbolos matemáticos e formatação de fórmulas
+\usepackage[a4paper]{geometry} % Formato do papel
+\usepackage{enumitem} % Pacote para listas enumeradas
+\usepackage{stmaryrd} % Pacote para símbolos matemáticos. Usado para \llbracket e \rrbracket.
+\usepackage{tikz-cd} % Pacote para diagramas comutativos
+\usetikzlibrary{babel} % Para usar o pacote babel com tikz-cd
+\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção
+\usepackage{hyperref} % Pacote para links e referências
+\usepackage{float} % Pacote para controle de flutuação de figuras e tabelas. Usado para [H].
+\usepackage{datetime} % Pacote para data e hora
+\usepackage{multicol} % Pacote para colunas múltiplas
+
+% Teoremas. Estilo definition para não ficar em itálico por padrão.
+% Ao final de definições e exemplos, adiciona-se um símbolo de fim de prova (qed) para facilitar a leitura.
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[chapter]
+\AtEndEnvironment{definition}{\null\hfill\qedsymbol}%
+\newtheorem{exemplo}[definition]{Exemplo}
+\AtEndEnvironment{exemplo}{\null\hfill\qedsymbol}%
+\newtheorem{prop}[definition]{Proposição}
+\newtheorem{corol}[definition]{Corolário}
+\newtheorem{exer}[definition]{Exercício}
+\newtheorem{lemma}[definition]{Lema}
+\newtheorem{theorem}[definition]{Teorema}
+
+% Notações.
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\id}{id}
