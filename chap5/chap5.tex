@@ -144,25 +144,26 @@ Em particular, temos:
 \end{corol}
 
 \section{Teoremas do isomorfismo}
+Os teoremas do homomorfismo dizem que certos homomorfismos ``fatoram'' para quocientes.
 \begin{theorem}[Teorema do homomorfismo]
-    Seja $f:A\rightarrow R$ um homomorfismo de anéis e $J$ um ideal tal que $J\subseteq \ker f$. Então, existe um único homomorfismo de anéis $g:A/J\rightarrow R$ tal que $g\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$.
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis e $J$ um ideal tal que $J\subseteq \ker f$. Então, existe um único homomorfismo de anéis $\bar f:A/J\rightarrow R$ tal que $\bar f\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$.
+    \begin{figure}[h]\centering
+        \begin{tikzcd}[column sep=1.6cm,row sep=1.2cm]
+            A\arrow[d, "q"']\arrow[rd, "f"]& \\
+            A/J \arrow[r, dashed, "\exists!\bar f"'] & R
+        \end{tikzcd}
+        \caption{Teorema do homomorfismo.}
+    \end{figure}
 \end{theorem}
 \begin{proof}
-    Definimos $g:A/J\rightarrow R$ por $g(a+J)=f(a)$. Então, $g$ é bem definido, pois se $a+J=b+J$, então $a-b \in J\subseteq \ker f$, logo, $f(a-b)=0_R$, ou seja, $f(a)=f(b)$.
+    Definimos $\bar f:A/J\rightarrow R$ por $\bar f(a+J)=f(a)$. Então, $g$ é bem definido, pois se $a+J=b+J$, então $a-b \in J\subseteq \ker f$, logo, $f(a-b)=0_R$, ou seja, $f(a)=f(b)$.
 
-    Agora, vejamos que $g$ é um homomorfismo de anéis. De fato, para todo $a', b' \in A/J$, sendo $a'=a+J$ e $b'=b+J$, temos que:
+    Agora, vejamos que $\bar f$ é um homomorfismo de anéis. De fato, para todo $a', b' \in A/J$, sendo $a'=a+J$ e $b'=b+J$, temos que:
     \begin{itemize}
-        \item $g(a'+b')=g((a+J)+(b+J))=g((a+b)+J)=f(a+b)=f(a)+f(b)=g(a+J)+g(b+J)$.
-        \item $g(a'b')=g((a+J)(b+J))=g(ab+J)=f(ab)=f(a)f(b)=g(a+J)g(b+J)$.
-        \item $g(1_{A/J})=g(1_A+J)=f(1_A)=1_R$.
+        \item $\bar f(a'+b')=\bar f((a+J)+(b+J))=\bar f((a+b)+J)=f(a+b)=f(a)+f(b)=\bar f(a+J)+\bar f(b+J)$.
+        \item $\bar f(a'b')=\bar f((a+J)(b+J))=\bar f(ab+J)=f(ab)=f(a)f(b)=\bar f(a+J)\bar f(b+J)$.
+        \item $\bar f(1_{A/J})=\bar f(1_A+J)=f(1_A)=1_R$.
     \end{itemize}
-\end{proof}
 
-\begin{theorem}[Primeiro Teorema do Isomorfismo]
-    Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então, existe um único homomorfismo de anéis $g:A/\ker f\rightarrow R$ tal que $g\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$, e $g:A\ker f\rightarrow \ran f$ é isomorfismo.
-\end{theorem}
-\begin{proof}
-    Pelo Teorema do homomorfismo com $J=\ker f$, existe um único homomorfismo de anéis $g:A/\ker f\rightarrow \ran f$ tal que $g\circ q=f$. Como $g\circ q=f$ e $q$ é sobrejetora, então $\ran g=\ran (g\circ q)=\ran f$, logo, $q$ é sobre $\ran f$.
-    
-    Resta ver que $g$ é injetora. De fato, seja $q(a)\in A/\ker f$ tal que $g(q(a))=0_R$. Então, $f(a)=0_R$, logo, $a\in \ker f=J$. ou seja, $a\sim_I 0$, logo $q(a)=q(0)=0_{A/\ker f}$. Assim, $g$ é injetora.
+    Temos que $\bar f\circ q=f$ por definição de $\bar f$. Para a unicidade, se $g:A/J\rightarrow R$ é um homomorfismo tal que $g\circ q=f$, fixe $a'\in A/J$. Fixe $a \in A$ tal que $a'=q(a)$. Então $g(a')=g(q(a))=f(a)=\bar \bar f(q(a))=\bar f(a')$. Assim, $g=\bar f$.
 \end{proof}
