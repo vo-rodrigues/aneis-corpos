@@ -308,3 +308,41 @@ Finalmente, temos o Terceiro Teorema do Isomorfismo.
 
     Assim, temos que $\ker \bar p=J/I$, e este último é um ideal, pois núcleos de homomorfismos são ideais.
 \end{proof}
+
+No terceiro teorema do isomorfismo, vimos que se $I\subseteq J\subseteq A$, então $J/I$ é um ideal de $A/I$.
+Quem são os ideais de um quociente?
+O teorema a seguir mostra que todos são dessa forma.
+
+\begin{theorem}[Teorema da correspondência]
+    Seja $A$ é um anel e $I$ um ideal de $A$.
+    Considere a função $\phi:\{J\subseteq A: I\subseteq J \text{ e } J \text{é ideal de } A\}\rightarrow \{K\subseteq A/I: K \text{é ideal de } A/I\}$ dada por:
+    \[\phi(J)=J/I.\]
+    Então $\phi$ é uma bijeção entre os ideais de $A$ que contêm $I$ e os ideais de $A/I$.
+    Além disso, $\phi$ é um isomorfismo de ordem, ou seja, se $J_1, J_2$ são ideais e $I\subseteq J_1, I\subseteq J_2\subseteq A$, então $\phi(J_1)\subseteq \phi(J_2)$ se, e somente se $J_1\subseteq J_2$.
+\end{theorem}
+
+\begin{proof}
+    Pelo Terceiro Teorema do Isomorfismo, o contradomínio de $\phi$ está correto.
+    Pela definição de $J/I$, é claro que $\phi$ é uma função crescente (se $J_1\subseteq J_2$, então $J_1/I\subseteq J_2/I$).
+
+    Agora, seja $\psi:\{K\subseteq A/I: K \text{é ideal de } A/I\}\rightarrow \{J\subseteq A: I\subseteq J \text{ e } J \text{é ideal de } A\}$ dada por $\psi(K)=q^{-1}[K]$, onde $q:A\rightarrow A/I$ é o mapa quociente dado por $q(a)=a+I$.
+
+    Como $q$ é um homomorfismo e ideais são preservados por imagens inversas de homomorfismos, segue que cada $\psi(K)$ é um ideal de $A$.
+    Além disso, $\psi(K)$ contém $I$, já que $\ker q=q^{-1}(0)=I\subseteq \psi(K)$.
+    Finalmente, pela definição de pré-imagem, $\psi$ também preserva a ordem.
+
+    Agora veremos que $\phi, \psi$ são isomorfismos inversos, o que completará a prova.
+
+    Dado um ideal $J$ de $A$ que contém $I$, temos que $\psi(\phi(I))=\psi(J/I)=\{a \in A: q(a)\in J/I\}$.
+    Afirmamos que esse conjunto é $J$.
+    Com efeito, se $a \in J$, temos que $a \in A$ e $q(a)\in J/I$.
+    Reciprocamente, se $a \in A$ e $q(a) \in J/I$, existe $b \in J$ tal que $q(a)=q(b)$.
+    Assim, $b \in J$ e $a-b \in I\subseteq J$, logo, $a=(a-b)+b\in J$.
+
+    Agora, fixe um ideal $K$ de $A/I$.
+    
+    Veremos que $\phi(\psi(K))=K$.
+
+    Temos que $\phi(\psi(K))=\phi(q^{-1}[K])=\phi(\{a \in A: q(a)\in K\})=\{q(a): a \in A \text{ e } q(a) \in K\}$.
+    É imediato que este último é $K$, o que completa a prova.
+\end{proof}

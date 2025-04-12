@@ -279,6 +279,24 @@ Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
 \begin{prop}[Interseção de ideais]
     Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais de $A$. Então $\bigcap_{I \in \mathcal F}I=\bigcap \mathcal F$ é um ideal de $A$.
 \end{prop}
+
+Ideais também são preservados por imagens inversas.
+
+\begin{prop}
+    $f:A\rightarrow R$ um homomorfismo de anéis e $J$ um ideal de $R$.
+    Então $f^{-1}[J]=\{a \in A: f(a) \in J\}$ é um ideal de $A$.
+\end{prop}
+\begin{proof}
+    Seja $I=f^{-1}[J]$.
+    Temos que $J\neq \emptyset$ já que $0 \in \ker f\subseteq I$.
+
+    Sejam $a, b \in I$.
+    Então $f(a), f(b) \in J$, logo, $f(a+b)=f(a)+f(b) \in J$, o que implica $a+b \in I$.
+
+    Agora seja $a \in A$ e $b \in I$.
+    Temos que $f(ab)=f(a)f(b)\in J$ e $f(ba)=f(b)f(a)\in J$, pois $f(b)\in J$.
+    Assim, $ab, ba \in J$.
+\end{proof}
 \begin{proof}
 
     Seja $I=\bigcap \mathcal F$.
