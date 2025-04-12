@@ -214,3 +214,59 @@ Assim, $0=\phi(y)=\phi\circ q(a)=f(a)$, logo, $a \in \ker f$.
 Como $q:A\rightarrow A/\ker f$ é o mapa quociente e $a \in \ker f$, segue que $y=q(a)=0_{A/\ker f}$.
 Logo, $\ker\phi=\{0\}$, ou seja, $\phi$ é injetor.
 \end{proof}
+
+Do primeiro Teorema do Isomorfismo, decorre o segundo Teorema do Isomorfismo.
+Para enuncia-lo, lembremos que se $B, C$ são subconjuntos de um grupo abeliano $A$, então $B+C=\{b+c: b \in B, c \in C\}$.
+
+\begin{lemma}
+Se $A$ é um anel, $B$ um subanel de $A$ e $I$ um ideal de $A$ contido em $B$, então para todo $b\in B$, a classe de equivalência $[b]_I$ é a mesma tomando como ambiente tanto o anel $B$ como o anel $A$.
+
+Assim, $B/I\subseteq A/I$.
+
+Além disso, sendo $q:A\rightarrow A/I$ o mapa quociente e $q':B\rightarrow B/I$ o mapa quociente, temos que $q'=q|B$.
+\end{lemma}
+
+\begin{proof}
+    Fixe $b$.
+    Devemos ver que $\{a \in A: a-b\in I\}=\{a \in B: a-b\in I\}$.
+
+    Assim, basta ver que se $a \in A$ e $a-b \in I$, então $a \in B$.
+    Ora, $a=(a-b)+b$.
+    Como $a-b \in I\subseteq B$ e $b \in B$, temos que $a \in B$.
+
+    Note que o lado esquerdo da igualdade é $q(b)$ e o direito é $q'(b)$, assim, segue a tese.
+\end{proof}
+
+\begin{theorem}[Segundo Teorema do Isomorfismo]
+    Sejam $A$ um anel, $B$ um subanel de $A$ e $I$ um ideal de $A$. Então:
+
+    \begin{enumerate}[label=\alph*)]
+        \item $I\cap B$ é um ideal de $B$.
+        \item $I+B$ é um subanel de $A$.
+        \item $\displaystyle \frac{I+B}{I}\cong \frac{B}{I\cap B}$.
+    
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Primeiro, verifiquemos que $I+B$ é um subanel de $A$.
+
+    Temos que $1=0+1 \in I+B$.
+
+    Se $x, y \in I+B$, então $x=a_1+b_1$ e $y=a_2+b_2$, onde $a_1, a_2 \in I$ e $b_1, b_2 \in B$.
+    Segue que $a_1-a_2 \in I$ e $b_1-b_2 \in B$, logo, $x-y=(a_1-a_2)+(b_1-b_2) \in I+B$.
+
+    Além disso, $xy=(a_1+b_1)(a_2+b_2)=a_1a_2+a_1b_2+b_1a_2+b_1b_2$.
+    Temos que $a_1a_2\in I$, $a_1b_2\in I$, $b_1a_2\in I$ e $b_1b_2\in B$, logo, $xy\in I+B$.
+    Assim, $I+B$ é um subanel de $A$.
+
+    Agora considere o mapa $q:I+B\rightarrow \frac{I+B}{I}$ dado por $q(x)=x+I$. Seja $f=q|_B:B\rightarrow \frac{I+B}{I}$ o homomorfismo restrito de $q$ em $B$.
+
+    Pelo primeiro Teorema do Isomorfismo, $B/\ker f \cong \ran f$.
+    Veremos que $\ran f=I+B/I$ e $\ker f=I\cap B$, o que completa a prova.
+
+    Temos que $\ran f = \frac{I+B}{I}$ pelo lema anterior, pois $I\subseteq B\subseteq I+B$.
+
+    Calculemos $\ker f$. Ora, se $x \in B$, temos que $f(x)=0$ se, e somente se, $q(x)=0$ se, e somente se $x\in I$.
+    Como $x\in B$, isso é equivalente à $x \in I\cap B$, o que completa a prova.
+\end{proof}
