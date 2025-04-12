@@ -1,3 +1,114 @@
 \chapter{Domínios de Integridade}
 Neste capítulo, exploraremos com mais detalhes os domínios de integridade e a teoria que nasce deles.
 
+\section{Relações entre corpos e domínios}
+Conforme visto, todo corpo é um domínio de integridade, e a recíproca não é verdadeira (sendo $\mathbb Z$ um contra-exemplo).
+
+A seguir, apresentaremos algumas relações entre corpos e domínios.
+
+\begin{prop}
+Todo domínio de integridade finito é um corpo.
+\end{prop}
+\begin{proof}
+    Seja $R$ um domínio de integridade finito.
+    Fixe $a \in R\setminus\{0\}$.
+    Veremos que $a$ é invertível.
+
+    Considere $\phi:R\setminus\{0\}\rightarrow R\setminus \{0\}$ dado por $\phi(x)=ax$.
+
+    Como $R$ é um domínio, para todo $x \in R\setminus \{0\}$, temos $ax \neq 0$, logo, $\phi$ está bem definida.
+
+    $\phi$ é uma função injetora: se $\phi(x)=\phi(y)$, então $ax=ay$.
+    Logo, $a(x-y)=0$.
+    Como $a\neq 0$ e $R$ é um domínio, segue que $x-y=0$, ou seja, $x=y$.
+
+    Como $R\setminus\{0\}$ é finito e $\phi:R\setminus\{0\}\rightarrow R\setminus \{0\}$ é injetora, segue que $\phi$ é sobrejetora.
+    Em particular, existe $x \in X$ tal que $ax=\phi(x)=1$.
+    Logo, $a$ é invertível.
+\end{proof}
+
+Portanto, restrito aos anéis finitos, o estudo dos corpos e domínios colapsa em um único estudo.
+
+Outra relação importante é a que segue:
+
+\begin{prop}
+Seja $R$ um anel comutativo e $I$ um ideal próprio de $R$. São equivalentes:
+
+\begin{enumerate}[label=(\roman*)]
+    \item $R/I$ é um corpo;
+    \item $I$ é maximal.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Seja $q:R\rightarrow I$ o mapa quociente.
+
+    (i) $\Rightarrow$ (ii): Suponha que $R/I$ é um corpo.
+    
+
+    $I$ é um ideal próprio, caso contrário, teríamos que $R/I$ é o anel trivial, que não é um corpo.
+
+    Agora suponha que $J$ é um ideal que contém $I$ propriamente.
+    Veremos que $J=R$.
+    Seja $a \in J\setminus I$.
+    Como $a\notin I$, temos que $q(a)\neq 0$.
+    Como $A/I$ é um corpo, existe $b \in R$ tal que $q(a)q(b)=1$.
+    Isso implica que existe $x \in I$ tal que $ab+x=1$.
+    Como $a \in J$ e $x \in I\subseteq J$, segue que $1=ab+x\in J$, e, portanto, $J=R$.
+
+    (ii) $\Rightarrow$ (i): Suponha que $I$ é maximal. Vejamos que $R/I$ é um corpo.
+
+    Seja $x \in R\setminus I$ não nulo.
+    Tome $a \in R$ tal que $q(a)=x$.
+    Temos que $a \notin I$.
+    Como $I+\langle a\rangle$ é um ideal que contém $I$ propriamente, segue que $I+\langle a\rangle=R$.
+    Logo, existe $b \in R$ e $c \in I$ tais que $c+ba=1$.
+    Logo, $q(1)=q(c)+q(ba)=0+q(b)q(a)=q(b)x$.
+    Portanto, $x$ é invertível.
+\end{proof}
+
+Será que podemos caracterizar, de forma análoga, ser um domínio? A resposta é positiva.
+
+\begin{prop}
+    Seja $R$ um anel comutativo e $I$ um ideal próprio de $R$. São equivalentes:
+    
+    \begin{enumerate}[label=(\roman*)]
+        \item $R/I$ é um domínio.
+        \item $I$ é primo.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    Seja $q:R\rightarrow I$ o mapa quociente.
+
+    (i) $\Rightarrow$ (ii): Suponha que $R/I$ é um domínio.
+    
+
+    $I$ é um ideal próprio, caso contrário, teríamos que $R/I$ é o anel trivial, que não é um domínio.
+
+    Suponha que $a,b \in R$ tais que $ab \in I$.
+    Temos que $q(a)q(b)=q(ab)=0$.
+    Como $R/I$ é um domínio, temos que $q(a)=0$ ou $q(b)=0$, ou seja, que $a \in I$ ou $B \in I$.
+
+    Logo, $I$ é primo.
+
+    (ii) $\Rightarrow$ (i): Suponha que $I$ é primo.
+    Vejamos que $R/I$ é um domínio.
+
+    Sejam $x, y \in R$ tais que $q(x)q(y)=0$.
+    Devemos ver que $q(x)=0$ ou $q(y)=0$.
+    Como $q(xy)=q(x)q(y)=0$, segue que $xy\in I$.
+    Então, $x\in I$ ou $y\in I$, ou seja, $q(x)=0$ ou $q(y)=0$.
+\end{proof}
+
+Como consequência, temos:
+
+\begin{corol}
+    Seja $R$ um anel comutativo finito e $I$ um ideal de $R$. Então $I$ é primo se, e somente se $I$ é maximal.
+\end{corol}
+\begin{proof}
+    Temos que $R/I$ é finito, e, portanto, é um corpo se, e somente se for um domínio.
+    Portanto:
+
+    \[I \text{ é primo} \Leftrightarrow R/I \text{ é um domínio} \Leftrightarrow R/I \text{ é um corpo} \Leftrightarrow I \text{ é maximal}\]
+\end{proof}
