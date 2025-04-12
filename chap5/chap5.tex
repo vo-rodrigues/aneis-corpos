@@ -270,3 +270,41 @@ Além disso, sendo $q:A\rightarrow A/I$ o mapa quociente e $q':B\rightarrow B/I$
     Calculemos $\ker f$. Ora, se $x \in B$, temos que $f(x)=0$ se, e somente se, $q(x)=0$ se, e somente se $x\in I$.
     Como $x\in B$, isso é equivalente à $x \in I\cap B$, o que completa a prova.
 \end{proof}
+Finalmente, temos o Terceiro Teorema do Isomorfismo.
+\begin{theorem}[Terceiro Teorema do Isomorfismo]
+    Sejam $A$ um anel, $B$ um subanel de $A$ e $I\subseteq J\subseteq B$ ideais.
+    Seja $q:A\rightarrow A/I$ a projeção natural.
+    Então $J/I=\{q(a):a \in J\}$ é um ideal de $A/I$, e:
+    \[
+         (B/I)/(J/I) \cong B/J.
+    \]
+\end{theorem}
+\begin{proof}
+    Seja $p:B\rightarrow B/J$ o mapa quociente dado por $p(b)=b+J$ para todo $b \in B$.
+    Seja $q'=q|B:B\rightarrow B/I$ o mapa quociente para $B/I$.
+
+    Temos que $\ker p=B\cap J=J$ e $I\subseteq J$.
+    Assim, pelo Teorema do Homomorfismo, existe $\bar p:B\rightarrow B/J$ homomorfismo tal que $\bar f\circ q'=f$.
+    \begin{figure}[H]\centering
+        \begin{tikzcd}
+            B\arrow[d, "q'"']\arrow[r, "p"]& B/J\\
+            A/I \arrow[ur, dashed, "\bar p"] \arrow[d]& \\
+            \frac{A/I}{\ker \bar p}\arrow[uur, dashed, "\phi"']&
+        \end{tikzcd}
+    \end{figure}
+    Pelo Primeiro Teorema do Isomorfismo, $(B/J)/\ker \bar f\cong \ran \bar f$.
+    Calcularemos $\ran \bar f$ e $\ker \bar f$, o que concluirá a prova.
+
+    Temos que, para $\bar p\circ q'=p$.
+    Como $q'$ e $p$ são sobrejetoras, temos:
+    \[\ran \bar p=\{p(x): x \in A/I\}=\{\bar p(q(b)):b \in B\}=\{p(b):b \in B\}=\ran p=B/J.\]
+
+    Agora calcularemos $\ker \bar p$.
+    Fixe $x \in A/I$.
+    Existe $b \in B$ tal que $x=q(b)$.
+    Se $x \in \ker \bar p$, então $0=\bar p(x)=\bar p(q(b))=p(b)=b+J$, logo, $b \in J$, e, portanto, $x=q(b)\in J/I$.
+    Reciprocamente, se $x \in J/I$, então $x=q(b)$ para algum $b \in J$, logo, $p(b)=0$, e, portanto, $p(x)=\bar p(q'(b))=p(b)=0$.
+    Assim, $x \in \ker \bar p$.
+
+    Assim, temos que $\ker \bar p=J/I$, e este último é um ideal, pois núcleos de homomorfismos são ideais.
+\end{proof}
