@@ -441,6 +441,49 @@ Porém, nem todo DIP é um corpo, como exemplificado pelo anel dos números inte
     Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
 \end{proof}
 
+\section{Ideais Primos e Maximais}
+Dois outros importantes tipos de ideais são os ideais primos e maximais.
+
+\begin{definition}
+Seja $A$ um anel.
+Um ideal $I$ de $A$ é dito \emph{próprio} se $I\neq A$.
+
+Um ideal próprio de $A$ é dito \emph{maximal} se ele não está contido propriamente em nenhum ideal próprio de $A$.
+Em símbolos:
+
+Um ideal $I$ de $A$ é dito maximal se for próprio e, para todo ideal próprio $J$ de $A$, se $I\subseteq J$ então $I=J$.
+\end{definition}
+
+Por sua vez, os ideais primos se definem como a seguir:
+
+\begin{definition}
+    Seja $A$ um anel comutativo.
+    Um ideal primo de $A$ é um ideal próprio $I\subseteq A$ tal que, para todos $a, b \in A$, se $ab \in I$, então $a \in I$ ou $b \in I$.
+\end{definition}
+
+Ideais primos podem ser generalizados para anéis não comutativos, mas este estudo não será realizado neste texto.
+
+Em anéis comutativos, todo ideal maximal é primo:
+
+\begin{prop}
+Seja $A$ um anel comutativo e $I$ um ideal maximal.
+Então $I$ é primo.
+\end{prop}
+
+\begin{proof}
+    Suponha que $a, b \in A$ são tais que $ab \in I$ e que $a \notin I$.
+    Veremos que $b \in I$.
+
+    Como $I$ é maximal, o ideal $I+\langle a\rangle$, por conter $I$ propriamente, não é um ideal próprio, ou seja, $I+\langle a\rangle=A$.
+
+    Assim, existem $x \in I$ e $y \in A$ tais que $x+ya=1$.
+    Multiplicando ambos os lados por $b$, temos que $xb+yab=b$.
+    Commo $x \in I$, temos que $xb \in I$, e, como $ab \in I$, temos que $yab \in I$.
+    Portanto, $b=xb+yab\in I$.
+\end{proof}
+
+Porém, nem todo ideal primo é maximal. Por exemplo, $\{0\}$ é um ideal primo de $\mathbb Z$ que não é maximal, já que $2\mathbb Z$ é um ideal próprio de $\mathbb Z$ que o contém propriamente.
+
 \section{Exercícios}
 \begin{exer}
 Lembremos que, da Álgebra Linear, um espaço vetorial $V$ sobre um corpo $K$ é uma quadrupla $(V, +, 0, \cdot)$, onde $(V, +, 0)$ é um grupo Abeliano e $\cdot:K\times V\rightarrow V$ é uma operação que satisfaz:
