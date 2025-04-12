@@ -363,6 +363,33 @@ Ideais também são preservados por imagens inversas.
 Observação: note que o menor ideal contendo $B=\emptyset$ é o ideal nulo, $\{0\}$.
 Escrevemos $\langle \emptyset\rangle=\{0\}$.
 
+Vimos que a interseção de ideais é um ideal. Porém, a união de ideais não precisa ser um ideal.
+
+\begin{exemplo} Considere, em $\mathbb Z$, os ideais $2\mathbb Z$ e $3\mathbb Z$. Temos que $2, 3 \in 2\mathbb Z\cup 3\mathbb Z$, mas $5=2+3\notin \mathbb Z\cup 3\mathbb Z$.
+\end{exemplo}
+
+Qual seria, então, o menor ideal que contém a união de dois ideais?
+\begin{prop}
+    Seja $A$ um anel e $I, J$ ideais de $A$. Então $\langle I\cup J\rangle=I+J=\{a+b: a \in I, b \in J\}$
+\end{prop}
+\begin{proof}
+Como $0\in I\cap J$, temos que $I\subseteq I+J$, já que para todo $a \in I$, $a+0\in I+J$.
+Similarmente, $J\subseteq I+J$.
+
+Temos que $I+J$ é um ideal: se $a, b \in I+J$, então existem $x, y \in I$ e $u, v \in J$ tais que $a=x+u$ e $b=y+v$.
+Segue que $a+b=(x+y)+(u+v)\in I+J$.
+Agora, dado $a \in I+J$ e $x \in A$, temos que $a=i+j$ com $i \in I$ e $j \in J$.
+Segue que $xa=xi+xj\in I+J$, já que $xi \in I$ e $xj \in J$. 
+Similarmente, $ax\in I+J$.
+
+Concluimos que $I+J$ é um ideal de $A$ que contém $I$ e $J$. Vejamos que ele é o menor.
+
+Se $K$ é um ideal que contém $I$ e $J$, vejamos que $I+J\subseteq K$.
+Seja $a+b \in I+J$, com $a \in I$ e $b \in J$.
+Como $K$ é um ideal, $a \in K$ e $b \in K$, segue que $a+b \in K$.
+Assim, $I+J\subseteq K$.
+\end{proof}
+\section{Ideais Principais}
 \begin{definition}[Ideal principal]
     Um \em{ideal principal} é um ideal gerado por um único elemento.
 \end{definition}
