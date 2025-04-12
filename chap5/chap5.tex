@@ -161,8 +161,8 @@ Os teoremas do homomorfismo dizem que certos homomorfismos ``fatoram'' para quoc
     Seja $f:A\rightarrow R$ um homomorfismo de anéis e $J$ um ideal tal que $J\subseteq \ker f$. Então, existe um único homomorfismo de anéis $\bar f:A/J\rightarrow R$ tal que $\bar f\circ q=f$, onde $q:A\rightarrow A/J$ é o mapa quociente canônico dado por $q(a)=a+J$.
     \begin{figure}[h]\centering
         \begin{tikzcd}[column sep=1.6cm,row sep=1.2cm]
-            A\arrow[d, "q"']\arrow[rd, "f"]& \\
-            A/J \arrow[r, dashed, "\exists!\bar f"'] & R
+            A\arrow[d, "q"']\arrow[r, "f"]& R \\
+            A/J \arrow[ur, dashed, "\exists!\bar f"']
         \end{tikzcd}
         \caption{Teorema do homomorfismo.}
     \end{figure}
@@ -184,4 +184,33 @@ Os teoremas do homomorfismo dizem que certos homomorfismos ``fatoram'' para quoc
     Fixe $a \in A$ tal que $a'=q(a)$.
     Então $g(a')=g(q(a))=f(a)=\bar \bar f(q(a))=\bar f(a')$.
     Assim, $g=\bar f$.
+\end{proof}
+
+Como consequência, temos o Primeiro Teorema do Isomorfismo:
+
+\begin{theorem}[Primeiro Teorema do Isomorfismo]
+    Seja $f:A\rightarrow R$ um homomorfismo de anéis.
+    Então, $A/I$ é isomorfo a $\ran f$.
+    Mais especificamente, existe um único homomorfismo $\phi:A/\ker f\rightarrow R$ tal que $q\circ \phi=f$, onde $q$ é o mapa quociente, e este homomorfismo é necessariamente um isomorfismo.
+    \begin{figure}[H]\centering
+        \begin{tikzcd}[column sep=1.6cm,row sep=1.2cm]
+            A\arrow[d, "q"']\arrow[r, "f"]& \ran f\\
+            A/\ker f \arrow[ur, dashed, "\exists! \phi"'] & 
+        \end{tikzcd}
+        \caption{Primeiro Teorema do Isomorfismo.}
+    \end{figure}
+\end{theorem}
+
+\begin{proof}
+Pelo Teorema do Homomorfismo, existe um único homomorfismo $\bar \phi:A/\ker f\rightarrow \ran f$ tal que $\phi\circ q=f$, onde $q:A\rightarrow A/\ker f$ é o mapa quociente canônico dado por $q(a)=a+\ker f$.
+
+Temos que $\phi$ é sobrejetor: dado $b \in \ran f$, existe $b \in A$ tal que $f(a)=b$.
+Logo, $b=f(a)=\bar \phi(q(a))$, assim, $b \in \ran \phi$.
+
+Agora vejamos que $\phi$ é injetor.
+Suponha que $y \in A/\ker f$ é tal que $\phi(y)=0$.
+Como $q$ é sobrejetor, tome $a \in A$ tal que $y=q(a)$.
+Assim, $0=\phi(y)=\phi\circ q(a)=f(a)$, logo, $a \in \ker f$.
+Como $q:A\rightarrow A/\ker f$ é o mapa quociente e $a \in \ker f$, segue que $y=q(a)=0_{A/\ker f}$.
+Logo, $\ker\phi=\{0\}$, ou seja, $\phi$ é injetor.
 \end{proof}

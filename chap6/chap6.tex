@@ -16,9 +16,9 @@ Exemplo: Seja $R=\mathbb Z_3$ e $S=\mathbb Z_4$. Então $(2, 2)\in R\times S$ e 
 \[(2, 2)+(1, 2)=(2+ 1, 2+ 2)=(0, 0).\]
 \[(2, 2)\cdot (2, 2)=(2\cdot 2, 2\cdot 2)=(1, 0).\]
 
-\begin{exer}
-    Prove que o produto direto de dois anéis é um anel.
-\end{exer}
+Com as operações explicitadas, o produto de dois anéis é, de fato, um anel.
+
+Deixaremos a prova deste fato como exercício (ver Exercício~\ref{exer:prod_anel}), já que na seção seguinte provaremos um resultado mais geral.
 
 \section{Produtos de uma família de anéis}
 
@@ -161,3 +161,29 @@ Exemplo: Seja $R=\mathbb Z_3$ e $S=\mathbb Z_4$. Então $(2, 2)\in R\times S$ e 
     Assim, $\psi$ e $\phi$ são isomorfismos inversos.
     Em particular, $\phi$ é isomorfismo, o que completa a prova.
 \end{proof}
+
+\section{Exercícios}
+
+\begin{exer}\label{exer:prod_anel}
+    Sejam $A, B$ anéis.
+    Prove diretamente que o produto direto $A\times B$ é um anel.
+    A seguir, prova que as projeções $\pi_1:A\times B\rightarrow A$ e $\pi_2:A\times B\rightarrow B$ dadas por $\pi_1(a, b)=a$ e $\pi_2(a, b)=b$ são homomorfismos de anéis.
+\end{exer}
+
+\begin{exer}
+    Na notação do exercício anterior, prove diretamente que $A\times S$, com as projeções $(\pi_1, \pi_2)$ satisfazem a propriedade universal do produto direto, ou seja, mostre que:
+
+    Para cada anel $S$ e cada par de homomorfismos de anéis $h_1:S\rightarrow A$ e $h_2:S\rightarrow B$, existe um único homomorfismo de anéis $g:S\rightarrow A\times B$ tal que $\pi_1\circ g=f_1$ e $\pi_2\circ g=f_2$.
+\end{exer}
+\begin{exer}
+Decida quais dos seguintes conjuntos sao subaneis do anel produto $\mathbb R^{[0, 1]}$, onde $[0, 1]$ é o intervalo fechado dos números reais entre $0$ e $1$.
+\begin{enumerate}[label=\alph*)]
+    \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ tais que $f(q)=0$ para todo $q\in [0, 1]$.
+    \item O conjunto de todas as funções polinomiais $f:[0, 1]\rightarrow \mathbb R$.
+    \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ que possuem apenas um número finito de zeros, juntamente com a função zero.
+    \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ que possuem um número infinito de zeros.
+    \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ tais que $\lim_{x\rightarrow 1}f(x)=0$.
+    \item O conjunto de todas as combinações lineares racionais das funções $\sin(nx)$ e $\cos(mx)$, onde $m,n$ são inteiros não negativos.
+    \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ tais que $f(q)=0$ para todo $q\in [0, 1]$ e $f(0)=1$.
+\end{enumerate}
+\end{exer}

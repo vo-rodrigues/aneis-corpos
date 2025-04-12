@@ -396,3 +396,39 @@ Porém, nem todo DIP é um corpo, como exemplificado pelo anel dos números inte
     Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
 \end{proof}
 
+\section{Exercícios}
+\begin{exer}
+Lembremos que, da Álgebra Linear, um espaço vetorial $V$ sobre um corpo $K$ é uma quadrupla $(V, +, 0, \cdot)$, onde $(V, +, 0)$ é um grupo Abeliano e $\cdot:K\times V\rightarrow V$ é uma operação que satisfaz:
+
+\begin{itemize}
+    \item Associatividade: para todos $\alpha, \beta \in K$ e para todo $v \in V$, $(\alpha\beta)v=\alpha(\beta v)$.
+    \item Distributividade: para todo $x, y \in K$ e para todo $v \in V$, $(x+y)v=xv+yv$.
+    \item Distributividade II: para todo $x \in K$ e para todo $u, v \in V$, $x(u+v)=xu+xv$.
+    \item Identidade: $1v=v$ para todo $v \in V$.
+\end{itemize}
+
+Uma transformação linear $T:V\rightarrow W$ entre dois espaços vetoriais $V$ e $W$ sobre um mesmo corpo $K$ é uma função que preserva a estrutura de espaço vetorial, ou seja, satisfaz:
+
+\begin{itemize}
+    \item $T(v+u)=T(v)+T(u)$ para todo $v, u \in V$.
+    \item $T(\alpha v)=\alpha T(v)$ para todo $\alpha \in K$ e para todo $v \in V$.
+\end{itemize}
+
+Dado um espaço vetorial $V$, o conjunto de todas as transformações lineares de $V$ em $V$, também chamadas de endomorfismos de $V$, é denotado por $\End(V)$.
+A função identidade $\id_V:V\rightarrow V$ é um endomorfismo, bem como a função nula.
+
+Assumindo todo o exposto acima, mostre que, com a soma usual de transformações lineares (que é efetuada ponto-a-ponto) e com operação de composição como produto, $\End(V)$ é um anel.
+
+Mostre com um exemplo que $\End(V)$ pode não ser comutativo.
+\end{exer}
+
+\begin{exer}
+Seja $V$ um espaco vetorial sobre um corpo $K$.
+Defina $\rho:K\rightarrow V^V$ da seguinte forma: 
+
+Para cada $\alpha \in K$, o mapa $\rho(\alpha):V\rightarrow V$ é dado por $\rho(\alpha)(v)=\alpha v$ para todo $v \in V$.
+
+Mostre que $\rho$ é um homomorfismo de anéis, onde $V^V$ é o anel dos endomorfismos de $V$.
+
+(Dica: não se esqueça de verificar que $\rho$ possui o contradomínio correto.)
+\end{exer}
