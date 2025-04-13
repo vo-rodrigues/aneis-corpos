@@ -65,7 +65,20 @@ A relação de ser associado é uma relação de equivalência:
         Logo, temos que $a=uvc$, e, portanto, $a$ é associado a $c$, já que $uv\in R^*$.
     \end{itemize}
 \end{proof}
+\section{Domínios Euclideanos}
+O anel dos números inteiros possui uma propriedade muito importante:
+dado $n\geq 0$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
 
+A noção de domínio Euclideano generaliza os anéis que possuem essa propriedade.
+
+\begin{definition}
+    Um domínio de integridade $R$ é um domínio Euclideano
+    se existe uma função $\nu:R\setminus \{0\} \to \mathbb N=\{0, 1, \dots\}$ satisfazendo:
+    \begin{itemize}
+        \item Para todos $a, b \in R$ com $b\neq 0$, existem $q, r \in R$ com $a=bq+r$ e ($r=0$ ou $\nu(r)<\nu(b)$).
+        \item Para todos $a, b \in R\setminus \{0\}$, $\nu(ab)\geq \nu(a)$.
+    \end{itemize}
+\end{definition}
 \section{Exercícios}
 
 \begin{exer}
