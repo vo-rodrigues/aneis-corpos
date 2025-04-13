@@ -215,6 +215,34 @@ Como $q:A\rightarrow A/\ker f$ é o mapa quociente e $a \in \ker f$, segue que $
 Logo, $\ker\phi=\{0\}$, ou seja, $\phi$ é injetor.
 \end{proof}
 
+Como aplicação, temos:
+
+\begin{prop}
+Seja $R$ um anel e $n>0$. Então $R$ possui um subanel isomorfo à $\mathbb Z_n$ se, e somente se a característica de $R$ é $n$.
+\end{prop}
+
+\begin{proof}
+Seja $\phi$ o único homomorfismo de $\mathbb Z$ em $\mathbb R$.
+
+Vimos que, em $\mathbb Z$, para todo ideal não nulo $I$, temos que $I=\langle n\rangle$, onde $m$ é o menor elemento positivo de $m$.
+
+Suponha que a característica de $R$ é $n>0$.
+Nesse caso, por definição, a característica de $R$ é o menor inteiro positivo do ideal $I=\ker \phi$.
+Pelo Primeiro Teorema do Isomorfismo, temos que $\mathbb Z_n=\mathbb Z/\langle n\rangle$ é isomorfo a $\ran \phi$, que é um subanel de $R$.
+
+Reciprocamente, suponha que $R$ possui um subanel $S$ isomorfo a $\mathbb Z_n$.
+Seja $\psi:S\rightarrow \mathbb Z_n$ isomorfismo.
+
+Seja $\phi$ o único homomorfismo de $\mathbb Z$ em $S$.
+Este necessariamente é, também, o único homomorfismo de $\mathbb Z$ em $R$.
+
+$\psi\circ \phi$ é o único homomorfismo de $\mathbb Z$ em $\mathbb Z_n$, logo, o seu primeiro zero positivo é a característica de $\mathbb Z_n$, que é $n$.
+Assim, $\psi\circ\phi(n)=\psi(\phi(n))=0$.
+Como $\psi$ é isomorfismo, segue que $\phi(n)=0$.
+Além disso, se $0<m<n$ e $\phi(m)=0$, teremos $\psi(\phi(m))=0$, o que é absurdo, já que $n$ é o primeiro zero de $\psi\circ \phi$.
+Portanto, a característica de $R$ é a característica de $S$, que é $n$.
+\end{proof}
+
 Do primeiro Teorema do Isomorfismo, decorre o segundo Teorema do Isomorfismo.
 Para enuncia-lo, lembremos que se $B, C$ são subconjuntos de um grupo abeliano $A$, então $B+C=\{b+c: b \in B, c \in C\}$.
 

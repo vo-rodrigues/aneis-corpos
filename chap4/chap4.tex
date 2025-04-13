@@ -484,6 +484,124 @@ Então $I$ é primo.
 
 Porém, nem todo ideal primo é maximal. Por exemplo, $\{0\}$ é um ideal primo de $\mathbb Z$ que não é maximal, já que $2\mathbb Z$ é um ideal próprio de $\mathbb Z$ que o contém propriamente.
 
+\section{Característica de um anel}
+Todo anel possui o elemento $0$ e o elemento $1$.
+Então, intuitivamente, também deve possuir os elementos $2=1+1$, $3=2+1$, $4=3+1$, e assim por diante, bem como seus opostos.
+Também esperamos que tais elementos operem de forma análoga aos inteiros, de modo que sejam verdadeiras expressões como $7=3+4$ ou $22=25-3$.
+Porém, como temos anéis finitos, como $\mathbb Z_2$, é impossível que qualquer anel contenha cópias de $\mathbb Z$.
+Expressões como $2=0$ intuitivamente devem ser verdade em $\mathbb Z_2$.
+
+Utilizando a noção de homomorfismo, tal intuição pode ser formalizada pela seguinte proposição:
+
+\begin{prop}
+Seja $R$ um anel.
+Então existe um único homomorfismo $f:\mathbb Z\rightarrow R$.
+\end{prop}
+
+\begin{proof}
+Começaremos provando a unicidade.
+Caso $f, g$ sejam dois homomorfismos de $\mathbb Z$ em $R$, temos que $g(0)=0=f(0)$ e $g(1)=1=f(1)$.
+
+Por indução, vemos que para todo $n\geq 1$, temos que $g(n)=n=g(n)$: a base $n=1$ foi afirmada acima.
+Para o passo indutivo, note que se tal hipótese vale para $n\geq 1$, então também vale para $n+1$: $g(n+1)=g(n)+g(1)=f(n)+f(1)=f(n+1)$.
+
+Finalmente, se $n<0$, temos que $-n>0$, logo $f(n)=f(-(-n))=-f(-n)=-g(-n)=g(n)$.
+
+Isso completa a prova da unicidade.
+Assim, resta apenas provar a existência.
+
+Primeiro, definiremos $f(n)$ recursivamente para $n\geq 0$ como se segue:
+
+\begin{itemize}
+    \item $f(0)=0$.
+    \item Definido $f(n)$ para $n\geq 0$, define-se $f(n+1)=f(n)+1$.
+\end{itemize}
+Assim, $f$ está definido para todo inteiro não negativo. Se $n<0$, define-se $f(-n)=-f(n)$.
+
+Note que, qualquer que seja $n \in \mathbb Z$, $f(-n)=f(n)$.
+
+Verificaremos que $f$ é homomorfismo de anéis.
+
+\paragraph{Preservação de 1:} Note que $f(1)=f(0)+1=0+1=1$.
+
+\paragraph{Preservação da soma:}
+Mostraremos que se $m, n \in \mathbb Z$, $f(m+n)=f(m)+f(n)$.
+
+\textbf{Caso 1:} $m, n\geq 0$.
+
+Fixe $n\geq 0$.
+Verificaremos, indutivamente, que $f(n+m)=f(n)+f(m)$ para todo $m\geq 0$.
+Para $m=0$, temos que $f(n+m)=f(n)=f(n)+0=f(n)+f(0)$.
+
+Supondo que a afirmação vale para $m$, temos que vale para $m+1$:
+$f(n+(m+1))=f((n+m)+1)=f(n+m)+1=(f(n)+f(m))+1=f(n)+(f(m)+1)=f(n)+f(m+1)$.
+
+\textbf{Caso 2:} $m, n<0$.
+
+Temos que $-n, -m>0$ e $-(n+m)<0$. Assim, $f(n+m)=f(-(-n-m))=-f((-n)+(-m))=-f(-n)-f(-m)=f(n)+f(m)$.
+
+\textbf{Caso 3:} $n\geq 0$, $m<0$.
+
+Teremos dois subcasos: $n+m\geq 0$ e $n+m<0$.
+
+Caso $n+m\geq 0$, temos que $f(n+m)+f(-m)=f((n+m)+(-m))=f(n)$ pelo primeiro caso, portanto, $f(n+m)=f(n)+(-f(-m))=f(n)+f(m)$.
+
+Caso $n+m<0$, temos pelo primeiro caso que $f(n)+f(-n-m)=f(-m)$. Logo, $f(n)+f(m)=f(n+m)$.
+
+\textbf{Caso 4:} $n< 0$, $m\geq0$.
+Temos, pelo caso anterior, que $f(m+n)=f(n+m)=f(n)+f(m)=f(m)+f(n)$.
+
+\paragraph{Preservação do produto:}
+Mostraremos que se $m, n \in \mathbb Z$, $f(mn)=f(m)f(n)$.
+
+\textbf{Caso 1:} $m, n\geq 0$.
+
+Fixe $n\geq 0$.
+Verificaremos, indutivamente, que $f(nm)=f(n)f(m)$ para todo $m\geq 0$.
+Para $m=0$, temos que $f(nm)=f(0)=0=f(n)f(0)$.
+
+Supondo que a afirmação vale para $m$, temos que vale para $m+1$:
+$f(n(m+1))=f(nm+n)=f(mn)+f(n)=f(n)f(m)+f(n)=f(n)(f(m)+1)=f(n)f(m+1)$.
+
+\textbf{Caso 2:} $m, n<0$.
+
+Temos que $-n, -m>0$. Assim, $f(nm)=f((-n)(-m)))=-f(-n)f(-m)=-(-(f(n)f(m)))=f(n)f(m)$.
+
+\textbf{Caso 3:} $n\geq 0$, $m<0$.
+Temos que $-m>0$. Assim, $f(nm)=f(-n(-m)))=-f(n)f(-m)=f(n)f(m)$.
+
+\textbf{Caso 4:} $n< 0$, $m\geq0$.
+Temos que $-m>0$. Assim, $f(nm)=f(-(-n)m))=-f(-n)f(-m)=f(n)f(m)$.
+\end{proof}
+
+Assim, podemos formalizar a notação $n \in \mathbb R$, e definir a característica de um anel como a seguir:
+
+\begin{definition}
+    Seja $R$ um anel e $n \in \mathbb Z$.
+
+    Em $R$, definimos o elemento $n$ como sendo $\phi(n)$, onde $\phi:\mathbb Z\rightarrow R$ é o único homomorfismo de anéis dado na proposição acima.
+
+    Caso exista, definimos a \emph{característica} de $R$ como o menor inteiro positivo $n$ tal que $n=0_R$. Caso não exista, dizemos que a característica de $R$ é zero.
+\end{definition}
+
+A característica $0$ é
+
+\begin{prop}
+    Seja $R$ um anel. Então a característica de $R$ é zero se, e somente se, $R$ contém um subanel isomorfo à $\mathbb Z$.
+\end{prop}
+
+\begin{proof}
+    Seja $\phi:\mathbb Z\rightarrow R$ o único homomorfismo de anéis entre $\mathbb Z$ e $R$.
+
+    Se a característica de $\mathbb Z$ é $0$, então para todo $n>0$, $\phi(n)\neq 0$ e $\phi(-n)=-\phi(n)\neq 0$. Assim, $\phi$ é um monomorfismo, e sua imagem é isomorfa à $\mathbb Z$.
+
+    Reciprocamente, se $R$ contém uma cópia isomorfa de $\mathbb Z$, seja $\psi:\mathbb Z\rightarrow R$ um monomorfismo.
+
+    Como o único homomorfismo de $\mathbb Z$ em $R$ é $\phi$, segue que $\phi=\psi$ é injetora, e, portanto, $\ker \phi=\{0\}$. Assim, não existe $n>0$ tal que $\phi(n)=0$.
+\end{proof}
+
+
+
 \section{Exercícios}
 \begin{exer}
 Lembremos que, da Álgebra Linear, um espaço vetorial $V$ sobre um corpo $K$ é uma quadrupla $(V, +, 0, \cdot)$, onde $(V, +, 0)$ é um grupo Abeliano e $\cdot:K\times V\rightarrow V$ é uma operação que satisfaz:
@@ -520,3 +638,4 @@ Mostre que $\rho$ é um homomorfismo de anéis, onde $V^V$ é o anel dos endomor
 
 (Dica: não se esqueça de verificar que $\rho$ possui o contradomínio correto.)
 \end{exer}
+
