@@ -423,6 +423,93 @@ O estudo das propriedades dos números reais é um assunto central de um curso b
 
 Nesse texto, detalharemos tais propriedades somente de acordo com nossa necessidade.
 
+\section{O corpo dos números complexos}
+A história dos números complexos remete à representar uma solução para a equação $x^2+1=0$, que não possui solução real.
+
+A ideia é que adiciona-se em $\mathbb R$ um novo elemento, $i$, para o qual vale $i^2=-1$ e para o qual as demais propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi$, onde $a,bin \mathbb R$.
+
+Apresentaremos uma construção a seguir.
+
+\begin{definition}[Quaternions]
+    Definimos $\mathbb C=\mathbb R^2$.
+    
+    Se $a \in \mathbb R$, identifique $a=(a, 0)$ e $i=(0, 1)$.
+
+    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, exisem únicos $a, b\in \mathbb R$ tais que $x=a+bi$.
+
+    Em $\mathbb c$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo Abeliano.
+
+    Define-se também a multiplicação, inspirada pela discussão acima, como se segue: para $a, b, c, d \in \mathbb R$:
+
+    \begin{equation*}
+        (a, b)(u, v)=(au-bv, bu+av).
+    \end{equation*}
+
+    Ou, em outra notação:
+
+    \begin{align*}
+    (a+bi)(c+di)& \\
+    &=(ac-bd)+(ad+bc)i
+    \end{align*}
+\end{definition}
+
+\begin{prop}
+    $\mathbb C$ é um corpo.
+\end{prop}
+\begin{proof}
+    \begin{prop}
+        $\mathbb H$ é um domínio de integridade.
+    \end{prop}
+    \begin{proof}
+        $1$ é neutro multiplicativo: dado $a+bi=(a, b)\in \mathbb C$, pela definição, temos que $(1, 0)(a, b)=(a, b)$, pois as demais parcelas zeram. Analogamente, $(a, b)(1, 0)=(a, b)$.
+        
+        A multiplicação é associativa:
+        Para $x, y, z \in \mathbb H$, tome $a, b, u, v, p, q \in \mathbb R$ com e $x=(a, b)$, $y=(u, v)$ e $z=(p, q)$.
+        Temos que:
+        \begin{align*}
+            (xy)z &=(au-bv, bu+av)(p, q)\\
+            &=((au-bv)p-(bu+av)q, (bu+av)p+(au-bv)q)\\
+            &=(aup-bvp-buq+avq, bup+avp+auq-bvq)
+        \end{align*}
+        e $x(yz)$ é dado por:
+        \begin{align*}
+        x(yz) &=(a, b)(up-pv,uq+vp)\\
+        &=(a(up-bv)-b(uq+vp), b(up-bv)+a(uq+vp))\\
+        &=(aup-bvq-bup+avq, bup+avp+auq-bvq)
+        \end{align*}
+        Comparando, segue.
+
+        A multiplicação é comutativa: Para $x, y \in \mathbb H$, temos que $x=(a, b)$ e $y=(u, v)$. Temos que:
+        \begin{align*}
+            xy &=(a, b)(u, v)
+            =(au-bv, bu+av)\\
+            &= (ua-vb, va+ub)\\
+            &= (u, v)(a, b)\\
+            &=yx.
+        \end{align*}    
+        A propriedade distributiva também é válida:
+
+        Para $x, y, z \in \mathbb H$, temos que $x=(a, b)$, $y=(u, v)$ e $z=(p, q)$. Temos que:
+        \begin{align*}
+            x(y+z) &=(a, b)((u, v)+(p, q))\\
+            &=(a, b)(u+p, v+q)\\
+            &=(a(u+p)-b(v+q), b(u+p)+a(v+q))\\
+            &=(au-bv, bu+av)+(ap-bq, bp+aq)\\
+            &=xy+xz
+        \end{align*}
+
+        Finalmente, todo elemento distindo de $(0, 0)$ é invertível: seja $x=(a, b)\in \mathbb C$ tal que $x\neq 0$.
+        Então, $a^2+b^2\neq 0$.
+        Considere $y=(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2})$.
+        Calculemos $xy$:
+        \begin{align*}
+            xy &=(a, b)(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2})\\
+            &=(\frac{a^2}{a^2+b^2}+\frac{b^2}{a^2+b^2}, \frac{-ab}{a^2+b^2}+\frac{ab}{a^2+b^2})\\
+            &=\left(\frac{a^2+b^2}{a^2+b^2}, 0\right)\\
+            &=1.
+        \end{align*}
+    \end{proof}
+\end{proof}
 \section{O Anel dos Quaternions}
 Discutimos as noções de corpo e de anel de divisão.
 Por definição, todo corpo é um anel de divisão.
@@ -445,7 +532,7 @@ Assumindo que $-i\neq i$, $-j\neq j$ e $-k\neq k$, temos que $i,j,k$ vêmos que 
 
     Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, exisem únicos $a, b, c, d \in \mathbb R$ tais que $x=a+bi+cj+dk$.
 
-    Em $\mathbb H$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo abeliano.
+    Em $\mathbb H$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo Abeliano.
 
     Define-se também a multiplicação, inspirada pela discussão acima, como se segue: para $a, b, c, d, u, v, z, w \in \mathbb R$:
 
@@ -611,4 +698,9 @@ Apresente um exemplo que demonstre que a recíproca é falsa.
 \begin{exer}
     Seja $A$ um anel. Prove que se $q \in Z(A)$ e $q$ é uma unidade, então $q^{-1} \in Z(A)$.
     Utilize esse fato para provar que o centro de qualquer anel de divisão é um corpo.
+\end{exer}
+
+\begin{exer}
+    Seja $\mathbb Z[i] = \{m+in: m, n \in \mathbb Z\}\subseteq \mathbb C$ (o conjunto dos inteiros de Gauss).
+    Mostre que $\mathbb Z[i]$ é um subanel de $\mathbb C$, e que é um domínio de integridade.
 \end{exer}
