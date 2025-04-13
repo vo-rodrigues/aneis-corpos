@@ -113,6 +113,47 @@ Como consequência, temos:
     \[I \text{ é primo} \Leftrightarrow R/I \text{ é um domínio de integridade} \Leftrightarrow R/I \text{ é um corpo} \Leftrightarrow I \text{ é maximal}\]
 \end{proof}
 
+\section{O corpo de frações de um domínio de integridade}
+
+Conforme vimos, nem todo domínio de integridade é um corpo, sendo $\mathbb Z$ é o contra-exemplo mais usual.
+Apesar disso, parece que, em algum sentido, $\mathbb Q$ é o ``menor'' corpo que contém $\mathbb Z$.
+
+Uma das construções mais usuals do corpo $\mathbb Q$ utiliza classes de equivalências de pares de elementos de $\mathbb Z$.
+Nesta seção, estudaremos esta construção de modo generalizado.
+
+Iniciaremos apresentando uma construção do corpo de frações.
+
+\begin{definition}
+    Seja $R$ um domínio de integridade.
+
+    Definamos, em $R\times \{0\}$, a relação de equivalência $\sim$ a seguir:
+
+    \[(a, b) \sim (c, d) \Leftrightarrow ad=bc.\]
+
+    O conjunto das classes de equivalência $R/\sim$ será denotado por $\Frac(R)$.
+\end{definition}
+
+Ao longo desta seção, a notação $\sim$ será fixada e utilizada exclusivamente para esse fim.
+A ideia é pensar em cada par $(a, b)$ como uma fração $\frac{a}{b}$.
+A relação $\sim$ captura a ideia que duas frações $\frac{a}{b}$ e $\frac{c}{d}$ são equivalentes se, e somente se, $ad=bc$.
+
+\begin{lemma}
+    Na notação acima, a relação $\sim$ é uma relação de equivalência em $R\times \{0\}$.
+\end{lemma}
+
+\begin{proof}
+    Seja $(a, b), (c, d), (e, f) \in R\times \{0\}$.
+    \begin{itemize}
+        \item Temos que $(a, b)\sim (a, b)$ pois $ab=ba$.
+        \item Simetria: se $(a, b)\sim (c, d)$, temos que $ad=bc$.
+        Logo, $cb=da$, o que nos dá $(c, d)\sim (a, b)$.
+        \item Transitividade: suponha que $(a, b)\sim (c, d)$ e $(c, d)\sim (e, f)$.
+        Temos que $ad=bc$ e $cf=de$.
+        Multiplicando a primeira equação por $f$ e a segunda por $b$, temos que $adf=bcf$ e $bcf=deb$.
+        Logo, $adf=deb$.
+        Como $d\neq 0$, cancelando, temos que $af=eb$, ou seja, que $(a, b)\sim (e, f)$.
+    \end{itemize}
+\end{proof}
 \section{Exercícios}
 \begin{exer}
     Demonstre, com suas próprias palavras, de modo que considere satisfatório, a seguinte afirmação demonstrada no texto: Todo domínio de integridade finito é um corpo.
