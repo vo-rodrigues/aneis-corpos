@@ -65,6 +65,37 @@ A relação de ser associado é uma relação de equivalência:
         Logo, temos que $a=uvc$, e, portanto, $a$ é associado a $c$, já que $uv\in R^*$.
     \end{itemize}
 \end{proof}
+
+Os números inteiros possuem uma classe muito importante de números: a dos primos.
+As definições abaixo generalizam a noção de primo.
+
+\begin{prop}[Elementos primos]
+    Seja $R$ um anel comutativo com unidade.
+    Dizemos que $p \in R$ é um elemento primo se $p\notin R^*$, $P\neq 0$, e, para todos $a, b \in R$, se $p|ab$, então $p|a$ ou $p|b$.
+\end{prop}
+
+\begin{prop}[Elementos irredutíveis]
+    Seja $R$ um anel comutativo com unidade.
+    Dizemos que $p \in R$ é um elemento irredutível se $p\notin R^*$, $p\neq 0$, e, para todos $a, b \in R$, se $p=ab$, então $a\in R^*$ ou $b\in R^*$.
+\end{prop}
+
+A seguinte proposição os relaciona:
+
+\begin{prop}
+    Seja $R$ um anel comutativo com unidade.
+    Então, se $p \in R$ é primo, então $p$ é irredutível.
+\end{prop}
+\begin{proof}
+    Seja $p \in R$ primo
+    Para ver que $p$ é irredutível, fixe $a, b \in R$ e suponha que $p=ab$.
+    
+    Como $ab=p$, temos que $p|ab$.
+    Logo, $p|a$ ou $p|b$.
+    Supondo $p|a$, temos que $a=pc$ para algum $c \in R$.
+    Logo, $p=pcb$, e, portanto, $1=cb$, o que mostra que $b \in R^*$.
+
+    O caso em que $p|b$ é análogo.
+\end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
 dado $n\in \mathbb Z$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
@@ -142,8 +173,29 @@ Mais adiante, veremos que esse será o caso para anéis de polinômios sobre cor
 Seja $K$ um corpo e considere $\nu:K\setminus \{0\}\to N$ dada por $\nu(x)=1$ para todo $x\in K\setminus \{0\}$.
 
     Então, para $a, b \in K\setminus \{0\}$, temos que $\nu(ab)=1=\nu(a)$,
-    e, dados $a, b\in K$ com $b\neq 0$, temos que $a=b^{-1}b+0$.
+    e, dados $a, b\in K$ com $b\neq 0$, temos que $a=(ab^{-1})b+0$.
 \end{proof}
+
+O resultado abaixo generaliza o que também já sabemos sobre $\mathbb Z$.
+\begin{prop}
+Todo domínio Euclideano é um domínio de ideais principais.
+\end{prop}
+\begin{proof}
+    Seja $R$ um domínio Euclideano com valoração $\nu$ e $I$ um ideal em $R$.
+
+    Se $I=\{0\}$, então $I$ é gerado por $0$.
+
+    Se $I\neq \{0\}$, então existe $b\in I$ tal que $\nu(b)$ é mínimo.
+    Afirmamos que $I=\langle b\rangle$.
+    É claro que $\langle b\rangle\subseteq I$, restando verificar que $I\subseteq \langle b\rangle$.
+    De fato, tome $a \in I$.
+    Existem $q, r \in R$ tais que $a=bq+r$ e $r=0$ ou $\nu(r)<\nu(b)$.
+    Se $r\neq 0$, temos que $\nu(r)<\nu(b)$, o que nos dá um absurdo, uma vez que $r=a-bq\in I$ e $b$ é o elemento de menor valoração em $I$.
+    Assim, $r=0$, e, portanto, $a=bq\in \langle b\rangle$.
+\end{proof}
+\section{Domínios de Fatoração Única}
+Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou Anéis Fatoriais, são domínios de integridade que capturam outra propriedade dos números inteiros:
+a do Teorema Fundamental da Aritmética.
 \section{Exercícios}
 
 \begin{exer}
