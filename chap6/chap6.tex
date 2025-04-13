@@ -129,8 +129,6 @@ Iniciaremos apresentando uma construção do corpo de frações.
     Definamos, em $R\times \{0\}$, a relação de equivalência $\sim$ a seguir:
 
     \[(a, b) \sim (c, d) \Leftrightarrow ad=bc.\]
-
-    O conjunto das classes de equivalência $R/\sim$ será denotado por $\Frac(R)$.
 \end{definition}
 
 Ao longo desta seção, a notação $\sim$ será fixada e utilizada exclusivamente para esse fim.
@@ -153,6 +151,49 @@ A relação $\sim$ captura a ideia que duas frações $\frac{a}{b}$ e $\frac{c}{
         Logo, $adf=deb$.
         Como $d\neq 0$, cancelando, temos que $af=eb$, ou seja, que $(a, b)\sim (e, f)$.
     \end{itemize}
+\end{proof}
+Assim, podemos definir:
+
+\begin{definition}
+    O conjunto das classes de equivalência $(R\times R\setminus\{0\})/\sim$ será denotado por $\Frac(R)$.
+    
+    A classe de equivalência de um par $(a, b)$ será denotada por $\frac{a}{b}$
+\end{definition}
+
+Observe que agora, formalmente, $\frac{a}{b}=\frac{c}{d}$ se, e somente se, $ad=bc$.
+
+Porém, a igualdade $a=\frac{a}{1}$ não faz sentido e será discutida mais adiante.
+
+Agora, definiremos as operações em $\Frac(R)$.
+
+\begin{definition}
+    Seja $R$ um domínio de integridade. Define-se, em $\Frac(R)$, as operações a seguir:
+    \begin{itemize}
+        \item Soma: $\displaystyle\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$.
+        \item Produto: $\displaystyle\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
+    \end{itemize}
+\end{definition}
+
+O próximo passo é mostrar que tais operações estão bem definidas.
+
+\begin{lemma}
+    Na notação anterior, a soma e o produto de frações estão bem definidas.
+\end{lemma}
+\begin{proof}
+    Consideremos $a, b, a', b', c, d, c', d'\in R$ tais que $b, b', d, d'\neq 0$ e tais que $\frac{a}{b}=\frac{a'}{b'}$ e $\frac{c}{d}=\frac{c'}{d'}$.
+    Assim, sabemos que $ab'=a'b$ e $cd'=c'd$.
+
+    Devemos ver que $\frac{ad+bc}{bd}=\frac{a'd'+b'c'}{b'd'}$ e $\frac{ac}{bd}=\frac{a'c'}{b'd'}$.
+
+    Começaremos pela segunda afirmação.
+    
+    Queremos provar que $acb'd'=a'c'bd$.
+    Temos:
+
+    \[acb'd'=(ab')(cd')=(a'b)(c'd)=a'c'bd.\]
+
+    Agora, para a soma, temos que provar que $adb'd'+bcb'd'=a'd'bd+b'c'bd$.
+    Multiplicando a equação $ab'=a'b$ por $d'd$, a equação $cd'=c'd$ por $b'b$, e somando, segue a tese.
 \end{proof}
 \section{Exercícios}
 \begin{exer}
