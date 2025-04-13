@@ -43,3 +43,25 @@ Assim, nos restringiremos aos anéis comutativos que não possuem divisores de z
         Reciprocamente, como $u$ é invertível, $a=ub$ e $u^{-1}a=b$, logo, $a|b$ e $b|a$.
     \end{proof}
 \end{prop}
+
+Com isso, definimos:
+
+\begin{definition}
+Seja $R$ um anel comutativo.
+Dizemos que elementos $a, b \in R$ são associados se existe $u \in R$ invertível tal que $a=ub$.
+\end{definition}
+
+A relação de ser associado é uma relação de equivalência:
+
+\begin{lemma}
+    Seja $R$ um anel comutativo. A relação de ser associado é uma relação de equivalência em $R$.
+\end{lemma}
+\begin{proof}
+    Seja $a, b, c \in R$.
+    \begin{itemize}
+        \item Reflexividade: $a$ é associado a si mesmo, pois $a=1\cdot a$ e $1 \in R^*$.
+        \item Simetria: Se $a$ é associado a $b$, então existe $u$ invertível tal que $a=ub$. Logo, $b=u^{-1}a$, e, portanto, $b$ é associado a $a$.
+        \item Transitividade: Se $a$ é associado a $b$ e $b$ é associado a $c$, então existem $u, v$ invertíveis tais que $a=ub$ e $b=vc$.
+        Logo, temos que $a=uvc$, e, portanto, $a$ é associado a $c$, já que $uv\in R^*$.
+    \end{itemize}
+\end{proof}
