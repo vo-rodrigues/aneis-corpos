@@ -333,6 +333,17 @@ Além disso, $A^*$ é, com a restrição da operação de multiplicação do ane
 
     Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
+
+\section{Divisores de zero}
+Divisores de zero são elementos não nulos que, multiplicados entre si, resultam em zero.
+
+\begin{definition}
+Sejam $A$ um anel. Um divisor de zero de $A$ é um elemento $a \in A$ não nulo para o qual exista $b \in A$ não nulo tal que $ab=0$ ou $ba=0$.
+\end{definition}
+
+Divisores de zero são patológicos ao estudar a teoria de divisibilidade em anéis, assim, muitas vezes, eles são excluídos de tal estudo.
+
+Note que um domínio de integridade é um anel comutativo sem divisores de zero.
 \section{O anel dos números inteiros}
 Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
 
@@ -394,7 +405,7 @@ Caso contrário, como $K$ é um corpo, $a^{-1}$ existe.
 Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 \end{proof}
 
-Porém, nem todo domínio de integridade é um corpo: por exemplo, $\mathbb Z$ é um domínio que não é um corpo, pois $2$ não possui inverso multiplicativo em $\mathbb Z$.
+Porém, nem todo domínio de integridade é um corpo: por exemplo, $\mathbb Z$ é um domínio de integridade que não é um corpo, pois $2$ não possui inverso multiplicativo em $\mathbb Z$.
 
 \section{O corpo dos números reais}
 Assim como fizemos com $\mathbb Z$, assumiremos a existência do corpo dos números reais.
@@ -495,7 +506,7 @@ Veremos que, quando tratamos de anéis, nem todo subconjunto pode ser visto como
 
 Na definição acima, estamos pedindo que $B$ seja um subconjunto de $A$ que possua as mesmas operações que $A$, e que essas operações sejam restritas a $B$ e satisfaçam todas as cláusulas da definição de anel. Aparentemente, na prática, provar que um dado subconjunto de $A$ é um subanel pode parecer uma tarefa longa. Porém, a seguinte proposição encurta esta tarefa significativamente: 
 
-\begin{definition}[Subanel]
+\begin{prop}[Subanel]
     Seja $A$ um anel e $B\subseteq A$. Então $B$ é um subanel de $A$ se, e somente se:
     \begin{itemize}
         \item $1_A \in B$
@@ -504,7 +515,7 @@ Na definição acima, estamos pedindo que $B$ seja um subconjunto de $A$ que pos
     \end{itemize}
 
     Além disso, caso $B$ seja um subanel de $A$, os opostos aditivos de $B$ são os mesmos que os de $A$, ou seja, que $-b \in B$ para todo $B \in B$.
-\end{definition}
+\end{prop}
 
 \begin{proof}
     Primeiro, notemos suponhamos que $B$ seja um subanel de $A$. Então $B$ é fechado por $+, \cdot$ e $1_A\in B$. Resta apenas ver que para todos $a, b \in B$, $a-b \in B$.
@@ -567,6 +578,8 @@ O centro de um anel sempre é um subanel.
 
     Finalmente, se $a, a' \in A$, temos que $a-a' \in Z(A)$, pois para todo $b \in A$, $(a-a')b=ab-a'b=ba-ba'=b(a-a')$.
 \end{proof}
+
+
 
 \section{Exercícios}
 

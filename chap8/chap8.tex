@@ -1,0 +1,45 @@
+\chapter{Divisibilidade em anéis}
+Neste capítulo, estudaremos a noção de divisibilidade em anéis.
+Tal noção é uma generalização da noção de divisibilidade em $\mathbb Z$.
+
+Trataremos de divisibilidade apenas em anéis comutativos.
+
+\section{Definição de divisibilidade}
+
+
+\begin{definition}
+Seja $R$ um anel comutativo. Definimos a relação de divisibilidade, $|$, em $R$, como se segue:
+
+Para $a, b \in R$, dizemos que $a|b$ ($a$ divide $b$) se existe $c \in R$ tal que $b=ac$.
+\end{definition}
+Algumas propriedades básicas:
+\begin{prop}
+    Seja $R$ um anel comutativo.
+    Então a relação de divisibilidade $|$ em $R$ é uma pré-ordem, ou seja, é reflexiva e transitiva.
+\end{prop}
+
+\begin{proof}Sejam $a, b, c \in R$.
+    Temos que $a|a$, pois $a=1\cdot a$.
+
+    Se $a|b$ e $b|c$, existem $e, f \in R$ tais que $b=ae$ e $c=bf$.
+    Logo, $c=bf=aef=a(ef)$, o que implica em que $a|c$.
+\end{proof}
+
+Divisores de zero geram diversas patologias na teoria da divisibilidade, e estas não serão objeto primário de nosso estudo.
+Assim, nos restringiremos aos anéis comutativos que não possuem divisores de zero, ou seja, aos domínios de integridade.
+\begin{prop}
+    Seja $R$ um anel domínio de integridade. Se $a, b\in R$, são equivalentes:
+
+    \begin{enumerate}
+        \item $a|b$ e $b|a$.
+        \item Existe $u \in R$ invertível tal que $a=ub$.
+    \end{enumerate}
+
+    \begin{proof}
+        Primeiro, suponha que $a|b$ e $b|a$.
+        Temos que existem $c, d$ com $a=cb$ e $b=da$.
+        Substituindo, temos que $b=dcb$. Cancelando, $1=dc$. Assim, $c$ é invertível.
+
+        Reciprocamente, como $u$ é invertível, $a=ub$ e $u^{-1}a=b$, logo, $a|b$ e $b|a$.
+    \end{proof}
+\end{prop}

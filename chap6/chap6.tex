@@ -1,10 +1,10 @@
 \chapter{Domínios de Integridade}
 Neste capítulo, exploraremos com mais detalhes os domínios de integridade e a teoria que nasce deles.
 
-\section{Relações entre corpos e domínios}
+\section{Relações entre corpos e domínios de integridade}
 Conforme visto, todo corpo é um domínio de integridade, e a recíproca não é verdadeira (sendo $\mathbb Z$ um contra-exemplo).
 
-A seguir, apresentaremos algumas relações entre corpos e domínios.
+A seguir, apresentaremos algumas relações entre corpos e domínios de integridade.
 
 \begin{prop}
 Todo domínio de integridade finito é um corpo.
@@ -16,18 +16,18 @@ Todo domínio de integridade finito é um corpo.
 
     Considere $\phi:R\setminus\{0\}\rightarrow R\setminus \{0\}$ dado por $\phi(x)=ax$.
 
-    Como $R$ é um domínio, para todo $x \in R\setminus \{0\}$, temos $ax \neq 0$, logo, $\phi$ está bem definida.
+    Como $R$ é um domínio de integridade, para todo $x \in R\setminus \{0\}$, temos $ax \neq 0$, logo, $\phi$ está bem definida.
 
     $\phi$ é uma função injetora: se $\phi(x)=\phi(y)$, então $ax=ay$.
     Logo, $a(x-y)=0$.
-    Como $a\neq 0$ e $R$ é um domínio, segue que $x-y=0$, ou seja, $x=y$.
+    Como $a\neq 0$ e $R$ é um domínio de integridade, segue que $x-y=0$, ou seja, $x=y$.
 
     Como $R\setminus\{0\}$ é finito e $\phi:R\setminus\{0\}\rightarrow R\setminus \{0\}$ é injetora, segue que $\phi$ é sobrejetora.
     Em particular, existe $x \in X$ tal que $ax=\phi(x)=1$.
     Logo, $a$ é invertível.
 \end{proof}
 
-Portanto, restrito aos anéis finitos, o estudo dos corpos e domínios colapsa em um único estudo.
+Portanto, restrito aos anéis finitos, o estudo dos corpos e domínios de integridade colapsa em um único estudo.
 
 Outra relação importante é a que segue:
 
@@ -67,13 +67,13 @@ Seja $R$ um anel comutativo e $I$ um ideal próprio de $R$. São equivalentes:
     Portanto, $x$ é invertível.
 \end{proof}
 
-Será que podemos caracterizar, de forma análoga, ser um domínio? A resposta é positiva.
+Será que podemos caracterizar, de forma análoga, ser um domínio de integridade? A resposta é positiva.
 
 \begin{prop}
     Seja $R$ um anel comutativo e $I$ um ideal próprio de $R$. São equivalentes:
     
     \begin{enumerate}[label=(\roman*)]
-        \item $R/I$ é um domínio.
+        \item $R/I$ é um domínio de integridade.
         \item $I$ é primo.
     \end{enumerate}
 \end{prop}
@@ -81,19 +81,19 @@ Será que podemos caracterizar, de forma análoga, ser um domínio? A resposta �
 \begin{proof}
     Seja $q:R\rightarrow I$ o mapa quociente.
 
-    (i) $\Rightarrow$ (ii): Suponha que $R/I$ é um domínio.
+    (i) $\Rightarrow$ (ii): Suponha que $R/I$ é um domínio de integridade.
     
 
-    $I$ é um ideal próprio, caso contrário, teríamos que $R/I$ é o anel trivial, que não é um domínio.
+    $I$ é um ideal próprio, caso contrário, teríamos que $R/I$ é o anel trivial, que não é um domínio de integridade.
 
     Suponha que $a,b \in R$ tais que $ab \in I$.
     Temos que $q(a)q(b)=q(ab)=0$.
-    Como $R/I$ é um domínio, temos que $q(a)=0$ ou $q(b)=0$, ou seja, que $a \in I$ ou $B \in I$.
+    Como $R/I$ é um domínio de integridade, temos que $q(a)=0$ ou $q(b)=0$, ou seja, que $a \in I$ ou $B \in I$.
 
     Logo, $I$ é primo.
 
     (ii) $\Rightarrow$ (i): Suponha que $I$ é primo.
-    Vejamos que $R/I$ é um domínio.
+    Vejamos que $R/I$ é um domínio de integridade.
 
     Sejam $x, y \in R$ tais que $q(x)q(y)=0$.
     Devemos ver que $q(x)=0$ ou $q(y)=0$.
@@ -107,8 +107,8 @@ Como consequência, temos:
     Seja $R$ um anel comutativo finito e $I$ um ideal de $R$. Então $I$ é primo se, e somente se $I$ é maximal.
 \end{corol}
 \begin{proof}
-    Temos que $R/I$ é finito, e, portanto, é um corpo se, e somente se for um domínio.
+    Temos que $R/I$ é finito, e, portanto, é um corpo se, e somente se for um domínio de integridade.
     Portanto:
 
-    \[I \text{ é primo} \Leftrightarrow R/I \text{ é um domínio} \Leftrightarrow R/I \text{ é um corpo} \Leftrightarrow I \text{ é maximal}\]
+    \[I \text{ é primo} \Leftrightarrow R/I \text{ é um domínio de integridade} \Leftrightarrow R/I \text{ é um corpo} \Leftrightarrow I \text{ é maximal}\]
 \end{proof}
