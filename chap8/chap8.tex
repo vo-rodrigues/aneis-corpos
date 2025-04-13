@@ -67,7 +67,7 @@ A relação de ser associado é uma relação de equivalência:
 \end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
-dado $n\geq 0$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
+dado $n\in \mathbb Z$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
 
 A noção de domínio Euclideano generaliza os anéis que possuem essa propriedade.
 
@@ -78,7 +78,72 @@ A noção de domínio Euclideano generaliza os anéis que possuem essa proprieda
         \item Para todos $a, b \in R$ com $b\neq 0$, existem $q, r \in R$ com $a=bq+r$ e ($r=0$ ou $\nu(r)<\nu(b)$).
         \item Para todos $a, b \in R\setminus \{0\}$, $\nu(ab)\geq \nu(a)$.
     \end{itemize}
+
+    Tal função $\nu$ é chamada de valoração, ou grau.
 \end{definition}
+Um primeiro resultado simples:
+\begin{definition}
+    Seja $R$ um domínio Euclideano e $\nu$ uma função de valoração.
+    Então se $a, b \in R$ são associados, temos $\nu(a)=\nu(b)$.
+\end{definition}
+\begin{proof}
+    Se $a$ e $b$ são associados, existe $u \in R^*$ tal que $a=ub$.
+    Logo, $\nu(a)=\nu(ub)\geq \nu(b)$ e $\nu(b)=\nu(u^{-1}a)\geq \nu(a)$.
+    Assim, $\nu(a)=\nu(b)$.
+\end{proof}
+
+\begin{exemplo}
+    O anel dos inteiros $\mathbb Z$ é um domínio Euclideano, com $\nu(n)=|n|$ para $n\neq 0$.
+    Primeiro, é claro que se $a, b\in \mathbb Z$ são não nulos, então $|ab|=|a||b|\geq |a|1=|a|$.
+
+    Agora, sejam $a, b\in \mathbb Z$ com $b\neq 0$.
+    Sabemos que existem $q, r \in \mathbb Z$ tais que $a=q|b|+r$ e $0\leq r < |b|$.
+    Se $b>0$, isso conclui a prova.
+    Se $b<0$, então $a=(-q)b+r$, e isso conclui a prova.
+\end{exemplo}
+
+\begin{exemplo}
+    No geral, não podemos exigir a unicidade de $q, r$.
+    De fato, em $\mathbb Z$, considere $a=3$, $b=2$.
+    Então $3=1\cdot 2+1$ com $|1|<|2|$, mas também $3=2\cdot 2+(-1)$ com $|-1|<|2|$.
+\end{exemplo}
+
+Porém, temos o resultado a seguir.
+Mais adiante, veremos que esse será o caso para anéis de polinômios sobre corpos munidos da função grau.
+
+
+\begin{prop}
+    Seja $R$ um domínio Euclideano e $\nu$ uma função de valoração tal que
+    para todos $a, b\in R$ com $a, b, a+b\neq 0$, temos $\nu(a+b)\leq \max(\nu(a), \nu(b))$.
+    
+    Então para todos $a, b \in R$ com $b\neq 0$, existem únicos $q, r \in R$ tais que $a=bq+r$ e ($r=0$ ou $\nu(r)<\nu(b)$).
+\end{prop}
+\begin{proof}
+    A existência de $q, r$ como acima vem da definição de domínios Euclideanos.
+    Adicionalmente, sejam $q', r' \in R$ tais que $a=bq'+r'$ e $r'=0$ ou $\nu(r')<\nu(b)$.
+
+    Temos que $q'b+r'=qb+r$.
+    Se $r=r'$, segue que $q=q'$.
+    Similarmente, se $q=q'$, segue que $r=r'$.
+    Portanto, vamos supor por absurdo que $r\neq r'$ e $q\neq q'$.
+    Assim, $r'-r=(q-q')b+(r-r')$.
+    
+    Se $r=0$, temos que $\nu(r')<\nu(b)\leq \nu((q-q')b)=\nu(r)$, o que é absurdo.
+
+    Se $r'=0$, temos que $\nu(-r)=\nu(r)<\nu(b)\leq(\nu(q-q')b)=\nu(r)$, o que é absurdo.
+    
+    Se $r, r'\neq 0$, temos que $\nu(r'-r)\leq \max(\nu(r), \nu(r'))<\nu(b)\leq(\nu(q-q')b)=\nu(r)$, o que é absurdo.
+\end{proof}
+
+\begin{prop}
+    Todo corpo é um Domínio Euclideano.
+\end{prop}
+\begin{proof}
+Seja $K$ um corpo e considere $\nu:K\setminus \{0\}\to N$ dada por $\nu(x)=1$ para todo $x\in K\setminus \{0\}$.
+
+    Então, para $a, b \in K\setminus \{0\}$, temos que $\nu(ab)=1=\nu(a)$,
+    e, dados $a, b\in K$ com $b\neq 0$, temos que $a=b^{-1}b+0$.
+\end{proof}
 \section{Exercícios}
 
 \begin{exer}
