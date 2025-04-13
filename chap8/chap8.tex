@@ -70,19 +70,41 @@ Os números inteiros possuem uma classe muito importante de números: a dos prim
 As definições abaixo generalizam a noção de primo.
 
 \begin{prop}[Elementos primos]
-    Seja $R$ um anel comutativo com unidade.
+    Seja $R$ um anel comutativo
     Dizemos que $p \in R$ é um elemento primo se $p\notin R^*$, $P\neq 0$, e, para todos $a, b \in R$, se $p|ab$, então $p|a$ ou $p|b$.
 \end{prop}
 
 \begin{prop}[Elementos irredutíveis]
-    Seja $R$ um anel comutativo com unidade.
+    Seja $R$ um anel comutativo.
     Dizemos que $p \in R$ é um elemento irredutível se $p\notin R^*$, $p\neq 0$, e, para todos $a, b \in R$, se $p=ab$, então $a\in R^*$ ou $b\in R^*$.
 \end{prop}
 
-A seguinte proposição os relaciona:
+Elementos primos se relacionam com ideais primos, como vemos a seguir:
+\begin{prop}
+    Seja $R$ um anel comutativo e $p\neq 0$.
+    Então, $p$ é primo se, e somente se $\langle p\rangle$ é um ideal primo.
+\end{prop}
+\begin{proof}
+    Primeiro, suponha que $p$ é primo.
+    Segue que $\langle p\rangle=\{ap: a \in R\}$ não é $0$, pois $p \in R$, e não é $R$, pois $p\notin R^*$.
+    Agora, seja $a, b \in R$ tais que $ab \in \langle p\rangle$.
+    Então, existe $c \in R$ tal que $ab=cp$, ou seja, $p|ab$.
+    Logo, $p|a$ ou $p|b$, o que implica que existe $d \in R$ tal que $a=pd$ ou $b=pd$, ou seja, $a\in \langle p\rangle$ ou $b\in \langle p\rangle$.
+
+    Reciprocamente, suponha que $\langle p\rangle$ é um ideal primo.
+    Veremos que $p$ é primo.
+    Temos que $p\neq 0$ e $p$ não é invertível (pois $\langle p\rangle\neq R$).
+    Agora, seja $a, b \in R$ tais que $p|ab$.
+    Então, existe $c \in R$ tal que $ab=cp$.
+    Logo, $ab \in \langle p\rangle$.
+    Como $\langle p\rangle$ é primo, temos que $a \in \langle p\rangle$ ou $b \in \langle p\rangle$.
+    Logo, existe $d \in R$ tal que $a=pd$ ou $b=pd$, ou seja, $p|a$ ou $p|b$.
+\end{proof}
+
+A seguinte proposição relaciona primos e irredutíveis em domínios de integridade.
 
 \begin{prop}
-    Seja $R$ um anel comutativo com unidade.
+    Seja $R$ um domínio de integridade
     Então, se $p \in R$ é primo, então $p$ é irredutível.
 \end{prop}
 \begin{proof}
@@ -95,6 +117,24 @@ A seguinte proposição os relaciona:
     Logo, $p=pcb$, e, portanto, $1=cb$, o que mostra que $b \in R^*$.
 
     O caso em que $p|b$ é análogo.
+\end{proof}
+A recíproca vale em domínios de ideais principais.
+
+\begin{prop}
+    Seja $R$ um domínio de ideais principais
+    Então, se $p \in R$ é irredutível, $p$ é primo.
+\end{prop}
+\begin{proof}
+    Seja $p \in R$ irredutível.
+    Veremos que $\langle p\rangle$ é primo.
+    Para tanto, basta ver que $\langle p\rangle$ é maximal.
+    Sabemos que esse ideal não é $\langle 0\rangle$ nem $R$.
+    Suponha que existe $a \in R$ é tal que $\langle p\rangle \subseteq \langle a\rangle$.
+
+    Então $p=ab$ para algum $b \in R$.
+    Como $p$ é irredutível, temos que $a \in R^*$ ou $b \in R^*$.
+    Se $a \in R^*$, então $\langle a\rangle=R$.
+    Se $b \in R^*$, então $a=p\cdot b^{-1}\in \langle p\rangle$, e, portanto, $\langle p\rangle=\langle a\rangle$.
 \end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
@@ -193,9 +233,20 @@ Todo domínio Euclideano é um domínio de ideais principais.
     Se $r\neq 0$, temos que $\nu(r)<\nu(b)$, o que nos dá um absurdo, uma vez que $r=a-bq\in I$ e $b$ é o elemento de menor valoração em $I$.
     Assim, $r=0$, e, portanto, $a=bq\in \langle b\rangle$.
 \end{proof}
+
+
 \section{Domínios de Fatoração Única}
 Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou Anéis Fatoriais, são domínios de integridade que capturam outra propriedade dos números inteiros:
 a do Teorema Fundamental da Aritmética.
+
+\begin{definition}
+    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$, existem um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+
+\end{definition}
+
+Pelo Teorema Fundamental da Aritmética, sabemos que $\mathbb Z$ é um DFU.
+
+
 \section{Exercícios}
 
 \begin{exer}
