@@ -167,13 +167,14 @@ Porém, a igualdade $a=\frac{a}{1}$ não faz sentido e será discutida mais adia
 Agora, definiremos as operações em $\Frac(R)$.
 
 \begin{definition}
-    Seja $R$ um domínio de integridade. Define-se, em $\Frac(R)$, as operações a seguir:
+    Seja $R$ um domínio de integridade. Define-se, em $\Frac(R)$, as operações a seguir. Para $a, b, c, d \in R$ tais que $b, d\neq 0$:
     \begin{itemize}
         \item Soma: $\displaystyle\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$.
         \item Produto: $\displaystyle\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
     \end{itemize}
 \end{definition}
 
+Note que a expressão $\frac{ac}{bd}$ faz sentido já que $bd\neq 0$.
 O próximo passo é mostrar que tais operações estão bem definidas.
 
 \begin{lemma}
@@ -194,6 +195,147 @@ O próximo passo é mostrar que tais operações estão bem definidas.
 
     Agora, para a soma, temos que provar que $adb'd'+bcb'd'=a'd'bd+b'c'bd$.
     Multiplicando a equação $ab'=a'b$ por $d'd$, a equação $cd'=c'd$ por $b'b$, e somando, segue a tese.
+\end{proof}
+
+Agora veremos que $\Frac(R)$ é um corpo.
+\begin{theorem}
+    Seja $R$ um domínio de integridade.
+    
+    Então $\Frac(R)$ é um corpo cujo zero é $\frac{0}{1}$, cuja identidade multiplicativa é $\frac{1}{1}$ e com opostos aditivos $-\frac{a}{b}=\frac{-a}{b}$.
+
+    Além do mais, se $\frac{a}{b}$ é não nulo, então $a\neq 0$ e $\frac{b}{a}$ é seu inverso multiplicativo.
+\end{theorem}
+\begin{proof}
+    Primeiro, veremos que $\Frac(R)$, com a soma, é um grupo abeliano.
+
+    Antes, note que para todo $b \in R\setminus\{0\}$, temos que $\frac{0}{b}=\frac{0}{1}$, já que $0\cdot 1=0=0\cdot b$.
+
+    \begin{itemize}
+        \item $+$ é associativo: sejam $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}+\left(\frac{c}{d}+\frac{e}{f}\right)=\frac{a}{b}+\frac{cd+ef}{df}=\frac{a(df)+b(cd+ef)}{bdf}=\frac{adf+bcd+bef}{bdf}.\]
+
+        Por outro lado,  temos que:
+        \[\left(\frac{a}{b}+\frac{c}{d}\right)+\frac{e}{f}=\frac{ad+bc}{bd}+\frac{e}{f}=\frac{(ad+bc)f+bed}{bdf}=\frac{adf+bcd+bef}{bdf}.\]
+        Logo, $+$ é associativa.
+
+        \item $+$ é comutativa: sejam $\frac{a}{b}, \frac{c}{d} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}=\frac{cb+da}{db}=\frac{c}{d}+\frac{a}{b}.\]
+
+        \item $\frac{0}{1}$ é neutro: seja $\frac{a}{b} \in \Frac(R)$. Temos que:
+        \item \[\frac{a}{b}+\frac{0}{1}=\frac{a\cdot 1+0\cdot b}{b\cdot 1}=\frac{a}{b}.\]
+        
+        \item Opostos aditivos: seja $\frac{a}{b} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}+\frac{-a}{b}=\frac{a\cdot b+(-a)\cdot b}{b\cdot b}=\frac{0}{b}=\frac{0}{1}.\]
+    \end{itemize}
+
+    Agora, provaremos as propriedades da multiplicação.
+
+    \begin{itemize}
+        \item $\cdot $ é associativo: sejam $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}\cdot\left(\frac{c}{d}\cdot\frac{e}{f}\right)=\frac{a}{b}\cdot\frac{cd}{df}=\frac{a(cd)}{b(df)}=\frac{(ac)d}{(bd)f}=\frac{ac}{bd}\frac{d}{f}=\left(\frac{a}{b}\cdot\frac{c}{d}\right)\cdot \frac{e}{f}.\]
+        \item $\cdot $ é comutativo: sejam $\frac{a}{b}, \frac{c}{d} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}=\frac{ca}{db}=\frac{c}{d}\cdot\frac{a}{b}.\]
+        \item $\frac{1}{1}$ é neutro: seja $\frac{a}{b} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}\cdot\frac{1}{1}=\frac{a\cdot 1}{b\cdot 1}=\frac{a}{b}.\]
+        \item Inversos multiplicativos: seja $\frac{a}{b} \in \Frac(R)$ não nulo.
+        Como $\frac{a}{b}$ é não nulo, temos que $a\neq 0$, uma vez que $\frac{0}{b}=\frac{0}{1}$.
+        Assim, a fração $\frac{b}{a}$ é bem definida, e:
+        \[\frac{a}{b}\cdot\frac{b}{a}=\frac{ab}{ba}=\frac{1}{1}.\]
+        \item Distributividade: sejam $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \Frac(R)$. Temos que:
+        \[\frac{a}{b}\cdot\left(\frac{c}{d}+\frac{e}{f}\right)=\frac{a}{b}\cdot\frac{cd+ef}{df}=\frac{a(cd+ef)}{b(df)}=\frac{acd+aef}{bdf}.\]
+        Por outro lado, temos que:
+        \[\frac{a}{b}\cdot\frac{c}{d}+\frac{a}{b}\cdot\frac{e}{f}=\frac{ac}{bd}+\frac{ae}{bf}=\frac{ac\cdot f+ae\cdot d}{bdf}=\frac{acdb+aebf}{b^2df}.\]
+
+        Temos que ambos os lados são iguais, pois:
+
+        \[b^2df(acd+aef)=bdf(acdb+aebf).\]
+    \end{itemize}
+\end{proof}
+
+Assim, à semelhança da relação que o corpo $\mathbb Q$ tem com $\mathbb Z$, construímos um corpo $\Frac(R)$ a partir de um domínio de integridade $R$.
+
+Existe uma identificação natural de $R$ em $\Frac(R)$, como dada a seguir:
+
+\begin{prop}
+    A função $\phi:R\rightarrow \Frac(R)$ dada por $\phi(a)=\frac{a}{1}$ é um monomorfismo de anéis. Tal $\phi$ é denominado \emph{identificação natural de $R$ em $\Frac(R)$}.
+\end{prop}
+\begin{proof}
+    Fixe $a, b \in R$.
+
+    Injetividade: se $\frac{a}{1}=\frac{b}{1}$, então $a.1=1.b$, logo, $a=b$.
+
+    Preservação da identidade: temos que $\phi(1)=\frac{1}{1}$, que é a identidade em $\Frac(R)$.
+
+    Preservação das somas: Temos que $\phi(a)+\phi(b)=\frac{a}{1}+\frac{b}{1}=\frac{a\cdot 1+b\cdot 1}{1^2}=\frac{a+b}{1}=\phi(a+b)$.
+
+    Preservação dos produtos: Temos que $\phi(a)\cdot\phi(b)=\frac{a}{1}\cdot\frac{b}{1}=\frac{ab}{1^2}=\phi(ab)$.
+\end{proof}
+
+Devido à isso, é natural identificar $a \in R$ com $\phi(a)=\frac{a}{1}$, de modo a dar sentido à igualdade $a=\frac{a}{1}$.
+
+Notemos ainda que, se $a, b\in R$ e $b\neq 0$, então $\frac{a}{b}=\phi(a)\phi^{-1}(b)$.
+Desse modo, pode-se pensar que, em algum sentido, $\Frac(R)$ é o menor corpo que contém $R$.
+A proposição abaixo não apenas formaliza essa ideia, mas define categoricamente o que é o corpo de frações de um domínio de integridade de modo independente de construções.
+
+\begin{theorem}[Propriedade universal do Corpo de Frações]
+    Seja $R$ um domínio de integridade, $\Frac(R)$ seu corpo de frações e $\phi$ a identificação natural de $R$ em $\Frac(R)$.
+
+    Então, para cada corpo $K$ e cada monomorfismo $f:R\rightarrow K$, existe um único homomorfismo de anéis $g$ tal que $g\circ\phi=f$.
+
+    Além disso, se $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um monomorfismo de anéis tal que para todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$ tal que $g\circ\psi=f$, então $L$ é isomorfo a $\Frac(R)$ -- e existe um único isomorfismo de anéis $u:L\rightarrow K$ tal que $u\circ\phi=\psi$.
+\end{theorem}
+
+\begin{proof}
+    Começaremos mostrando que o par $(\frac(R), \phi)$ tem a propriedade desejada.
+
+    Seja $K$ um corpo e $f:R\rightarrow K$ um homomorfismo de anéis.
+    Definimos $g:\Frac(R)\rightarrow K$ para $a, b \in R$ com $b\neq 0$ como a seguir:
+    \[g\left(\frac{a}{b}\right)=f(a)f(b)^{-1}.\]
+
+    Se $a', b' \in R$ e $b'\neq 0$ são tais que $\frac{a}{b}=\frac{a'}{b'}$, então $ab'=a'b$.
+    Logo, $f(a)f(b')=f(a')f(b)$, ou seja, $f(a)f(b)^{-1}=f(a')f(b')^{-1}$ e, portanto, a função está bem definida.
+
+    Vejamos que $g$ é homomorfismo:
+
+    \begin{itemize}
+        \item Preservação da soma: sejam $\frac{a}{b}, \frac{c}{d} \in \Frac(R)$. Temos que:
+        \[g\left(\frac{a}{b}+\frac{c}{d}\right)=g\left(\frac{ad+bc}{bd}\right)=f(ad+bc)f(bd)^{-1}=f(a)f(d)^{-1}+f(b)f(c)^{-1}=g\left(\frac{a}{b}\right)+g\left(\frac{c}{d}\right).\]
+        \item Preservação do produto: sejam $\frac{a}{b}, \frac{c}{d} \in \Frac(R)$ com $b, d\neq 0$. Temos que:
+        \[g\left(\frac{a}{b}\cdot\frac{c}{d}\right)=g\left(\frac{ac}{bd}\right)=f(ac)f(bd)^{-1}=f(a)f(b)^{-1}f(c)f(d)^{-1}=g\left(\frac{a}{b}\right)\cdot g\left(\frac{c}{d}\right).\]
+        \item Preservação da identidade: sejam $\frac{a}{b} \in \Frac(R)$ com $b\neq 0$. Temos que:
+        \[g\left(\frac{1}{1}\right)=f(1)f(1)^{-1}=1_K.\]
+    \end{itemize}
+
+    Temos que $g\circ \phi(a)=g(\frac{a}{1})=f(a)f(1)^{-1}=f(a)$, para todo $a \in R$, logo, $g\circ \phi=f$.
+
+    Assim, $g$ satisfaz todos os requisitos necessários.
+
+    Vejamos que $g$ é único.
+    Se $\bar g:\Frac(R)\rightarrow K$ é um homomorfismo de anéis tal que $\bar g\circ \phi=f$, fixe $a, b \in R$ com $b\neq 0$. Veremos que $g\left(\frac{a}{b}\right)=\bar g\left(\frac{a}{b}\right)$.
+    Ora:
+
+    \[\bar g\left(\frac{a}{b}\right)=\bar g\left(\frac{a}{1}\cdot\frac{1}{b}\right)=\bar g\left(\frac{a}{1}\right)\cdot \bar g\left(\frac{1}{b}\right)\]
+    \[=\bar g\circ \phi(a)\cdot \bar g(\phi(b)^{-1})=f(a)\bar g(\phi(b))^{-1}=f(a)f(b)^{-1}=g\left(\frac{a}{b}\right).\]
+
+    Isso prova a primeira parte do teorema.
+    Para a segunda parte, suponha que $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um homomorfismo de anéis tal que para todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$ tal que $g\circ\psi=f$.
+
+    Aplicando a propriedade de $(L, \psi)$ para o corpo $K$ e homomorfismo $\phi$, existe um único homomorfismo de anéis $u:L\rightarrow K$ tal que $u\circ \psi=\phi$.
+    Basta ver que $u$ é isomorfismo.
+
+    Aplicando a propriedade de $(K, \phi)$ para o corpo $L$ e homomorfismo $\psi$, existe um homomorfismo de anéis $v:K\rightarrow L$ tal que $v\circ \phi=\psi$.
+    Veremos que $v=u^{-1}$.
+
+    Aplicando a propriedade de $(L, \psi)$ para o corpo $L$ e homomorfismo $\psi$, existe um único homomorfismo de anéis $w:L\rightarrow L$ tal que $w\circ \psi=\psi$.
+    Porém, $\id_L\circ \psi=\psi$ e $(v\circ u)\circ \psi=v\circ \phi=\psi$, logo, $\id_L=w=v\circ u$.
+
+    Aplicando a propriedade de $(K, \phi)$ para o corpo $L$ e homomorfismo $\phi$, existe um único homomorfismo de anéis $\bar w:L\rightarrow K$ tal que $\bar w\circ \phi=\phi$.
+    Porém, $\id_K\circ \phi=\phi$ e $(u\circ v)\circ \phi=v\circ \psi=\phi$, logo, $\id_K=\bar w=u\circ v$.
+
+    Logo, $u$ e $v$ são isomorfismos inversos, e segue a tese.
+
+
+
 \end{proof}
 \section{Exercícios}
 \begin{exer}
