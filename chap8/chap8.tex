@@ -246,9 +246,70 @@ a do Teorema Fundamental da Aritmética.
 
 Pelo Teorema Fundamental da Aritmética, sabemos que $\mathbb Z$ é um DFU.
 
+Mais geralmente:
+
+\begin{theorem}
+    Todo domínio de ideais principais é um DFU.
+\end{theorem}
+
+Primeiro, precisaremos:
+
+\begin{lemma}
+Seja $R$ um domínio de ideais principais e $a\in R\setminus \{0\}$ não invertível.
+Então existe um elemento primo $p\in R$ tal que $p|a$.
+\end{lemma}
+\begin{proof}
+    Fique $a \in R$ como no enunciado e suponha por absurdo que a tese é falsa.
+
+    Recursivamente, defina uma sequência de elementos $a_n$ não invertíveis e não tal que $a_0=a$ e $a_{n+1}|a_n$ e $a_{n+1}$ não é associado à $a_n$, o que existe ou $a$ seria divisível por um elemento irredutível (e portanto primo).
+
+    Temos que $I=\bigcup_{n \in \mathbb N}\langle a_n\rangle$ é um ideal, pois $\langle a_n\rangle\subseteq \langle a_{n+1}\rangle$ para todo $n\geq 0$.
+    Como $R$ é um domínio de ideais principais, existe $b\in R$ tal que $I=\langle b\rangle$.
+
+    Temos que $b\in \langle a_n\rangle $ para algum $n$, assim, $a_{n+1}\in \langle a_n\rangle$, o que implica que $a_{n+1}$ é associado a $a_n$, um absurdo.
+\end{proof}
+
+\section{Mínimo múltiplo comum e Máximo divisor comum}
+\begin{definition}
+Seja $R$ um anel comutativo e $a, b \in R$ não nulos.
+
+Um mínimo múltiplo comum de $a$ e $b$ é, se existe, um elemento $m\in R$ tal que:
+\begin{itemize}
+    \item $a|m$ e $b|m$.
+    \item Se $c\in R$ é tal que $a|c$ e $b|c$, então $m|c$.
+\end{itemize}
+
+Um máximo divisor comum de $a$ e $b$ é, se existe, um elemento $d\in R$ tal que:
+\begin{itemize}
+    \item $d|a$ e $d|b$.
+    \item Se $c\in R$ é tal que $c|a$ e $c|b$, então $c|d$.
+\end{itemize}
+\end{definition}
+\begin{lemma}
+    Seja $R$ um domínio de integridade e $a \in R$ não nulo.
+
+    Sejam $a, b \in R$.
+    Então todos os mínimos múltiplos comuns de $a$ e $b$ são associados entre si, e todos os máximos divisores comuns de $a$ e $b$ são associados entre si (caso existam).
+\end{lemma}
+\begin{proof}
+Sejam $d, d'$ máximos divisores comuns de $a$ e $b$.
+Então, $d|a$ e $d|b$, $d'|a$ e $d'|b$.
+Logo, $d|d'$ e $d'|d$.
+Logo, $d$ e $d'$ são associados entre si.
+
+Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a$ e $b$.
+Então, $m|a$ e $m|b$, $m'|a$ e $m'|b$.
+Logo, $m|m'$ e $m'|m$.
+Logo, $m$ e $m'$ são associados entre si.
+\end{proof}
 
 \section{Exercícios}
 
 \begin{exer}
     Prove, com suas próprias palavras e de modo que considere satisfatório, que a relação de ser associado, em um anel comutativo, é uma relação de equivalência.
+\end{exer}
+
+\begin{exer}
+    Seja $D$ um domínio de integridade e $a, b \in R$ não nulos.
+    Redija com suas palavras, de forma que considere satisfatória, uma demonstração para o fato de que quaisquer dois mínimos múltiplos comuns de $a$ e $b$ são associados entre si, e que quaisquer dois máximos divisores comuns de $a$ e $b$ são associados entre si, caso existam.
 \end{exer}
