@@ -15,7 +15,7 @@ Para $a, b \in R$, dizemos que $a|b$ ($a$ divide $b$) se existe $c \in R$ tal qu
 Algumas propriedades básicas:
 \begin{prop}
     Seja $R$ um anel comutativo.
-    Então a relação de divisibilidade $|$ em $R$ é uma pré-ordem, ou seja, é reflexiva e transitiva.
+    Então a relação de divisibilidade $|$ em $R$ é uma pré-ordem, ou seja, é reflexiva e transitiva. Além disso, $1$ é elemento mínimo, e $0$, elemento máximo
 \end{prop}
 
 \begin{proof}Sejam $a, b, c \in R$.
@@ -23,10 +23,17 @@ Algumas propriedades básicas:
 
     Se $a|b$ e $b|c$, existem $e, f \in R$ tais que $b=ae$ e $c=bf$.
     Logo, $c=bf=aef=a(ef)$, o que implica em que $a|c$.
+
+    Temos que $0$ é elemento máximo, já que para todo $a \in R$, $0=0a$.
+    Por outro lado, $1$ é elemento mínimo, já que para todo $a \in R$, $a=1a$.
 \end{proof}
 
+Note que $a|0$ não implica, pelas nossas definições, que $a$ é divisor de zero, uma vez que necessitaríamos da existência de $b \in R$ não nulo tal que $ab=0$.
 Divisores de zero geram diversas patologias na teoria da divisibilidade, e estas não serão objeto primário de nosso estudo.
+
 Assim, nos restringiremos aos anéis comutativos que não possuem divisores de zero, ou seja, aos domínios de integridade.
+Note que, nesses domínios, se $b\neq 0$ e $b|a$, então existe um \emph{único} $c\in R$ tal que $a=bc$.
+Este elemento $c$ é, muitas vezes, chamado de quociente de $a$ por $b$.
 \begin{prop}
     Seja $R$ um anel domínio de integridade. Se $a, b\in R$, são equivalentes:
 
@@ -401,11 +408,6 @@ São equivalentes:
     \item Para todo $a\in R\setminus \{0\}$ não invertível, existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
 \end{enumerate}
 \end{prop}
-
-\begin{proof}
-Resta provar apenas que b) implica a), e, para isso, basta 
-\end{proof}
-
 
 \section{Mínimo múltiplo comum e Máximo divisor comum}
 \begin{definition}
