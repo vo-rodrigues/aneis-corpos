@@ -280,7 +280,7 @@ Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou
 a do Teorema Fundamental da Aritmética.
 
 \begin{definition}
-    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$, existem um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$ não invertível, existem um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
 
 \end{definition}
 
@@ -354,6 +354,58 @@ Então existe um elemento irredutível $p\in R$ tal que $p|a$.
 
     Portanto, segue que para todo $n$, $\langle a_n\rangle\subsetneq \langle a_{n+1}\rangle$, uma contradição.
 \end{proof}
+
+\begin{corol}
+    Seja $R$ um domínio de ideais principais e $a\in R\setminus \{0\}$ não invertível.
+    Então existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
+\end{corol}
+
+\begin{prop}
+    Seja $R$ um domínio de integridade.
+    Então todo elemento irredutível é primo.
+\end{prop}
+\begin{proof}
+Seja $r\in R$ irredutível.
+Suponha que $r|ab$, onde $a, b \in R$.
+Logo, $ab=rc$ para algum $c \in R$.
+
+Se $a=0$ ou $b=0$, segue que $r|a$ ou $r|b$, respectivamente.
+
+Se $a$ é invertível ou $b$ é invertível, também segue, respectivamente, que $r|b$ ou $r|a$.
+
+Caso contrário, temos $c\neq 0$.
+Escreva $a=a_1\cdots a_n$ e $b=b_1\cdots b_m$ ecom $a_1, \cdots, a_n$, $b_1, \cdots, b_m$ irredutíveis.
+Temos que $a_1\cdots a_n b_1\cdots b_m=rc$.
+Se $c$ é invertível, temos da unicidade dos DFU's que $r$ é associado a algum $a_i$ ou $b_j$, e, portanto, $r|a$ ou $r|b$.
+
+Se $c$ não é invertível, escreva $c=c_1\cdots c_k$ com $c_1, \dots, c_k$ irredutíveis. Novamente, pela unicidade dos DFU's, temos que $r$ é associado a algum $a_i$ ou $b_j$, e, portanto, $r|a$ ou $r|b$.
+\end{proof}
+
+\begin{lemma}
+Seja $R$ um domínio de integridade.
+Se $r \in R$ é irredutível e $r$ se escreve como um produto de primos, então $r$ é primo.
+\end{lemma}
+\begin{proof}
+Suponha que $r=p_1\cdots p_n$ com $p_1, \dots, p_n$ primos.
+Procedemos por indução em $n$.
+
+Para $n=1$ é trivial.
+Para o passo indutivo, se $r=p_1\cdots p_np_{n+1}$, então $p_1\cdots p_n$ é invertível ou $p_{n+1}$ é invertível.
+Temos que $p_{n+1}$ não é invertível, logo, $p_1\cdots p_n$ é invertível, e, portanto, $r$ é associado ao primo $p_{n+1}$, e, portanto, é primo.
+\end{proof}
+\begin{prop}
+Seja $R$ um domínio de integridade.
+São equivalentes:
+\begin{enumerate}[label=\alph*)]
+    \item $R$ é um domínio de domínio de fatoração única.
+    \item Para todo $a\in R\setminus \{0\}$ não invertível, existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Resta provar apenas que b) implica a), e, para isso, basta 
+\end{proof}
+
 
 \section{Mínimo múltiplo comum e Máximo divisor comum}
 \begin{definition}
