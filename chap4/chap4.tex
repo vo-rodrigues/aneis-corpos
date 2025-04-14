@@ -389,6 +389,26 @@ Seja $a+b \in I+J$, com $a \in I$ e $b \in J$.
 Como $K$ é um ideal, $a \in K$ e $b \in K$, segue que $a+b \in K$.
 Assim, $I+J\subseteq K$.
 \end{proof}
+
+Apesar disso, uma união de uma cadeia de ideais é um ideal.
+
+\begin{prop}
+Seja $A$ um anel e $\mathcal F$ uma coleção não vazia de ideais de $A$ tal que para todos $I, J \in \mathcal F$, $I\subseteq J$ ou $J\subseteq I$.
+
+Então $\bigcup \mathcal F=\bigcup_{I \in \mathcal F}I$ é um ideal de $A$.
+\end{prop}
+\begin{proof}
+    Seja $J=\bigcup \mathcal F=\bigcup_{I \in \mathcal F}I$.
+
+    Temos que $0 \in J$, pois para qualquer $I \in \mathcal F$, temos $0 \in I$.
+
+    Se $a, b \in J$, temos que $a+b \in J$: existem $I_1, I_2 \in \mathcal F$ com $a \in I_1, b \in I_2$.
+    Como $I_1\subseteq I_2$ ou $I_2\subseteq I_1$ temos que $a, b \in I_1$ ou $a, b \in I_2$, e, assim, $a+b \in I_1$ ou $a+b \in I_2$.
+    Em qualquer caso, $a+b \in J$.
+
+    Finalmente, se $a \in J$ e $b \in R$, temos que existe $I \in \mathcal F$ tal que $a \in I$.
+    Assim, $ab, ba \in I\subseteq J$.
+\end{proof}
 \section{Ideais Principais}
 \begin{definition}[Ideal principal]
     Um \em{ideal principal} é um ideal gerado por um único elemento.
