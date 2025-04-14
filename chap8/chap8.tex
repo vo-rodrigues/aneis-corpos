@@ -161,6 +161,21 @@ A recíproca vale em domínios de ideais principais.
     Se $a \in R^*$, então $\langle a\rangle=R$.
     Se $b \in R^*$, então $a=p\cdot b^{-1}\in \langle p\rangle$, e, portanto, $\langle p\rangle=\langle a\rangle$.
 \end{proof}
+
+\begin{lemma}
+Seja $R$ um domínio de integridade e $p$ um elemento irredutível.
+
+Se $q \in R$ é associado à $p$, então $q$ é irredutível.
+\end{lemma}
+\begin{proof}
+    Seja $u$ invertível tal que $q=pu$.
+
+    Se $a, b \in R$ tão tais que $q=ab$, então $pu=ab$.
+    Então, $p=(u^{-1}a)b$.
+    Assim, $u^{-1}a$ é invertível ou $b$ é invertível.
+    Se $b$ é invertível, segue a tese.
+    Se $u^{-1}a=v$ é invertível, então $a=uv$ também é, e segue a tese.
+\end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
 dado $n\in \mathbb Z$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
@@ -338,8 +353,6 @@ Então existe um elemento irredutível $p\in R$ tal que $p|a$.
     Assim, $a_{n+1}|a_{n}$, mas $a_{n}\not \neq a_{n+1}$, ou teríamos que existe $b$ tal que $a_{n+1}=ba_n$, e, substituindo, seguiria que $a_n=a_nbp_{n+1}$, o que nos dá $p_{n+1}$ é invertível, um absurdo.
 
     Portanto, segue que para todo $n$, $\langle a_n\rangle\subsetneq \langle a_{n+1}\rangle$, uma contradição.
-
-
 \end{proof}
 
 \section{Mínimo múltiplo comum e Máximo divisor comum}
