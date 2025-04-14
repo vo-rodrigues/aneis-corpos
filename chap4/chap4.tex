@@ -461,6 +461,19 @@ Porém, nem todo DIP é um corpo, como exemplificado pelo anel dos números inte
     Como $n\mathbb Z=\langle n\rangle$ e $n \in I$, temos que $n\mathbb Z\subseteq I$, o que completa a prova.
 \end{proof}
 
+\begin{prop}
+    Seja $R$ um domínio de ideais principais.
+    Então, não existe uma sequência infinita de ideais $(I_n)_{n \in \mathbb N}$ tal que para todo $n \in \mathbb N$, $I_n\subsetneq I_{n+1}$.
+\end{prop}
+\begin{proof}
+    Suponha que exista uma tal cadeia e seja $J=\bigcup_{n \in \mathbb N} I_n$.
+    Como $R$ é um domínio de ideais principais, $J$ é um ideal principal, ou seja, existe $x \in R$ tal que $J=\langle x\rangle$.
+    
+    Como $x \in J\bigcup_{n \in \mathbb N}I_n$, existe $N \in \mathbb N$ tal que $x \in I_N$.
+    Como $x \in I_n$, temos que $\langle x\rangle \subseteq I_N$.
+    Assim, $J=\langle n\rangle \subseteq I_N\subseteq I_{N+1}\subseteq J$, o que implica que $I_N=I_{N+1}$, um absurdo.
+\end{proof}
+
 \section{Ideais Primos e Maximais}
 Dois outros importantes tipos de ideais são os ideais primos e maximais.
 
