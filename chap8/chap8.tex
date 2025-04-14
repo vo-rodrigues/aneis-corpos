@@ -65,6 +65,32 @@ A relação de ser associado é uma relação de equivalência:
         Logo, temos que $a=uvc$, e, portanto, $a$ é associado a $c$, já que $uv\in R^*$.
     \end{itemize}
 \end{proof}
+
+A relação de divisibilidade tem ligações com propriedades de ideais.
+Enunciaremos a primeira delas a seguir:
+
+\begin{prop}
+Seja $R$ um anel comutativo e $a, b \in R$.
+São equivalentes:
+\begin{enumerate}[label=\alph*)]
+    \item $a|b$.
+    \item $b \in \langle a \rangle$.
+    \item $\langle b\rangle \subseteq \langle a \rangle$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+    Primeiro, suponha que $a|b$.
+    Então existe $c \in R$ tal que $b=ac$.
+    Como $\langle a=\{ac: c \in R\}$, segue b).
+
+    Agora suponha que $b \in \langle a\rangle$.
+    Como $\langle b\rangle$ é o menor ideal que contém $b$ e $\langle a\rangle$ é um ideal que contém $b$, segue que $\langle b\rangle \subseteq \langle a\rangle$.
+
+    Agora suponha que $\langle b\rangle \subseteq \langle a\rangle$.
+    Em particular, $b \in \langle a\rangle$.
+    Pela definição de $\langle a \rangle$, existe $c \in R$ tal que $b=ac$, e, assim, $a|b$.
+\end{proof}
+
 \section{Elementos primos e irredutíveis}
 Os números inteiros possuem uma classe muito importante de números: a dos primos.
 As definições abaixo generalizam a noção de primo.
