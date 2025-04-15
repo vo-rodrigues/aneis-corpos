@@ -212,3 +212,48 @@ Notação: abandona-se $\hat r$ em favor de $r$, mesmo havendo ambiguidade de no
 
     A função $g$ é única, pois se $g'$ é outra tal função, temos que, dado $p(x)=\sum_{i=0}^n r_ix^i$, temos que $g'(p(x))=\sum_{i=0}^nf(r_i)s^i=g(p(x))$.
 \end{proof}
+
+\section{A definição abstrada}
+Um anel de polinômios pode ser definido abstratamente pela seguinte propriedade universal:
+
+\begin{definition}
+Seja $R$ um anel comutativo e $X$ um conjunto.
+Um anel de polinômios sobre $R$ com variáveis em $X$ é uma tripla $(R[X], \phi, \alpha)$, onde $R[X]$ é um anel comutativo e $\phi:R\rightarrow R[X]$ é um homomorfismo e $\alpha:X\rightarrow R[X]$ é uma função que satisfazem a seguinte propriedade:
+
+Para todo anel $S$ e toda função $\beta:X\rightarrow S$, existe um único homomorfismo $g:R[X]\rightarrow S$ tal que $g\circ \phi=f$ e $g\circ \alpha=\beta$.
+\end{definition}
+
+\begin{prop}
+Seja $R$ um anel comutativo e $X$ um conjunto. Se $(R[X], \phi, \alpha)$ e $(\overline{R[X]}, \bar \phi, \bar \alpha)$ são anéis de polinômios sobre $R$ com variáveis em $X$, então $R[X]$ e $\overline{R[X]}$ são isomorfos por um isomorfismo $f:R[X]\rightarrow \overline{R[X]}$ tal que $f\circ \alpha=\bar \alpha$ e $f\circ \phi=\bar \phi$.
+\end{prop}
+\begin{proof}
+    Aplicando a propriedade de $R[X]$ para o anel $\overline{R[X]}$ e a função $\bar \alpha$, existe um homomorfismo $g:R[X]\rightarrow \overline{R[X]}$ tal que $g\circ \phi=\bar \phi$ e $g\circ \alpha=\bar \alpha$.
+
+    Aplicando a propriedade de $\overline{R[X]}$ para o anel $R[X]$ e a função $\alpha$, existe um homomorfismo $h:\overline{R[X]}\rightarrow R[X]$ tal que $h\circ \bar \phi=\phi$ e $h\circ \bar \alpha=\alpha$.
+
+    Aplicando a propriedade de $R[X]$ para o anel $R[X]$ e a função $ \alpha$, existe um único homomorfismo $u:R[X]\rightarrow R[X]$ tal que $u\circ \phi=\phi$ e $u\circ \alpha=\alpha$.
+    É imediato que $\id_{R[X]}$ satisfaz essas propriedades. O mapa $h\circ g$ também satisfaz, pois $h\circ g\circ \phi=h\circ \bar \phi=\phi$ e $h\circ g\circ \alpha=h\circ \bar \alpha=\alpha$.
+
+    Aplicando a propriedade de $\overline{R[X]}$ para o anel $\overline{R[X]}$ e a função $\bar \alpha$, existe um único homomorfismo $v:\overline{R[X]}\rightarrow \overline{R[X]}$ tal que $v\circ \bar \phi=\bar \phi$ e $v\circ \bar \alpha=\bar \alpha$.
+    É imediato que $\id_{\overline{R[X]}}$ satisfaz essas propriedades. O mapa $g\circ h$ também satisfaz, pois $g\circ h\circ \bar \phi=g\circ \phi=\bar \phi$ e $g\circ h\circ \bar \alpha=g\circ \bar \alpha=\bar \alpha$.
+
+    Assim, $g\circ h=\id_{\overline{R[X]}}$ e $h\circ g=\id_{R[X]}$. Portanto, $g$ é um isomorfismo de anéis, e $h$ é o inverso de $g$.
+\end{proof}
+
+\begin{corol}
+    Seja $R$ um anel comutativo e $X$, $Y$ conjuntos de mesmas cardinalidades.
+
+    Se $(R[X], \phi, \alpha)$ e $(R[Y], \bar \phi, \bar \alpha)$ são anéis de polinômios sobre $R$ com variáveis em $X$ e $Y$, respectivamente, então $R[X]$ e $R[Y]$ são isomorfos.
+\end{corol}
+
+\begin{proof}
+Seja $\theta:Y\rightarrow X$ uma bijeção. Basta ver que $(R[X], \phi, \alpha\circ \theta)$ é um anel de polinômios sobre $R$ com variáveis em $Y$.
+
+Seja $S$ um anel comutativo e $f:R\rightarrow S$ um homomorfismo, e $\beta:Y\rightarrow S$ uma função.
+Temos que $\beta'=\beta\circ \theta^{-1}:X\rightarrow S$ é uma função.
+Então existe um único homomorfismo $g: R[X]\rightarrow S$ tal que $g\circ \phi=f$ e $g\circ \alpha=\beta'$.
+Desta última, $\alpha\circ \theta=\beta$.
+
+Para ver que $g$ é o único tal homomorfismo, se $h: R[Y]\rightarrow S$ é um homomorfismo tal que $h\circ \phi=f$ e $h\circ \alpha\circ \theta=\beta$, então então $h\circ \alpha=\beta'$.
+Pela unicidade de $g$, segue que $g=h$.
+\end{proof}
