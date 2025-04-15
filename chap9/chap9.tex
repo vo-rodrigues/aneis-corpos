@@ -146,15 +146,15 @@ Agora vamos trabalhar um pouco mais nossa notação.
 \end{proof}
 
 \begin{lemma}
-    Na notação anterior, seja $h:R\rightarrow R[x]$ dada por $h(r)=\hat r$. Então $h$ é um homomorfismo injetor.
+    Na notação anterior, seja $\phi:R\rightarrow R[x]$ dada por $\phi(r)=\hat r$. Então $h$ é um homomorfismo injetor.
 \end{lemma}
     
 \begin{proof}
     Sejam $r, s \in R$. Então:
     \begin{itemize}
-        \item $h(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=h(r)+h(s)$
-        \item $h(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=h(r)\cdot h(s)$
-        \item $h(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
+        \item $\phi(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=\phi(r)+\phi(s)$
+        \item $\phi(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=\phi(r)\cdot \phi(s)$
+        \item $\phi(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
     \end{itemize}
 
     A injetividade é óbvia.
@@ -181,3 +181,34 @@ A recíproca é imediata. Para a implicação direta, note que a igualdade nos d
 \end{proof}
 
 Notação: abandona-se $\hat r$ em favor de $r$, mesmo havendo ambiguidade de notação.
+
+\begin{prop}
+    Seja $R$ um anel comutativo.
+    $R[x]$ é um anel comutativo que satisfaz a seguinte propriedade:
+    Para todo anel $S$, todo homomorfismo $f:R\rightarrow S$ e todo $s \in S$, existe um único homomorfismo $g:R[x]\rightarrow S$ tal que $g\circ \phi=f$ e $g(x)=s$.
+\end{prop}
+
+\begin{proof}
+    Defina $g:R[x]\rightarrow S$ por $g(p(x))=\sum_{i=0}^n f(r_i)s^i$, onde $p(x)=\sum_{i=0}^n r_ix^i$.
+    Note que $g$ é bem definido, pois se $p(x)=\sum_{i=0}^n r_ix^i=\sum_{i=0}^n s_ix^i=q(x)$, então $r_i=s_i$ para todo $i\leq n$.
+
+    $g$ é homomorfismo, pois, dados $p(x)=\sum_{i=0}^n r_ix^i$ e $q(x)=\sum_{i=0}^m s_ix^i$, escrevendo $a_i=0$ para $i>n$ e $b_i=0$ para $i>m$, temos que:
+    \begin{align*}
+        g(p(x)+q(x))&=g\left(\sum_{i=0}^{\max\{n, m\}}(r_i+s_i)x^i\right)\\
+        &=\sum_{i=0}^{\max\{n, m\}}f(r_i+s_i)s^i\\
+        &=\sum_{i=0}^{n}f(r_i)s^i+\sum_{i=0}^{m}f(s_i)s^i\\
+        &=g(p(x))+g(q(x)).
+    \end{align*}
+    \begin{align*}
+        g(p(x)q(x))&=g\left(\sum_{i=0}^{n+m}\left(\sum_{j=0}^i r_{i-j}s_j\right)x^i\right)\\
+        &=\sum_{i=0}^{n+m}\left(\sum_{j=0}^i f(r_{i-j})f(s_j)\right)s^i\\
+        &=\sum_{i=0}^{n}f(r_i)s^i\cdot \sum_{j=0}^m f(s_j)s^j\\
+        &=g(p(x))g(q(x)).
+    \end{align*}
+    \begin{align*}
+        g(1_{R[x]})
+        &=\sum_{i=0}^0 f(1_R)s^i=1_S.
+    \end{align*}
+
+    A função $g$ é única, pois se $g'$ é outra tal função, temos que, dado $p(x)=\sum_{i=0}^n r_ix^i$, temos que $g'(p(x))=\sum_{i=0}^nf(r_i)s^i=g(p(x))$.
+\end{proof}
