@@ -518,12 +518,16 @@ Então $R$ é um DFU.
     Assim, $(up_1\cdots p_{k})p_{k+1}=vq_1\cdots q_{m}$.
     Como $p_{k+1}|q_1\cdots q_m$, segue do lema anterior que existe $i$ tal que $p_{k+1}$ é associado a $q_i$.
     Tome $\theta: \{1, \dots, m\}\rightarrow \{1, \dots, m\}$ de modo que  $\theta(i)=m$. Escreva $p_{k+1}=w q_i$.
-    Cancelando, segue que $(uw)q_1\cdots q_k = vq_(\theta(1))\cdots q_{i-1}q_{i+1} q_{\theta(m-1)}$.
+    Cancelando, segue que $(uw)q_1\cdots q_k = vq_{\theta(1)}\cdots q_{i-1}q_{i+1} q_{\theta(m-1)}$.
     Por hipótese indutiva, temos que existe $m-1=k$ e existe $\sigma: \{1, \dots, k\}\rightarrow \{1, \dots, k\}$ tal que $p_j$ é associado a $q_{\theta(\sigma(j))}$ para todo $j=1, \dots, k$.
-    
+
     Seja $\sigma'=\theta\circ\sigma \cup \{(k+1, i)\}$, o que conclui a prova.
 \end{proof}
-Então existe um elemento irredutível $p\in R$ tal que $p|a$.
+
+\section{Domínios de Ideais Principais}
+Nessa seção, veremos que todo DIP é um DFU, bem como o conhecido Lema de Bézout.
+
+
 \begin{proof}
     Fique $a \in R$ como no enunciado e suponha por absurdo que a tese é falsa.
     Recursivamente, construiremos uma sequência $(p_n: n \in \mathbb N)$ de elementos de $\mathbb R$ satisfazendo:
@@ -612,7 +616,13 @@ São equivalentes:
     \item Para todo $a\in R\setminus \{0\}$ não invertível, existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
 \end{enumerate}
 \end{prop}
+\begin{prop}[Lema de Bézout]
+    Seja $R$ um domínio de ideais principais, $a, b \in R$ e $d$ um MDC de $a, b$.
+    Então existem $x, y \in R$ tais que $xa+yb=d$.
+\end{prop}
+\begin{proof}
 
+\end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
 dado $n\in \mathbb Z$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
