@@ -526,11 +526,11 @@ Então $R$ é um DFU.
 
 \section{Domínios de Ideais Principais}
 Nessa seção, veremos que todo DIP é um DFU, bem como o conhecido Lema de Bézout.
-
-
+\begin{lemma}
+Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não invertível, possui um divisor irredutível.
+\end{lemma}
 \begin{proof}
-    Fique $a \in R$ como no enunciado e suponha por absurdo que a tese é falsa.
-    Recursivamente, construiremos uma sequência $(p_n: n \in \mathbb N)$ de elementos de $\mathbb R$ satisfazendo:
+    Fique $a \in R$ como no enunciado e suponha por absurdo que $a$ não possui divisor irredutível. Recursivamente, construiremos uma sequência $(p_n: n \in \mathbb N)$ de elementos de $\mathbb R$ satisfazendo:
     \begin{enumerate}[label=\alph*)]
         \item $p_0=a$.
         \item $p_n|p$ para todo $n \in \mathbb N$
@@ -547,7 +547,7 @@ Nessa seção, veremos que todo DIP é um DFU, bem como o conhecido Lema de Béz
     Logo, existem $b, c \in R$ tais que $p_n=bc$ e nem $b$, nem $c$ são invertíveis.
     Seja $p_{n+1}=b$.
 
-    Como $p_{n+1}|p_n$ e $p_n|p$, segue que $p_{n+1}|p$,
+    Como $p_{n+1}|p_n$ e $p_n|p$, segue que $p_{n+1}|p$.
     Como $b$ não é invertível, $\langle p_{n+1}\rangle\neq R$.
 
     Como $p_{n+1}|p_n$, temos que $\langle p_n\rangle\subseteq \langle p_{n+1}\rangle$.
@@ -583,45 +583,18 @@ Nessa seção, veremos que todo DIP é um DFU, bem como o conhecido Lema de Béz
 \end{proof}
 
 \begin{corol}
-    Seja $R$ um domínio de ideais principais e $a\in R\setminus \{0\}$ não invertível.
-    Então existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
+    Todo domínio de ideais principais é um domínio de fatoração única.
 \end{corol}
 
-\begin{prop}
-    Seja $R$ um domínio de integridade.
-    Então todo elemento irredutível é primo.
-\end{prop}
-\begin{proof}
-Seja $r\in R$ irredutível.
-Suponha que $r|ab$, onde $a, b \in R$.
-Logo, $ab=rc$ para algum $c \in R$.
-
-Se $a=0$ ou $b=0$, segue que $r|a$ ou $r|b$, respectivamente.
-
-Se $a$ é invertível ou $b$ é invertível, também segue, respectivamente, que $r|b$ ou $r|a$.
-
-Caso contrário, temos $c\neq 0$.
-Escreva $a=a_1\cdots a_n$ e $b=b_1\cdots b_m$ ecom $a_1, \cdots, a_n$, $b_1, \cdots, b_m$ irredutíveis.
-Temos que $a_1\cdots a_n b_1\cdots b_m=rc$.
-Se $c$ é invertível, temos da unicidade dos DFU's que $r$ é associado a algum $a_i$ ou $b_j$, e, portanto, $r|a$ ou $r|b$.
-
-Se $c$ não é invertível, escreva $c=c_1\cdots c_k$ com $c_1, \dots, c_k$ irredutíveis. Novamente, pela unicidade dos DFU's, temos que $r$ é associado a algum $a_i$ ou $b_j$, e, portanto, $r|a$ ou $r|b$.
-\end{proof}
-
-\begin{prop}
-Seja $R$ um domínio de integridade.
-São equivalentes:
-\begin{enumerate}[label=\alph*)]
-    \item $R$ é um domínio de domínio de fatoração única.
-    \item Para todo $a\in R\setminus \{0\}$ não invertível, existem $p_1, \dots, p_n$ primos tais que $a=p_1\cdots p_n$.
-\end{enumerate}
-\end{prop}
 \begin{prop}[Lema de Bézout]
     Seja $R$ um domínio de ideais principais, $a, b \in R$ e $d$ um MDC de $a, b$.
     Então existem $x, y \in R$ tais que $xa+yb=d$.
 \end{prop}
 \begin{proof}
-
+    Seja $d'$ um gerador do ideal $\langle a, b\rangle$.
+    Então $d'|a$ e $d'|b$.
+    Logo, $d'|d$.
+    Assim, $d \in \langle a, b\rangle=\{ax+by: x, y \in R\}$, o que conclui a prova.
 \end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
