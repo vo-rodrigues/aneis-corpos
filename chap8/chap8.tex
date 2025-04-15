@@ -439,26 +439,91 @@ a do Teorema Fundamental da Aritmética.
 
 \begin{definition}
     Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$ não invertível, existem um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
-
 \end{definition}
 
-Pelo Teorema Fundamental da Aritmética, sabemos que $\mathbb Z$ é um DFU.
+\begin{prop}
+    Todo DFU é um domínio de MDC.
+\end{prop}
+\begin{proof}
+Seja $R$ um DFU e $a, b \in R$ não nulos.
+Se $a|b$ ou $b|a$, temos que o $\MDC(a, b)\neq \emptyset$.
+Assim, vamos supor que $a\not|b$ e $b\not|a$
 
-Mais geralmente:
+Escreva $a=p_1\dots p_n$ e $b=q_1\dots q_m$.
+Reordenando se necessário e fatorando alguma unidade, podemos reescrever:
 
-\begin{theorem}
-    Todo domínio de ideais principais é um DFU.
-\end{theorem}
+\[a=\prod_{i \in I} c_i \prod_{j \in J} a_j\]
+\[b=\prod_{i \in I} c_i \prod_{k \in K} b_k\]
 
-Para provar esse teorema, precisaremos de alguns lemas.
+Onde cada $c_i, a_j, b_k$ são irredutíveis, nenhum $a_j$ é associado à nenhum $b_k$, e consideramos que o produto vazio é $1$.
+Como $a\not |b$ e $b\not | a$, temos que $J, K\neq\emptyset$.
+Afirmamos que $c=\prod_{i \in I} c_i$ é um MDC de $a$ e $b$.
 
+Está claro que $c|a$ e $c|b$.
+Suponha que $d|a$ e $d|b$.
+Devemos ver que $d|c$.
+Temos que $d\neq 0$, e se $d$ é invertível, segue a tese.
+Suponha por absurdo que $d\not | c$.
+Se $d$ não é invertível, escreva $d=d_1\dots d_k$ com $d_i$ irredutíveis.
+Como $d_1\dots d_k|\prod_{i \in I} c_i \prod_{j \in J} a_j$, pela unicidade de fatoração, todo $d_l$ é associado à algum $c_i$ ou $d_k$, de forma injetora.
+Como $d\not |c$, algum $d_l$ é associado à algum $a_j$.
+Porém, $d_1\dots d_k|\prod_{i \in I} c_i \prod_{k \in K} c_k$, e, portnato, esse mesmo $d_l$ é associado à algum $c_k$.
+Assim, $a_j$ é associado à $c_k$, um absurdo.
+\end{proof}
 
-Primeiro, precisaremos:
+\begin{corol}
+Em um DFU, todo elemento irredutível é primo.
+Assim, em um DFU, todo elemento não nulo e não invertível se escreve como um produto de primos.
+\end{corol}
+
+A recíproca é verdadeira. Primeiro, precisamos:
 
 \begin{lemma}
-Seja $R$ um domínio de ideais principais e $a\in R\setminus \{0\}$ não invertível.
-Então existe um elemento irredutível $p\in R$ tal que $p|a$.
+Seja $R$ um domínio de integridade, $p\in R$ um elemento primo e $q_1, \dots, q_n\in R$ irredutíveis.
+Se $p|q_1\cdots q_n$, então existe $i$ tal que $p$ é associado à $q_i$.
 \end{lemma}
+\begin{proof}
+Seguimos por indução em $n$.
+para $n=1$, se $p|q_1$, temos que $q_1=pu$ para algum $u\in R$.
+Assim, $p\in R^*$ ou $u\in R^*$.
+Como $p \notin R^*$, segue que $u \in R^*$, logo, $p$ é associado à $q_1$.
+
+Para o passo indutivo, suponha que a tese é verdadeira para $n$ e que $p|(q_1\dots q_{n+1})$.
+Temos que $p|(q_1\dots q_{n})$ ou $p|q_{n+1}$.
+As hipóteses indutivas concluem a prova.
+\end{proof}
+
+\begin{prop}
+Suponha que $R$ é um domínio em que todo elemento não nulo, não invertível se escreve como um produto de primos.
+Então $R$ é um DFU.
+\end{prop}
+\begin{proof}
+    Basta ver que se $u, v \in R^*$, $n, m\geq 1$ e $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis, então $n=m$ e existe uma permutação $\sigma:\{1, \dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+
+    Primeiro, verificaremos que todo irredutível é primo.
+    Suponha que $q$ é irredutível.
+    Escreva $q=p_1\cdots p_n$, com $p_1, \dots, p_n$ primos.
+    Temos que cada $p_i$ divide $q$.
+    Assim, pelo lema, existe $i$ tal que $p_i$ é associado a $q$.
+    Em particular, $q$ é primo.
+
+    Agora provaremos por indução em $k=\max\{m, n\}$ que, para todo $m, n\geq1$ com $m, n\leq k$, se $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis (primos), então $n=m$ e existe uma permutação $\sigma:\{1, \dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+
+    Para $k=1$, temos que $u p_1= v q_1$.
+    Logo, $p_1, q_1$ são associados.
+
+    Para o passo indutivo, suponha que a tese é verdadeira para $k$ e que $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis (primos) com $n, m\leq k+1$.
+    Se $m, n\leq k$, a hipótese indutiva conclui a prova.
+    Sem perda de generalidade, vamos supor $n=k+1$.
+    Assim, $(up_1\cdots p_{k})p_{k+1}=vq_1\cdots q_{m}$.
+    Como $p_{k+1}|q_1\cdots q_m$, segue do lema anterior que existe $i$ tal que $p_{k+1}$ é associado a $q_i$.
+    Tome $\theta: \{1, \dots, m\}\rightarrow \{1, \dots, m\}$ de modo que  $\theta(i)=m$. Escreva $p_{k+1}=w q_i$.
+    Cancelando, segue que $(uw)q_1\cdots q_k = vq_(\theta(1))\cdots q_{i-1}q_{i+1} q_{\theta(m-1)}$.
+    Por hipótese indutiva, temos que existe $m-1=k$ e existe $\sigma: \{1, \dots, k\}\rightarrow \{1, \dots, k\}$ tal que $p_j$ é associado a $q_{\theta(\sigma(j))}$ para todo $j=1, \dots, k$.
+    
+    Seja $\sigma'=\theta\circ\sigma \cup \{(k+1, i)\}$, o que conclui a prova.
+\end{proof}
+Então existe um elemento irredutível $p\in R$ tal que $p|a$.
 \begin{proof}
     Fique $a \in R$ como no enunciado e suponha por absurdo que a tese é falsa.
     Recursivamente, construiremos uma sequência $(p_n: n \in \mathbb N)$ de elementos de $\mathbb R$ satisfazendo:
