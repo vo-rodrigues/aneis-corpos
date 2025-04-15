@@ -2,7 +2,17 @@
 Neste capítulo, estudaremos a noção de divisibilidade em anéis.
 Tal noção é uma generalização da noção de divisibilidade em $\mathbb Z$.
 
-Trataremos de divisibilidade apenas em anéis comutativos.
+Trataremos de divisibilidade apenas em anéis comutativos, dando particular atenção aos domínios de integridade.
+
+Neste capítulo, estudaremos diversos tipos de domínios de integridade que capturam boa parte das propriedades de divisibilidade dos números inteiros.
+
+Uma esquematização encontra-se no diagrama abaixo:
+
+\begin{center}
+    \begin{tikzcd}
+        \text{Domínios de integridade} \\ \text{Domínios de MDC} \arrow[u] \\ \text{Domínios Fatoriais} \arrow[u] \\ \text{Domínios de ideais principais} \arrow[u] \\ \text{Domínios Euclideanos} \arrow[u] \\ \text{Corpos} \arrow[u]\\
+    \end{tikzcd}
+\end{center}
 
 \section{Definição de divisibilidade}
 
@@ -34,6 +44,8 @@ Divisores de zero geram diversas patologias na teoria da divisibilidade, e estas
 Assim, nos restringiremos aos anéis comutativos que não possuem divisores de zero, ou seja, aos domínios de integridade.
 Note que, nesses domínios, se $b\neq 0$ e $b|a$, então existe um \emph{único} $c\in R$ tal que $a=bc$.
 Este elemento $c$ é, muitas vezes, chamado de quociente de $a$ por $b$.
+
+Outra vantagem é a caracterização de $a|b$ e $b|a$ a seguir:
 \begin{prop}
     Seja $R$ um anel domínio de integridade. Se $a, b\in R$, são equivalentes:
 
@@ -97,6 +109,81 @@ São equivalentes:
     Em particular, $b \in \langle a\rangle$.
     Pela definição de $\langle a \rangle$, existe $c \in R$ tal que $b=ac$, e, assim, $a|b$.
 \end{proof}
+
+\section{Mínimo múltiplo comum e Máximo divisor comum}
+
+Nesta seção, definimos a noção de mínimo múltiplo comum e máximo divisor comum de dois elementos em um domínio de integridade.
+\begin{definition}
+Seja $R$ um domínio de integridade e $a, b \in R$ não nulos.
+
+Um mínimo múltiplo comum de $a$ e $b$ é, se existe, um elemento $m\in R$ tal que:
+\begin{itemize}
+    \item $a|m$ e $b|m$.
+    \item Se $c\in R$ é tal que $a|c$ e $b|c$, então $m|c$.
+\end{itemize}
+
+Um máximo divisor comum de $a$ e $b$ é, se existe, um elemento $d\in R$ tal que:
+\begin{itemize}
+    \item $d|a$ e $d|b$.
+    \item Se $c\in R$ é tal que $c|a$ e $c|b$, então $c|d$.
+\end{itemize}
+
+O conjunto de todos os MMC's de $a, b$ é $\MMC(a, b)$.
+O conjunto de todos os MDC's de $a, b$ é $\MDC(a, b)$.
+\end{definition}
+
+Note que, pela simetria da definição, $\MDC(a, b)=\MDC(b, a)$ e $\MMC(a, b)=\MMC(b, a)$.
+É importante ressaltar que, no geral, $\MMC(a, b)$ e $\MDC(a, b)$ podem ser vazios, e, geralmente, quando não vazios, não são unitários.
+De fato:
+\begin{lemma}
+    Seja $R$ um domínio de integridade e $a \in R$ não nulo.
+
+    Sejam $a, b \in R$.
+    Então todos os elementos de $\MDC(a, b)$ são associados entre si.
+    Analogamente, todos os elementos de $\MMC(a, b)$ são associados entre si.
+
+    Reciprocamente, todo elemento de $R$ associado à algum elemento de $\MDC(a, b)$ é um MDC de $a, b$, e todo elemento de $R$ associado à algum elemento de $\MMC(a, b)$ é um MMC de $a, b$.
+\end{lemma}
+\begin{proof}
+Sejam $d, d'$ máximos divisores comuns de $a$ e $b$.
+Então, $d|a$ e $d|b$, $d'|a$ e $d'|b$.
+Logo, $d|d'$ e $d'|d$.
+Logo, $d$ e $d'$ são associados entre si.
+
+Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a$ e $b$.
+Então, $m|a$ e $m|b$, $m'|a$ e $m'|b$.
+Logo, $m|m'$ e $m'|m$.
+Logo, $m$ e $m'$ são associados entre si.
+
+Para a recíproca, se $d$ é MDC de $a, b$ e $d'$ é associado à $d$, então $d'|a$ e $d'|b$, pois $d|a$, $d|b$ e $d'|d$.
+Se $x\in R$ é tal que $x|a$ e $x|b$, então $d'|d$ e $d|x$, logo $d'|x$.
+
+Similarmente, se $m$ é MMC de $a, b$ e $m'$ é associado à $m$, então $m'$ é MMC de $a, b$.
+\end{proof}
+No geral, em domínios de integridade, podem existir pares de elementos sem MMC ou MDC.
+Porém:
+
+\begin{lemma}
+Sejam $a, b \in R$ tais que $a|b$.
+Então $a \in \MDC(a, b)$ e $b \in \MDC(a, b)$.
+
+Em particular, $0 \in \MDC(a, 0)$ e $a \in \MMC(a, 0)$.
+Além disso, se $a, b \neq 0$, temos $0 \notin \MMC(a, b)$. e $0 \notin \MDC(a, b)$.
+\end{lemma}
+
+\begin{proof}
+    Suponha que $a|b$.
+    Temos que $a|b$ e $a|a$, logo, $a$ é divisor comum de $a, b$.
+    Se $r$ é divisor comum de $a, b$, temos que $r|a$, logo, $a \in \MDC(a, b)$.
+
+    Temos que $a|b$ e $b|b$, logo, $b$ é múltiplo comum de $a, b$.
+    Se $r$ é múltiplo comum de $a, b$, temos que $b|r$, logo, $b \in \MMC(a, b)$.
+
+    Para a última afirmação, se $a, b \neq 0$, temos que $0 \notin \MDC(a, b)$, já que $0$ divide apenas $0$.
+    Além disso, $0 \notin MMC(a, b)$, pois $ab\neq 0$ é múltiplo comum de $a, b$ e não é múltiplo de $0$.
+\end{proof}
+
+
 
 \section{Elementos primos e irredutíveis}
 Os números inteiros possuem uma classe muito importante de números: a dos primos.
@@ -183,6 +270,169 @@ Se $q \in R$ é associado à $p$, então $q$ é irredutível.
     Se $b$ é invertível, segue a tese.
     Se $u^{-1}a=v$ é invertível, então $a=uv$ também é, e segue a tese.
 \end{proof}
+
+\begin{lemma}
+    Seja $R$ um domínio de integridade e $p$ um elemento primo.
+    
+    Se $q \in R$ é associado à $p$, então $q$ é primo.
+    
+\end{lemma}
+    
+\begin{proof}
+    Se $a, b \in R$ tão tais que $q|ab$, como $p|q$, segue que $p|ab$.
+    Logo, $p|a$ ou $p|b$.
+    Como $q|p$, segue que $q|a$ ou $a|b$.
+\end{proof}
+
+
+
+\section{Domínios de MDC}
+Em $\mathbb Z$, sabemos que quaisquer dois elementos possuem um mdc (máximo divisor comum) e um mmc (mínimo múltiplo comum).
+
+Nesta seção, estudaremos a classe de domínios de integridade que generaliza essa propriedade.
+
+\begin{definition}
+    Um domínio de integridade $R$ é um domínio de MDC se para todos $a, b \in R$ existe um mdc de $a$ e $b$.
+\end{definition}
+
+Como primeira propriedade, temos:
+
+\begin{prop}
+    Seja $R$ um domínio de MDC e $a, b\in R$.
+    Então, para todo $x \in R$, temos $x\MDC(a, b)=\MDC(xa, xb)$.
+\end{prop}
+\begin{proof}
+    Se $x=0$, a igualdade nos diz que $\{0\}=\{0\}$.
+    Assim, suponha que $x\neq 0$.
+
+    Seja $m\in \MDC(a, b)$ e $\bar m \in \MDC(xa, xb)$.
+    Veremos que $xm$ e $\bar m$ são associados.
+
+    Como $m$ é MDC de $a$ e $b$, temos que $m|a$ e $m|b$.
+    Logo, $xm|xa$ e $xm|xb$.
+    Assim, $xm|\bar m$.
+
+    Para a recíproca, temos que $x|xa$ e $x|xb$. Segue que $x|\bar m$.
+    Escreva $\bar m=xc$ para algum $c \in R$.
+    Temos que $xc|xa$ e $xc|xb$.
+    Cancelando, $c|a$ e $c|b$.
+    Logo, $c|m$. Assim, $\bar m=xc|xm$.
+\end{proof}
+
+\begin{prop}
+    Seja $R$ um domínio de MDC e $a, b\in R$.
+    Então, para todo $x \in R$, temos $x\MDC(a, b)=\MDC(xa, xb)$.
+\end{prop}
+\begin{proof}
+    Se $x=0$, a igualdade nos diz que $\{0\}=\{0\}$.
+    Assim, suponha que $x\neq 0$.
+
+    Seja $m\in \MDC(a, b)$ e $\bar m \in \MDC(xa, xb)$.
+    Veremos que $xm$ e $\bar m$ são associados.
+
+    Como $m$ é MDC de $a$ e $b$, temos que $m|a$ e $m|b$.
+    Logo, $xm|xa$ e $xm|xb$.
+    Assim, $xm|\bar m$.
+
+    Para a recíproca, temos que $x|xa$ e $x|xb$. Segue que $x|\bar m$.
+    Escreva $\bar m=xc$ para algum $c \in R$.
+    Temos que $xc|xa$ e $xc|xb$.
+    Cancelando, $c|a$ e $c|b$.
+    Logo, $c|m$. Assim, $\bar m=xc|xm$.
+\end{proof}
+
+
+Poderíamos definir também a noção de domínio de MMC, mas isso não é necessário:
+
+\begin{prop}
+    Seja $R$ um domínio de integridade.
+    Então $R$ é um domínio de MDC se, e somente se para todos $a, b \in R$, $\MMC(a, b)\neq \emptyset$.
+
+    Além disso, nesses casos, se $a, b \neq 0$ e $m\in \MMC(a, b)$, então o quociente de $ab$ por $m$ é um MDC de $a$ e $b$.
+
+    Analogamente, se $a, b \neq 0$ e $d\in \MDC(a, b)$, então o quociente de $ab$ por $d$ é um MMC de $a$ e $b$.
+\end{prop}
+
+\begin{proof}
+    Primeiro, suponha que $R$ é um domínio de MDC.
+    Fixe $a, b \in R$,
+    veremos que existe um MMC de $a, b$.
+    Se $a=0$ ou $b=0$, então $0 \in MMC(a, b)$.
+    Assim, suponha que $a\neq 0\neq b$.
+    Segue que $0 \notin \MDC(a, b)$.
+
+    Seja $d \in \MDC(a, b)$.
+    Escreva $a=da'$ e $b=db'$.
+    Seja $m=da'b'=ab'=ba'$.
+    Está claro que $a|m$ e $b|m$, e $ab=md$.
+
+    Suponha que $x\in R$ é tal que $a|x$ e $b|x$.
+    Então $md=ab|xb$ e $md=ab|xa$.
+    Como $xd\in \MDC(ax, bx)$, temos que $xd|md$.
+    Como $d\neq 0$, temos que $x|m$.
+    Isso conclui que $m \in \MMC(a, b)$.
+
+    Reciprocamente, suponha que para todos $a, b \in R$, $\MMC(a, b)\neq \emptyset$. Veremos que para todos $a, b \in R$, $\MDC(a, b)\neq \emptyset$.
+    Se $a=0$ ou $b=0$, então $0 \in \MDC(a, b)$.
+    Assim, vamos supor $a, b \neq 0$.
+
+    Fixe $m \in \MMC(a, b)$.
+    Temos que $a|m$ e $b|m$, que $ab|am$ e $ab|bm$.
+    Escreva $m=aa'=bb'$.
+    Como $ab$ é múltiplo de $a$ e $b$, temos que $m|ab$.
+    Escreva $ab=dm$.
+    Afirmamos que $d \in \MDC(a, b)$.
+    
+    Com efeito, $ab=dm=daa'=dbb'$, logo, $b=da'$ e $b=db'$.
+    Assim, $d|a$ e $d|b$.
+    Agora seja $x\in R$ tal que $x|a$ e $x|b$.
+    Temos que $x|ab$.
+    Escreva $ab=xy$, $a=\bar ax$, $b=\bar by$.
+    Então $ab=\bar axb=\bar bxa=xy$, assim, $\bar ab=\bar ba=y$.
+    Logo, $b|y$ e $a|y$, e, assim, $m|y$.
+
+    Escreva $y=my'$.
+    Segue que $ab=xy=xmy'=dm$.
+    Cancelando $m$, segue que $xy'=d$, ou seja, $x|d$.
+\end{proof}
+
+\begin{corol}
+    Seja $R$ um domínio de MDC.
+    Então para todos $a, b, x \in R$, temos que $x\MMC(a, b)=\MMC(xa, xb)$.
+\end{corol}
+\begin{proof}
+Seja $x=0$ a igualdade é $\{0\}=\{0\}$.
+Se $a=0$, temos que $xb$ está em ambos os conjuntos.
+Se $b=0$, temos que $xa$ está em ambos os conjuntos.
+
+Assim, suponha $a, b, x \neq 0$.
+Seja $d\in \MDC(a, b)$.
+Escreva $md=ab$.
+Assim $(xm)(xd)=(xa)(xb)$ e $xd \in MDC(a, b)$.
+Logo, $(xm)\in \MMC(xa, xb)$.
+\end{proof}
+
+\begin{lemma}
+    Em um domínio de MDC, todo elemento irredutível é primo.
+    \end{lemma}
+    
+\begin{proof}
+    Seja $p \in R$ um elemento irredutível.
+    Sejam $a, b \in R$ com $p|ab$.
+    Veremos que $p|a$ ou $p|b$.
+
+    Seja $d\in\MDC(p, a)$.
+    Então $bd\in \MDC(pb, ab)$.
+    Como $p|pb$ e $p|ab$, segue que $p|bd$.
+
+    Então $d|p$ e $d|a$.
+    Como $d|p$, então $d$ é invertível ou é associado à $p$.
+
+    Se $d$ é associado à $p$, temos que $p|d$, e, portanto, $p|a$.
+
+    Se $d$ é invertível, temos, de $p|bd$, que $p|b$.
+\end{proof}
+
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
 dado $n\in \mathbb Z$ e $d>0$, existem únicos $n, r$ tais que $0\leq r < d$ e $a=nd+r$.
@@ -409,39 +659,7 @@ São equivalentes:
 \end{enumerate}
 \end{prop}
 
-\section{Mínimo múltiplo comum e Máximo divisor comum}
-\begin{definition}
-Seja $R$ um anel comutativo e $a, b \in R$ não nulos.
 
-Um mínimo múltiplo comum de $a$ e $b$ é, se existe, um elemento $m\in R$ tal que:
-\begin{itemize}
-    \item $a|m$ e $b|m$.
-    \item Se $c\in R$ é tal que $a|c$ e $b|c$, então $m|c$.
-\end{itemize}
-
-Um máximo divisor comum de $a$ e $b$ é, se existe, um elemento $d\in R$ tal que:
-\begin{itemize}
-    \item $d|a$ e $d|b$.
-    \item Se $c\in R$ é tal que $c|a$ e $c|b$, então $c|d$.
-\end{itemize}
-\end{definition}
-\begin{lemma}
-    Seja $R$ um domínio de integridade e $a \in R$ não nulo.
-
-    Sejam $a, b \in R$.
-    Então todos os mínimos múltiplos comuns de $a$ e $b$ são associados entre si, e todos os máximos divisores comuns de $a$ e $b$ são associados entre si (caso existam).
-\end{lemma}
-\begin{proof}
-Sejam $d, d'$ máximos divisores comuns de $a$ e $b$.
-Então, $d|a$ e $d|b$, $d'|a$ e $d'|b$.
-Logo, $d|d'$ e $d'|d$.
-Logo, $d$ e $d'$ são associados entre si.
-
-Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a$ e $b$.
-Então, $m|a$ e $m|b$, $m'|a$ e $m'|b$.
-Logo, $m|m'$ e $m'|m$.
-Logo, $m$ e $m'$ são associados entre si.
-\end{proof}
 
 \section{Exercícios}
 
