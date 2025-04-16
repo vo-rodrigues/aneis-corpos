@@ -5,8 +5,18 @@ Durante o texto, precisamos de algumas definições e resultados envolvendo noç
 Não é objetivo deste capítulo desenvolver formalmente os princípios da teoria dos conjuntos, mas apenas estabelecer convenções notacionais e fixar algumas definições que serão utilizadas ao longo do texto. Assume-se familiaridade do leitor com funções e com manipulação de conjuntos a nível básico.
 Um curso de pré-cálculo ou um curso básico de álgebra linear apresentam conhecimentos mais do que suficientes para acompanhar a leitura deste texto.
 
-\section{Famílias e produtos cartesianos}
+\section{Pares ordenados}
+Um par ordenado é um conjunto especial constituido a partir de dois outros conjuntos, $a, b$, e denotado por $(a, b)$.
+Sua principal propriedade é que $a, b$ são pares ordenados, vale que $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$.
 
+Formalmente, em Teoria dos Conjuntos, um par ordenado é definido como qualquer conjunto que possui esta propriedade.
+Um modo popular de o fazer é através do chamado par de Kuratowski, que define o par ordenado $(a, b)$ como o conjunto $\{\{a\}, \{a, b\}\}$.
+Definindo-se o par ordenado dessa forma, fica a cargo do leitor interessado verificar que $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$.
+
+A definição de Kuratowski pode parecer estranha, ou anti-natural, mas satisfaz o que se espera de um par ordenado.
+Por isso mesmo, não é desejável que teoremas sobre Álgebra dependam dela. E não dependerão. Tudo que será utilizado ao longo de todo o texto é a propriedade mencionada no parágrafo anterior.
+
+\section{Famílias e produtos cartesianos}
 Funções são objetos matemáticos normalmente pensados como entes $f:X\rightarrow Y$ que recebem uma entrada $x$, dentro de um conjunto de possíveis entradas $x \in X$ e devolvem uma saída $f(x)\in Y$.
 O conjunto $X$ é chamado de \emph{domínio} de $f$, e denotado por $\dom f$. O conjunto de todos os valores assumidos por $f$ é a \emph{imagem} de $f$, e denotado por $\ran(f)=\{f(x): x \in X\}$.
 Um conjunto que contém a imagem é chamado de um \emph{contradomínio} de $f$.
