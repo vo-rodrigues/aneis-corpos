@@ -257,3 +257,18 @@ Desta última, $\alpha\circ \theta=\beta$.
 Para ver que $g$ é o único tal homomorfismo, se $h: R[Y]\rightarrow S$ é um homomorfismo tal que $h\circ \phi=f$ e $h\circ \alpha\circ \theta=\beta$, então então $h\circ \alpha=\beta'$.
 Pela unicidade de $g$, segue que $g=h$.
 \end{proof}
+\begin{prop}
+    Seja $R$ um anel comutativo e $X$ um conjunto. Então $R[x, y]\approx R[x][y]$.
+\end{prop}
+\begin{proof}
+    Seja $X=\{x, y\}$, $\psi:R[x]$ a imersão canônica, $\psi': R[x]\rightarrow R[x][y]$ a imersão, $\phi=\psi'\circ \psi$, $\alpha(x)=x\in R[x][y]$ e $\alpha(y)=y\in R[x][y]$. e $\alpha(x)=\psi'(x)\in R[x]$.
+    Então, $(R[x][y], \phi, \alpha)$ é um anel de polinômios sobre $R$ com variáveis em $X$.
+
+    Com efeito, seja $S$ um anel comutativo, $f:R\rightarrow S$ um homomorfismo e $\beta:X\rightarrow S$ uma função.
+    Então, existe um único homomorfismo $g:R[x]\rightarrow S$ tal que $g\circ \psi=f$ e $g(x)=\beta(x)$.
+    Então, existe um único homomorfismo $h:R[x][y]\rightarrow S$ tal que $h\circ \psi'=g$ e $h(y)=\beta(y)$.
+    Assim, $h\circ \phi=h\circ(\psi'\circ \psi)=(h\circ \psi')\circ \psi=g\circ \psi=f$, $h(\alpha(y))=h(y)=\beta(y)$ e $h(\alpha(x))=h\circ \psi'(x)=g(x)=\beta(x)$.
+
+    Para ver a unicidade de $h$, se $\bar h$ é outra tal função, temos que $\bar h\circ \psi=(\bar h\circ \psi')\circ \psi=f$ e $\bar h\circ \alpha(x)=\bar h\circ \psi'(x)=\beta(x)$, logo, $\bar h\circ \psi'=g$.
+    Além disso, $\bar h\circ \alpha=\beta$, logo, $\bar h=h$.
+\end{proof}
