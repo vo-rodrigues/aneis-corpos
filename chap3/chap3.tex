@@ -290,13 +290,23 @@ Temos que o elemento $(1,n)$ da matriz $(a_{ij})(b_{ij})$ é dado por $\sum_{k=1
 \end{proof}
 
 Assim, os anéis de matrizes nos dão uma ampla gama de anéis não comutativos.
-\section{Domínios de Integridade}
+\section{Domínios de integridade e divisores de zero}
 O anel dos números inteiros, bem como o anel dos racionais reais, possuem a seguinte importante propriedade:
 \begin{definition}
 Seja $A$ um anel comutativo. Dizemos que $A$ é um \emph{domínio de integridade} se, e somente se, $\forall a, b \in A$, se $ab=0$, então $a=0$ ou $b=0$.
 \end{definition}
 
 Nem todos os anéis comutativos são domínios de integridade. Por exemplo, no anel dos inteiros módulo $4$, $\mathbb Z_4$, temos que $2\cdot 2=4=0$, e $2\neq 0$.
+
+Divisores de zero são elementos não nulos que, multiplicados entre si, resultam em zero.
+
+\begin{definition}
+Sejam $A$ um anel. Um divisor de zero de $A$ é um elemento $a \in A$ não nulo para o qual exista $b \in A$ não nulo tal que $ab=0$ ou $ba=0$.
+\end{definition}
+
+Note que um domínio de integridade é um anel comutativo sem divisores de zero.
+
+Divisores de zero são patológicos ao estudar a teoria de divisibilidade em anéis, assim, muitas vezes, eles são excluídos de tal estudo.
 
 \section{Elementos invertíveis}
 Um anel, com sua soma, é um grupo Abeliano, e, portanto, possui opostos aditivos. Porém, não necessita possuir opostos multiplicativos. Os elementos de um anel que possuem inversos no anel são os chamados \emph{elementos invertíveis} ou \emph{unidades}.
@@ -334,16 +344,6 @@ Além disso, $A^*$ é, com a restrição da operação de multiplicação do ane
     Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
 
-\section{Divisores de zero}
-Divisores de zero são elementos não nulos que, multiplicados entre si, resultam em zero.
-
-\begin{definition}
-Sejam $A$ um anel. Um divisor de zero de $A$ é um elemento $a \in A$ não nulo para o qual exista $b \in A$ não nulo tal que $ab=0$ ou $ba=0$.
-\end{definition}
-
-Divisores de zero são patológicos ao estudar a teoria de divisibilidade em anéis, assim, muitas vezes, eles são excluídos de tal estudo.
-
-Note que um domínio de integridade é um anel comutativo sem divisores de zero.
 \section{O anel dos números inteiros}
 Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
 
