@@ -73,13 +73,14 @@ Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
 
 \begin{prop}[Unicidade dos inversos]\label{prop:inverso_unico_grupo}
     Seja $(G,\cdot,e)$ um grupo.
-    Então todo $a \in G$ possui um único elemento inverso, ou seja, para todo $g \in G$,  é único.
+    Então todo $a \in G$ possui um único elemento inverso.
 Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
 \end{prop}
 \begin{proof}
     A existência do inverso é garantida pela definição de grupo.
-    Para provar a unicidade, suponha que $b, c$ são inversos de $a$, ou seja, $a \cdot b = b \cdot a = e$ e $a \cdot c = c \cdot a = e$.
-    Então, temos:
+    
+    Para provar a unicidade, suponha que $b, c$ são inversos de $a$, ou seja, que $a \cdot b = b \cdot a = e$ e $a \cdot c = c \cdot a = e$.
+    Segue que:
     $$b=be=b(ac)=(ba)c=ec=c.$$
 \end{proof}
 
