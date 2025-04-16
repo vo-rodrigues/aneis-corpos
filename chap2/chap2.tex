@@ -182,7 +182,7 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
     \[=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.\]
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:group_sumVarChange}
     Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
 Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
 Então:
@@ -200,6 +200,50 @@ Como $|J'|=|I'|=n$, por hipótese indutiva temos que $\sum_{j \in J'}a_{\phi(j)}
 Segue que:
 
 \[\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.\]
+\end{proof}
+\begin{prop}[Concatenação de somatórios]\label{prop:group_sumConcat}
+    Seja $I, J$ conjuntos disjuntos. Considere em $G$ famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
+    Vale a relação:
+
+    \[\sum_{i \in I}a_i+\sum_{i \in I}a_i=\sum_{i \in I\cup J}a_i\]
+\end{prop}
+\begin{proof}
+    Provaremos por indução no tamanho de $J$.
+    Se $J=\emptyset$, temos $I\cup J=J$ e $\sum_{i \in J}a_i=0$, logo, segue a tese.
+
+    Se a proposição vale para todo $J$ de tamanho $n$, suponha que $|J|=n+1$ e seja $J'=J\setminus \{j'\}$, onde $j' \in J$ é qualquer elemento arbitrário.
+
+    Então:
+    \[\sum_{i \in I}a_i+\sum_{i \in J}a_i=\left(\sum_{i \in I}a_i+\sum_{i \in J'}a_i\right)+a_{j'}=\sum_{i \in I\cup J'}a_i+a_{j'}=\sum_{i \in I\cup J}a_i.\]
+\end{proof}
+
+\begin{prop}[Concatenação de somatórios II]\label{prop:group_sumConcatII}
+    Seja $I$ um conjunto não vazio e, para cada $i \in F$, seja $F_i$ um conjunto.
+    Considere o conjunto finito $K=\bigcup_{i \in I}\{i\}\times F_i=\{(i, j): i \in I, j \in F_i\}$.
+
+    Para cada $i \in I$, considere uma família de elementos de $G$, $(a_{ij}: j \in F_i)$.
+    Considere também as famílias $(a_{ij}: (i, j)\in K)=(a_{i, j}: i\in I, j \in F_i)$ e $(\sum_{j \in F_i}: i\in I)$. Vale a relação:
+
+    \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\sum_{(i, j)\in K}a_{ij}\]
+\end{prop}
+\begin{proof}
+    Provaremos por indução no tamanho de $I$.
+    Se $I=\{i'\}$ é unitário, temos que $K=\{(i', j): j \in F_{i'}\}$.
+    Segue que $\phi:F_{i'}\rightarrow K$ dada por $\phi(j)=(i', j)$ é bijetora.
+    Assim, pela proposição \ref{prop:group_sumVarChange}, temos que:
+
+    \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\left(\sum_{j \in F_{i'}}a_{i'j}\right)=\sum_{(i, j)\in K}a_{ij}\]
+
+    Agora provaremos o passo indutivo.
+
+    Suponha que $|I|=n+1$ e que a hipótese vale para todo $I$ de tamanho $n$. Fixe qualquer $i' \in I$ e considere $I'=I\setminus \{i'\}$.
+
+    Seja $K'=\{(i', j): j \in F_{i'}\}$. e $\hat K=\{(i, j): i \in I', j \in F_i\}$.
+    Segue que $K$ é a união disjunta de $\hat K$ e $K'$.
+    Assim, pela Proposição \ref{prop:group_sumConcat}, pelo caso base, e pelo passo indutivo, segue que:
+    \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\left(\sum_{i \in I'}\sum_{j \in F_{i}}a_{ij}\right)+\left(\sum_{j \in F_{i'}}a_{i'j}\right)=\sum_{(i, j)\in \hat K}a_{ij}+\sum_{(i, j)\in K'}a_{ij}=\sum_{(i, j)\in K}a_{ij}\]
+
+
 \end{proof}
 
 \section{Exercícios}
