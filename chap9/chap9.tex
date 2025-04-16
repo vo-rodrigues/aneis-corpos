@@ -275,8 +275,8 @@ Pela unicidade de $g$, segue que $g=h$.
 
 \section{Divisibilidade em anéis de polinômios}
 \begin{prop}
-Se $R$ é um corpo, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
-Em particular, $R[x]$ é um domínio Euclideano.
+Se $R$ é um domínio de integridade, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$ e o coeficiente dominante de $d$ invertível, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
+Em particular, se $R$ é um corpo, então $R[x]$ é um domínio Euclideano.
 \end{prop}
 \begin{proof}
     Existência: fixe $d(x)$ e seja $\deg(d(x))=k\geq 0$.
@@ -287,5 +287,42 @@ Em particular, $R[x]$ é um domínio Euclideano.
     Temos que $p(x)-\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}$ é um polinômio de grau $\leq n$, logo, pela hipótese indutiva, existe $q(x), r(x)$ tais que $p(x)-\frac{p_n}{d_k}d(x)x^{n+1-k}=d(x)q(x)+r(x)$, onde $\deg(r(x))<k$.
     Segue que $p(x)=(\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}+q(x))d(x)+r(x)$, onde $\deg(r(x))<k$.
 
-    A unicidade segue do fato do fato de que $\deg(a(x)+b(x))\leq\max(\deg(a(x)), \deg(b(x)))$ para todos $a(x), b(x)\in R[x]$.
+    Para a unicidade, se existem $q_1(x), r_1(x)$ e $q_2(x), r_2(x)$ tais que $p(x)=d(x)q_1(x)+r_1(x)=d(x)q_2(x)+r_2(x)$, temos que $d(x)(q_1(x)-q_2(x))=r_2(x)-r_1(x)$.
+    Se $q_1(x)-q_2(x)=0$ segue a tese.
+
+    Caso contrário, temos $\gr(r_2(x)-r_1(x))<\gr(d(x))\leq\gr(d(x)(q_1(x)-q_2(x)))=\gr(r_2(x)-r_1(x))$, o que é uma contradição.
 \end{proof}
+
+\begin{prop}
+    Seja $R$ um domínio de integridade e $p(x)\in R[x]$.
+    Temos que $(x-a)|p(x)$ se, e somente se, $p(a)=0$.
+\end{prop}
+\begin{proof}
+    Suponha que $p(a)=0$. Existem $q(x)\in R[x]$ e $r \in R$ tais que $p(x)=q(x)(x-a)+r$.
+    Como $p(0)=0$, segue que $0=r$, logo, $(x-a)|p(x)$.
+
+    Reciprocamente, se $(x-a)|p(x)$, exite $q(x)$ tal que $p(x)=(x-a)q(x)$. Assim, $p(0)=0$.
+\end{proof}
+
+\section{Exercícios}
+\begin{exer}
+    Seja $K$ um corpo. Demonstre, de acordo com o roteiro abaixo, que o ideal $\langle x-a\rangle$ é maximal no domínio $K[x]$:
+    \begin{enumerate}[label=\alph*)]
+        \item Considere o homomorfismo avaliação de $K[x]$ em $K$ que avalia $p(x)$ em $a$. Mostre que o núcleo desse homomorfismo é $\langle x-a\rangle$.
+        \item Demonstre que $K[x]/\langle x-a\rangle$ é isomorfo a $K$.
+        \item Conclua que $\langle x-a\rangle$ é maximal.
+    \end{enumerate}
+\end{exer}
+\begin{exer}
+    Considere o anel de polinômios $K[x, y]=K[x][y]$ e  $I=\langle y\rangle$.
+    \begin{itemize}
+        \item Mostre que $I$ não é um ideal maximal exibindo um ideal próprio que o contém.
+        \item Mostre que $I$ não é maximal estudando o quociente $K[x, y]/I$.
+    \end{itemize}
+\end{exer}
+\begin{exer}
+Mostre que $\mathbb R[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb C$.
+\end{exer}
+\begin{exer}
+    Mostre que $\mathbb z[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb Z[i]$.
+\end{exer}
