@@ -27,26 +27,37 @@ Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de 
     \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
 \end{itemize}
 \end{definition}
-Algumas observações importantes sobre a notação utilizada no estudo de grupos:
-\begin{itemize}
-\item Ao discursar sobre grupos, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$.
-\item Caso o grupo seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
-Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
-\item Caso o grupo não seja Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
-Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
-\end{itemize}
 
 Alguns exemplos:
 
+\begin{exemplo}Abaixo, exemplificamos alguns grupos importantes.
+    \begin{enumerate}[label=\alph*)]
+        \item Com a soma usual e $0$, $\mathbb{Z, Q, R, C}$ são grupos Abelianos.
+        \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo Abeliano com elemento neutro $1$.
+        De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro.
+        Note que $1\in \mathbb T$ e $0\notin \mathbb T$.
+        Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$.
+        Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
+        \item Os inteiros módulo $n$ ($n\geq 1$), dados por $\mathbb Z_n=\{0, \dots, n-1\}$ com a soma dada pela aritmética módulo $n$, são grupos.
+        \item Se $X$ é um conjunto qualquer, o conjunto das bijeções de $X$ em $X$ é, com a composição usual de funções e a identidade, um grupo, cuja operação inversa é a inversão usual de funções.
+        Tal grupo é denominado \emph{grupo de permutações de $X$}.
+        
+        Caso $X$ tenha ao menos $3$ elementos, ele não é abeliano: sendo $a, b, c$ três elementos distintos de $X$, sendo $f$ a função que permuta $a, b$ e fixa os demais elementos, $g$ a que permuta $b, c$ temos que $f\circ g(a)=f(a)=b$, mas $g\circ f(a)=g(b)=c$, logo, $f\circ g\neq g\circ f$.
+    \end{enumerate}
+\end{exemplo}
+
+Algumas observações importantes sobre a notação utilizada no estudo de grupos:
 \begin{itemize}
-    \item Com a soma usual, $\mathbb{Z, Q, R, C}$ são grupos Abelianos.
-    \item Com a multiplicação usual, o círculo unitário complexo $\mathbb T=\{x \in \mathbb C: |x|=1\}$ é um grupo Abeliano com elemento neutro $1$.
-    De fato, o produto de complexos é comutativo, associativo e tem $1$ como elemento neutro.
-    Note que $1\in \mathbb T$ e $0\notin \mathbb T$.
-    Se $x \in \mathbb T$, o inverso multiplicativo de $x$ é dado por $\frac{\bar x}{|x|^2}$, onde $\bar x$ denota o conjugado de $x$.
-    Como $|\bar x|=|x|=1$, segue que $\mathbb T$ tem todos os inversos de todos seus elementos.
-    \item Os inteiros módulo $n$ ($n\geq 1$), dados por $\mathbb Z_n=\{0, \dots, n-1\}$ com a soma dada pela aritmética módulo $n$, são grupos.
+\item Ao discursar sobre grupos, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$, conforme fizemos acima ao mencionar que $\mathbb Z$ é um grupo.
+O mais formal, porém muito menos usual, feito principalmente em situações em há chance de confusão, é escrever que, por exemplo, $(\mathbb Z, +, 0)$ é um grupo.
+\item Como também ocorre com $\mathbb Z$, caso o grupo seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
+Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
+\item Caso o grupo em discurso não seja necessariamente Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
+Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
+
+Porém, há grupos Abelianos cujas operações também são denotadas por $\cdot$, como no caso o grupo $\mathbb T$ mencionado acima.
 \end{itemize}
+
 
 Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
 \begin{prop}[Unicidade do elemento neutro]
