@@ -272,3 +272,20 @@ Pela unicidade de $g$, segue que $g=h$.
     Para ver a unicidade de $h$, se $\bar h$ é outra tal função, temos que $\bar h\circ \psi=(\bar h\circ \psi')\circ \psi=f$ e $\bar h\circ \alpha(x)=\bar h\circ \psi'(x)=\beta(x)$, logo, $\bar h\circ \psi'=g$.
     Além disso, $\bar h\circ \alpha=\beta$, logo, $\bar h=h$.
 \end{proof}
+
+\section{Divisibilidade em anéis de polinômios}
+\begin{prop}
+Se $R$ é um corpo, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
+Em particular, $R[x]$ é um domínio Euclideano.
+\end{prop}
+\begin{proof}
+    Existência: fixe $d(x)$ e seja $\deg(d(x))=k\geq 0$.
+    Provaremos por indução no grau de $p(x)$.
+    Se $\deg(p(x))<k$, seja $q(x)=0$ e $r(x)=p(x)$.
+
+    Para o passo indutivo, se a hipótese vale para $\gr(p(x))<n$ e $n+1\geq k$, seja $p_{n+1}$ o coeficiente dominante de $p(x)$ e $d_k$ o de $d(x)$.
+    Temos que $p(x)-\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}$ é um polinômio de grau $\leq n$, logo, pela hipótese indutiva, existe $q(x), r(x)$ tais que $p(x)-\frac{p_n}{d_k}d(x)x^{n+1-k}=d(x)q(x)+r(x)$, onde $\deg(r(x))<k$.
+    Segue que $p(x)=(\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}+q(x))d(x)+r(x)$, onde $\deg(r(x))<k$.
+
+    A unicidade segue do fato do fato de que $\deg(a(x)+b(x))\leq\max(\deg(a(x)), \deg(b(x)))$ para todos $a(x), b(x)\in R[x]$.
+\end{proof}
