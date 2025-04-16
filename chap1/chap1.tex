@@ -7,12 +7,29 @@ Um curso de pré-cálculo ou um curso básico de álgebra linear apresentam conh
 
 \section{Famílias e produtos cartesianos}
 
-Famílias são funções com notação especial.
-Muitas vezes, ao pensar em funções, pensamos em um ``dispositivo de entrada/saída''.
-Quando, ao invés disso, estamos pensando apenas em um  ``conjunto indexado de valores'', a notação de família pode ser mais conveniente.
+Funções são objetos matemáticos normalmente pensados como entes $f:X\rightarrow Y$ que recebem uma entrada $x$, dentro de um conjunto de possíveis entradas $x \in X$ e devolvem uma saída $f(x)\in Y$.
+O conjunto $X$ é chamado de \emph{domínio} de $f$, e denotado por $\dom f$. O conjunto de todos os valores assumidos por $f$ é a \emph{imagem} de $f$, e denotado por $\ran(f)=\{f(x): x \in X\}$.
+Um conjunto que contém a imagem é chamado de um \emph{contradomínio} de $f$.
+Na notação $f:X\rightarrow Y$, estamos dizendo que $Y$ é um contradomínio de $f$, de modo que $\ran(f)\subseteq Y$.
+Note que o contradomínio de uma função não é único: por exemplo, considerando que o conjunto dos números complexos, $\mathbb C$, possui uma cópia do conjuntodos números reais, $\mathbb R$, dentro de si, a função $f:\mathbb R\rightarrow \mathbb R$ dada por $f(x)=x^2$ tem como contradomínios tanto $\mathbb R$ como $\mathbb C$
+Formalmente, a função propriamente dita costuma ser definida como o o conjunto dos pares ordenados $\{(x, f(x)): x \in X\}$, mas tais detalhes serão de pouca relevância nesse texto.
+
+Muitas vezes, em Matemática, pensamos no conceito de função com o intuito de representar um conjunto de valores indexados, em que a ideia de ``dispositivo de entrada/saída'' muito presente por exemplo em Cálculo Diferencial em integral perde importância. Uma dessas ocasiões é no tratamento de sequências. Formalmente, sequências são funções cujo domínio é o conjunto dos números naturais, mas, em muitos contextos, pensa-se em sequências como uma coleção de objetos enumerados, e não como um dispositivo de entrada/saída.
+
+Nesses contextos, é muito usual trocar a terminologia usual utilizada para tratar funções por uma outra terminologia, em que a função, mesmo sendo o mesmo objeto matemático que no outro contexto, passa a ser chamada de \emph{família}.
+
+Uma família $a=(a_i: i \in I)=(a_i)_{i \in I}$ é uma função cujo domínio é $I$.
+Nessa notação, pensamos em $i$ como sendo uma variável muda, como ocorre com o símbolo $x$ nos parágrafos anteriores.
+$I$, que é o domínio da função, costuma ser chamado de conjuntos de índices.
+A notação não deixa explícito um contradomínio, como ocorre ao escrever $f:X\rightarrow Y$.
+Quando se torna relevante, costumamos escrever sentenças como ``a família $(a_i)_{i \in I}$ assume valores em $Y$'', ou, simplesmente, ``$(a_i)_{i \in I}$ é uma família em $Y$''.
+Já $a_i$ é o elemento $a(i)$.
+
+Nesse texto, consideraremos que $(a_i: i \in I)$ e $((i, a(i)): i \in I)$ são o mesmo objeto matemático, não havendo qualquer distinção formal entre eles.
+A distinção é meramente notacional, e pode ser intercambiada a qualquer momento sem nenhuma perda de formalismo matemático.
 
 No quadro abaixo, apresentamos uma comparação entre as duas notações.
-Enfatizamos que, matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
+Enfatizamos novamente que, matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
 \begin{table}[h]
     \centering
     \begin{tabular}{lllll}
