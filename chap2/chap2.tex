@@ -147,7 +147,6 @@ Analogamente, se $ba=a$, então $b=e$.
 Nessa seção, formalizaremos a noção de somatório.
 É desejável que o leitor já possua familiaridade com alguma notação de somatório, não sendo nosso objetivo fornecer ao leitor um primeiro contato. Aqui apresentaremos a notação e as técnicas de ``substituição de variáveis'' que serão utilizadas.
 
-
 \begin{definition}[Soma de família finita]\label{def:group_sum}
 Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
 Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in F)$, onde $F$ é um conjunto de $n$ índices e $a_i \in G$ para todo $i \in F$, como se segue:
@@ -181,8 +180,10 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
 
     \[=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.\]
 \end{proof}
+Como fazemos no cálculo de integrais, muitas vezes é desejável utilizar técnicas de substituição de variáveis para calcular ou simplificar somatórios.
 
-\begin{prop}\label{prop:group_sumVarChange}
+A proposição abaixo formaliza esta técnica.
+\begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}
     Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
 Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
 Então:
@@ -242,8 +243,6 @@ Segue que:
     Segue que $K$ é a união disjunta de $\hat K$ e $K'$.
     Assim, pela Proposição \ref{prop:group_sumConcat}, pelo caso base, e pelo passo indutivo, segue que:
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\left(\sum_{i \in I'}\sum_{j \in F_{i}}a_{ij}\right)+\left(\sum_{j \in F_{i'}}a_{i'j}\right)=\sum_{(i, j)\in \hat K}a_{ij}+\sum_{(i, j)\in K'}a_{ij}=\sum_{(i, j)\in K}a_{ij}\]
-
-
 \end{proof}
 
 \section{Exercícios}
