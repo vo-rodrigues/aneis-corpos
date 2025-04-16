@@ -96,11 +96,16 @@ Para o segundo caso, define-se também que $a-b=a+(-b)$.
     Analogamente, se $b \cdot a = c \cdot a$, então $b=c$.
 \end{prop}
 \begin{proof}
-Provaremos a primeira afirmação.
-A segunda é análoga e fica como exercício.
+    Provaremos a primeira afirmação.
+    A segunda é análoga e fica como exercício.
     Suponha que $ba=ca$.
-Então $b=be=b(aa^{-1})=(ba)a^{-1}=(ca)a^{-1}=c(aa^{-1})=ce=c$.
-Assim, $b=c$.
+    Segue que $(ba)a^{-1}=(ca)a^{-1}$.
+    
+    Pela propriedade associativa, $b(aa^{-1})=c(aa^{-1})$.
+
+    Pela definição de inverso, segue que $be=ce$.
+
+    Pela neutralidade de $e$, segue que $b=c$.
 \end{proof}
 
 \begin{corol}[Cancelamento II]
