@@ -60,7 +60,7 @@ Porém, há grupos Abelianos cujas operações também são denotadas por $\cdot
 
 
 Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
-\begin{prop}[Unicidade do elemento neutro]\label{prop:group_uniqueInverse}
+\begin{prop}[Unicidade do elemento neutro]\label{prop:group_uniqueNeutral}
     Seja $(G,\cdot,e)$ um grupo.
     Então, o elemento neutro $e$ é único.
     Isto é, se $h \in G$ é tal que $\forall a \in G$ $h \cdot a = a \cdot h = a$, então $h = e$.
@@ -71,7 +71,7 @@ Agora iniciaremos a provar algumas propriedades básicas sobre grupos.
     Assim, $h=he=e$.
 \end{proof}
 
-\begin{prop}[Unicidade dos inversos]\label{prop:inverso_unico_grupo}
+\begin{prop}[Unicidade dos inversos]\label{prop:group_uniqueInverse}
     Seja $(G,\cdot,e)$ um grupo.
     Então todo $a \in G$ possui um único elemento inverso.
 Isto é $\forall a \in G$ $\exists!\, b \in G$ $a \cdot b = b \cdot a = e$.
@@ -90,10 +90,10 @@ Caso $(G, +, 0)$ seja um grupo Abeliano, a notação $-a$ é frequentemente util
 Note que assim, ficam definidos operadores unários $(\,)^{-1}:G\rightarrow G$ (ou $-:G\rightarrow G$).
 Para o segundo caso, define-se também que $a-b=a+(-b)$.
 
-\begin{prop}[Cancelamento]
-    Seja $(G,\cdot,e)$ um grupo.
-Então, se $a,b,c \in G$ e $a \cdot b = a \cdot c$, então $b=c$.
-    Analogamente, se$b \cdot a = c \cdot a$, então $b=c$.
+\begin{prop}[Cancelamento]\label{prop:group_cancel}
+    Seja $(G,\cdot,e)$ um grupo e $a,b,c \in G$.
+    Se $a \cdot b = a \cdot c$, então $b=c$.
+    Analogamente, se $b \cdot a = c \cdot a$, então $b=c$.
 \end{prop}
 \begin{proof}
 Provaremos a primeira afirmação.
