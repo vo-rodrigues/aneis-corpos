@@ -181,7 +181,6 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
     \[=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.\]
 \end{proof}
 Como fazemos no cálculo de integrais, muitas vezes é desejável utilizar técnicas de substituição de variáveis para calcular ou simplificar somatórios.
-
 A proposição abaixo formaliza esta técnica.
 \begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}
     Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
@@ -202,6 +201,8 @@ Segue que:
 
 \[\sum_{j \in J}a_{\phi(j)}=\left(\sum_{j \in J'}a_{\phi(j)}\right)+a_{\phi(k)}=\left(\sum_{i \in I'}a_{i}\right)+a_{\phi(k)}=\sum_{j \in I}a_{i}.\]
 \end{proof}
+
+Também podemos juntar, sempre que necessário, duas somas disjuntas sob um único sinal de somatório.
 \begin{prop}[Concatenação de somatórios]\label{prop:group_sumConcat}
     Seja $I, J$ conjuntos disjuntos. Considere em $G$ famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
     Vale a relação:
@@ -218,12 +219,19 @@ Segue que:
     \[\sum_{i \in I}a_i+\sum_{i \in J}a_i=\left(\sum_{i \in I}a_i+\sum_{i \in J'}a_i\right)+a_{j'}=\sum_{i \in I\cup J'}a_i+a_{j'}=\sum_{i \in I\cup J}a_i.\]
 \end{proof}
 
+Antes de enunciar a próxima proposição, precisamos falar sobre notações de índices duplos.
+Se $K$ é um conjunto que consiste apenas de pares ordenados $(i, j)$, não é incomum encontrarmos na literatura a notação $\sum_{(i, j)\in K}a_{ij}$.
+bem como encontrar a notação $(a_{ij}:(i, j)\in K))$.
+
+Tais notações são usadas no contexto no qual uma para todo $i, j$ com $(i, j)\in K$, está definido um elemento $a_{ij}$.
+Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)\pi_2(k)}: k \in K)$, e $\sum_{(i, j)\in K}a_{ij}$ denota $\sum_{k \in K}a_{\pi_1(k)\pi_2(k)}$, onde $\pi_1$ e $\pi_2$ são as funções coordenadas de pares ordenados.
+
 \begin{prop}[Concatenação de somatórios II]\label{prop:group_sumConcatII}
     Seja $I$ um conjunto não vazio e, para cada $i \in F$, seja $F_i$ um conjunto.
     Considere o conjunto finito $K=\bigcup_{i \in I}\{i\}\times F_i=\{(i, j): i \in I, j \in F_i\}$.
 
     Para cada $i \in I$, considere uma família de elementos de $G$, $(a_{ij}: j \in F_i)$.
-    Considere também as famílias $(a_{ij}: (i, j)\in K)=(a_{i, j}: i\in I, j \in F_i)$ e $(\sum_{j \in F_i}: i\in I)$. Vale a relação:
+    Considere também as famílias $(a_{ij}: (i, j)\in K)=(a_{ij}: i\in I, j \in F_i)$ e $(\sum_{j \in F_i}: i\in I)$. Vale a relação:
 
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\sum_{(i, j)\in K}a_{ij}\]
 \end{prop}
