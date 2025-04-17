@@ -180,6 +180,11 @@ Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
 
     \[=\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+(a_j+a_k)=\left(\left(\sum_{i\in F\setminus\{j, k\}} a_i\right)+a_j\right)+a_k=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k.\]
 \end{proof}
+
+A partir dessa generalidade, pode-se chegar na notação mais utilizada envolvendo somatórios: se $n\leq m$ e $I=\{n, \dots, m\}$, escrevemos:
+\[\sum_{i=n}^m a_i=\sum_{i\in I} a_i.\]
+
+
 Como fazemos no cálculo de integrais, muitas vezes é desejável utilizar técnicas de substituição de variáveis para calcular ou simplificar somatórios.
 A proposição abaixo formaliza esta técnica.
 \begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}
@@ -243,6 +248,9 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
 
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\left(\sum_{j \in F_{i'}}a_{i'j}\right)=\sum_{(i, j)\in K}a_{ij}\]
 
+    Justificando melhor a última igualdade:
+    \[\sum_{j \in F_{i'}}a_{i'j}=\sum_{j \in F_{i'}}a_{\pi_1(\phi(j))\pi_2(\phi(j))}=\sum_{k \in K}a_{\pi_1(k)\pi_2(k)}=\sum_{(i, j)\in J}a_{ij}.\]
+    
     Agora provaremos o passo indutivo.
 
     Suponha que $|I|=n+1$ e que a hipótese vale para todo $I$ de tamanho $n$. Fixe qualquer $i' \in I$ e considere $I'=I\setminus \{i'\}$.
@@ -253,6 +261,27 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\left(\sum_{i \in I'}\sum_{j \in F_{i}}a_{ij}\right)+\left(\sum_{j \in F_{i'}}a_{i'j}\right)=\sum_{(i, j)\in \hat K}a_{ij}+\sum_{(i, j)\in K'}a_{ij}=\sum_{(i, j)\in K}a_{ij}\]
 \end{proof}
 
+Agora provaremos a comutação de somatórios.
+
+\begin{prop}\label{prop:group_sumCommut}
+    Sejam $I, J$ conjuntos não vazios e considere uma família $(a_{ij}:(i, j)\in I\times J)=(a_{ij}:i \in I, j \in J)$.
+
+    Para cada $i \in I$, considere a família $(a_{ij}: j \in J)$, e, para cada $j \in J$, considere a família $(a_{ij}: i \in I)$.
+
+    Então:
+
+    \[\sum_{i\in I}\sum_{j \in J}a_{ij}=\sum_{j \in J}\sum_{i \in I}a_{ij}\]
+\end{prop}
+\begin{proof}
+    Seja $K=I\times J$ e $K'=J\times I$.
+    Temos que $\phi:I\times J\rightarrow J\times I$ dada por $\phi(i, j)=(j, i)$ é uma bijeção entre $K$ e $K'$. Escrevendo de outra forma, $\phi(k)=(\pi_2(k), \pi_1(k))$. Note ainda que $\phi^2=\id_K$.
+
+    Assim, pela Proposição \ref{prop:group_sumVarChange} e Proposição \ref{prop:group_sumConcatII}, temos que:
+
+    \[\sum_{j\in J}\sum_{j \in J}a_{ij}=\sum_{(i,j)\in I\times J}a_{ij}=\sum_{k\in K}a_{\pi_1(\phi^2(k))\pi_2(\phi^2(k))}\]
+    \[=\sum_{k \in K'}a_{\pi_1(\phi(k))\pi_2(\phi(k))}=\sum_{k \in K'}a_{\pi_2(k)\pi_1(k)}=\sum_{(j, i)\in J\times I}a_{ij}=\sum_{j \in J}\sum_{i \in I}a_{ij}.\]
+
+\end{proof}
 \section{Exercícios}
 \begin{exer}
     Suponha que $a$, $b$ e $c$ sejam elementos de um anel $A$, e que $a$ não é divisor de $0$.

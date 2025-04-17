@@ -4,13 +4,12 @@ Nesta seção, iniciaremos o estudo dos anéis e de estruturas relacionadas. Apr
 \section{A definição de anel}
 No Capítulo 2, conhecemos, por alto, a definição de grupo.
 Um grupo é um conjunto munido de uma operação binária que satisfaz algumas propriedades.
-Ele pode ser Abeliano ou não Abeliano, e, quando é Abeliano, lembra-nos da adição de inteiros.
-Porém, estururas como inteiros, racionais e reais não são apenas grupos Abelianos, pois possuem também outra operação binária -- a multiplicação.
-Esta operação se relaciona com a soma através das propriedades distributivas.
+Grupos pode ser Abelianos ou não Abelianos, e, quando é Abeliano, lembra-nos da adição de inteiros.
 
-A noção de anel visa capturar parte desas ideias, de modo a generalizar o estudo das estruturas citadas acima.
+Porém, estuturas como as dos números inteiros, racionais e reais parecem não ter sua estrutura algébrica completamente capturada pela noção de grupo Abeliano, pois possuem também outra operação binária -- a multiplicação.
+Esta operação se relaciona com a soma através das propriedades distributivas. A noção de anel surge para capturar parte destas ideias, generalizando o estudo das estruturas mencionadas.
 \begin{definition}[Anel]
-    Um anel é uma $4$-upla $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
+    Um anel é uma $5$-upla $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
     \begin{itemize}
         \item $(A, +, 0)$ é um grupo abeliano.
         \item (\textbf{Associatividade}) Para todo $a, b \in A$, temos $(a \cdot b)\cdot c = a\cdot(b\cdot c)$.
@@ -87,7 +86,9 @@ Todo anel satisfaz as conhecidas regras de sinais referentes à multiplicação 
     \ref{prop:regraSinal2_C}: Temos que $(-1)a=-(1a)=-a$.
 \end{proof}
 \section{Anéis de Matrizes}
-Dado qualquer anel $A$ e $n, m \in \mathbb N$, podemos construir o conjunto das matrizes com coeficientes em $A$.
+Matrizes são objetos muito importantes na matemática, sendo amplamente utilizadas na Álgebra Linear.
+
+Nesta seção, construiremos os anéis de matrizes com coeficientes em um anel arbitrário.
 
 \begin{definition}
     Seja $A$ um anel e $n, m$ inteiros positivos. O conjunto $M_{n\times m}(A)$ é o conjunto de matrizes $n\times m$ cujos coeficientes estão em $A$. Formalmente, $M_{n\times m}$ é o conjunto de todas as famílias $(a_{ij})_{i,j}=(a_{ij}: (i, j) \in \{1, \dots, n\}\times \{1, \dots, m\})$. Quando conveniente, representamos a tal matriz de qualquer uma das duas formas a seguir:
@@ -289,13 +290,23 @@ Temos que o elemento $(1,n)$ da matriz $(a_{ij})(b_{ij})$ é dado por $\sum_{k=1
 \end{proof}
 
 Assim, os anéis de matrizes nos dão uma ampla gama de anéis não comutativos.
-\section{Domínios de Integridade}
+\section{Domínios de integridade e divisores de zero}
 O anel dos números inteiros, bem como o anel dos racionais reais, possuem a seguinte importante propriedade:
 \begin{definition}
 Seja $A$ um anel comutativo. Dizemos que $A$ é um \emph{domínio de integridade} se, e somente se, $\forall a, b \in A$, se $ab=0$, então $a=0$ ou $b=0$.
 \end{definition}
 
 Nem todos os anéis comutativos são domínios de integridade. Por exemplo, no anel dos inteiros módulo $4$, $\mathbb Z_4$, temos que $2\cdot 2=4=0$, e $2\neq 0$.
+
+Divisores de zero são elementos não nulos que, multiplicados entre si, resultam em zero.
+
+\begin{definition}
+Sejam $A$ um anel. Um divisor de zero de $A$ é um elemento $a \in A$ não nulo para o qual exista $b \in A$ não nulo tal que $ab=0$ ou $ba=0$.
+\end{definition}
+
+Note que um domínio de integridade é um anel comutativo sem divisores de zero.
+
+Divisores de zero são patológicos ao estudar a teoria de divisibilidade em anéis, assim, muitas vezes, eles são excluídos de tal estudo.
 
 \section{Elementos invertíveis}
 Um anel, com sua soma, é um grupo Abeliano, e, portanto, possui opostos aditivos. Porém, não necessita possuir opostos multiplicativos. Os elementos de um anel que possuem inversos no anel são os chamados \emph{elementos invertíveis} ou \emph{unidades}.
@@ -333,16 +344,6 @@ Além disso, $A^*$ é, com a restrição da operação de multiplicação do ane
     Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
 
-\section{Divisores de zero}
-Divisores de zero são elementos não nulos que, multiplicados entre si, resultam em zero.
-
-\begin{definition}
-Sejam $A$ um anel. Um divisor de zero de $A$ é um elemento $a \in A$ não nulo para o qual exista $b \in A$ não nulo tal que $ab=0$ ou $ba=0$.
-\end{definition}
-
-Divisores de zero são patológicos ao estudar a teoria de divisibilidade em anéis, assim, muitas vezes, eles são excluídos de tal estudo.
-
-Note que um domínio de integridade é um anel comutativo sem divisores de zero.
 \section{O anel dos números inteiros}
 Espera-se que o estudante já possua traquejo com o anel dos números inteiros, incluindo contato com a noção formal de divisibilidade, o teorema fundamental da aritmética e a noção de congruência módulo $n$.
 
@@ -407,11 +408,7 @@ Assim, temos que $b=(a^{-1}a)b=a^{-1}(ab)=0$, logo, $b=0$.
 Porém, nem todo domínio de integridade é um corpo: por exemplo, $\mathbb Z$ é um domínio de integridade que não é um corpo, pois $2$ não possui inverso multiplicativo em $\mathbb Z$.
 
 \section{O corpo dos números reais}
-Assim como fizemos com $\mathbb Z$, assumiremos a existência do corpo dos números reais.
-
-O corpo dos números reais é um corpo ordenado que satisfaz a propriedade de ser Dedekind-completo.
-
-Formalmente:
+Assim como fizemos com $\mathbb Z$, assumiremos a existência do corpo dos números reais, que é um corpo ordenado que satisfaz a propriedade de ser Dedekind-completo. Formalmente:
 
 \begin{prop}
     O corpo dos números reais $\mathbb R$ é um corpo ordenado, e satisfaz a propriedade de ser Dedekind-completo.
