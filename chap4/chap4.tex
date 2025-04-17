@@ -78,8 +78,8 @@ A proposição abaixo encurta esta verificação substancialmente.
 \end{prop}
 \begin{proof}
     Provaremos o lado que não é imediatamente trivial.
-    Começaremos mostrando que $f(0_A)=0_R$.
-    Temos que $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$, logo, cancelando, $f(0_A)=0_R$.
+
+    Para ver que $f(0_A)=0_R$, primeiro note que $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$.Cancelando $f(0_A)$, $f(0_A)=0_R$.
 
     Agora, vejamos que $f(-a)=-f(a)$ para todo $a \in A$.
     Temos que $f(a)+f(-a)=f(a+(-a))=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
@@ -88,7 +88,8 @@ A proposição abaixo encurta esta verificação substancialmente.
 \end{proof}
 
 \section{Propriedades elementares}
-\begin{lemma}
+A composição de homomorfismos é um homomorfismo.
+\begin{lemma}[Composição de homomorfismos]\label{prop:homoIdeal_composicao}
     Sejam $f:A\rightarrow R$ e $g:R\rightarrow S$ homomorfismos de anéis.
     Então a composição $g\circ f:A\rightarrow S$ é um homomorfismo de anéis.
 \end{lemma}
@@ -138,7 +139,7 @@ A noção de isomorfismo é uma relação de equivalência na classe dos anéis.
 \end{prop}
 
 \begin{proof}
-\ref{prop:isomorfismo_a} A composição de funções bijetoras é bijetora, e a composição de homomorfismos é homomorfismo.
+\ref{prop:isomorfismo_a} A composição de funções bijetoras é bijetora, e a composição de homomorfismos é homomorfismo (Proposição~\ref{prop:homoIdeal_composicao}).
 Como um isomorfismo é um homomorfismo bijetor, segue que a composição de dois isomorfismos é um isomorfismo.
 
 \ref{prop:isomorfismo_b} Como $f$ é um isomorfismo, $f$ é bijetora, assim, $f^{-1}:R\rightarrow A$ está bem definida e é bijetora. Verificaremos que $f^{-1}$ é um homomorfismo. Dados $r, s \in R$, sejam $a, b \in A$ tais que $f(a)=r$ e $f(b)=s$. Temos que:
