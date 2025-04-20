@@ -1,47 +1,59 @@
 
 \chapter{Polinômios}
+Nesse capítulo, estudaremos os anéis de polinômios no contexto de anéis comutativos.
 
+Apresentaremos uma construção do anel das séries formais, e a partir deste, extrairemos o anel de polinômios.
+
+Após isso, veremos como se dá sua definição abstrata.
 \section{Séries Formais}
+Ao estudar Análise Real, Análise Funcional, Funções Analíticas ou mesmo Cálculo Diferencial e Integral, é comum se deparar com somas infinitas. Em tais assuntos, essas somas podem convergir ou divergir, e, mesmo quando convergem, não é sempre que podemos manipular essas somas infinitas como gostaríamos.
+
+Para se falar em convergência de tais objetos, é necessária uma noção de convergência, o que pode ser feito por uma noção de métrica, ou, mais geralmente, por uma noção de topologia.
+Tal estudo foge do escopo deste texto.
+
+Apesar disso, em anéis comutativos arbitrários, é possível estudar séries de potência como objetos formais, sem nunca de fato computar somar infinitas, ou falar em convergência. É o que faremos nesta seção.
+
+
 Se $R$ é um anel comutativo, intuitivamente uma série formal é um objeto que se escreve na forma:
 $$a_0+a_1x+a_2x^2+\dots=\sum_{i=0}^\infty a_ix^i$$
 onde $a_i\in R$.
 
-Que propriedades gostaríamos que esse objeto tivesse?
+Antes de definirmos o que, formalmente, é esse objetivo, vamos enunciar algumas propriedades que gostaríamos que esse objeto tivesse.
 
 \begin{itemize}
-    \item \textbf{Igualdade:} igualdade de objetos desse tipo fosse determinada por uma condição de igualdade entre os coeficientes. Ou seja, que:
+    \item \textbf{Igualdade:} é conveniente que, no aspecto formal, a igualdade entre séries formais seja determinada pelos seus coeficientes. Ou seja, que:
     \begin{align*}
       \sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty b_ix^i & \Leftrightarrow \forall i\in \mathbb N\, a_i=b_i.
     \end{align*}
-    \item \textbf{Soma:} que a soma de dois objetos desse tipo fosse dada por:
+    \item \textbf{Soma:} intuitivamente, se valem propriedades associativas, comutativas e distributivas, faz sentido que a soma satisfaça a propriedade a seguir, imaginando que as duas séries à esquerda se juntam e se reordenam de modo a obter a da direita.
     \begin{align*}
         \left(\sum_{i=0}^\infty a_ix^i\right)+\left(\sum_{i=0}^\infty b_ix^i\right)=\left(\sum_{i=0}^\infty (a_i+bi)x^i\right)
     \end{align*}
-    \item \textbf{Produto:} que o produto de dois objetos desse tipo fosse dada por:
+    \item \textbf{Produto:} intuitivamente, se, no lado esquerdo da igualdade, valerem propriedades distributivas ``infinitas'', como podemos definir produto? Ora, o coeficiente $c_i$ da série produto resultante deveria ser obtido agrumando (através de soma) os coeficientes $a_jb_k$ com $j+k=i$. Isso é equivalente à igualdade abaixo:
     \begin{align*}
         \left(\sum_{i=0}^\infty a_ix^i\right)\cdot\left(\sum_{i=0}^\infty b_ix^i\right)=\sum_{i=0}^\infty \left(\sum_{j=0}^i a_{j}b_{i-j}\right)x^i
     \end{align*}
-    \item \textbf{Preservação:} que as operações do anel sejam preservadas.
     \item Notação: $R\llbracket x \rrbracket$ é o conjunto de todas as séries formais em $R$.
 \end{itemize}
-
+Olhando apenas para as regras acima, parece que as letras $x^i$ parecem não ter nenhum papel a não ser o de demarcar a ``$i$-ésima posição.'' Com isso em mente, definimos:
 \begin{definition}
-Seja $R$ um anel comutativo. Definiremos $R\llbracket x\rrbracket=R^{\mathbb N}$.
+Seja $R$ um anel comutativo.
+Definiremos $R\llbracket x\rrbracket$ como o conjunto $R^{\mathbb N}$ munido das operações definidas abaixo.
+Nesse contexto, escrevemos, para $(a_i: i \in \mathbb N)\in R^{\mathbb N}$:
 
+\[\sum_{i=0}^\infty a_ix^i=(a_i)_{i \in \mathbb N}.\]
 
-Um elemento de $R\llbracket x\rrbracket$ é da forma $p=(p_0, p_1, \dots)=(p_n)_{n \in \mathbb N}=(p(n))_{n \in \mathbb N}=(p(0), p(1), \dots)$ onde $p_i=p(i)\in R$  para todo $i \in \mathbb N$.
+Reforçamos que, neste contexto, não há nenhuma soma infinita ocorrendo, e o lado esquerdo é simplesmente definido como uma notação alternativa para o lado direito.
+Note ainda que, com essa definição, a propriedade da igualdade acima vale automaticamente.
 
-O suporte de $p\in R\llbracket x\rrbracket$ é o conjunto $\supp(p)=\{i \in \mathbb N: p_i \neq 0\}$.
-O grau de $p \in R[x]$ é o maior elemento de $\supp(p)$, denotado por $\deg(p)$. Se $p=0$, então $\deg(p)=-\infty$
-
-\textbf{Intuição}: $p=(a_0, a_1, \dots)$ corresponderá à $a_0+a_1x+\dots+a_n x^n+\dots$.
+Se $p\in \mathbb R\llbracket x\rrbracket$, escrevemos $p(x)=p$ para reforçar o fato de que estamos lidando com uma série formal, e escrevemos $p(x)=\sum_{i=0}^\infty p_ix^i$. Os elementos $p_i$ são chamados de coeficientes de $p(x)$.
 
 \textbf{Operações}:
-Se $p, q \in R[x]$, define-se:
-$$p+q=(p_0+q_0, q_1+p_1, \dots)=(p_i+q_i)_{i \in \mathbb N}\in R^{\mathbb N}$$
-$$p\cdot q=(p_0q_0, p_1q_0+p_0q_1, p2q_0+p_1q_1+p_0q_2, \dots)=\left(\sum_{j=0}^i p_{i-j}q_j\right)_{i \in \mathbb N}$$
-$$1_{R\llbracket x\rrbracket}=(1, 0, 0, \dots)$$
-$$0_{R\llbracket x\rrbracket}=(0, 0, 0, \dots)$$
+Se $p(x), q(x) \in R\llbracket x\rrbracket$, define-se:
+\[p(x)+q(x)=\sum_{i=0}^\infty p_ix^i+\sum_{i=0}^\infty q_ix^i=\sum_{i=0}^\infty(p_i+q_i)x^i.\]
+\[p(x)\cdot q(x)=\sum_{i=0}^\infty p_ix^i\cdot\sum_{i=0}^\infty q_ix^i=\sum_{i=0}^\infty\left(\sum_{j=0}^i p_{i-j}q_{j}\right)x^i.\]
+\[1_{R\llbracket x\rrbracket}=\sum_{i=0}^\infty \delta_{i0}x^i=(1, 0, 0, \dots).\]
+\[0_{R\llbracket x\rrbracket}=\sum_{i=0}^\infty 0x^i=(0, 0, 0, \dots).\]
 \end{definition}
 
 \begin{lemma}[Séries formais formam anéis]
@@ -50,24 +62,31 @@ $$0_{R\llbracket x\rrbracket}=(0, 0, 0, \dots)$$
 
 \begin{proof}
     A operação de soma de $\mathbb R\llbracket x \rrbracket$ é a mesma de $\mathbb R^{\mathbb N}$, que já verificamos satisfazer as propriedades de grupo Abeliano. Assim, $R\llbracket x \rrbracket$ é um grupo abeliano sob a soma.
+
+    Para as demais propriedades, fique $p(x), q(x), r(x) \in R\llbracket x \rrbracket$ e $i \in \mathbb N$.
     \begin{itemize}
-        \item \textbf{Distributividade:} $$p\cdot (q+r)=p\cdot(q_i+r_i)_{i \in \mathbb N}=\left(\sum_{j=0}^i p_{i-j}(q_j+r_j)\right)_{i \in \mathbb N}$$$$=\left(\sum_{j=0}^i p_{i-j}q_j\right)_{i \in \mathbb N}+\left(\sum_{j=0}^i p_{i-j}r_j\right)_{i \in \mathbb N}=p\cdot q+p\cdot r.$$
-        \item \textbf{Elemento Neutro:} $$p\cdot 1=\left(\sum_{j=0}^i p_{i-j}\delta_{0j}\right)_{i\in \mathbb N}=(p_i)_{i \in \mathbb N}.$$
-        \item \textbf{Comutatividade:} A $i$-ésima coordenada de $p\cdot q$ é $\sum_{j=0}^i p_{i-j}q_j=\sum(p_{i_j}q_j: j \in A_j)$, onde $A_j=\{0, \dots, i\}$. A função $\phi: A_j:\rightarrow A_j$ dada por $\phi(j)=i-j$ é bijetora, pois é injetora e $A_j$ é finito. Assim:
-        $$\sum_{j=0}^i p_{i-j}q_j=\sum_{j=0}^ip_{i-\phi(j)}q_{\phi(j)}=\sum_{j=0}^ip_{j}q_{i-j}=\sum_{j=0}^iq_{i-j}p_{j}$$
+        \item \textbf{Distributividade:} O $i$-ésimo coeficiente de $p(x)\cdot (q(x)+r(x))$ é:
+        
+        \[\sum_{j=0}^i p_{i-j}(q_j+r_j)=\sum_{j=0}^i p_{i-j}q_j+\sum_{j=0}^i p_{i-j}r_j.\]
 
-        E esta é a $i$-ésima coordenada de $q\cdot p$.
+        O que coincide com o $i$-ésimo coeficiente de $p(x)q(x)+p(x)r(x)$.
+        \item \textbf{Elemento Neutro:} Temos que:
+        \[p(x)\cdot 1=\sum_{i=0}^\infty\left(\sum_{j=0}^i p_{i-j}\delta_{0j}\right)x^i=\sum_{i=0}^\infty p_ix^i=p(x).\]
+        \item \textbf{Comutatividade:} A $i$-ésima coordenada de $p(x)\cdot q(x)$ é $\sum_{j=0}^i p_{i-j}q_j=\sum(p_{i-j}q_j: j \in A_i)$, onde $A_i=\{0, \dots, i\}$. A função $\phi: A_i\rightarrow A_i$ dada por $\phi(j)=i-j$ é bijetora, pois é injetora e $A_i$ é finito. Assim:
+        \[\sum_{j=0}^i p_{i-j}q_j=\sum_{j=0}^ip_{i-\phi(j)}q_{\phi(j)}=\sum_{j=0}^ip_{j}q_{i-j}=\sum_{j=0}^iq_{i-j}p_{j}.\]
 
-        \item \textbf{Associatividade:} Temos que a $i$-ésima coordenada de $(p\cdot q)\cdot r$ é dada por:
+        E esta é a $i$-ésima coordenada de $q(x)\cdot p(x)$.
 
-        $$\pi_i((p\cdot q)\cdot r)=\sum_{j=0}^i\pi_{i-j}(p\cdot q)\cdot q_j=\sum_{j=0}^i\left(\sum_{k=0}^{i-j}p_{i-j-k}q_k\right)\cdot q_j$$
-        $$=\sum_{j=0}^{i}\sum_{k=0}^{i-j}p_{i-j-k}q_kq_j=\sum\left(p_{i-j-k}q_kr_j:(j, k)\in A\right)$$
+        \item \textbf{Associatividade:} Temos que a $i$-ésima coordenada de $(p(x)\cdot q(x))\cdot r(x)$ é dada por:
+
+        \[\pi_i((p(x)\cdot q(x))\cdot r(x))=\sum_{j=0}^i\pi_{i-j}(p(x)\cdot q(x))\cdot q_j=\sum_{j=0}^i\left(\sum_{k=0}^{i-j}p_{i-j-k}q_k\right) q_j\]
+        \[=\sum_{j=0}^{i}\sum_{k=0}^{i-j}p_{i-j-k}q_kq_j=\sum \left(p_{i-j-k}q_kr_j:(j, k)\in A\right).\]
 
         Onde $A=\{(j, k): 0\leq j\leq i, 0\leq k\leq i-j\}$.
 
-        Temos que a $i$-ésima coordenada de $p\cdot (q\cdot r)$ é dada por:
+        Temos que a $i$-ésima coordenada de $p(x)\cdot (q(x)\cdot r(x))$ é dada por:
 
-        $$\pi_i(p\cdot (q\cdot r))=\sum_{s=0}^ip_{i-s}\pi_s(q\cdot r)=\sum_{s=0}^ip_{i-s}\left(\sum_{t=0}^sq_{s-t}r_t\right)$$
+        $$\pi_i(p(x)\cdot (q(x)\cdot r(x)))=\sum_{s=0}^ip_{i-s}\pi_s(q(x)\cdot r(x))=\sum_{s=0}^ip_{i-s}\left(\sum_{t=0}^sq_{s-t}r_t\right)$$
         $$=\sum_{s=0}^i\sum_{t=0}^sp_{i-s}q_{s-t}r_t=\sum\left(q_{i-s}q_{s-t}r_t:(s, t)\in B\right)$$
         
         onde $B=\{(s, t): 0\leq t\leq s\leq i\}$. A função $\phi: A\rightarrow B$ dada por $\phi(j, k)=(j+k, j)$ é bijetora: é em $B$, pois $0\leq j\leq j+k\leq j+(i-j)=i$. É injetora, pois se $(j+k, j)=(j'+k', j')$ então $j=j'$ e, cancelando, $k=k'$. Finalmente, é sobrejetora, pois se $0\leq t\leq s\leq i$, sendo $j=t$ e $k=s-t$, temos que $0\leq j\leq i$, $0\leq k=s-t\leq i-t=i-j$ e $j+k=s$. Assim, $\phi$ é bijetora. Portanto:
@@ -76,9 +95,7 @@ $$0_{R\llbracket x\rrbracket}=(0, 0, 0, \dots)$$
     \end{itemize}
 \end{proof}
 
-Dado $p \in \mathbb R_x$, utilizamos a notação $$p=p(x)=\sum_{i=0}^\infty p_ix^i.$$
-
-É importante observar que não há, de fato, uma ``soma infinita'' acontecendo aqui. É possível dar sentido à essa soma infinita utilizando a teoria de limites diretos de anéis, mas não faremos isso aqui. Por ora, isso é apenas uma notação especial para tratar desses objetos. Note que, ao menos por enquanto, a letra $x$ é apenas parte da notação, e que não faz sentido, por enquanto, ``substituir $x$'' por algo.
+Note que, ao menos por enquanto, a letra $x$ é apenas parte da notação, e que não faz sentido, por enquanto, ``substituir $x$'' por algo.
 \section{Anéis de Polinômios}
 Na subseção anterior, introduzimos o anel das séries formais de um anel comutativo dado. Vimos que tal anel é um anel comutativo.
 
