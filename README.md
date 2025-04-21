@@ -6,3 +6,10 @@ Para mais informações e sugestões, mande um e-mail para vinior@ime.usp.br.
 
 ## PDF Compilado
 Para acessar o pdf da última compilação, [acesse este link](https://raw.githubusercontent.com/vo-rodrigues/aneis-corpos/gh-pages/main.pdf).
+
+## Changelog
+
+Para acessar o changelog, [acesse este link](https://github.com/vo-rodrigues/aneis-corpos/blob/main/CHANGELOG.md).
+
+## Licença
+Esta obra está licenciada sob a licença [Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br). Pode ser livremente utilizada, reproduzida e adaptada, desde que seja atribuído crédito à autora ou ao criador original, conforme especificado na licença.
