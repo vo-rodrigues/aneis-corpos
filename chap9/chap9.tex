@@ -46,7 +46,7 @@ Nesse contexto, escrevemos, para $(a_i: i \in \mathbb N)\in R^{\mathbb N}$:
 Reforçamos que, neste contexto, não há nenhuma soma infinita ocorrendo, e o lado esquerdo é simplesmente definido como uma notação alternativa para o lado direito.
 Note ainda que, com essa definição, a propriedade da igualdade acima vale automaticamente.
 
-Se $p\in \mathbb R\llbracket x\rrbracket$, escrevemos $p(x)=p$ para reforçar o fato de que estamos lidando com uma série formal, e escrevemos $p(x)=\sum_{i=0}^\infty p_ix^i$. Os elementos $p_i$ são chamados de coeficientes de $p(x)$.
+Se $p\in \mathbb R\llbracket x\rrbracket$, escrevemos $p(x)=p$ para reforçar o fato de que estamos lidando com uma série formal, e escrevemos $p(x)=\sum_{i=0}^\infty p_ix^i$. Os elementos $p_i$ são chamados de \emph{coeficientes} de $p(x)$, e $p_0$ é chamado de \emph{coeficiente constante}.
 
 \textbf{Operações}:
 Se $p(x), q(x) \in R\llbracket x\rrbracket$, define-se:
@@ -102,44 +102,69 @@ Na subseção anterior, introduzimos o anel das séries formais de um anel comut
 Deste anel, podemos extrair o anel de polinômios.
 
 \begin{definition}
-Seja $R$ um anel comutativo. O anel de polinômios $R[x]$ é o subconjunto de $R\llbracket x \rrbracket$ dado por:
-$$R[x]=\{p \in R\llbracket x \rrbracket: \deg(p) < \infty\}$$
+Seja $R$ um anel comutativo e $p(x)\in R\llbracket x \rrbracket$.
+
+Define-se o \emph{suporte} de $p(x)$ por:
+
+\[\supp p(x) =\{i \in I: p_i\neq 0\}.\]
+
+Define-se o \emph{grau} de $p(x)$ por:
+\[
+\gr(p(x))=\begin{cases}
+    \infty & \text{se } \supp p(x)  \text{ é infinito}\\
+    -\infty  & \text{se } \supp p(x) =\emptyset \,(\text{se } p(x)=0)\\
+    \max \supp p(x)  & \text{caso contrário.}
+\end{cases}
+\]
+O \emph{anel de polinômios com coeficientes em $R$}, denotado por $R[x]$, é o subconjunto de $R\llbracket x \rrbracket$ dado por:
+$$R[x]=\{p \in R\llbracket x \rrbracket: \gr(p) < \infty\}.$$
+
+Se $p(x)\in R[x]$ é não nulo, define-se o \emph{coeficiente dominante} de $p(x)$ por $a_{\gr(p(x))}$.
+Ou seja, o coeficiente dominante de $p(x)$ é seu coeficiente não nulo de mais alta posição.
 \end{definition}
 
-Note que uma série formal tem grau $<\infty$ se, e somente se, todos os coeficientes, a partir de algum ponto, são nulos.
+Assim, formalmente, o conjunto dos polinômios foi construído como sendo o conjunto de sequências eventualmente nulas de elementos de $R$.
 
 \begin{lemma}
-    Seja $R$ um anel comutativo. O anel de polinômios $R[x]$ é um subanel de $R\llbracket x \rrbracket$. Mais especificamente, dados $p(x), q(x) \in R\llbracket x \rrbracket$, temos que, se $\gr(p(x)) < \infty$ e $\gr(q(x)) < \infty$, então:
+    Seja $R$ um anel comutativo. O anel de polinômios $R[x]$ é um subanel de $R\llbracket x \rrbracket$. Mais especificamente, dados $p(x), q(x) \in R[x]$:
 
     \begin{enumerate}[label=\alph*)]
-        \item $\gr p(x)q(x)\leq\gr p(x)+\gr q(x)$ caso ambos sejam não nulos, e a igualdade vale se $R$ for um domínio de integridade.
-        \item $\gr p(x)+q(x)\leq \max\{\gr p(x),\gr(q(x))\}$.
+        \item $\gr \left(p(x)q(x)\right)\leq\gr p(x)+\gr q(x)$, e a igualdade vale se $R$ for um domínio de integridade.
+        \item $\gr\left(p(x)+q(x)\right)\leq \max\{\gr p(x),\gr(q(x))\}$.
+        \item $\gr p(x)=\gr (-p(x))$.
+
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    Para a primeira afirmação, sejam $n, m$ os graus de $p(x)$ e $q(x)$, respectivamente.
+    Ambas as afirmações são óbvias se $p(x)=0$ ou $q(x)=0$, então suponhamos que $p(x)$ e $q(x)$ são ambos não nulos.
+    Sejam $n, m$ os graus de $p(x)$ e $q(x)$, respectivamente.
     
-    Calculemos o coeficiente $n+m$ de $p(x)q(x)$. 
+    Calculemos o coeficiente $n+m$ de $p(x)q(x)$.
 
     $$\pi_{n+m}(p(x)q(x))=\sum_{j=0}^{n+m}p_{n+m-j}q_j.$$
 
-    Se $0\leq j< m$ temos que $n+m-j>0$, e $p_{n+m-j}=0$. Se $j>m$, temos que $q_j=0$. Assim, o único termo não nulo da soma é quando $j=m$, e temos que $p_{n+m-m}q_m=p_nq_m$, que é não nulo se $R$ for um domínio. Por outro lado, se $l>n+m$ temos que:
+    Se $0\leq j< m$ temos que $n+m-j>0$, e $p_{n+m-j}=0$. Se $j>m$, temos que $q_j=0$. Assim, o único termo possivelmente não nulo da soma é quando $j=m$, que é $p_nq_m$. Este é não nulo $R$ for um domínio.
+    
+    Por outro lado, se $l>n+m$ temos que:
 
     $$\pi_{l}(p(x)q(x))=\sum_{j=0}^{l}p_{l-j}q_j.$$
 
     Se $0\leq j\leq m$ temos que $l-j>m+n-m=n$, e $p_{l-j}=0$. Se $j>m$, temos que $q_j=0$. Assim, todos os coeficientes da soma são $0$.
-
+    Isso conclui que $\gr(p(x)q(x))\leq n+m$, sendo $n+m$ se $R$ for um domínio de integridade.
 
     Para a segunda afirmação, se $l>\max\{\gr p(x), \gr q(x)\}$, temos que o $l$-ésimo coeficiente de $p(x)+q(x)$ é $0$, pois este é $p_l+q_l=0+0$.
 
-    Agora, para a afirmação principal, as duas afirmações itemizadas nos mostram que $R[x]$ é fechado pela soma e produto de $R\llbracket x \rrbracket$. Finalmente, note que o grau da série $1=(1, 0, 0, \dots)$ é $0$, logo, $1\in R[x]$.
+    A terceira afirmação é imediata.
+
+    Agora, para a afirmação principal, as afirmações itemizadas nos mostram que $R[x]$ é fechado pela soma, produto e diferença de $R\llbracket x \rrbracket$. Finalmente, note que o grau da série $1=(1, 0, 0, \dots)$ é $0$, logo, $1\in R[x]$.
 \end{proof}
 
 Agora vamos trabalhar um pouco mais nossa notação.
+Vamos identificar o elemento $x \in R[x]$, bem como identificar uma cópia de $R$ dentro de $R[x]$.
 
 \begin{definition}
-    Seja $R$ um anel comutativo. Em $R[x]$, seja $x=(0, 1, 0, 0, \dots)$ e, para cada $r \in R$, seja $\hat r=(\hat r, 0, 0, \dots)$.
+    Seja $R$ um anel comutativo. Em $R[x]$, seja $x=(0, 1, 0, 0, \dots)$ e, para cada $r \in R$, seja $\hat r=(r, 0, 0, \dots)$.
 \end{definition}
 
 \begin{lemma}
@@ -157,10 +182,12 @@ Agora vamos trabalhar um pouco mais nossa notação.
 
     Para o passo $n+1$, onde $n\geq 1$, temos que, sendo $i\geq 1$:
 
-    $$\pi_i(\hat rx^{n+1})=\pi_i((\hat rx^n)\cdot x)=\sum_{j=0}^i\pi_{i-j}(\hat r x^n)\cdot \pi_j(x)=\pi_{i-1}^{\hat r x^n}$$
+    \[\pi_i(\hat rx^{n+1})=\pi_i((\hat rx^n)\cdot x)=\sum_{j=0}^i\pi_{i-j}(\hat r x^n)\cdot \pi_j(x)=\pi_{i-1}(\hat r x^n).\]
 
     Assim, se $i=n+1$, temos que a coordenada é $r$, e $0$ caso contrário. Resta apenas verificar que a coordenada $0$ é $0$. Ora, a coordenada $0$ se dá por $\pi_0(\hat r x^n)\pi_0(x)=0$.
 \end{proof}
+
+O lema abaixo mostra que os elementos $\hat r$ de fato agem como uma cópia de $R$ dentro de $R[x]$.
 
 \begin{lemma}
     Na notação anterior, seja $\phi:R\rightarrow R[x]$ dada por $\phi(r)=\hat r$. Então $h$ é um homomorfismo injetor.
@@ -169,43 +196,47 @@ Agora vamos trabalhar um pouco mais nossa notação.
 \begin{proof}
     Sejam $r, s \in R$. Então:
     \begin{itemize}
-        \item $\phi(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=\phi(r)+\phi(s)$
-        \item $\phi(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=\phi(r)\cdot \phi(s)$
+        \item $\phi(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=\phi(r)+\phi(s)$.
+        \item $\phi(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=\phi(r)\cdot \phi(s)$.
         \item $\phi(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
     \end{itemize}
 
     A injetividade é óbvia.
 \end{proof}
 
+Agora veremos que todo elemento de $R[x]$ se escreve como uma soma de elementos de $R$ e potências de $x$, que é o esperado quando pensamos em polinômios.
 \begin{prop}
-    Na notação anterior, para todo $p(x)\in R[x]$, existem $n\geq 0$ e $r_0, r_1, \dots, r_n\in R$ tais que $p(x)=\sum_{i=0}^n \hat r_ix^i$.
+    Na notação anterior, para todo $p(x)\in R[x]$ e $n\geq \gr p(x)$, existem únicos $r_0, r_1, \dots, r_n\in R$ tais que $p(x)=\sum_{i=0}^n \hat r_ix^i$, e estes são os coeficientes de $p(x)$.
 \end{prop}
     
 \begin{proof}
-    Se $p(x)=0$, seja $n=0$ e $r_0=0$. Caso contrário, seja $n=\gr p(x)$ e $r_i=p_i$ para todo $i\leq n$. Então:
+    Para a unicidade, note que se $p(x)=\sum_{i=0}^n \hat r_ix^i$, então para cada $i\leq n$, o $i$-ésimo coeficiente do lado direito é o $i$-ésimo coeficiente de $\hat r_ix^i$, que é $r_i$.
+    Logo, $r_i$ é o $i$-ésimo coeficiente de $p(x)$.
 
-    $$p(x)=(p_0, \dots, p_n, 0, \dots, 0)=(r_0, \dots, r_n, 0, \dots, 0)=\sum_{i=0}^n\hat r_ix^i$$
+    Para a existência, note que $p(x)=(p_0, p_1, \dots, p_n, 0, 0, \dots)=(p_0, 0, \dots)+(0, p_1, 0, \dots)+\dots+(0, 0, \dots, p_n)=p_0x^0+p_1x^1+\dots+p_nx^n=\sum_{i=0}^n \hat p_ix^i$.
 \end{proof}
-
-\begin{prop}
+Note que, diferente do que ocorre na notação inicial sobre séries formais, a notação $\sum_{i=0}^n \hat r_i x^i$ expressa, de fato, uma soma (finita). Além disso, vale a comparação coeficiente-a-coeficiente.
+\begin{corol}
     Na notação anterior, se $r_1, \dots, r_n$ e $s_1, \dots, s_n$ são elementos de $R$, então:
 
     $\sum_{i=0}^n \hat r_i x^i=\sum_{i=0}^n \hat s_i x^i$ se, e somente se, $r_i=s_i$ para todo $i\leq n$.
-\end{prop}
-    
-\begin{proof}
-A recíproca é imediata. Para a implicação direta, note que a igualdade nos diz que $(r_0, \dots, r_n, 0, 0, \dots)=(s_0, \dots, s_n, 0, 0, \dots)$, ou seja, $r_i=s_i$ para todo $i\leq n$.
-\end{proof}
-
+\end{corol}
 Notação: abandona-se $\hat r$ em favor de $r$, mesmo havendo ambiguidade de notação.
+\section{A propriedade universal do Anel de Polinômios}
 
-\begin{prop}
-    Seja $R$ um anel comutativo.
+Se $p(x)$ é um polinômio, esperamos poder "substituir" $x$ por um elemento $r$ de $R$, a fim de obter um elemento de $R$.
+
+
+A proposição abaixo formaliza e generaliza essa ideia.
+\begin{prop}[Propriedade universal do anel de polinômios]
+    Seja $R$ um anel comutativo. Então
     $R[x]$ é um anel comutativo que satisfaz a seguinte propriedade:
+
     Para todo anel $S$, todo homomorfismo $f:R\rightarrow S$ e todo $s \in S$, existe um único homomorfismo $g:R[x]\rightarrow S$ tal que $g\circ \phi=f$ e $g(x)=s$.
 \end{prop}
-
 \begin{proof}
+    Já vimos que $R[x]$ é um anel comutativo.
+
     Defina $g:R[x]\rightarrow S$ por $g(p(x))=\sum_{i=0}^n f(r_i)s^i$, onde $p(x)=\sum_{i=0}^n r_ix^i$.
     Note que $g$ é bem definido, pois se $p(x)=\sum_{i=0}^n r_ix^i=\sum_{i=0}^n s_ix^i=q(x)$, então $r_i=s_i$ para todo $i\leq n$.
 
@@ -229,9 +260,6 @@ Notação: abandona-se $\hat r$ em favor de $r$, mesmo havendo ambiguidade de no
 
     A função $g$ é única, pois se $g'$ é outra tal função, temos que, dado $p(x)=\sum_{i=0}^n r_ix^i$, temos que $g'(p(x))=\sum_{i=0}^nf(r_i)s^i=g(p(x))$.
 \end{proof}
-
-\section{A definição abstrada}
-Um anel de polinômios pode ser definido abstratamente pela seguinte propriedade universal:
 
 \begin{definition}
 Seja $R$ um anel comutativo e $X$ um conjunto.
