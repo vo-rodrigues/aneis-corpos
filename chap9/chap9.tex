@@ -265,7 +265,7 @@ A proposição abaixo formaliza e generaliza essa ideia.
     Seja $R$ um anel comutativo e $X$ um conjunto.
     Um anel de polinômios sobre $R$ com variáveis em $X$ é uma tripla $(R[X], \phi, \alpha)$, onde $R[X]$ é um anel comutativo e $\phi:R\rightarrow R[X]$ é um homomorfismo e $\alpha:X\rightarrow R[X]$ é uma função que satisfazem a seguinte propriedade:
 
-    Para todo anel $S$ e toda função $\beta:X\rightarrow S$, existe um único homomorfismo $g:R[X]\rightarrow S$ tal que $g\circ \phi=f$ e $g\circ \alpha=\beta$.
+    Para toda tripla $(S, f, \beta)$ onde $S$ é um anel comutativo, $f:R\rightarrow S$ é um homomorfismo e$\beta:X\rightarrow S$, existe um único homomorfismo $g:R[X]\rightarrow S$ tal que $g\circ \phi=f$ e $g\circ \alpha=\beta$.
     \begin{figure}[H]
         \centering
         \begin{tikzcd}[row sep=1.5cm, column sep=2cm]
@@ -276,18 +276,46 @@ A proposição abaixo formaliza e generaliza essa ideia.
 \end{definition}
 
 \begin{prop}
-Seja $R$ um anel comutativo e $X$ um conjunto. Se $(R[X], \phi, \alpha)$ e $(\overline{R[X]}, \bar \phi, \bar \alpha)$ são anéis de polinômios sobre $R$ com variáveis em $X$, então $R[X]$ e $\overline{R[X]}$ são isomorfos por um isomorfismo $f:R[X]\rightarrow \overline{R[X]}$ tal que $f\circ \alpha=\bar \alpha$ e $f\circ \phi=\bar \phi$.
+Seja $R$ um anel comutativo e $X$ um conjunto. Se $(R[X], \phi, \alpha)$ e $(\overline{R[X]}, \bar \phi, \bar \alpha)$ são anéis de polinômios sobre $R$ com variáveis em $X$, então $R[X]$ e $\overline{R[X]}$ são isomorfos por um isomorfismo $g:R[X]\rightarrow \overline{R[X]}$ tal que $g\circ \alpha=\bar \alpha$ e $g\circ \phi=\bar \phi$.
 \end{prop}
 \begin{proof}
-    Aplicando a propriedade de $R[X]$ para o anel $\overline{R[X]}$ e a função $\bar \alpha$, existe um homomorfismo $g:R[X]\rightarrow \overline{R[X]}$ tal que $g\circ \phi=\bar \phi$ e $g\circ \alpha=\bar \alpha$.
+    Aplicando a propriedade universal $R[X]$ para $(\overline{R[X]}, \overline \phi, \overline \alpha)$, existe um homomorfismo $g:R[X]\rightarrow \overline{R[X]}$ tal que $g\circ \phi=\bar \phi$ e $g\circ \alpha=\bar \alpha$.
 
-    Aplicando a propriedade de $\overline{R[X]}$ para o anel $R[X]$ e a função $\alpha$, existe um homomorfismo $h:\overline{R[X]}\rightarrow R[X]$ tal que $h\circ \bar \phi=\phi$ e $h\circ \bar \alpha=\alpha$.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}[row sep=1.5cm, column sep=2cm]
+            R \arrow[r, "\phi"]\arrow[rd, "\bar \phi"']  & R[X] \arrow[d, dashed, "g"] & X \arrow[l, "\alpha"']\arrow[ld, "\bar\alpha"]\\
+            & \overline{R[X]} &
+        \end{tikzcd}
+    \end{figure}
+    Aplicando a propriedade universal $\overline{R[X]}$ para $(R[X], \phi, \alpha)$, existe um homomorfismo $h:\overline{R[X]}\rightarrow R[X]$ tal que $h\circ\bar \phi=\phi$ e $h\circ \bar\alpha=\alpha$.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}[row sep=1.5cm, column sep=2cm]
+            R \arrow[r, "\bar \phi"]\arrow[rd, " \phi"']  & \overline{R[X]} \arrow[d, dashed, "h"] & X \arrow[l, "\bar \alpha"']\arrow[ld, "\alpha"]\\
+            & R[X] &
+        \end{tikzcd}
+    \end{figure}
 
-    Aplicando a propriedade de $R[X]$ para o anel $R[X]$ e a função $ \alpha$, existe um único homomorfismo $u:R[X]\rightarrow R[X]$ tal que $u\circ \phi=\phi$ e $u\circ \alpha=\alpha$.
+    Aplicando a propriedade de $R[X]$ para a tripla $(R[X], \phi, \alpha)$, existe um único homomorfismo $u:R[X]\rightarrow R[X]$ tal que $u\circ \phi=\phi$ e $u\circ \alpha=\alpha$.
     É imediato que $\id_{R[X]}$ satisfaz essas propriedades. O mapa $h\circ g$ também satisfaz, pois $h\circ g\circ \phi=h\circ \bar \phi=\phi$ e $h\circ g\circ \alpha=h\circ \bar \alpha=\alpha$.
-
-    Aplicando a propriedade de $\overline{R[X]}$ para o anel $\overline{R[X]}$ e a função $\bar \alpha$, existe um único homomorfismo $v:\overline{R[X]}\rightarrow \overline{R[X]}$ tal que $v\circ \bar \phi=\bar \phi$ e $v\circ \bar \alpha=\bar \alpha$.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}[row sep=1.5cm, column sep=2cm]
+            R \arrow[r, "\phi"]\arrow[rd, " \phi"']  & R[X] \arrow[d, dashed, "\id_{R[X]}", "h\circ g"'] & X \arrow[l, "\alpha"']\arrow[ld, "\alpha"]\\
+            & R[X] &
+        \end{tikzcd}
+    \end{figure}    
+    Aplicando a propriedade de $\overline{R[X]}$ para a tripla $(\overline{R[X]}, \bar \phi, \bar \alpha)$, existe um único homomorfismo $v:\overline{R[X]}\rightarrow \overline{R[X]}$ tal que $v\circ \bar \phi=\bar \phi$ e $v\circ \bar \alpha=\bar \alpha$.
     É imediato que $\id_{\overline{R[X]}}$ satisfaz essas propriedades. O mapa $g\circ h$ também satisfaz, pois $g\circ h\circ \bar \phi=g\circ \phi=\bar \phi$ e $g\circ h\circ \bar \alpha=g\circ \bar \alpha=\bar \alpha$.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzcd}[row sep=1.5cm, column sep=2cm]
+            R \arrow[r, "\bar \phi"]\arrow[rd, " \bar \phi"']  & \overline{R[X]} \arrow[d, dashed, "\id_{\overline{R[X]}}", "g\circ h"'] & X \arrow[l, "\bar \alpha"']\arrow[ld, "\bar \alpha"]\\
+            & \overline{R[X]} &
+        \end{tikzcd}
+    \end{figure}    
 
     Assim, $g\circ h=\id_{\overline{R[X]}}$ e $h\circ g=\id_{R[X]}$. Portanto, $g$ é um isomorfismo de anéis, e $h$ é o inverso de $g$.
 \end{proof}
