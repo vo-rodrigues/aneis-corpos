@@ -26,6 +26,9 @@ Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de 
 \begin{itemize}
     \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
 \end{itemize}
+
+Caso valham apenas as propriedades associativas e do elemento neutro, dizemos que $(G, \cdot, e)$ é um \emph{monóide}.
+Caso valha, adicionalmente, a propriedade comutativa, dizemos que $(G, \cdot, e)$ é um \emph{monóide comutativo}.
 \end{definition}
 
 Alguns exemplos:
@@ -48,11 +51,11 @@ Alguns exemplos:
 
 Algumas observações importantes sobre a notação utilizada no estudo de grupos:
 \begin{itemize}
-\item Ao discursar sobre grupos, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$, conforme fizemos acima ao mencionar que $\mathbb Z$ é um grupo.
+\item Ao discursar sobre grupos e monóides, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$, conforme fizemos acima ao mencionar que $\mathbb Z$ é um grupo.
 O mais formal, porém muito menos usual, feito principalmente em situações em há chance de confusão, é escrever que, por exemplo, $(\mathbb Z, +, 0)$ é um grupo.
-\item Como também ocorre com $\mathbb Z$, caso o grupo seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
+\item Como também ocorre com $\mathbb Z$, caso o grupo ou monóide seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
 Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
-\item Caso o grupo em discurso não seja necessariamente Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
+\item Caso o grupo ou monóide em discurso não seja necessariamente Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
 Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
 
 Porém, há grupos Abelianos cujas operações também são denotadas por $\cdot$, como no caso o grupo $\mathbb T$ mencionado acima.
@@ -148,7 +151,7 @@ Nessa seção, formalizaremos a noção de somatório.
 É desejável que o leitor já possua familiaridade com alguma notação de somatório, não sendo nosso objetivo fornecer ao leitor um primeiro contato. Aqui apresentaremos a notação e as técnicas de ``substituição de variáveis'' que serão utilizadas.
 
 \begin{definition}[Soma de família finita]\label{def:group_sum}
-Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
+Seja $G=(G, +, 0)$ um monóide comutativo.
 Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in F)$, onde $F$ é um conjunto de $n$ índices e $a_i \in G$ para todo $i \in F$, como se segue:
 
 \begin{itemize}
@@ -187,10 +190,10 @@ A partir dessa generalidade, pode-se chegar na notação mais utilizada envolven
 
 Como fazemos no cálculo de integrais, muitas vezes é desejável utilizar técnicas de substituição de variáveis para calcular ou simplificar somatórios.
 A proposição abaixo formaliza esta técnica.
-\begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}
-    Seja $G$ um conjunto munido de uma operação $+$ associativa, comutativa e com neutro $0$.
-Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
-Então:
+\begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}   
+    Seja $G$ um monóide comutativo.
+    Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
+    Então:
 
     \[\sum_{i \in I}a_i=\sum_{j \in J}a_{\phi(j)}.\]
 
@@ -209,7 +212,7 @@ Segue que:
 
 Também podemos juntar, sempre que necessário, duas somas disjuntas sob um único sinal de somatório.
 \begin{prop}[Concatenação de somatórios]\label{prop:group_sumConcat}
-    Seja $I, J$ conjuntos disjuntos. Considere em $G$ famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
+    Seja $I, J$ conjuntos disjuntos e $G$ um monóide comutativo. Considere famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
     Vale a relação:
 
     \[\sum_{i \in I}a_i+\sum_{i \in I}a_i=\sum_{i \in I\cup J}a_i\]
@@ -235,7 +238,7 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
     Seja $I$ um conjunto não vazio e, para cada $i \in F$, seja $F_i$ um conjunto.
     Considere o conjunto finito $K=\bigcup_{i \in I}\{i\}\times F_i=\{(i, j): i \in I, j \in F_i\}$.
 
-    Para cada $i \in I$, considere uma família de elementos de $G$, $(a_{ij}: j \in F_i)$.
+    Para cada $i \in I$, considere uma família de elementos de um monóide comutativo $G$, $(a_{ij}: j \in F_i)$.
     Considere também as famílias $(a_{ij}: (i, j)\in K)=(a_{ij}: i\in I, j \in F_i)$ e $(\sum_{j \in F_i}: i\in I)$. Vale a relação:
 
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\sum_{(i, j)\in K}a_{ij}\]
@@ -264,7 +267,7 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
 Agora provaremos a comutação de somatórios.
 
 \begin{prop}\label{prop:group_sumCommut}
-    Sejam $I, J$ conjuntos não vazios e considere uma família $(a_{ij}:(i, j)\in I\times J)=(a_{ij}:i \in I, j \in J)$.
+    Sejam $I, J$ conjuntos não vazios e considere uma família $(a_{ij}:(i, j)\in I\times J)=(a_{ij}:i \in I, j \in J)$ em um monóide comutativo $G$.
 
     Para cada $i \in I$, considere a família $(a_{ij}: j \in J)$, e, para cada $j \in J$, considere a família $(a_{ij}: i \in I)$.
 
@@ -288,3 +291,4 @@ Agora provaremos a comutação de somatórios.
     
     Mostre que se $ab = ac$, então ou $a = 0$ ou $b = c$ (isto é, se $a\neq 0$, podemos cancela-lo).
 \end{exer}
+
