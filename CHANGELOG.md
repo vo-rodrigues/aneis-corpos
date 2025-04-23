@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+* Algumas demonstrações sobre polinômios melhoradas ou corrigidas.
+* Informações sobre funções polinomiais começaram a ser adicionadas.
 ## 0.1.2
 * Diagrama da propriedade universal de anéis de polinômios adicionada.
 ## 0.1.1
