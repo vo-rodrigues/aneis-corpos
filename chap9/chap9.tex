@@ -23,7 +23,7 @@ Antes de definirmos o que, formalmente, é esse objetivo, vamos enunciar algumas
 \begin{itemize}
     \item \textbf{Igualdade:} é conveniente que, no aspecto formal, a igualdade entre séries formais seja determinada pelos seus coeficientes. Ou seja, que:
     \begin{align*}
-      \sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty b_ix^i & \Leftrightarrow \forall i\in \mathbb N\, a_i=b_i.
+      \sum_{i=0}^\infty a_ix^i=\sum_{i=0}^\infty b_ix^i & \Leftrightarrow \forall i\in \mathbb N\, a_i= b_i.
     \end{align*}
     \item \textbf{Soma:} intuitivamente, se valem propriedades associativas, comutativas e distributivas, faz sentido que a soma satisfaça a propriedade a seguir, imaginando que as duas séries à esquerda se juntam e se reordenam de modo a obter a da direita.
     \begin{align*}
@@ -354,7 +354,7 @@ Pela unicidade de $g$, segue que $g=h$.
 \end{proof}
 
 \section{Divisibilidade em anéis de polinômios}
-\begin{prop}
+\begin{prop}\label{prop:polinomio_Euclideano}
 Se $R$ é um domínio de integridade, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$ e o coeficiente dominante de $d$ invertível, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
 Em particular, se $R$ é um corpo, então $R[x]$ é um domínio Euclideano.
 \end{prop}
@@ -382,6 +382,37 @@ Em particular, se $R$ é um corpo, então $R[x]$ é um domínio Euclideano.
     Como $p(0)=0$, segue que $0=r$, logo, $(x-a)|p(x)$.
 
     Reciprocamente, se $(x-a)|p(x)$, exite $q(x)$ tal que $p(x)=(x-a)q(x)$. Assim, $p(0)=0$.
+\end{proof}
+
+\section{Funções Polinomiais}
+Dado um anel comutativo $R$ e $a_0, \dots, a_n\in R$, é possível definir $f:R\rightarrow R$ dada por $f(x)=\sum_{i=0}^n a_ix^i$.
+Em muitos contextos, tais funções são chamadas de polinômios, ou funções polinomiais.
+Nesta seção, as chamaremos, para evitar confusão, de função polinomial, e estudaremos sua relação com polinômios.
+
+\begin{definition}
+Seja $R$ um anel comutativo.
+Uma função polinomial é uma função $f:R\rightarrow R$ da forma $f(x)=\sum_{i=0}^n a_ix^i$, com $0\leq i\leq n$ e $a_i\in R$.
+\end{definition}
+
+É possível que o leitor tenha indagado, desde o início do capítulo, sobre o motivo de polinômios não terem sido definidos como acima.
+O exemplo abaixo responde esta pergunta:
+
+\begin{exemplo}
+Considere $R=\mathbb Z^2$, $f, g:\mathbb Z^2\rightarrow \mathbb Z^2$ dadas por $f(x)=x^3+x^2$ e $g(x)=x^3+x$. Então $f(0)=g(0)=0$, e $f(1)=g(1)=0$, logo, $f=g=0$.
+
+Apesar disso, $f, g$ foram expressas com coeficientes distintos. Ou seja, não vale a propriedade de que dois polinômios de mesmo grau são iguais se, e somente se possuem a mesma sequência de coeficientes.
+\end{exemplo}
+
+Apesar disso, temos:
+
+\begin{prop}
+Seja $R$ um anel comutativo infinito e $f, g$ funções polinomiais dadas por $f(x)=\sum_{i=0}^n a_ix^i$ e $g(x)=\sum_{i=0}^m b_ix^i$ com $a_n, b_m\neq 0$. Então $f, g$ não são nulas, e $f=g$ se, e somente se, $a_i=b_i$ para todo $i\leq \max\{n, m\}$.
+\end{prop}
+
+\begin{proof}
+    Olhando os coeficientes de $h=f-g$, basta provar que se os coeficientes de uma função polinomial são não nulos, então a função polinomial não é nula.
+
+    
 \end{proof}
 \section{Exercícios}
 \begin{exer}
