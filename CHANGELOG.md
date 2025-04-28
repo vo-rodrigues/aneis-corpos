@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+* Novo exercício sobre polinômios.
+
 ## 0.1.3
 * Algumas demonstrações sobre polinômios melhoradas ou corrigidas.
 * Informações sobre funções polinomiais começaram a ser adicionadas.

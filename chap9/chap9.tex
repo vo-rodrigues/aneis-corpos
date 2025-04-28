@@ -353,6 +353,91 @@ Pela unicidade de $g$, segue que $g=h$.
     Além disso, $\bar h\circ \alpha=\beta$, logo, $\bar h=h$.
 \end{proof}
 
+\section{Polinômios de várias variáveis}
+Nesta seção, daremos uma contrução particular para $R[X]$, onde $X$ é um conjunto arbitrário de indeterminadas e $R$ é um anel comutativo.
+
+Se $x, y, z \in X$, precisamos dar sentido à expressões como $x^2y^3z^4$ e $xy^2+xz^3$. A definição abaixo cuida disso.
+
+\begin{definition}
+    Seja $X$ um conjunto qualquer. O conjunto $\mathbb N^{(X)}$ é o conjunto de funções $u:X\rightarrow \mathbb N$ tal que $\supp u=\{x \in X: f(x)\neq 0\}$ é finito.
+
+    Se $u, v \in \mathbb N^{(X)}$, define-se $u*v:X\rightarrow \mathbb N$ dada por $(u+v)(x)=u(x)+v(x)$.
+\end{definition}
+
+\begin{lemma}
+    A operação $*$ definida acima é tal que $\supp(u*v)= \supp u \cup \supp v$, é associativa e comutativa. Além disso, dado $w \in \mathbb N^{(X)}$, temos que $\{(u, v): u*v=w\}$ é finito.
+\end{lemma}
+\begin{proof}
+    A única afirmação não imediata é a última, que provaremos a seguir.
+    Se $u*v=w$, temos que $\supp u, \supp v\subseteq \supp w$, que é finito. Assim, $u, v$ são $0$ fora de $\supp w$, e não podem ter valor maior do que $w(x)$ para $x\in \supp w$. Assim, há no máximo $N=\prod_{x \in \supp w}(w(x)+1)$ escolhas para $u, v$, logo, no máximo $N^2$ escolhas para $(u, v)$.
+
+    Observação: o número $N^2$ acima é uma cota superior para o número de pares $(u, v)$ tal que $u*v=w$, mas, no geral, ele é substancialmente menor do que este.
+\end{proof}
+
+Agora definiremos o anel das séries formais de $R$ com variáveis em $X$.
+A ideia é identificar cada elemento de $\mathbb N^{(X)}$ com um monômio.
+Por exemplo, se $X=\{x, y, z\}$ e $u(x)=2$, $u(y)=3$ e $u(z)=4$, pensamos em $u$ como $x^2y^3z^4=y^3z^4x^2=\dots$.
+Assim, se temos ainda que $v(x)=1$, $v(y)=4$ e $v(z)=0$, temos que $u*v=(x^2y^3z^4)*(xy^4z^0)=x^3y^7z^4$, como é esperado.
+
+Desta forma, o que buscamos é, para se obter uma série formal com coeficientes em um anel comutativo $R$ com variáveis em $X$, é associar a cada elemento de $\mathbb N^{(X)}$ (cada monômio), um elemento de $R$.
+\begin{definition}
+    Seja $R$ um anel comutativo e $X$ um conjunto. O anel das séries formais de $R$ com variáveis em $X$, denotado por $R\llbracket X\rrbracket$, é o conjunto de funções $f:\mathbb N^{(X)}\rightarrow R$. Um elemento $p=(p_u)_{u \in \mathbb N}\in R\llbracket X\rrbracket$ é denotado por:
+
+    \[p=\sum_{u \in \mathbb N^{(X)}}p_u u.\]
+
+    A série nula é dada pela família $0=(0)_{u \in \mathbb N^{(X)}}$.
+    O monômio $1$ é a função nula $0:X\rightarrow \mathbb N$. O elemento $1$ de $R\llbracket X\rrbracket$ é a função $1=(\delta_{1u})_{u \in \mathbb N^{(X)}}$, onde $\delta_{1u}$ é o delta de Kronecker, que vale $1$ se $u=1$ e $0$ caso contrário.
+
+    A soma e produto de séries formais se dá por:
+
+    \[\sum_{u \in \mathbb N^{(X)}}p_u u+\sum_{u \in \mathbb N^{(X)}}q_u u=\sum_{u \in \mathbb N^{(X)}}(p_u+q_u)u\]
+    \[\sum_{u \in \mathbb N^{(X)}}p_u u\cdot \sum_{u \in \mathbb N^{(X)}}q_u u=\sum_{u \in \mathbb N^{(X)}}\sum_{v*w=u}(p_vq_w)u\]
+\end{definition}
+
+\begin{lemma}[Séries formais formam anéis]
+    Se $R$ é um anel comutativo e $X$ um conjunto, então $R\llbracket X \rrbracket$ é um anel comutativo.
+\end{lemma}
+
+\begin{proof}
+    A operação de soma de $\mathbb R\llbracket x \rrbracket$ é a mesma de $\mathbb R^{\mathbb N^{(X)}}$, que já verificamos satisfazer as propriedades de grupo Abeliano. Assim, $R\llbracket x \rrbracket$ é um grupo abeliano sob a soma.
+
+    Para as demais propriedades, fique $p, q, r \in R\llbracket X \rrbracket$.
+    \begin{itemize}
+        \item \textbf{Distributividade:} Fixe $u \in \mathbb N^{(X)}$. O $u$-ésimo coeficiente de $p\cdot (q+r)$ é:
+        
+        \[\sum_{v*w=u} p_{v}(q_w+r_w)=\sum_{v*w=u}p_vq_w+\sum_{v*w=u}p_vr_w\]
+
+        O que coincide com o $u$-ésimo coeficiente de $pq+pr$.
+        \item \textbf{Elemento Neutro:} Temos que:
+        \[p\cdot 1=\sum_{u \in \mathbb N^{(X)}}\left(\sum_{v*w=u} p_{v}\delta_{1w}\right)u=\sum_{u \in \mathbb N^{(X)}}p_{u}u=p\]
+
+        \item \textbf{Comutatividade:} A $u$-ésima coordenada de $pq$ é $\sum_{v*w=u} p_vq_w=\sum(p_vq_w: (v, w)\in A)$, onde $A=\{(v, w)\in \mathbb N^{(X)}\times \mathbb N^{(X)}: v*w=u\}$. A função $\phi: A\rightarrow A$ dada por $\phi(v, w)=(w, v)$ é bijetora, pois é injetora e $A$ é finito. Assim:
+        \[\sum(p_vq_w: (v, w)\in A)=\sum(p_wq_v: (v, w)\in A)=\sum(q_vp_w: (v, w)\in A)=\sum_{v*w=u}q_vp_w\]
+
+        que é a $u$-ésima coordenada de $qp$.
+    
+        \item \textbf{Associatividade:} Temos que a $u$-ésima coordenada de $((pq)r$ é dada por:
+
+        \[\sum_{v*w=u}\pi_v(pq)r_wu=\sum_{v*w=u}\sum_{s*t=v}p_sq_tr_wu=\sum(p_sq_tr_w: (s, t, v, w)\in A)\]
+
+        onde $A=\{(s, t, v, w): s*t=v, v*w=u\}$. Seja $B=\{(a, b, c): a*b*c=u\}$. A função $\phi:B\rightarrow A$ dada por $\phi(a, b, c)=(a, b, a*b, c)$ é bijetora (verifique), logo:
+
+        \[\sum(p_sq_tr_w: (s, t, v, w)\in A)=\sum(p_aq_br_c: (a, b, c)\in A)=\sum_{a*b*c=u}p_aq_br_c.\]
+
+        Analogamente, o $u$-ésimo coeficiente de $p(qr)$ é dado pela expressão acima.
+    \end{itemize}
+\end{proof}
+
+\begin{definition}
+    Seja $R$ um anel comutativo e $X$ um conjunto. O anel de polinômios com coeficientes em $R$ e variáveis em $X$, denotado por $R[X]$, é o subanel de $R\llbracket X \rrbracket$ formado pelos elementos $p\in R\llbracket X \rrbracket$ que têm suporte finito, onde $\supp p=\{u \in \mathbb N^{(X)} \in X: p_u\neq 0\}$.
+\end{definition}
+
+\begin{lemma}
+    Se $R$ é um anel comutativo e $X$ um conjunto, então $R[X]$ é um subanel de $R\llbracket X \rrbracket$.
+\end{lemma}
+\begin{proof}
+    A soma e o produto de polinômios são polinômios, pois se $p=\sum_{u \in \mathbb N^{(X)}}p_u u$ e $q=\sum_{u \in \mathbb N^{(X)}}q_u u$, então $\supp(p+q)\subseteq\supp p\cup \supp q$ e $\supp(pq)=\{u \in \mathbb N^{(X)}: u=v*w, v\in \supp p, w\in \supp q\}$, que é finito. Além disso, as séries $0$ e $1$ são polinômios.
+\end{proof}
 \section{Divisibilidade em anéis de polinômios}
 \begin{prop}\label{prop:polinomio_Euclideano}
 Se $R$ é um domínio de integridade, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$ e o coeficiente dominante de $d$ invertível, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
@@ -425,6 +510,6 @@ Mostre que $\mathbb R[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb C$.
 \begin{exer}
     Mostre que $\mathbb Z[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb Z[i]$.
 \end{exer}
-\begin{exer}
+\begin{exer}\label{exer:polinomio_serieDominio}
     Mostre que se $R$ é um domínio de integridade, então $R\llbracket x \rrbracket$ é um domínio de integridade.
 \end{exer}
