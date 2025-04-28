@@ -2,6 +2,7 @@
 
 ## 0.1.4
 * Novo exercício sobre polinômios.
+* Um pouco sobre anéis de polinômios com várias variáveis redigido.
 
 ## 0.1.3
 * Algumas demonstrações sobre polinômios melhoradas ou corrigidas.
