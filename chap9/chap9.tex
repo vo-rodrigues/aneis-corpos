@@ -261,6 +261,13 @@ A proposição abaixo formaliza e generaliza essa ideia.
     A função $g$ é única, pois se $g'$ é outra tal função, temos que, dado $p(x)=\sum_{i=0}^n r_ix^i$, temos que $g'(p(x))=\sum_{i=0}^nf(r_i)s^i=g(p(x))$.
 \end{proof}
 
+\begin{exemplo}
+Seja $R$ um anel comutativo e $R[x]$ o anel de polinômios sobre $R$.
+Para todo $s \in R$, existe um homomorfismo $\av_s:R[x]\rightarrow R$ tal que $\av_s(r)=r$ para todo $r \in R$ e $\av_s(x)=s$, de modo que para todo $p(x)=\sum_{i=0}^n r_ix^i\in R[x]$, $\av_s(p(x))=\sum_{i=0}^n r_is^i$.
+
+Esse homomorfismo é chamado de \emph{avaliação em $s$}, e escrevemos $p(s)=\av_s(p(x))$.
+\end{exemplo}
+
 \begin{definition}\label{definition:polinomio_propUniversal}
     Seja $R$ um anel comutativo e $X$ um conjunto.
     Um anel de polinômios sobre $R$ com variáveis em $X$ é uma tripla $(R[X], \phi, \alpha)$, onde $R[X]$ é um anel comutativo e $\phi:R\rightarrow R[X]$ é um homomorfismo e $\alpha:X\rightarrow R[X]$ é uma função que satisfazem a seguinte propriedade:
