@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.5
+* Alguns erros de digitação em exercícios foram corrigidos.
+
 ## 0.1.4
 * Novo exercício sobre polinômios.
 * Um pouco sobre anéis de polinômios com várias variáveis redigido.
