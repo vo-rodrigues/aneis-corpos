@@ -478,13 +478,13 @@ Para completar a prova, note que para todos $p(x), q(x) \in K[x]\setminus \{0\}$
 \end{proof}
 
 \begin{corol}
-Se $R$ é um anel comutativo, $a \in R$ e $p(x)\in R[x]$, então existe único $q(x)\in R[x]$ tal que $p(x)=q(x)(x-a)+p(a)$.
+Se $R$ é um anel comutativo, $a \in R$ e $p(x)\in R[x]$, então existe $q(x)\in R[x]$ tal que $p(x)=q(x)(x-a)+p(a)$.
 \end{corol}
 \begin{proof}
     Como $1 \in R[x]$, existem $q(x), r(x) \in R[x]$ tais que $p(x)=q(x)(x-a)+r(x)$ e $\deg(r(x))\leq 0$. Assim, $r(x)=b$ para algum $b \in R$, logo, $p(x)=q(x)(x-a)+b$. Como a avaliação em $a$ é homomorfismo, note que $p(a)=b$. Assim, $p(x)=q(x)(x-a)+p(a)$.
 \end{proof}
 \begin{prop}
-    Seja $R$ um domínio de integridade e $p(x)\in R[x]$.
+    Seja $R$ um anel comutativo e $p(x)\in R[x]$.
     Temos que $(x-a)|p(x)$ se, e somente se, $p(a)=0$.
 \end{prop}
 \begin{proof}
@@ -543,7 +543,7 @@ Nesta seção, as chamaremos, para evitar confusão, de função polinomial, e e
 
 \begin{definition}
 Seja $R$ um anel comutativo.
-Uma função polinomial é uma função $f:R\rightarrow R$ da forma $f(x)=\sum_{i=0}^n a_ix^i$, com $0\leq i\leq n$ e $a_i\in R$.
+Uma função polinomial é uma função $f:R\rightarrow R$ da forma $f(s)=\sum_{i=0}^n a_is^i$ $(s \in R)$, com $0\leq i\leq n$ e $a_i\in R$.
 \end{definition}
 
 É possível que o leitor tenha indagado, desde o início do capítulo, sobre o motivo de polinômios não terem sido definidos como acima.
@@ -554,6 +554,23 @@ Considere $R=\mathbb Z^2$, $f, g:\mathbb Z^2\rightarrow \mathbb Z^2$ dadas por $
 
 Apesar disso, $f, g$ foram expressas com coeficientes distintos. Ou seja, não vale a propriedade de que dois polinômios de mesmo grau são iguais se, e somente se possuem a mesma sequência de coeficientes.
 \end{exemplo}
+
+\begin{prop}
+Seja $R$ um anel comutativo. O conjunto das funções polinomiais de $R$ forma um subanel do anel produto $R^R$.
+Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
+\end{prop}
+
+\begin{proof}
+    Seja $h:R\rightarrow R^R$ a função que associa $a \in R$ ao mapa constante $h(a)\in R^R$ dado por $h(a)(r)=a$ para todo $r \in R$.
+    Está claro que $h(1)$ é o mapa constante $1 \in R^R$, que $h(a+b)=h(a)+h(b)$ e $h(ab)=h(a)h(b)$.
+
+    Pela propriedade universal do anel de polinômios, existe um homomorfismo $g:R[x]\rightarrow R^R$ tal que $g|_{R}=h$ e $g(x)=\id_R$.
+    
+    Assim, sendo $p(x)=\sum_{i=0}^n a_ix^i$, temos que $g(p(x))(s)=\sum_{i=0}^n a_is^i$.
+
+    Está claro que $g$ é sobrejetora no conjunto das funções polinomais, e, portanto, este forma um anel. Além disso, se $R$ é um domínio infinito e $g(p(x))=0$, então $p(s)=0$ para todo $s \in R$.
+    Se $p(x)\neq 0$, o número de raízes de $p(x)$ seria finito. Como $R$ é infinito, $p(x)$ tem infinitas raízes, assim, $p(x)=0$.
+\end{proof}
 
 \section{Exercícios}
 \begin{exer}
