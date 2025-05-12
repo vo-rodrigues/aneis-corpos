@@ -114,49 +114,49 @@ São equivalentes:
 
 Nesta seção, definimos a noção de mínimo múltiplo comum e máximo divisor comum de dois elementos em um domínio de integridade.
 \begin{definition}
-Seja $R$ um domínio de integridade e $a, b \in R$ não nulos.
+Seja $R$ um anel comutativo e $a_0, \dots, a_n \in R$ não nulos.
 
-Um mínimo múltiplo comum de $a$ e $b$ é, se existe, um elemento $m\in R$ tal que:
+Um mínimo múltiplo comum de $a_0, \dots, a_n$ é, se existe, um elemento $m\in R$ tal que:
 \begin{itemize}
-    \item $a|m$ e $b|m$.
-    \item Se $c\in R$ é tal que $a|c$ e $b|c$, então $m|c$.
+    \item $a_0|m$, $\dots$, $a_n|m$
+    \item Se $c\in R$ é tal que $a_0|c$, $\dots$, $a_n|c$, então $m|c$.
 \end{itemize}
 
-Um máximo divisor comum de $a$ e $b$ é, se existe, um elemento $d\in R$ tal que:
+Um máximo divisor comum de $a_0, \dots, a_n$ é, se existe, um elemento $d\in R$ tal que:
 \begin{itemize}
-    \item $d|a$ e $d|b$.
-    \item Se $c\in R$ é tal que $c|a$ e $c|b$, então $c|d$.
+    \item $d|a_0$, $\dots$, $d|a_n$.
+    \item Se $c\in R$ é tal que $c|a_0$, $\dots$,  $c|a_n$, então $c|d$.
 \end{itemize}
 
-O conjunto de todos os MMC's de $a, b$ é $\MMC(a, b)$.
-O conjunto de todos os MDC's de $a, b$ é $\MDC(a, b)$.
+O conjunto de todos os MMC's de $a, b$ é $\MMC(a_0, \dots, a_n)$.
+O conjunto de todos os MDC's de $a, b$ é $\MDC(a_0, \dots, a_n)$.
 \end{definition}
 
 Note que, pela simetria da definição, $\MDC(a, b)=\MDC(b, a)$ e $\MMC(a, b)=\MMC(b, a)$.
-É importante ressaltar que, no geral, $\MMC(a, b)$ e $\MDC(a, b)$ podem ser vazios, e, geralmente, quando não vazios, não são unitários.
+É importante ressaltar que, no geral, $\MMC(a_0, \dots, a_n)$ e $\MDC(a_0, \dots, a_n)$ podem ser vazios, e, geralmente, quando não vazios, não são unitários.
 De fato:
 \begin{lemma}
     Seja $R$ um domínio de integridade e $a \in R$ não nulo.
 
-    Sejam $a, b \in R$.
-    Então todos os elementos de $\MDC(a, b)$ são associados entre si.
-    Analogamente, todos os elementos de $\MMC(a, b)$ são associados entre si.
+    Sejam $a_0, \dots, a_n \in R$.
+    Então todos os elementos de $\MDC(a_0, \dots, a_n)$ são associados entre si.
+    Analogamente, todos os elementos de $\MMC(a_0, \dots, a_n)$ são associados entre si.
 
-    Reciprocamente, todo elemento de $R$ associado à algum elemento de $\MDC(a, b)$ é um MDC de $a, b$, e todo elemento de $R$ associado à algum elemento de $\MMC(a, b)$ é um MMC de $a, b$.
+    Reciprocamente, todo elemento de $R$ associado à algum elemento de $\MDC(a_0, \dots, a_n)$ é um MDC de $a_0, \dots, a_n$, e todo elemento de $R$ associado à algum elemento de $\MMC(a_0, \dots, a_n)$ é um MMC de $a_0, \dots, a_n$.
 \end{lemma}
 \begin{proof}
-Sejam $d, d'$ máximos divisores comuns de $a$ e $b$.
-Então, $d|a$ e $d|b$, $d'|a$ e $d'|b$.
+Sejam $d, d'$ máximos divisores comuns de $a_0, \dots, a_n$.
+Então, $d|a_0$, $\dots$, $d|a_n$, $d'|a_0$, $\dots$, $d'|a_n$.
 Logo, $d|d'$ e $d'|d$.
 Logo, $d$ e $d'$ são associados entre si.
 
-Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a$ e $b$.
-Então, $m|a$ e $m|b$, $m'|a$ e $m'|b$.
+Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a_0, \dots, a_n$.
+Então, $m|a_0$, $\dots$, $m|a_n$, $m'|a_0$, $\dots$, $m'|a_n$.
 Logo, $m|m'$ e $m'|m$.
 Logo, $m$ e $m'$ são associados entre si.
 
-Para a recíproca, se $d$ é MDC de $a, b$ e $d'$ é associado à $d$, então $d'|a$ e $d'|b$, pois $d|a$, $d|b$ e $d'|d$.
-Se $x\in R$ é tal que $x|a$ e $x|b$, então $d'|d$ e $d|x$, logo $d'|x$.
+Para a recíproca, se $d$ é MDC de $a_0, \dots, a_n$ e $d'$ é associado à $d$, então $d'|a_0$, $\dots$, $d'|a_n$, pois $d|a_0$, $\dots$, $d|a_n$ e $d'|d$.
+Se $x\in R$ é tal que $x|a_0$, $\dots$, $x|a_n$, então $d'|d$ e $d|x$, logo $d'|x$.
 
 Similarmente, se $m$ é MMC de $a, b$ e $m'$ é associado à $m$, então $m'$ é MMC de $a, b$.
 \end{proof}
@@ -182,7 +182,6 @@ Além disso, se $a, b \neq 0$, temos $0 \notin \MMC(a, b)$. e $0 \notin \MDC(a, 
     Para a última afirmação, se $a, b \neq 0$, temos que $0 \notin \MDC(a, b)$, já que $0$ divide apenas $0$.
     Além disso, $0 \notin MMC(a, b)$, pois $ab\neq 0$ é múltiplo comum de $a, b$ e não é múltiplo de $0$.
 \end{proof}
-
 
 
 \section{Elementos primos e irredutíveis}
