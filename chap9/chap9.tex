@@ -440,35 +440,102 @@ Desta forma, o que buscamos é, para se obter uma série formal com coeficientes
 \end{proof}
 \section{Divisibilidade em anéis de polinômios}
 \begin{prop}\label{prop:polinomio_Euclideano}
-Se $R$ é um domínio de integridade, então para todo $p(x), d(x) \in R[x]$ com $d(x)\neq 0$ e o coeficiente dominante de $d$ invertível, existem únicos $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
-Em particular, se $R$ é um corpo, então $R[x]$ é um domínio Euclideano.
+Seja $R$ é um anel comutativo E $p(x), d(x) \in R[x]$ com $d(x)\neq 0$ e o coeficiente dominante de $d$ invertível. Então existem $q(x), r(x) \in R[x]$ tais que $p(x)=d(x)q(x)+r(x)$, onde $\deg(r(x))<\deg(d(x))$.
+
+Além disso, se $R$ é domínio de integridade, então $q(x), r(x)$ são únicos.
 \end{prop}
 \begin{proof}
     Existência: fixe $d(x)$ e seja $\deg(d(x))=k\geq 0$.
-    Provaremos por indução no grau de $p(x)$.
-    Se $\deg(p(x))<k$, seja $q(x)=0$ e $r(x)=p(x)$.
 
-    Para o passo indutivo, se a hipótese vale para $\gr(p(x))<n$ e $n+1\geq k$, seja $p_{n+1}$ o coeficiente dominante de $p(x)$ e $d_k$ o de $d(x)$.
-    Temos que $p(x)-\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}$ é um polinômio de grau $\leq n$, logo, pela hipótese indutiva, existe $q(x), r(x)$ tais que $p(x)-\frac{p_n}{d_k}d(x)x^{n+1-k}=d(x)q(x)+r(x)$, onde $\deg(r(x))<k$.
-    Segue que $p(x)=\left(\frac{p_{n+1}}{d_k}d(x)x^{n+1-k}+q(x)\right)d(x)+r(x)$, onde $\deg(r(x))<k$.
+    Se $p(x)=0$, seja $q(x)=r(x)=0$. Note que $\gr(0)=-\infty<\gr(d(x))$.
 
-    Para a unicidade, se existem $q_1(x), r_1(x)$ e $q_2(x), r_2(x)$ tais que $p(x)=d(x)q_1(x)+r_1(x)=d(x)q_2(x)+r_2(x)$, temos que $d(x)(q_1(x)-q_2(x))=r_2(x)-r_1(x)$.
+    Se $p(x)\neq 0$, procedemos por indução em $m=\gr(p(x))$.
+
+    Para $m=0$: se $0<k$, seja $q(x)=0$ e $r(x)=p(x)$. Então $p(x)=d(x)q(x)+r(x)$ e $\gr(r(x))=0<k=\gr(d(x))$.
+
+    Se $0=k$, então $p(x)=a\in K$, $d(x)=b\in K^*$. Seja $q(x)=ab^{-1}$ e $r(x)=0$. Então $\gr(r(x))=-\infty<0=\gr(d(x))$ e $0<k$.
+    Provaremos por indução em $m$ que para todo $p(x)\in R[x]$ de grau $m$, existem $q(x), r(x) \in R[x]$ com $p(x)=q(x)d(x)+r(x)$ e $\gr(r(x))<\gr(d(x))$.
+
+    Agora vamos supor que a hipótese vale para $m$. Provaremos que vale para $m+1$.
+    Para $m+1<k$, seja $p(x)=r(x)$ e $q(x)=0$. Então $q(x)d(x)+r(x)=r(x)=p(x)$ e $\gr(r(x))=m+1<k=\gr(d(x))$.
+
+    Se $m+1\geq k$, seja $a$ o coeficiente dominante de $p(x)$ e $b$ o coeficiente dominante de $d(x)$.
+    Temos que $p(x)-\frac{a}{b}d(x)x^{m+1-k}$ é um polinômio de grau $\leq n$, logo, pela hipótese indutiva, existem $q(x), r(x)$ tais que $p(x)-\frac{a}{b}d(x)x^{m+1-k}=d(x)q(x)+r(x)$, onde $\deg(r(x))<k$.
+    Segue que $p(x)=\left(\frac{a}{b}d(x)x^{m+1-k}+q(x)\right)d(x)+r(x)$, onde $\deg(r(x))<k$.
+
+    Para a unicidade caso $R$ seja domínio, se existem $q_1(x), r_1(x)$ e $q_2(x), r_2(x)$ tais que $p(x)=d(x)q_1(x)+r_1(x)=d(x)q_2(x)+r_2(x)$, temos que $d(x)(q_1(x)-q_2(x))=r_2(x)-r_1(x)$.
     Se $q_1(x)-q_2(x)=0$ segue a tese.
 
     Caso contrário, temos $\gr(r_2(x)-r_1(x))<\gr(d(x))\leq\gr(d(x)(q_1(x)-q_2(x)))=\gr(r_2(x)-r_1(x))$, o que é uma contradição.
 \end{proof}
+\begin{corol}
+Seja $K$ um corpo. Então $K[x]$ é um domínio Euclideano.
+\end{corol}
+\begin{proof}
+Já vimos que se $K$ é um corpo, então $K[x]$ é um domínio de integridade.
 
+Para completar a prova, note que para todos $p(x), q(x) \in K[x]\setminus \{0\}$, $\gr(p(x)q(x))=\gr(p(x))+\gr(q(x))\geq \gr(p(x))$.
+\end{proof}
+
+\begin{corol}
+Se $R$ é um anel comutativo, $a \in R$ e $p(x)\in R[x]$, então existe único $q(x)\in R[x]$ tal que $p(x)=q(x)(x-a)+p(a)$.
+\end{corol}
+\begin{proof}
+    Como $1 \in R[x]$, existem $q(x), r(x) \in R[x]$ tais que $p(x)=q(x)(x-a)+r(x)$ e $\deg(r(x))\leq 0$. Assim, $r(x)=b$ para algum $b \in R$, logo, $p(x)=q(x)(x-a)+b$. Como a avaliação em $a$ é homomorfismo, note que $p(a)=b$. Assim, $p(x)=q(x)(x-a)+p(a)$.
+\end{proof}
 \begin{prop}
     Seja $R$ um domínio de integridade e $p(x)\in R[x]$.
     Temos que $(x-a)|p(x)$ se, e somente se, $p(a)=0$.
 \end{prop}
 \begin{proof}
-    Suponha que $p(a)=0$. Existem $q(x)\in R[x]$ e $r \in R$ tais que $p(x)=q(x)(x-a)+r$.
-    Como $p(0)=0$, segue que $0=r$, logo, $(x-a)|p(x)$.
+    Se $p(a)=0$, segue do corolário anterior que $(x-a)|p(x)$.
 
-    Reciprocamente, se $(x-a)|p(x)$, exite $q(x)$ tal que $p(x)=(x-a)q(x)$. Assim, $p(0)=0$.
+    Reciprocamente, se $(x-a)|p(x)$, escreva $p(x)=q'(x)(x-a)$. Segue que $p(a)=q'(a)(a-a)=0$.
 \end{proof}
 
+\begin{corol}
+Seja $R$ um domínio de integridade e $a \in R$. Então $x-a\in R[x]$ é primo (e, portanto, irredutível).
+\end{corol}
+\begin{proof}
+Suponha que $(x-a)|p(x)q(x)$. Então $p(a)q(a)=0$, logo, $p(a)=0$ ou $q(a)=0$. Assim, $(x-a)|p(x)$ ou $(x-a)|q(x)$.
+\end{proof}
+\section{Raízes de polinômios}
+\begin{definition}
+Seja $R$ um domínio de integridade e $p(x)\in R[x]$ e $a \in R$. Dizemos que $a$ é uma raiz de $p(x)$ se $p(a)=0$.
+\end{definition}
+
+\begin{prop}
+Seja $R$ um domínio de integridade e $p(x)\in R[x]\setminus \{0\}$. Seja $m=\gr (p(x))$. Então $R[x]$ tem no máximo $m$ raízes.
+\end{prop}
+\begin{proof}
+    Provaremos por indução em $m$.
+    Caso $m=0$, escreva $p(a)=b\neq 0$. Temos que para todo $a \in R$ $p(a)=b\neq 0$, logo, $p(x)$ tem $0$ raízes.
+
+    Suponha que a afirmação vale para $m$. Provaremos que vale para $m+1$.
+    
+    Seja $p(x)$ de grau $m+1$. Caso $p(x)$ não possua raízes, a prova está concluída. Caso contrário, seja $a$ uma raiz de $p(x)$. Então $(x-a)|p(x)$, logo, existe $q(x) \in R[x]$ tal que $p(x)=q(x)(x-a)$
+
+    Como $\gr(p(x))=\gr(q(x))+1$, temos por hipótese indutiva que $q(x)$ tem no máximo $m$ raízes. Observe que se $b\neq a$ é raiz de $p(x)$, então $(b-a)q(b)=0$, logo, $b$ é raiz de $q(x)$. Assim, $p(x)$ tem no máximo $m+1$ raízes.
+\end{proof}
+
+Se $R$ é um domínio de integridade e $K$ é seu corpo de frações, podemos identificar $R$ dentro de $K$ como subanel. Assim, $R[x]\subseteq K[x]$.
+\begin{prop}
+Seja $R$ um domínio de fatoração única e $F$ o corpo de frações de $R$. Seja $p(x)\in R[x]\subseteq K[x]$ não nulo e $u, v \in D$ com $v \neq 0$ e $1\in \MDC(u, v)$.
+
+Então, se $\frac{u}{v}$ é uma raiz de $p(x)=a_nx^n+\dots+a_1x+a_0$ onde $n=\gr p(x)$, temos que $u|a_n$ e $v|a_0$.
+\end{prop}
+\begin{proof}
+    Temos que $0=\sum_{i=0}^na_i \frac{u^i}{v^i}$. Multiplicando por $v^n$, temos que $0=\sum_{i=0}^n a_i u^iv^{n-i}$.
+
+    Como $p(x)$ tem raízes, $n>0$, $-a_nu^n=\sum_{i=0}^{n-1}a_iu^iv^{n-i}=v\sum_{i=0}^{n-1}a_iu^iv^{n-i-1}$. Como $v|anu^n$ e $1\in \MDC(v, u)$ e estamos em um domínio de fatoração única, temos que $v|a_n$.
+
+    Similarmente, $-a_0v^n=\sum_{i=1}^n a_i u^iv^{n-i}=u\sum_{i=1}^n a_i u^{i-1}v^{n-i}$. Como $u|a_0v^n$ e $1\in \MDC(u, v)$ e estamos em um domínio de fatoração única, temos que $u|a_0$.
+\end{proof}
+
+
+\begin{exemplo}
+Em $\mathbb Q[x]$, considere $p(x)=2x^3- x^2 - 4 x  + 2$. Caso $p(x)\in \mathbb Z[x]$ possua uma raiz racional, ela deve ser da forma $\frac{a}{b}$ com $a|2$ e $b|2$ com $a, b$ primos entre si. As únicas opções de raízes são $\frac{1}{2}$,$-\frac{1}{2}$, $1$, $-1$, $2$, $-2$.
+\end{exemplo}
 \section{Funções Polinomiais}
 Dado um anel comutativo $R$ e $a_0, \dots, a_n\in R$, é possível definir $f:R\rightarrow R$ dada por $f(x)=\sum_{i=0}^n a_ix^i$.
 Em muitos contextos, tais funções são chamadas de polinômios, ou funções polinomiais.
