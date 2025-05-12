@@ -432,6 +432,30 @@ Logo, $(xm)\in \MMC(xa, xb)$.
     Se $d$ é invertível, temos, de $p|bd$, que $p|b$.
 \end{proof}
 
+Finalmente, em um domínio de MDC, MDCs e MMCs de quantidades finitas arbitrárias de elementos existem.
+
+\begin{prop}
+    Seja $R$ um domínio de MDC e $a_1, \dots, a_n \in R$.
+    Então $\MDC(a_1, \dots, a_n)$ e $\MMC(a_1, \dots, a_n)$ não são vazios.
+\end{prop}
+
+\begin{proof}
+Provaremos por indução em $n$.
+Para $n=1$, note que $a\in \MDC(a)$ e $a \in \MMC(a)$.
+Para $n=2$, temos que $\MDC(a_1, a_2)$ e $\MMC(a_1, a_2)$ não são vazios pelo já estudado.
+
+Suponha que a proposição vale para $n$. Sejam $a_1, \dots, a_{n+1} \in R$.
+Seja $d\in \MDC(a_1, \dots, a_n)$ e $m\in \MMC(a_1, \dots, a_n)$.
+
+Seja $d' \in \MDC(a_{n+1}, d)$ e $m' \in \MMC(a_{n+1}, m)$.
+Afirmamos que $d'$ é um MDC de $a_1, \dots, a_{n+1}$ e $m'$ é um MMC de $a_1, \dots, a_{n+1}$.
+
+$d'$ é divisor comum de $a_1, \dots, a_{n+1}$: temos que $d'|a_{n+1}$ e, como $d'|d$, segue que $d'|a_1, \dots, d'|a_n$.
+Se $x$ é divisor comum de $a_1, \dots, a_{n+1}$, então $x|d$ e $x|a_{n+1}$, logo, $x|d'$.
+
+$m'$ é múltiplo comum de $a_1, \dots, a_{n+1}$: temos que $a_{n+1}|m'$, $m|m'$, logo $a_1|m'$, $\dots$, $a_n|m'$.
+Se $x$ é múltiplo comum de $a_1, \dots, a_{n+1}$, então $m|x$ e $a_{n+1}|x$, logo $m'|x$.
+\end{proof}
 \section{Domínios de Fatoração Única}
 Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou Anéis Fatoriais, são domínios de integridade que capturam outra propriedade dos números inteiros:
 a do Teorema Fundamental da Aritmética.
