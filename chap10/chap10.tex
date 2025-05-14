@@ -55,21 +55,33 @@ Seja $F$ um corpo estendendo $E$ e $a \in F$. Dizemos que $a \in F$ é um elemen
 \begin{definition}
     Seja $F$ uma extensão de um corpo $E$ e $a \in F$.
 
-    $E[a]$ é o menor subanel de $F$ contendo $E, a$.
-    $E(a)$ é o menor subcorpo de $F$ contendo $E, a$.
+    Define-se $E[a]=\{p(a): p \in E[x]\}$.
 \end{definition}
 
 Observação: na definição acima, $E[a]$ e $E(a)$ dependem também de $F$, apesar de tal fato não estar explícito na notação.
 \begin{lemma}
-    Na notação acima, $E[a]=\{p(a): p \in E[x]\}$.
+    Na notação acima, $E[a]$ é o menor subanel de $F$ contendo $E$ e $a$.
 \end{lemma}
 \begin{proof}
-    Temos que $\{p(a): p \in E[x]\}$ é a imagem de $E[x]$ pela avaliação em $a$, e, portanto, é um subanel de $F$.
-    Qualquer subanel de $F$ contendo $E, a$ contém $\{p(a): p \in E[x]\}$, pois se $S$ é um subanel de $F$ contendo $E, a$, então dado $p\in E[x]$, sendo $p(x)=\sum_{i=0}^n a_ix^i$, temos que $p(a)=\sum_{i=0}^n a_i a^i \in S$.
+    Temos que $E[a]$ é a imagem de $E[x]$ pela avaliação em $a$, e, portanto, é um subanel de $F$.
+    Qualquer subanel de $F$ contendo $E, a$ contém $E[a]$, pois se $S$ é um subanel de $F$ contendo $E, a$, então dado $p\in E[x]$, sendo $p(x)=\sum_{i=0}^n a_ix^i$, temos que $p(a)=\sum_{i=0}^n a_i a^i \in S$.
 \end{proof}
+\begin{prop}
+    Seja $F$ um corpo estendendo $E$ e $a\in F$ um elemento algébrico de $E$. Então:
 
+    \begin{enumerate}
+        \item $\{p \in E[x]: p(a)=0\}$ é um ideal maximal de $E[x]$.
+        \item Se $p$ é um polinômio não nulo de menor grau tal que $p(a)=0$, então $a$ é irredutível em $E[x]$.
+        \item $\{p \in E[x]: p(a)=0\}$ possui um único gerador mônico, e este é irredutível.
+        \item $E[a]$ é o menor subcorpo de $F$ contendo $E$ e $a$.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    Seja $I=\{p \in E[x]: p(a)=0\}$. $I$ é o núcleo da avaliação em $a$, e, portanto, é um ideal de $E[x]$.
+    Pelo primeiro teorema do isomorfismo, $E[x]/I$ é isomorfo à $E[x]$, que é um subanel de um corpo, e, portanto, um domínio de integridade. logo, $I$ é primo.
+\end{proof}
 \begin{lemma}
-    Na notação acima, $E(a)=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(a\neq 0\}$.
+    Na notação acima, $E(a)=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(a)\neq 0\}$.
 \end{lemma}
 \begin{proof}
     Veremos que $L=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(b)\neq 0\}$ é um subcorpo de $F$.
