@@ -1,0 +1,83 @@
+\chapter{Extensão de corpos}
+
+\begin{definition}
+Dizemos que um corpo $K$ estende um corpo $L$ se $L\subseteq K$ e $L$ é um subanel (subcorpo) de $K$.
+\end{definition}
+
+Lembremos que, da álgebra linear, se $K, L$ são corpos e $K$ estende $L$ então $K$ é um $L$-espaço vetorial:
+
+\begin{prop}
+    Sejam $K$ um corpo estendendo $L$. Então $K$ é, com a multiplicação usual, um $L$-espaço vetorial.
+\end{prop}
+
+\begin{proof}
+    $(K, +)$ é claramente um grupo abeliano. Além disso, se $u, v \in L$ e $a, b \in K$, temos que $u(a+b)=ua+ub$, que $(u+v)a=ua+uv$, que $1a=a$ e que $(uv)a=u(va)$.
+\end{proof}
+
+\begin{definition}
+Na notação anterior, a dimensão de $K$ como $L$-espaço vetorial é denotada por $[K:L]$.
+\end{definition}
+
+\begin{lemma}
+Seja $E, F, K$ corpos com $K$ estendendo $F$ e $F$ estendendo $K$. Então $[K:E]$ é finito se, e somente se $[K:F]$ e $[F:E]$ são finitos, e, nesse caso, $[K:E]=[K:F][F:E]$.
+\end{lemma}
+
+\begin{proof}
+    Primeiro, suponha que $[K:F]$ e $[F:E]$ são finitos. Seja $\mathcal B=(b_i: 1\leq i\leq n)$ uma base de $K$ como $F$-espaço vetorial e $\mathcal C=(c_j: 1\leq j\leq m)$ uma base de $F$ como $E$-espaço vetorial.
+
+    Seja $\mathcal D=(b_ic_j: 1\leq i\leq n, 1\leq j\leq m)$. Afirmo que $\mathcal D$ é $E$-base de $K$.
+
+    $\mathcal D$ é L.I.: com efeito, sejam $x_{ij}\in E$ tais que $\sum\left(x_{ij}b_ic_j: 1\leq i\leq n, 1\leq j\leq m\right)=0$. Então $\sum_{i=1}^n\left(\sum_{j=1}^mx_{ij}c_j\right)b_i=0$. Como $\mathcal B$ é L.I., cada $\sum_{j=1}^m x_{ij}c_j=0$. Como $\mathcal C$ é L.I., cada $x_{ij}=0$. Portanto, $\mathcal D$ é L.I.
+
+    $\mathcal D$ é gerador: dado $k \in K$, existem $y_1, \dots, y_n$ tais que $k=\sum_{i=1}^n y_i b_i$. Como $\mathcal C$ é gerador, existem $x_{ij}\in E$ tais que $y_i=\sum_{j=1}^m x_{ij}c_j$ para cada $1\leq i\leq k$. Portanto, $k=\sum_{i=1}^n\left(\sum_{j=1}^mx_{ij}c_j\right)b_i=\sum_{i=1}^n\sum_{j=1}^mx_{ij}c_jb_i$, o que mostra que $\mathcal D$ é gerador.
+
+    Note que $\mathcal D$ é uma família de tamanho $mn=[K:F][F:E]$.
+
+    Reciprocamente, suponha que $[K:E]$ é finito. Como $F$ é um subespaço de $K$ como $E$-espaço vetorial, temos que $[F:E]\leq [K:E]$. Ademais, uma base de $K$ como $E$-espaço vetorial é um gerador de $K$ como $F$-espaço vetorial, e, assim, esta contém uma base (finita). Logo, $[K:F]\leq [K:E]$.
+\end{proof}
+
+\begin{definition}
+Seja $F$ um corpo estendendo $E$ e $a \in F$. Dizemos que $a \in F$ é um elemento algébrico sobre $E$ se existe um polinômio não nulo $p \in E[x]$ tal que $p(a)=0$. Caso contrário, $a$ é dito transcendente sobre $E$.
+\end{definition}
+
+\begin{exemplo}
+    Todo elemento de $a \in E$ é algébrico sobre $E$, pois é raiz de $x-a$.
+\end{exemplo}
+
+\begin{exemplo}
+    Considere $\mathbb Q\subseteq \mathbb C$. Temos que $i$ é algébrico sobre $\mathbb Q$, pois é raiz de $x^2+1$.
+\end{exemplo}
+
+\begin{exemplo}
+    Se $K$ é um corpo, seja $K(x)$ o corpo de frações do domínio $K[x]$. Identificando $K\subseteq K[x]\subseteq K(x)$, temos que $x \in K(x)$ é transcendente sobre $K$.
+\end{exemplo}
+
+\begin{definition}
+    Seja $F$ uma extensão de um corpo $E$ e $a \in F$.
+
+    $E[a]$ é o menor subanel de $F$ contendo $E, a$.
+    $E(a)$ é o menor subcorpo de $F$ contendo $E, a$.
+\end{definition}
+
+Observação: na definição acima, $E[a]$ e $E(a)$ dependem também de $F$, apesar de tal fato não estar explícito na notação.
+\begin{lemma}
+    Na notação acima, $E[a]=\{p(a): p \in E[x]\}$.
+\end{lemma}
+\begin{proof}
+    Temos que $\{p(a): p \in E[x]\}$ é a imagem de $E[x]$ pela avaliação em $a$, e, portanto, é um subanel de $F$.
+    Qualquer subanel de $F$ contendo $E, a$ contém $\{p(a): p \in E[x]\}$, pois se $S$ é um subanel de $F$ contendo $E, a$, então dado $p\in E[x]$, sendo $p(x)=\sum_{i=0}^n a_ix^i$, temos que $p(a)=\sum_{i=0}^n a_i a^i \in S$.
+\end{proof}
+
+\begin{lemma}
+    Na notação acima, $E(a)=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(a\neq 0\}$.
+\end{lemma}
+\begin{proof}
+    Veremos que $L=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(b)\neq 0\}$ é um subcorpo de $F$.
+
+    Sejam $p, p', q, q' \in E[x]$ tais que $q(a), q'(a)\neq 0$, temos que $qq'(a)\neq 0$.
+    Assim, segue que $p(a)q(a)^{-1}p'(a)q'(a)^{-1}=(pp')(a)(qq')(a)^{-1}$, bem como que $p(a)q(a)^{-1}-p'(a)q'(a)^{-1}=(pq'-p'q)(a)(qq)'(a)^{-1}$, e que $1=1(a)1(a)^{-1}$ estão todos no conjunto, o que mostra que $L$ é subanel.
+    $L$ é subcorpo, pois se $p(a)q(a)^{-1}\neq 0$, temos que $p(a)\neq 0$, e, assim, seu inverso $q(a)p(a)^{-1}$ está em $L$.
+
+    Agora, se $K$ é um subcorpo intermediário entre $E$ e $F$ contendo $a$, sabemos que $p(a)\in K$ para todo $p \in E[x]$. logo, se $p, q \in E[x]$ e $q(a)\neq 0$, como $K$ é corpo, segue que $p(a)q(a)^{-1}\in K$. Portanto, $L\subseteq K$.
+\end{proof}
+ 
