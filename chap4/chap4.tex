@@ -516,7 +516,24 @@ Então $I$ é primo.
     Portanto, $b=xb+yab\in I$.
 \end{proof}
 
-Porém, nem todo ideal primo é maximal. Por exemplo, $\{0\}$ é um ideal primo de $\mathbb Z$ que não é maximal, já que $2\mathbb Z$ é um ideal próprio de $\mathbb Z$ que o contém propriamente.
+Porém, nem todo ideal primo é maximal. Por exemplo, $\{0\}$ é um ideal primo de $\mathbb Z$ que não é maximal, já que $2\mathbb Z$ é um ideal próprio de $\mathbb Z$ que o contém propriamente. Porém, vale que:
+
+\begin{prop}
+Seja $A$ um domínio de ideais principais e $I$ um ideal primo não nulo de $A$.
+Então $I$ é maximal.
+\end{prop}
+
+\begin{proof}
+    Seja $I=\langle a\rangle$ para algum $a \in A$.
+    Temos que $a \neq 0$, pois $I$ é não nulo.
+
+    Seja $J$ um ideal de $A$ tal que $I\subseteq J$. Temos que $J=(b)$ para algum $b \in A$.
+
+    Como $a \in J$, temos que existe $c \in A$ tal que $a=bc \in I$, logo, $b \in I$ ou $c \in I$.
+    Se $b \in I$, segue que $I=J$.
+    
+    Se $c \in I$, segue que $c=ax$ para algum $x \in A$. Assim, $a=bac$. Como $a\neq 0$, segue que $a=bc$, logo, $b$ é invertível e, portanto, $A=J$.
+\end{proof}
 
 \section{Característica de um anel}
 Todo anel possui o elemento $0$ e o elemento $1$.
