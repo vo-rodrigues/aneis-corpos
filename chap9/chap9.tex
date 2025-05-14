@@ -499,6 +499,14 @@ Seja $R$ um domínio de integridade e $a \in R$. Então $x-a\in R[x]$ é primo (
 \begin{proof}
 Suponha que $(x-a)|p(x)q(x)$. Então $p(a)q(a)=0$, logo, $p(a)=0$ ou $q(a)=0$. Assim, $(x-a)|p(x)$ ou $(x-a)|q(x)$.
 \end{proof}
+
+\begin{prop}
+Seja $R$ um domínio de integridade. Os únicos elementos invertíveis de $R[x]$ são os elementos invertíveis de $R$.
+\end{prop}
+\begin{proof}
+    Se $a \in R$ é invertível, então $aa^{-1}=1$ também em $R[x]$.
+    Se $a \in R[x]$ e existe $b$ tal que $ab=1$, temos que $\deg(a)+\deg(b)=0$, logo, $\deg a)=\deg b=0$ e, assim, $a, b \in R$, e, portanto, $a, b \in R^*$.
+\end{proof}
 \section{Raízes de polinômios}
 \begin{definition}
 Seja $R$ um domínio de integridade e $p(x)\in R[x]$ e $a \in R$. Dizemos que $a$ é uma raiz de $p(x)$ se $p(a)=0$.
