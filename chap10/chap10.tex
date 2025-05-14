@@ -1,7 +1,8 @@
 \chapter{Extensão de corpos}
 
+\section{Elementos algébricos e transcendentes}
 \begin{definition}
-Dizemos que um corpo $K$ estende um corpo $L$ se $L\subseteq K$ e $L$ é um subanel (subcorpo) de $K$.
+Dizemos que um corpo $K$ estende um corpo $L$ se $L\subseteq K$ e $L$ é um subanel (subcorpo) de $K$. Escrevemos que $K/L$ é uma extensão de corpos.
 \end{definition}
 
 Lembremos que, da álgebra linear, se $K, L$ são corpos e $K$ estende $L$ então $K$ é um $L$-espaço vetorial:
@@ -71,25 +72,66 @@ Observação: na definição acima, $E[a]$ e $E(a)$ dependem também de $F$, ape
 
     \begin{enumerate}
         \item $\{p \in E[x]: p(a)=0\}$ é um ideal maximal de $E[x]$.
-        \item Se $p$ é um polinômio não nulo de menor grau tal que $p(a)=0$, então $a$ é irredutível em $E[x]$.
-        \item $\{p \in E[x]: p(a)=0\}$ possui um único gerador mônico, e este é irredutível.
+        \item $\{p \in E[x]: p(a)=0\}$ possui um único gerador mônico $q$, e este é o único polinômio mônico irredutível que anula $a$.
         \item $E[a]$ é o menor subcorpo de $F$ contendo $E$ e $a$.
+        \item $E[a]\approx E[x]/(q)$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
     Seja $I=\{p \in E[x]: p(a)=0\}$. $I$ é o núcleo da avaliação em $a$, e, portanto, é um ideal de $E[x]$.
-    Pelo primeiro teorema do isomorfismo, $E[x]/I$ é isomorfo à $E[x]$, que é um subanel de um corpo, e, portanto, um domínio de integridade. logo, $I$ é primo.
+    Pelo primeiro teorema do isomorfismo, $E[x]/I$ é isomorfo à $E[x]$, que é um subanel de um corpo, e, portanto, um domínio de integridade. Logo, $I$ é primo.
+    Como $I$ é também não nulo, $I$ é maximal.
+    Logo, $E[x]$ é um corpo, e este é o menor subanel de $F$ contendo $E$ e $a$, logo, é também o menor subcorpo.
+
+    Seja $q$ um gerador de $I$, que podemos supor ser mônico pois $I$ é um ideal.
+    Ele é irredutivel, pois $I=(q)$ é primo não nulo, e, portanto, $q$ é primo.
+    Se $p$ é um polinômio irredutível que anula $a$, temos que $p=qx$ para algum $x \in E[x]$. Como $p$ é irredutível, $q \in E$ ou $x \in E$. Como $q \notin E$, temos que $x \in E$, e, assim, o coeficiente dominante de $p$ é o de $qx$, que é $x$, logo, $x=1$.
 \end{proof}
-\begin{lemma}
-    Na notação acima, $E(a)=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(a)\neq 0\}$.
-\end{lemma}
+\begin{corol}
+    Sejam $F/E$ e $F'/E$ extensões de corpos. Seja $p\in E[x]$ um polinômio irredutível para o qual $p(a)=0$ e $p(b)=0$, com $a \in F$ e $b \in F'$.
+    Então $E[a]$ e $E[b]$ são isomorfos.
+\end{corol}
 \begin{proof}
-    Veremos que $L=\{p(a)q(a)^{-1}: p \in E[x], q \in E[x], q(b)\neq 0\}$ é um subcorpo de $F$.
+    Seja $q$ um polinômio mônico associado à $p$. Temos que $(p)=(q)$. Logo, $E[a]\approx E[x]/(p)\approx E[b]$.
+\end{proof}
 
-    Sejam $p, p', q, q' \in E[x]$ tais que $q(a), q'(a)\neq 0$, temos que $qq'(a)\neq 0$.
-    Assim, segue que $p(a)q(a)^{-1}p'(a)q'(a)^{-1}=(pp')(a)(qq')(a)^{-1}$, bem como que $p(a)q(a)^{-1}-p'(a)q'(a)^{-1}=(pq'-p'q)(a)(qq)'(a)^{-1}$, e que $1=1(a)1(a)^{-1}$ estão todos no conjunto, o que mostra que $L$ é subanel.
-    $L$ é subcorpo, pois se $p(a)q(a)^{-1}\neq 0$, temos que $p(a)\neq 0$, e, assim, seu inverso $q(a)p(a)^{-1}$ está em $L$.
+\begin{definition}
+    Seja $F$ uma extensão de um corpo $E$ e $a \in F$ um elemento algébrico sobre $E$. Então $[E[a]:E]$ é o grau do único polinômio mônico irredutível que anula $a$, e uma base é $(1, a, \dots, a^{n-1})$, onde $n=[E[a]:E]$.
+\end{definition}
+\begin{proof}
+    Temos que $(1, a, \dots, a^{n-1})$ é L.I., pois se $t_0, \dots, t_{n-1} \in E$ tais que $t_0+t_1a+\dots+t_{n-1}a^{n-1}=0$, sendo $p(x)=t_0+t_1x+\dots+t_{n-1}x^{n-1}$, temos que $p(a)=0$. Como $\gr p<n$, o único modo de termos $p(a)=0$ é com $p=0$. Logo, $t_0=t_1=\dots=t_{n-1}=0$.
 
-    Agora, se $K$ é um subcorpo intermediário entre $E$ e $F$ contendo $a$, sabemos que $p(a)\in K$ para todo $p \in E[x]$. logo, se $p, q \in E[x]$ e $q(a)\neq 0$, como $K$ é corpo, segue que $p(a)q(a)^{-1}\in K$. Portanto, $L\subseteq K$.
+    Agora seja $z \in E[a]$ um elemento arbitrário. Ele é da forma $z=p(a)$, com $p \in E[x]$. Seja $q$ o único polinômio mônico irredutível que anula $a$. Então $p=qa+r$ para alguns $r, a \in E[x]$ com $\gr r<\gr q$
+    
+    Logo, $z=p(a)=q(a)r(a)+r(a)=r(a)$. Sendo $r(x)=t_0+t_1x+\dots+t_{n-1}x^{n-1}$, temos que $z=r(a)=t_0+t_1a+\dots+t_{n-1}a^{n-1} \in \text{span}(1, a, \dots, a^{n-1})$.
+
+\end{proof}
+Como uma interseção arbitrária de subcorpos é um subcorpo, $E(a)$ está bem definido e vale que $E[a]\subseteq E(a)$. Vimos que se $a$ é algébrico sobre $E$, então $E(a)=E[a]$. Abaixo, caracterizaremos $E(a)$ quando $a$ é transcendente sobre $E$.
+\begin{prop}
+        Seja $F$ uma extensão de um corpo $E$ e $a \in F$ um elemento transcendente sobre $E$. Então $E(a)=\{p(a)q(a)^{-1}: p, q \in E[x], q\neq 0\}$ é isomorfo à $\Frac(E[x])$.
+\end{prop}
+\begin{proof}
+    Seja $h:E[x] \rightarrow E(a)$ a avaliação em $a$. Temos que $h$ é um homomorfismo injetor, logo, existe um único homomorfismo injetor $g:\Frac(E(x))\rightarrow E(a)$ tal que $g(p/1)=h(p)=p(a)$ para todo $p \in E[x]$.
+
+    Conforme estudado, $g(p/q)=h(p)h(q)^{-1}$ para todo $p, q \in E[x]$ com $q\neq 0$.
+    Logo, a imagem de $g$ é $\{p(a)q(a)^{-1}: p, q \in E[x], q\neq 0\}$, que é um subanel de $E(a)$ isomorfo a $\Frac(E[x])$, e, portanto, um subcorpo de $E(a)\subseteq F$. Como $E(a)$ é o menor subcorpo de $F$ contendo $E$ e $a$, temos que $E(a)=\{p(a)q(a)^{-1}: p, q \in E[x], q\neq 0\}$.
 \end{proof}
  
+\begin{definition}
+    Seja $E$ um corpo e $E[x]$ seu anel de polinômios. Define-se $E(x)=\Frac(E[x])$, o corpo de frações de $E[x]$.
+\end{definition}
+
+\begin{prop}
+    Seja $F$ uma extensão de um corpo $E$ e $a \in F$ um elemento transcendente sobre $E$. Então $[E(a):E]$ é infinito.
+\end{prop}
+\begin{proof}
+    Basta ver que $(1, a, a^2, \dots)$ é L.I. em $E(a)$, uma vez que para todos $s_0, \dots, s_n \in E$, se $\sum_{i=0}^n s_ia^i=0$, temos que $p(x)=s_0+s_1x+\dots+s_nx^n$ é um polinômio com $p(a)=0$, o que nos dá $p=0$ e, portanto, $s_0=s_1=\dots=s_n=0$.
+\end{proof}
+\section{Extensões algébricas}
+\begin{definition}
+Seja $E$ um corpo. Uma extensão algébrica de $E$ é um corpo $F$ contendo $E$ tal que todo elemento de $F$ é algébrico sobre $E$.
+\end{definition}
+\section{Exercícios}
+\begin{exer}
+    Seja $F$ um corpo estedendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
+\end{exer}

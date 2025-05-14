@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+* Em DIPs, ideais primos não nulos são maximais.
+* Funções polinomiais são isomorfas a polinômios em domínios infinitos
+* MMC e MDC generalidados para n elementos.
+* Algumas propriedades sobre raízes de polinômios foram redigidas.
+
 ## 0.1.5
 * Alguns erros de digitação em exercícios foram corrigidos.
 
