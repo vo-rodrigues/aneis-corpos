@@ -2,6 +2,7 @@
 
 ## 0.2.1
 * Definição dos homomorfismos avaliação em polinômios.
+* Dois novos exercícios sobre polinômios.
 
 ## 0.2.0
 * Capítulo 10 introduzido: extensões de corpos.

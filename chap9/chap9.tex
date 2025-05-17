@@ -360,6 +360,23 @@ Pela unicidade de $g$, segue que $g=h$.
     Além disso, $\bar h\circ \alpha=\beta$, logo, $\bar h=h$.
 \end{proof}
 
+\begin{corol}
+Sejam $R, S$ anéis comutativos com unidade e $f: R\rightarrow S$ um isomorfismo.
+Então existe um único isomorfismo $\bar f:R[x]\rightarrow S[x]$ que satisfaz $\bar f(\sum_{i=0}^n r_ix^i)=\sum_{i=0}^nf(a_i)x^i$ para todos $n\geq 0$ e $r_0, \dots, r_n\in R$.
+\end{corol}
+
+\begin{proof}
+    Identificando $R\subseteq R[x]$ e $S\subseteq S[x]$, considere o único homomorfismo $\bar f:R[x]\rightarrow S[x]$ tal que $\bar f|_R=f$ e $f(x)=x\in S[x]$. Então $\bar f(\sum_{i=0}^n r_ix^i)=\sum_{i=0}^nf(a_i)x^i$.
+
+    Seja $g=f^{-1}$ e seja $\bar g:S[x]\rightarrow R[x]$ o homomorfismo tal que $\bar g|_S=g$ e $\bar g(x)=x\in R[x]$. Segue que $g\circ f|_R=\id_R$ $\bar g\circ \bar f(x)=x$, bem como $\id_{R[x]}$, logo, $\bar g\circ \bar f=\id_{R[x]}$. Analogamente, $f\circ g=\id_{S[x]}$.
+    Logo, $\bar f$ é isomorfismo.
+
+    A unicidade de $\bar f$ vem do fato de que este é o único homomorfismo que satisfaz $\bar f|_R=f$ e $\bar f(x)=x$.
+\end{proof}
+
+\begin{definition}
+    Na notação acima, para $p \in R[x]$, $\bar f(p)$ é chamado de $f(p)$.
+\end{definition}
 \section{Polinômios de várias variáveis}
 Nesta seção, daremos uma contrução particular para $R[X]$, onde $X$ é um conjunto arbitrário de indeterminadas e $R$ é um anel comutativo.
 
