@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.1
+* Definição dos homomorfismos avaliação em polinômios.
+
 ## 0.2.0
 * Capítulo 10 introduzido: extensões de corpos.
 * Em DIPs, ideais primos não nulos são maximais.
