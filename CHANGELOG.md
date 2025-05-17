@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.2.0
+* Capítulo 10 introduzido: extensões de corpos.
 * Em DIPs, ideais primos não nulos são maximais.
 * Funções polinomiais são isomorfas a polinômios em domínios infinitos
 * MMC e MDC generalidados para n elementos.
