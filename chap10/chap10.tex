@@ -370,6 +370,29 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
     Se $a, b \in \mathbb K$, então $ab \in \mathbb K$: se $b=0$, $ab=0\in \mathbb K$. Se $b\neq 0$, temos que $\frac 1b\in \mathbb K$, logo, $\frac{a}{\frac1b}=ab\in \mathbb K$.
 \end{proof}
 
+
+\begin{prop}
+    $\mathbb K$ é o menor subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$.
+\end{prop}
+
+\begin{proof}
+    Devemos ver que se $L$ é um subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$, então $\mathbb K\subseteq \mathbb L$.
+
+    Devemos ver que para todo $(x, y)\in \mathbb P$, $x \in L$. Para tanto, mostraremos que para todo $n$ e para todo $(x, y)\in \mathbb P_n$, $x \in L$.
+
+    Temos que $\mathbb P_0=\{(0, 0), (1, 0)\}$. Como $0, 1 \in L$, a tese vale para a base $n=0$.
+
+    Suponha que a tese vale para $n$. Veremos que vale para $n+1$.
+
+    Seja $(x, y) \in \mathbb P_{n+1}$.
+
+    \textbf{Caso 1:} $(x, y)\in \mathbb P_n$. Nesse caso, $x \in L$ por hipótese de indução.
+
+    \textbf{Caso 2:} $(x, y)\in \reta(a, b)\cap \reta(c, d)$, onde $\reta(a, b)\neq \reta(c, d)$ e $a, b, c, d \in \mathbb P_n$ com $a\neq b$ e $c\neq d$. 
+
+    Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb=c+tb$.
+    
+\end{proof}
 \section{Exercícios}
 \begin{exer}
     Seja $F$ um corpo estedendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
