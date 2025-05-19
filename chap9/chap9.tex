@@ -261,6 +261,13 @@ A proposição abaixo formaliza e generaliza essa ideia.
     A função $g$ é única, pois se $g'$ é outra tal função, temos que, dado $p(x)=\sum_{i=0}^n r_ix^i$, temos que $g'(p(x))=\sum_{i=0}^nf(r_i)s^i=g(p(x))$.
 \end{proof}
 
+\begin{exemplo}
+Seja $R$ um anel comutativo e $R[x]$ o anel de polinômios sobre $R$.
+Para todo $s \in R$, existe um homomorfismo $\av_s:R[x]\rightarrow R$ tal que $\av_s(r)=r$ para todo $r \in R$ e $\av_s(x)=s$, de modo que para todo $p(x)=\sum_{i=0}^n r_ix^i\in R[x]$, $\av_s(p(x))=\sum_{i=0}^n r_is^i$.
+
+Esse homomorfismo é chamado de \emph{avaliação em $s$}, e escrevemos $p(s)=\av_s(p(x))$.
+\end{exemplo}
+
 \begin{definition}\label{definition:polinomio_propUniversal}
     Seja $R$ um anel comutativo e $X$ um conjunto.
     Um anel de polinômios sobre $R$ com variáveis em $X$ é uma tripla $(R[X], \phi, \alpha)$, onde $R[X]$ é um anel comutativo e $\phi:R\rightarrow R[X]$ é um homomorfismo e $\alpha:X\rightarrow R[X]$ é uma função que satisfazem a seguinte propriedade:
@@ -353,6 +360,23 @@ Pela unicidade de $g$, segue que $g=h$.
     Além disso, $\bar h\circ \alpha=\beta$, logo, $\bar h=h$.
 \end{proof}
 
+\begin{corol}
+Sejam $R, S$ anéis comutativos com unidade e $f: R\rightarrow S$ um isomorfismo.
+Então existe um único isomorfismo $\bar f:R[x]\rightarrow S[x]$ que satisfaz $\bar f(\sum_{i=0}^n r_ix^i)=\sum_{i=0}^nf(a_i)x^i$ para todos $n\geq 0$ e $r_0, \dots, r_n\in R$.
+\end{corol}
+
+\begin{proof}
+    Identificando $R\subseteq R[x]$ e $S\subseteq S[x]$, considere o único homomorfismo $\bar f:R[x]\rightarrow S[x]$ tal que $\bar f|_R=f$ e $f(x)=x\in S[x]$. Então $\bar f(\sum_{i=0}^n r_ix^i)=\sum_{i=0}^nf(a_i)x^i$.
+
+    Seja $g=f^{-1}$ e seja $\bar g:S[x]\rightarrow R[x]$ o homomorfismo tal que $\bar g|_S=g$ e $\bar g(x)=x\in R[x]$. Segue que $g\circ f|_R=\id_R$ $\bar g\circ \bar f(x)=x$, bem como $\id_{R[x]}$, logo, $\bar g\circ \bar f=\id_{R[x]}$. Analogamente, $f\circ g=\id_{S[x]}$.
+    Logo, $\bar f$ é isomorfismo.
+
+    A unicidade de $\bar f$ vem do fato de que este é o único homomorfismo que satisfaz $\bar f|_R=f$ e $\bar f(x)=x$.
+\end{proof}
+
+\begin{definition}
+    Na notação acima, para $p \in R[x]$, $\bar f(p)$ é chamado de $f(p)$.
+\end{definition}
 \section{Polinômios de várias variáveis}
 Nesta seção, daremos uma contrução particular para $R[X]$, onde $X$ é um conjunto arbitrário de indeterminadas e $R$ é um anel comutativo.
 
@@ -604,4 +628,11 @@ Mostre que $\mathbb R[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb C$.
 \end{exer}
 \begin{exer}\label{exer:polinomio_serieDominio}
     Mostre que se $R$ é um domínio de integridade, então $R\llbracket x \rrbracket$ é um domínio de integridade.
+\end{exer}
+\begin{exer}
+Considere $R=\mathbb Z_4^\mathbb N$ com a estrutura de anel produto. Seja $a \in R$ dado por $a(n)=2$ para todo $n \in \mathbb N$. Mostre que o polinômio $ax \in R[x]$ possui infinitas raízes.
+\end{exer}
+
+\begin{exer}
+    Prove ou dê um contra-exemplo: os únicos polinômios invertíveis de $\mathbb Z_4[x]$ são os polinômios de grau $0$ dados por $1$ e $3$.
 \end{exer}

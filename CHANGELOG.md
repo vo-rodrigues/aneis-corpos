@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+* Texto inicial do Capítulo 10 melhor organizado e ligeiramente aprimorado.
+* Capítulo 10 substancialmente expandido. Construção dos números construtíveis iniciada.
+* Definição dos homomorfismos avaliação em polinômios.
+* Dois novos exercícios sobre polinômios.
+
 ## 0.2.0
 * Capítulo 10 introduzido: extensões de corpos.
 * Em DIPs, ideais primos não nulos são maximais.
