@@ -430,15 +430,21 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \begin{proof}
     Por indução, em $m$, vemos que para todo $m, n$ com $m\leq n$, $K_m\subseteq K_n$.
 
-     
+    Também por indução, vemos que se $L$ é um subcorpo de $\mathbb R$ fechado por raízes quadradas de números não negativos, então para todo $n\in \mathbb N$, $K_n\subseteq L$.
+
+    Resta ver que $K=\bigcup_{n \in \mathbb N}K_n$ é um subcorpo de $\mathbb R$. Para tanto, note que $1 \in K$. Se $b\in K\setminus \{0\}$, então existe $n \in K$ tal que $b\in K_n$. Logo, $b^{-1} \in K_{n+1}$. Similarmente, se- $b\geq 0$ e $b \in K$, então, $\sqrt b \in K$. Finalmente, se $a, b \in K$, existem $n, m$ com $a\in K_n$ e $b\in K_m$. Sendo $k=\max(n, m)$, temos que $a-b, ab \in K_{k+1}$.     
 \end{proof}
+
+\begin{prop}
+    Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$.
+\end{prop}
 \begin{proof}
     Veremos que o conjunto $L$ de tais $a$ é um subcorpo de $\mathbb R$ fechado por raiz quadrada de valores positivos.
 
     Temos que $1 \in L$ pois $\mathbb Q(1)/\mathbb Q$ tem grau 1.
     Se $a, b \in \mathbb L$, então $a-b, ab \in \mathbb L$, pois, sendo $a_0, \dots, a_n, b_0, \dots, b_m\in \mathbb R$ tais que $a_0, b_0 \in \mathbb Q$ tem grau $1$ ou $2$, $a_{i+1}\in \mathbb Q(a_1, \dots, a_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_i)$ e $a_n=a$, $b_n=b$.
     
-    Temos que $(a_0, \dots, a_n, b_0, \dots, b_m)$ é uma sequência desse mesmo tipo: como $\mathbb Q(b_0)/\mathbb Q$ tem grau $1$ ou $2$, existe um polinômio de coeficientes racionais de grau $1$ ou $2$ que anula $b_0$. O mesmo polinômio anula $b_0$ em $\mathbb Q(a_1, \dots, a_n)$, logo, $b_0$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_n)$. Dado $i<m$, por motivo similar, $b_{i+1}\in \mathbb Q(b_1, \dots, b_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_0, \dota, _n, b_0, \dots, b_i)$.
+    Temos que $(a_0, \dots, a_n, b_0, \dots, b_m)$ é uma sequência desse mesmo tipo: como $\mathbb Q(b_0)/\mathbb Q$ tem grau $1$ ou $2$, existe um polinômio de coeficientes racionais de grau $1$ ou $2$ que anula $b_0$. O mesmo polinômio anula $b_0$ em $\mathbb Q(a_1, \dots, a_n)$, logo, $b_0$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_n)$. Dado $i<m$, por motivo similar, $b_{i+1}\in \mathbb Q(b_1, \dots, b_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_0, \dots, _n, b_0, \dots, b_i)$.
 
     Como $a, b \in \mathbb Q(a_0, \dots, a_n, b_0, \dots, b_n)$, temos que $a-b, ab$ e $a^{-1}$.
 \end{proof}
