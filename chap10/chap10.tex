@@ -374,7 +374,26 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \begin{prop}
     $\mathbb K$ é o menor subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$.
 \end{prop}
+\begin{prop}
+    $\mathbb K$ é um subcorpo de $\mathbb R$ fechado por raizes quadradas de números não negativos.
+\end{prop}
 
+\begin{proof}
+    Temos que $1, 0 \in \mathbb K$.
+
+    Se $a, b \in \mathbb K$ e $a>b$, então $a-b, b-a \in \mathbb K$: temos que $(a, 0), (b, 0) \in \mathbb P$, então $b-a \in \dist(\mathbb P)\subseteq \mathbb K$, e $(a-b, 0) \in \cir((0, 0), b-a)\cap \reta((0, 0), (1, 0))$.
+
+    Note que isso implica que se $a, b \in \mathbb K$, então $b-a\in \mathbb K$. Em particular, $-a \in \mathbb K$.
+
+    Se $a, b \in \mathbb K$ e $b\neq 0$, então $-b \in \mathbb K$, e, portanto, $(a, -b)\in \mathbb P$. Note que $\reta((0, 0), (1, 0))\cap \reta((0, 1), (a, -b))=\{(\frac ab, 0)\}$, logo, $\frac ab \in \mathbb K$.
+
+    Se $a, b \in \mathbb K$, então $ab \in \mathbb K$: se $b=0$, $ab=0\in \mathbb K$. Se $b\neq 0$, temos que $\frac 1b\in \mathbb K$, logo, $\frac{a}{\frac1b}=ab\in \mathbb K$.
+
+    Se $a\geq 0  \in \mathbb K$, então sendo $l=\frac{c+1}{2} (1, \sqrt c))\in \cir((l, 0), l)\cap \reta((1, 0), (1, 1))$ pois $(1, 0)+\sqrt c((1, 1)-(1, 0))=(1, \sqrt c)$, e $(l-1)^2+(\sqrt c)^2=l^2-2l+1+c=l^2-c-1+1+c=l^2$. Assim, $\sqrt c \in \mathbb K$.
+\end{proof}
+\begin{prop}
+    $\mathbb K$ é o menor subcorpo de $\mathbb R$ fechado por raizes quadradas de números não negativos.
+\end{prop}
 \begin{proof}
     Devemos ver que se $L$ é um subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$, então $\mathbb K\subseteq \mathbb L$.
 
@@ -388,11 +407,42 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 
     \textbf{Caso 1:} $(x, y)\in \mathbb P_n$. Nesse caso, $x \in L$ por hipótese de indução.
 
-    \textbf{Caso 2:} $(x, y)\in \reta(a, b)\cap \reta(c, d)$, onde $\reta(a, b)\neq \reta(c, d)$ e $a, b, c, d \in \mathbb P_n$ com $a\neq b$ e $c\neq d$. 
+    \textbf{Caso 2:} $(x, y)\in \reta(a, b)\cap \reta(c, d)$, onde $\reta(a, b)\neq \reta(c, d)$ e $a, b, c, d \in \mathbb P_n$ com $a\neq b$ e $c\neq d$. Por hipótese, as coordenadas de $a, b, c, d$ estão em $L$.
 
-    Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb=c+tb$.
-    
+    Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb=c+td$, e, portanto, $a-c=t(d-b)$. Se $d=b$, segue que $a=c$, logo, $\reta(a, b)= \reta(c, d)$, o que é absurdo. Logo, $d\neq b$.
+
+    Escreva $a=(a_1, a_2)$, $b=(b_1, b_2)$, $c=(c_1, c_2)$ e $d=(d_1, d_2)$. Como $b\neq d$, temos $b_1\neq d_1$ ou $b_2\neq d_2$. Se $b_1\neq d_1$, segue que $\frac{a_1-c_1}{b_1-d_1}=t\in L$, e, portanto, $x=a_1+tb_1\in L$. Analogamente, se $b_2\neq d_2$, $\frac{a_2-c_2}{b_2-d_2}$, e $x=a_1+tb_1\in L$.
+
+    \textbf{Caso 3:} $(x, y)\in \reta(a, b)\cap \cir(c, s)$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $c \in \mathbb P_n$ com $s \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$, $b=(b_1, b_2)$ e $c=(c_1, c_2)$.
+
+    Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb$ e $\|a+tb-c\|=s$. Isso ocorre se, e somente se $(a_1+tb_1-c_1)^2+(a_2+tb_2-c_2)^2=s^2$.
+    Da fórmula quadrática, $t$, que existe, é uma combinação de somas, diferenças, produtos e raizes quadradas de $a_1, b_1, c_1, a_2, b_2, c_2, s^2$, que são todos, por hipótese de indução, elementos de $L$. Logo, $t \in L$. Assim, $x=a_1+tb_1\in L$.
+
+    \textbf{Caso 4:} $(x, y)\in \cir(a, s)\cap \cir(b, s')$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $s, s' \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$ e $b=(b_1, b_2)$.
+    Nesse caso, $(x-a_1)^2+(y-a_2)^2=s^2$ e $(x-b_1)^2+(y-b_2)^2=s'^2$. Da primeira equaçã, $x-a_1=\sqrt(s^2-(y-a_2)^2)$ ou $x-a_1=-\sqrt(s^2-(y-a_2)^2)$. Em qualquer caso, é claro que $x \in L$.
 \end{proof}
+
+
+\begin{lemma}
+    $\mathbb K=\bigcup_{n \in \mathbb N} K_n$, onde $K_0=\{1\}$ e $K_{n+1}=K_n\cup\{a-b, ab, a^{-1}: a, b \in K_n\}\cup\{b^{-1}: b\in K_n\setminus\{0\}\}\cup \{\sqrt b: b\geq 0, b \in \mathbb K_n\}$.
+\end{lemma}
+
+\begin{proof}
+    Por indução, em $m$, vemos que para todo $m, n$ com $m\leq n$, $K_m\subseteq K_n$.
+
+     
+\end{proof}
+\begin{proof}
+    Veremos que o conjunto $L$ de tais $a$ é um subcorpo de $\mathbb R$ fechado por raiz quadrada de valores positivos.
+
+    Temos que $1 \in L$ pois $\mathbb Q(1)/\mathbb Q$ tem grau 1.
+    Se $a, b \in \mathbb L$, então $a-b, ab \in \mathbb L$, pois, sendo $a_0, \dots, a_n, b_0, \dots, b_m\in \mathbb R$ tais que $a_0, b_0 \in \mathbb Q$ tem grau $1$ ou $2$, $a_{i+1}\in \mathbb Q(a_1, \dots, a_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_i)$ e $a_n=a$, $b_n=b$.
+    
+    Temos que $(a_0, \dots, a_n, b_0, \dots, b_m)$ é uma sequência desse mesmo tipo: como $\mathbb Q(b_0)/\mathbb Q$ tem grau $1$ ou $2$, existe um polinômio de coeficientes racionais de grau $1$ ou $2$ que anula $b_0$. O mesmo polinômio anula $b_0$ em $\mathbb Q(a_1, \dots, a_n)$, logo, $b_0$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_n)$. Dado $i<m$, por motivo similar, $b_{i+1}\in \mathbb Q(b_1, \dots, b_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_0, \dota, _n, b_0, \dots, b_i)$.
+
+    Como $a, b \in \mathbb Q(a_0, \dots, a_n, b_0, \dots, b_n)$, temos que $a-b, ab$ e $a^{-1}$.
+\end{proof}
+
 \section{Exercícios}
 \begin{exer}
     Seja $F$ um corpo estedendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
