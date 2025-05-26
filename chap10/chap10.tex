@@ -425,7 +425,7 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 
 
 \begin{lemma}
-    $\mathbb K=\bigcup_{n \in \mathbb N} K_n$, onde $K_0=\{1\}$ e $K_{n+1}=K_n\cup\{a-b, ab, a^{-1}: a, b \in K_n\}\cup\{b^{-1}: b\in K_n\setminus\{0\}\}\cup \{\sqrt b: b\geq 0, b \in \mathbb K_n\}$.
+    $\mathbb K=\bigcup_{n \in \mathbb N} K_n$, onde $(K_n: n \in \mathbb N)$ é a sequência de conjuntos definida recursivamente por $K_0=\{1\}$ e $K_{n+1}=K_n\cup\{a-b, ab, a^{-1}: a, b \in K_n\}\cup\{b^{-1}: b\in K_n\setminus\{0\}\}\cup \{\sqrt b: b\geq 0, b \in \mathbb K_n\}$.
 \end{lemma}
 
 \begin{proof}
@@ -437,18 +437,31 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \end{proof}
 
 \begin{prop}
-    Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$.
+    Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$. Mais especificamente, se $a \in \mathbb K$, então existem $(a_0, \dots, a_n)\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$
 \end{prop}
 \begin{proof}
-    Veremos que o conjunto $L$ de tais $a$ é um subcorpo de $\mathbb R$ fechado por raiz quadrada de valores positivos.
+    Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $\mathbb a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência.
 
-    Temos que $1 \in L$, pois $\mathbb Q(1)/\mathbb Q$ tem grau 1.
-    Se $a, b \in \mathbb L$, então $a-b, ab \in \mathbb L$, pois, sendo $a_0, \dots, a_n, b_0, \dots, b_m\in \mathbb R$ tais que $a_0, b_0 \in \mathbb Q$ tem grau $1$ ou $2$, $a_{i+1}\in \mathbb Q(a_1, \dots, a_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_i)$ e $a_n=a$, $b_n=b$.
-    
-    Temos que $(a_0, \dots, a_n, b_0, \dots, b_m)$ é uma sequência desse mesmo tipo: como $\mathbb Q(b_0)/\mathbb Q$ tem grau $1$ ou $2$, existe um polinômio de coeficientes racionais de grau $1$ ou $2$ que anula $b_0$. O mesmo polinômio anula $b_0$ em $\mathbb Q(a_1, \dots, a_n)$, logo, $b_0$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_n)$. Dado $i<m$, por motivo similar, $b_{i+1}\in \mathbb Q(b_1, \dots, b_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_0, \dots, _n, b_0, \dots, b_i)$.
+    Para provar a segunda afirmação, procederemos por indução em $n$ para mostrar que para todo $a \in K_n$, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
 
-    Como $a, b \in \mathbb Q(a_0, \dots, a_n, b_0, \dots, b_n)$, temos que $a-b, ab$ e $a^{-1}$.
+    Base: que $K_0=\{1\}$, e $[\mathbb Q(1):\mathbb Q]=1$. Considere a sequência unitária $(1)$.
+
+    Passo indutivo: suponha que a hipótese é válida para $n$. Mostraremos que ela é válida para $n+1$.
+
+    Seja $c \in K_{n+1}$. Se $a \in K_n$, segue da hipótese indutiva.
+
+    Caso $c=a-b$ ou $c=ab$, com $a, b \in K_n$, por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$. Similarmente para $b$, existem $b_0, \dots, b_m\in K_n$ com $b=b_m$, com $[\mathbb Q(b_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(b_0, \dots, b_i)(b_{i+1}):\mathbb Q(b_0, \dots, b_i)]\in \{0, 1\}$ para todo $i<m$.
+
+    Considere $(a_0, \dots, a_n, b_0, \dots, b_m, c)$. Temos que $[\mathbb Q(a_0, \dots, a_n)(b_0):\mathbb Q(a_0, \dots, a_n)]$ é o menor grau de um polinômio não nulo com coeficientes em $\mathbb Q(a_0, \dots, a_n)$ que anula $b_0$. Ora, como $[\mathbb Q(b_0):\mathbb Q]$ é $1$ ou $2$, segue que $[\mathbb Q(a_0, \dots, a_n)(b_0):\mathbb Q(a_0, \dots, a_n)]$ também é $1$ ou $2$.
+    Similarmente, $[\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_{j+1}):\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_{j})]$ é $1$ ou $2$.
+    Finalmente, note que $[\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)(c):\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)]=1$,  pois $c \in \mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)$.
+
+    Se $c=a^{-1}$ (ou $c=\sqrt a$), com $a\in K_n\setminus\{0\}$ (respectivamente, $\sqrt a=c$). Por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$. Considere $a_{n+1}=a^{-1}$. Então, caso $c=a^{-1}$ $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]=1$, pois $a_{n+1}\in \mathbb Q(a_0, \dots, a_n)$, e, caso $c=\sqrt a$, temos que $x^2-a$ anula $c$, logo $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]$ é $1$ ou $2$.
 \end{proof}
+
+\begin{definition}
+Dizemos que um ângulo $\alpha$ é construtível com régua e compasso se existem $a, b, c \in \mathbb P$ tais que a medida do ângulo $\angle{abp}$
+\end{definition}
 
 \section{Exercícios}
 \begin{exer}
