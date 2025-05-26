@@ -6,7 +6,7 @@ No Capítulo 2, conhecemos, por alto, a definição de grupo.
 Um grupo é um conjunto munido de uma operação binária que satisfaz algumas propriedades.
 Grupos pode ser Abelianos ou não Abelianos, e, quando é Abeliano, lembra-nos da adição de inteiros.
 
-Porém, estuturas como as dos números inteiros, racionais e reais parecem não ter sua estrutura algébrica completamente capturada pela noção de grupo Abeliano, pois possuem também outra operação binária -- a multiplicação.
+Porém, estruturas como as dos números inteiros, racionais e reais parecem não ter sua estrutura algébrica completamente capturada pela noção de grupo Abeliano, pois possuem também outra operação binária -- a multiplicação.
 Esta operação se relaciona com a soma através das propriedades distributivas. A noção de anel surge para capturar parte destas ideias, generalizando o estudo das estruturas mencionadas.
 \begin{definition}[Anel]
     Um anel é uma $5$-upla $(A, +, \cdot, 0, 1)$ conjunto $A$ com duas operações binárias, adição e multiplicação, denotadas por $+$ e $\cdot$, tais que:
@@ -79,11 +79,11 @@ Todo anel satisfaz as conhecidas regras de sinais referentes à multiplicação 
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    \ref{prop:regraSinal2_A}: Temos que $ab+(-a)b=(-a)b+ab=[-a+a]b=0b=0$. Assim, $(-a)b=-(ab)$. Analogamente, $a(-b)=-(ab)$.
+    \ref{prop:regraSinal2_A}: temos que $ab+(-a)b=(-a)b+ab=[-a+a]b=0b=0$. Assim, $(-a)b=-(ab)$. Analogamente, $a(-b)=-(ab)$.
 
-    \ref{prop:regraSinal2_B}: Temos que $(-a)(-b)=-[a(-b)]=-[-(ab)]=ab$ pela regra anterior.
+    \ref{prop:regraSinal2_B}: temos que $(-a)(-b)=-[a(-b)]=-[-(ab)]=ab$ pela regra anterior.
 
-    \ref{prop:regraSinal2_C}: Temos que $(-1)a=-(1a)=-a$.
+    \ref{prop:regraSinal2_C}: temos que $(-1)a=-(1a)=-a$.
 \end{proof}
 \section{Anéis de Matrizes}
 Matrizes são objetos muito importantes na matemática, sendo amplamente utilizadas na Álgebra Linear.
@@ -156,7 +156,7 @@ Em outra notação:
     \end{pmatrix}
 \end{equation*}
 
-A matriz nula de $M_{n\times m}(A)$ é a matriz cuja todas as entradas são $0\in A$, e é denotada por $0_{n\times m}$, ou, simplesmente, $0$.
+A matriz nula de $M_{n\times m}(A)$ é a matriz cujas entradas são todas $0\in A$, e é denotada por $0_{n\times m}$, ou, simplesmente, $0$.
 
 Caso $n=m$, abreviamos $M_{n\times n}(A)$ como $M_n(A)$.
 \end{definition}
@@ -335,11 +335,11 @@ Seja $A$ um anel. Para todos $a, b \in A^*$, temos:
 Além disso, $A^*$ é, com a restrição da operação de multiplicação do anel, um grupo com identidade $1$. Caso $A$ é um anel comutativo, $A^*$ é um grupo abeliano.
 \end{prop}
 \begin{proof}
-    \ref{prop:unidadeProduto_a}: Sejam $a, b \in A^*$. Pela associatividade, $(ab)(b^{-1}a^{-1})=1=(b^{-1}a^{-1})(ab)$, logo, pela unicidade do inverso, $(ab)^{-1}=b^{-1}a^{-1}$.
+    \ref{prop:unidadeProduto_a}: sejam $a, b \in A^*$. Pela associatividade, $(ab)(b^{-1}a^{-1})=1=(b^{-1}a^{-1})(ab)$, logo, pela unicidade do inverso, $(ab)^{-1}=b^{-1}a^{-1}$.
 
-    \ref{prop:unidadeProduto_b}: Seja $a \in A^*$. Temos que $a^{-1}a=1=a(a^{-1})$, logo, pela unicidade do inverso, $(a^{-1})^{-1}=a$.
+    \ref{prop:unidadeProduto_b}: seja $a \in A^*$. Temos que $a^{-1}a=1=a(a^{-1})$, logo, pela unicidade do inverso, $(a^{-1})^{-1}=a$.
 
-    \ref{prop:unidadeProduto_c}: Note que $1\cdot 1=1=1\cdot 1$, logo, pela unicidade do inverso, $1^{-1}=1$.
+    \ref{prop:unidadeProduto_c}: note que $1\cdot 1=1=1\cdot 1$, logo, pela unicidade do inverso, $1^{-1}=1$.
 
     Se $A$ é um anel comutativo, então $A^*$ é um grupo abeliano, pois para todo $a, b \in A^*$, temos que $ab=ba$, logo $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.
 \end{proof}
@@ -350,7 +350,7 @@ Espera-se que o estudante já possua traquejo com o anel dos números inteiros, 
 Primeiramente, reconheçamos que $\mathbb Z$ possui, além da estrutura de domínio de integridade, uma estrutura de ordem.
 
 \begin{definition}
-    Um anel ordenado é uma tupla $(A, +, \cdot, 0, 1, \leq)$ tal que $(A, +, \cdot, 0, 1)$ é um anel comutativo tal que $\leq$ é uma relação de ordem total (também chamada de ordem linear) em $A$, ou seja, que satisfaça:
+    Um anel ordenado é uma tupla $(A, +, \cdot, 0, 1, \leq)$ para a qual $(A, +, \cdot, 0, 1)$ é um anel comutativo tal que $\leq$ é uma relação de ordem total (também chamada de ordem linear) em $A$, ou seja, que satisfaça:
 
     \begin{itemize}
         \item (Propriedade reflexiva) $\forall a \in A$, $a \leq a$.
@@ -359,7 +359,7 @@ Primeiramente, reconheçamos que $\mathbb Z$ possui, além da estrutura de domí
         \item (Linearidade) $\forall a, b \in A$, $a \leq b$ ou $b \leq a$.
     \end{itemize}
 
-    e tal que:
+    E tal que:
 
     \begin{itemize}
         \item (Compatibilidade da soma) $\forall a, b, c \in A$, se $a \leq b$, então $a+c \leq b+c$ e $ac \leq bc$.
@@ -381,7 +381,7 @@ $\mathbb Z=(\mathbb Z,+,\cdot,0,1, \leq)$ é um domínio de integridade ordenado
 Qualquer subconjunto não vazio de inteiros positivos possui elemento mínimo.
 \end{definition}
 
-Assumiremos todos os fatos elementares sobre $\mathbb Z$ que não foram provados, inclusive o fato de que $\mathbb Z=\{\dots, -2, -1, 0, 1, 2, \dots, \}$.
+Assumiremos todos os fatos elementares sobre $\mathbb Z$ que não foram provados, inclusive que $\mathbb Z=\{\dots, -2, -1, 0, 1, 2, \dots, \}$.
 \section{Corpos e anéis de divisão}
 
 Abaixo, segue a definição de anel de divisão e corpo.
@@ -420,9 +420,9 @@ O estudo das propriedades dos números reais é um assunto central de um curso b
 Nesse texto, detalharemos tais propriedades somente de acordo com nossa necessidade.
 
 \section{O corpo dos números complexos}
-A história dos números complexos remete à representar uma solução para a equação $x^2+1=0$, que não possui solução real.
+A história dos números complexos remete a representar uma solução para a equação $x^2+1=0$, que não possui solução real.
 
-A ideia é que adiciona-se em $\mathbb R$ um novo elemento, $i$, para o qual vale $i^2=-1$ e para o qual as demais propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi$, onde $a,bin \mathbb R$.
+A ideia é que se adiciona em $\mathbb R$ um novo elemento, $i$, para o qual vale $i^2=-1$, e tal que propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi$, onde $a,bin \mathbb R$.
 
 Apresentaremos uma construção a seguir.
 
@@ -431,7 +431,7 @@ Apresentaremos uma construção a seguir.
     
     Se $a \in \mathbb R$, identifique $a=(a, 0)$ e $i=(0, 1)$.
 
-    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, exisem únicos $a, b\in \mathbb R$ tais que $x=a+bi$.
+    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, existem únicos $a, b\in \mathbb R$ tais que $x=a+bi$.
 
     Em $\mathbb C$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo Abeliano.
 
@@ -494,7 +494,7 @@ Apresentaremos uma construção a seguir.
             &=xy+xz
         \end{align*}
 
-        Finalmente, todo elemento distindo de $(0, 0)$ é invertível: seja $x=(a, b)\in \mathbb C$ tal que $x\neq 0$.
+        Finalmente, todo elemento distinto de $(0, 0)$ é invertível: seja $x=(a, b)\in \mathbb C$ tal que $x\neq 0$.
         Então, $a^2+b^2\neq 0$.
         Considere $y=(\frac{a}{a^2+b^2}, \frac{-b}{a^2+b^2})$.
         Calculemos $xy$:
@@ -506,12 +506,12 @@ Apresentaremos uma construção a seguir.
         \end{align*}
     \end{proof}
 \end{proof}
-\section{O Anel dos Quaternions}
+\section{O Anel dos Quatérnions}
 Discutimos as noções de corpo e de anel de divisão.
 Por definição, todo corpo é um anel de divisão.
-Um dos primeiros exemplos de um anel de divisão que não é um corpo é o anel dos quaternions $\mathbb H$, que descreveremos abaixo.
+Um dos primeiros exemplos de um anel de divisão que não é um corpo é o anel dos quatérnions $\mathbb H$, que descreveremos abaixo.
 
-A ideia é que adiciona-se em $\mathbb R$ três elementos distintos: $i, j, k$, para os quais valem as propriedades de que $i^2=j^2=k^2=-1$, e $ij=k$, $jk=i$ e $ki=j$, e para o qual as demais propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi+cj+dk$, onde $a,b,c,d\in \mathbb R$.
+A ideia é que se adiciona em $\mathbb R$ três elementos distintos: $i, j, k$, para os quais valem as propriedades de que $i^2=j^2=k^2=-1$, e $ij=k$, $jk=i$ e $ki=j$, e para o qual as demais propriedades operacionais de números reais são preservadas. Nesse anel, todo elemento se escreverá de forma única como $a+bi+cj+dk$, onde $a,b,c,d\in \mathbb R$.
 
 Apresentaremos uma construção a seguir. Antes disso, note que, como $k=ij$, multiplicando ambos os lados por $i$ à esquerda, supondo que a propriedade associativa ainda valha, temos que $ik=-j$.
 
@@ -519,14 +519,14 @@ Multiplicando por $j$ à direita, temos que $kj=-1$.
 
 Além disso, multiplicando por $i=jk$ à esquerda por $j$, temos que $ji=-1$. Assim, temos que $ij=k$, $jk=i$, $ki=j$, $ji=-k$, $kj=-i$ e $ik=-j$.
 
-Assumindo que $-i\neq i$, $-j\neq j$ e $-k\neq k$, temos que $i,j,k$ vêmos que a nossa estrutura deverá ser não comutativa.
+Assumindo que $-i\neq i$, $-j\neq j$ e $-k\neq k$, temos que $i,j,k$ vemos que a nossa estrutura deverá ser não comutativa.
 
 \begin{definition}[Quaternions]
     Definimos $\mathbb H=\mathbb R^4$.
     
     Se $a \in \mathbb R$, seja $a=(a, 0, 0, 0)$, $i=(0, 1, 0, 0)$, $j=(0, 0, 1, 0)$ e $k=(0, 0, 0, 1)$.
 
-    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, exisem únicos $a, b, c, d \in \mathbb R$ tais que $x=a+bi+cj+dk$.
+    Segue que, utilizando a linguagem de produto por escalar oriunda da álgebra linear, que para todo $x \in \mathbb H$, existem únicos $a, b, c, d \in \mathbb R$ tais que $x=a+bi+cj+dk$.
 
     Em $\mathbb H$, definimos a soma coordenada-a-coordenada. Da Álgebra Linear, sabemos que isso nos dá um grupo Abeliano.
 
@@ -618,7 +618,7 @@ Porém, note que $\mathbb N$ tem $1$ e é fechado por soma e produto, o que most
 \end{exemplo}
 
 \begin{exemplo}[Subanel trivial]
-    Para todo $A$, temos que $A$ é subanel de si mesmo.
+    Para todo $A$, temos que $A$ é subanel de si.
 \end{exemplo}
 
 \begin{exemplo}
@@ -629,7 +629,7 @@ Por indução, para todo $n\geq 1$ temos que $n \in \mathbb B$: com efeito, $1\i
 Como as operações de um subanel são as mesmas de um anel, um subanel de um anel comutativo é comutativo.
 
 \begin{prop}
-    Subanéis de aneis comutativos são comutativos.
+    Subanéis de anéis comutativos são comutativos.
 \end{prop}
 \begin{proof}
 Seja $A$ um anel comutativo e $B$ um subanel de $A$. Para todos $a, b \in B$, temos que o produto $a\cdot b$ em $B$ é dado pelo produto (comutativo) $a\cdot b$ em $A$, logo $a\cdot b=b\cdot a$.
@@ -655,9 +655,9 @@ O centro de um anel sempre é um subanel.
 \end{prop}
 
 \begin{proof}
-    Temos que $1 \in Z(A)$ pois para todo $b \in A$, $1a=a1=a$.
+    Temos que $1 \in Z(A)$, pois para todo $b \in A$, $1a=a1=a$.
 
-    Se $a, a' \in A$, temos que $aa' \in Z(A)$ pois para todo $b \in A$, $(aa')b=a(a'b)=a(ba')=(ab)a'=(ba)a'=b(a'a)$.
+    Se $a, a' \in A$, temos que $aa' \in Z(A)$, pois para todo $b \in A$, $(aa')b=a(a'b)=a(ba')=(ab)a'=(ba)a'=b(a'a)$.
 
     Finalmente, se $a, a' \in A$, temos que $a-a' \in Z(A)$, pois para todo $b \in A$, $(a-a')b=ab-a'b=ba-ba'=b(a-a')$.
 \end{proof}
@@ -676,14 +676,14 @@ Apresente um exemplo que demonstre que a recíproca é falsa.
 \end{exer}
 
 \begin{exer}
-    No anel dos quaternions $\mathbb H$, identifique $x \in \mathbb R$ com $(x, 0, 0, 0)=x+0i+0j+0k$.
+    No anel dos quatérnions $\mathbb H$, identifique $x \in \mathbb R$ com $(x, 0, 0, 0)=x+0i+0j+0k$.
 
     Mostre que $\mathbb R=Z(\mathbb H)$.
 
     (Dica: após mostrar que $\mathbb R\subseteq Z(\mathbb H)$, tome um elemento arbitrário de $Z(\mathbb H)$ e estude sua multiplicação por $i$, $j$ e $k$.)
 \end{exer}
 \begin{exer}\label{exer:quaternion}
-    No anel dos quaternions, dado $q \in \mathbb H$, seu conjugado é definido como $\bar q = a - bi - cj - dk$.
+    No anel dos quatérnions, dado $q \in \mathbb H$, seu conjugado é definido como $\bar q = a - bi - cj - dk$.
 
     \begin{enumerate}[label=\alph*)]
         \item Calcule  $q\bar q$ e $q\bar q$.

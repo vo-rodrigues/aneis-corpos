@@ -6,7 +6,7 @@ Na classe dos anéis, estas funções são o que chamamos de \emph{homomorfismos
 Homomorfismos são funções que preservam a estrutura de anéis.
 Formalmente:
 \begin{definition}
-Sejam $A$, $R$ aneis.
+Sejam $A$, $R$ anéis.
 Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
 \begin{itemize}
     \item $f(a+b)=f(a)+f(b)$ para todo $a, b \in A$.
@@ -18,10 +18,10 @@ Uma função $f:A\rightarrow R$ é um \emph{homomorfismo} se:
 
 Caso $f$ seja injetora, dizemos que $f$ é um \emph{monomorfismo}.
 Caso $f$ seja sobrejetora, dizemos que $f$ é um \emph{epimorfismo}.
-Caso $f$ seja bijetora, dizemos que $f$ é um \emph{isomorfismo}.
+Finalmente, caso $f$ seja bijetora, dizemos que $f$ é um \emph{isomorfismo}.
 \end{definition}
 
-A noção de isomorfismo é extremamente importante na Teoria de Anéis. Muitas vezes, temos dois anéis que ``deveriam ser a mesma coisa'', mas, como objetos matemáticos, não são iguais. A noção de isomorfismo entra em campo para dizer que, mesmo que dois anéis não sejam o mesmo objeto, eles possuem exatamente as mesmas propriedades algébricas e operacionais. Para darmos um exemplo concreto:
+A noção de isomorfismo é extremamente importante na Teoria de Anéis. Muitas vezes, temos dois anéis que ``deveriam ser o mesmo'', mas, como objetos matemáticos, não são iguais. A noção de isomorfismo entra em campo para dizer que, mesmo que dois anéis não sejam o mesmo objeto, eles possuem exatamente as mesmas propriedades algébricas e operacionais. Para darmos um exemplo concreto:
 
 \begin{exemplo}
 Seja $A=\{0, 1\}$ e $R=\{Z, U\}$, onde $Z, U$ são objetos diferentes, e diferentes de $0, 1$. Defina em $A$ as operações $\cdot$ e $+$ dadas pelas seguintes tabelas:
@@ -79,7 +79,7 @@ A proposição abaixo encurta esta verificação substancialmente.
 \begin{proof}
     Provaremos o lado que não é imediatamente trivial.
 
-    Para ver que $f(0_A)=0_R$, primeiro note que $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$.Cancelando $f(0_A)$, $f(0_A)=0_R$.
+    Para ver que $f(0_A)=0_R$, primeiro note que $f(0_A)=f(0_A+0_A)=f(0_A)+f(0_A)$. Cancelando $f(0_A)$, $f(0_A)=0_R$.
 
     Agora, vejamos que $f(-a)=-f(a)$ para todo $a \in A$.
     Temos que $f(a)+f(-a)=f(a+(-a))=f(0_A)=0_R$, logo, $f(-a)=-f(a)$.
@@ -165,7 +165,7 @@ Agora introduziremos o núcleo de um homomorfismo.
 
     \[\ker f=\{a \in A: f(a)=0_R\}.\]
 \end{definition}
-Uma importante relação entre o homomorfismo e seu núcleo é dado como se segue:
+Uma importante relação entre o homomorfismo e seu núcleo é dada como se segue:
 
 \begin{prop}
 Sejam $A, R$ anéis e $f:A\rightarrow R$ um homomorfismo. Então $f:A\rightarrow R$ é injetor (um monomorfismo) se, e somente se $\ker f = \{0_A\}$.
@@ -184,7 +184,7 @@ Sejam $A, R$ anéis e $f:A\rightarrow R$ um homomorfismo. Então $f:A\rightarrow
 \end{proof}
 \section{Ideais}
 Ideais são as estruturas responsáveis pela noção de quociente em anéis, assunto que será estudado no próximo capítulo.
-Introduziremos a noção de ideal neste capítulo pois ela tem interações fundamentais com a noção de homomorfismo, porém, apenas no próximo capítulo ficará clara a sua enorme importância para esta teoria.
+Introduziremos a noção de ideal neste capítulo, pois ela tem interações fundamentais com a noção de homomorfismo, porém, apenas no próximo capítulo ficará clara a sua enorme importância para esta teoria.
 Nesta seção, motivaremos, nesta seção, a noção de ideal, a partir do núcleo de homomorfismos.
 
 Para começar, notemos algumas propriedades do núcleo.
@@ -202,7 +202,7 @@ Seja $f:A\rightarrow R$ um homomorfismo de anéis. Seja $I=\ker f$. Então:
 
 \begin{proof}
     \begin{enumerate}[label=\alph*)]
-        \item $0_A \in I$ pois $f(0_A)=0_R$.
+        \item $0_A \in I$, pois $f(0_A)=0_R$.
         \item Se $a, b \in I$, então $f(a)=0_R$ e $f(b)=0_R$. Assim, $f(a+b)=f(a)+f(b)=0_R+0_R=0_R$, logo, $a+b\in I$.
         \item Se $a \in I$ e $x \in A$, então $f(a)=0_R$. Assim, $f(ax)=f(a)f(x)=0_Rf(x)=0_R$, logo, $ax\in I$.
         \item Se $a \in I$ e $x \in A$, então $f(a)=0_R$. Assim, $f(xa)=f(x)f(a)=f(x)0_R=0_R$, logo, $xa\in I$.
@@ -221,7 +221,7 @@ Seja $f:A\rightarrow R$ um homomorfismo de anéis. Seja $I=\ker f$. Então:
     Como $1_R=0_R$, segue que $R=\{0_R\}$, pois dado $x \in R$ temos $x=x\cdot 1_R=x\cdot 0_R=0_R$.
 \end{proof}
 
-Como recíproca, notemos que um homomorfismo acima existe para qualquer anel $A$:
+Para uma recíproca, notemos que um homomorfismo acima existe para qualquer anel $A$:
 
 \begin{prop}
     Seja $A$ um anel e $R=\{0_R\}$ um anel trivial.
@@ -266,12 +266,12 @@ Da discussão anterior, temos:
     Seja $f:A\rightarrow R$ um homomorfismo de anéis. Então $\ker f$ é um ideal de $A$.
 \end{corol}
 
-Então, todo núcleo é um ideal.
+Assim, todo núcleo é um ideal.
 No próximo capítulo, veremos que vale uma recíproca: todo ideal é um núcleo de algum homomorfismo.
 
-Todo anel possui ao menos os ideais abaixos, chamados de ideais triviais:
+Todo anel possui ao menos os ideais abaixo, chamados de ideais triviais:
 
-\begin{prop}[Ideal trivial]Seja $A$ um anel. Então $\{0\}$ e $A$ são ideais de $A$. Estes ideais são chamados de \emph{ideais principais}
+\begin{prop}[Ideal trivial]Seja $A$ um anel. Então $\{0\}$ e $A$ são ideais de $A$. Estes ideais são chamados de \emph{ideais principais}.
 \end{prop}
 \begin{proof}
     Exercício.
@@ -344,7 +344,7 @@ Ideais também são preservados por imagens inversas.
 
     Finalmente, provaremos a afirmação final para quando $B\subseteq Z(R)$. Seja $I'=\{a_1b_1+\cdots+a_nb_n: n\geq 1, a_i \in A, b_i \in B\}$.
     Veremos que $I=I'$.
-    Pondo $c_1=\cdots=c_n=1$, vemos que que $I'\subseteq I$.
+    Pondo $c_1=\cdots=c_n=1$, vemos que $I'\subseteq I$.
 
     Reciprocamente, se $x=a_1b_1c_1+\cdots+a_nb_nc_n \in I$ com $n\geq 1$, $a_1,\dots, a_n, c_1, \dots, c_n \in A$ e $b_1, \dots, b_n \in B\subseteq Z(A)$, temos que $x=(a_1c_1)b_1+\dots+(a_nc_n)b_n\in I'$.
 \end{proof}
@@ -383,7 +383,7 @@ Agora, dado $a \in I+J$ e $x \in A$, temos que $a=i+j$ com $i \in I$ e $j \in J$
 Segue que $xa=xi+xj\in I+J$, já que $xi \in I$ e $xj \in J$. 
 Similarmente, $ax\in I+J$.
 
-Concluimos que $I+J$ é um ideal de $A$ que contém $I$ e $J$. Vejamos que ele é o menor.
+Concluímos que $I+J$ é um ideal de $A$ que contém $I$ e $J$. Vejamos que ele é o menor.
 
 Se $K$ é um ideal que contém $I$ e $J$, vejamos que $I+J\subseteq K$.
 Seja $a+b \in I+J$, com $a \in I$ e $b \in J$.
@@ -429,7 +429,7 @@ Quais são exemplos de DIPs? Para começar, qualquer corpo é um DIP. Mais espec
 \begin{prop}[Ideais de um corpo são triviais]
     Os únicos ideais de qualquer corpo são os triviais.
     Em particular, todo corpo é um DIP.
-    Reciprocamente, se $A$ é um anel comutativo não trivial cujo todo ideal é trivial, então $A$ é um corpo.
+    Reciprocamente, se $A$ é um anel comutativo não trivial cujos ideais são todos triviais, então $A$ é um corpo.
 \end{prop}
 \begin{proof}
     Seja $K$ um corpo e $I$ um ideal de $K$.
@@ -471,7 +471,7 @@ Porém, nem todo DIP é um corpo, como exemplificado pelo anel dos números inte
     Como $R$ é um domínio de ideais principais, $J$ é um ideal principal, ou seja, existe $x \in R$ tal que $J=\langle x\rangle$.
     
     Como $x \in J\bigcup_{n \in \mathbb N}I_n$, existe $N \in \mathbb N$ tal que $x \in I_N$.
-    Como $x \in I_n$, temos que $\langle x\rangle \subseteq I_N$.
+    Considerando que $x \in I_n$, temos que $\langle x\rangle \subseteq I_N$.
     Assim, $J=\langle n\rangle \subseteq I_N\subseteq I_{N+1}\subseteq J$, o que implica que $I_N=I_{N+1}$, um absurdo.
 \end{proof}
 
@@ -512,7 +512,7 @@ Então $I$ é primo.
 
     Assim, existem $x \in I$ e $y \in A$ tais que $x+ya=1$.
     Multiplicando ambos os lados por $b$, temos que $xb+yab=b$.
-    Commo $x \in I$, temos que $xb \in I$, e, como $ab \in I$, temos que $yab \in I$.
+    Como $x \in I$, temos que $xb \in I$, e, como $ab \in I$, temos que $yab \in I$.
     Portanto, $b=xb+yab\in I$.
 \end{proof}
 
@@ -593,7 +593,7 @@ Temos que $-n, -m>0$ e $-(n+m)<0$. Assim, $f(n+m)=f(-(-n-m))=-f((-n)+(-m))=-f(-n
 
 \textbf{Caso 3:} $n\geq 0$, $m<0$.
 
-Teremos dois subcasos: $n+m\geq 0$ e $n+m<0$.
+Teremos dois sub casos: $n+m\geq 0$ e $n+m<0$.
 
 Caso $n+m\geq 0$, temos que $f(n+m)+f(-m)=f((n+m)+(-m))=f(n)$ pelo primeiro caso, portanto, $f(n+m)=f(n)+(-f(-m))=f(n)+f(m)$.
 
@@ -628,7 +628,7 @@ Temos que $-m>0$. Assim:
 \[f(nm)=f(-(-n)m)=-f(-n)f(-m)=f(n)f(m).\]
 \end{proof}
 
-Assim, podemos formalizar a notação $n \in \mathbb R$, e definir a característica de um anel como a seguir:
+Dessa forma, podemos formalizar a notação $n \in \mathbb R$, e definir a característica de um anel como a seguir:
 
 \begin{definition}
     Seja $R$ um anel e $n \in \mathbb Z$.
@@ -658,7 +658,7 @@ A característica $0$ é
 
 \section{Exercícios}
 \begin{exer}
-Lembremos que, da Álgebra Linear, um espaço vetorial $V$ sobre um corpo $K$ é uma quadrupla $(V, +, 0, \cdot)$, onde $(V, +, 0)$ é um grupo Abeliano e $\cdot:K\times V\rightarrow V$ é uma operação que satisfaz:
+Lembremos que, da Álgebra Linear, um espaço vetorial $V$ sobre um corpo $K$ é uma quádrupla $(V, +, 0, \cdot)$, onde $(V, +, 0)$ é um grupo Abeliano e $\cdot:K\times V\rightarrow V$ é uma operação que satisfaz:
 
 \begin{itemize}
     \item Associatividade: para todos $\alpha, \beta \in K$ e para todo $v \in V$, $(\alpha\beta)v=\alpha(\beta v)$.
@@ -683,7 +683,7 @@ Mostre com um exemplo que $\End(V)$ pode não ser comutativo.
 \end{exer}
 
 \begin{exer}
-Seja $V$ um espaco vetorial sobre um corpo $K$.
+Seja $V$ um espaço vetorial sobre um corpo $K$.
 Defina $\rho:K\rightarrow V^V$ da seguinte forma: 
 
 Para cada $\alpha \in K$, o mapa $\rho(\alpha):V\rightarrow V$ é dado por $\rho(\alpha)(v)=\alpha v$ para todo $v \in V$.

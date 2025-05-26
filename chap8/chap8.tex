@@ -16,7 +16,6 @@ Uma esquematização encontra-se no diagrama abaixo:
 
 \section{Definição de divisibilidade}
 
-
 \begin{definition}
 Seja $R$ um anel comutativo. Definimos a relação de divisibilidade, $|$, em $R$, como se segue:
 
@@ -78,7 +77,7 @@ A relação de ser associado é uma relação de equivalência:
 \begin{proof}
     Seja $a, b, c \in R$.
     \begin{itemize}
-        \item Reflexividade: $a$ é associado a si mesmo, pois $a=1\cdot a$ e $1 \in R^*$.
+        \item Reflexividade: $a$ é associado a si, pois $a=1\cdot a$ e $1 \in R^*$.
         \item Simetria: Se $a$ é associado a $b$, então existe $u$ invertível tal que $a=ub$. Logo, $b=u^{-1}a$, e, portanto, $b$ é associado a $a$.
         \item Transitividade: Se $a$ é associado a $b$ e $b$ é associado a $c$, então existem $u, v$ invertíveis tais que $a=ub$ e $b=vc$.
         Logo, temos que $a=uvc$, e, portanto, $a$ é associado a $c$, já que $uv\in R^*$.
@@ -142,18 +141,18 @@ De fato:
     Então todos os elementos de $\MDC(a_0, \dots, a_n)$ são associados entre si.
     Analogamente, todos os elementos de $\MMC(a_0, \dots, a_n)$ são associados entre si.
 
-    Reciprocamente, todo elemento de $R$ associado à algum elemento de $\MDC(a_0, \dots, a_n)$ é um MDC de $a_0, \dots, a_n$, e todo elemento de $R$ associado à algum elemento de $\MMC(a_0, \dots, a_n)$ é um MMC de $a_0, \dots, a_n$.
+    Reciprocamente, todo elemento de $R$ associado a algum elemento de $\MDC(a_0, \dots, a_n)$ é um MDC de $a_0, \dots, a_n$, e todo elemento de $R$ associado a algum elemento de $\MMC(a_0, \dots, a_n)$ é um MMC de $a_0, \dots, a_n$.
 \end{lemma}
 \begin{proof}
 Sejam $d, d'$ máximos divisores comuns de $a_0, \dots, a_n$.
 Então, $d|a_0$, $\dots$, $d|a_n$, $d'|a_0$, $\dots$, $d'|a_n$.
 Logo, $d|d'$ e $d'|d$.
-Logo, $d$ e $d'$ são associados entre si.
+Portanto, $d$ e $d'$ são associados entre si.
 
 Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a_0, \dots, a_n$.
 Então, $m|a_0$, $\dots$, $m|a_n$, $m'|a_0$, $\dots$, $m'|a_n$.
 Logo, $m|m'$ e $m'|m$.
-Logo, $m$ e $m'$ são associados entre si.
+Portanto, $m$ e $m'$ são associados entre si.
 
 Para a recíproca, se $d$ é MDC de $a_0, \dots, a_n$ e $d'$ é associado à $d$, então $d'|a_0$, $\dots$, $d'|a_n$, pois $d|a_0$, $\dots$, $d|a_n$ e $d'|d$.
 Se $x\in R$ é tal que $x|a_0$, $\dots$, $x|a_n$, então $d'|d$ e $d|x$, logo $d'|x$.
@@ -461,7 +460,7 @@ Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou
 a do Teorema Fundamental da Aritmética.
 
 \begin{definition}
-    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$ não invertível, existem um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$ não invertível, existe um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
 \end{definition}
 
 \begin{prop}
@@ -478,7 +477,7 @@ Reordenando se necessário e fatorando alguma unidade, podemos reescrever:
 \[a=\prod_{i \in I} c_i \prod_{j \in J} a_j\]
 \[b=\prod_{i \in I} c_i \prod_{k \in K} b_k\]
 
-Onde cada $c_i, a_j, b_k$ são irredutíveis, nenhum $a_j$ é associado à nenhum $b_k$, e consideramos que o produto vazio é $1$.
+Onde cada $c_i, a_j, b_k$ são irredutíveis, nenhum $a_j$ é associado a nenhum $b_k$, e consideramos que o produto vazio é $1$.
 Como $a\not |b$ e $b\not | a$, temos que $J, K\neq\emptyset$.
 Afirmamos que $c=\prod_{i \in I} c_i$ é um MDC de $a$ e $b$.
 
@@ -488,9 +487,9 @@ Devemos ver que $d|c$.
 Temos que $d\neq 0$, e se $d$ é invertível, segue a tese.
 Suponha por absurdo que $d\not | c$.
 Se $d$ não é invertível, escreva $d=d_1\dots d_k$ com $d_i$ irredutíveis.
-Como $d_1\dots d_k|\prod_{i \in I} c_i \prod_{j \in J} a_j$, pela unicidade de fatoração, todo $d_l$ é associado à algum $c_i$ ou $d_k$, de forma injetora.
-Como $d\not |c$, algum $d_l$ é associado à algum $a_j$.
-Porém, $d_1\dots d_k|\prod_{i \in I} c_i \prod_{k \in K} c_k$, e, portnato, esse mesmo $d_l$ é associado à algum $c_k$.
+Como $d_1\dots d_k|\prod_{i \in I} c_i \prod_{j \in J} a_j$, pela unicidade de fatoração, todo $d_l$ é associado a algum $c_i$ ou $d_k$, de forma injetora.
+Como $d\not |c$, algum $d_l$ é associado a algum $a_j$.
+Porém, $d_1\dots d_k|\prod_{i \in I} c_i \prod_{k \in K} c_k$, e, portanto, esse mesmo $d_l$ é associado a algum $c_k$.
 Assim, $a_j$ é associado à $c_k$, um absurdo.
 \end{proof}
 
@@ -507,7 +506,7 @@ Se $p|q_1\cdots q_n$, então existe $i$ tal que $p$ é associado à $q_i$.
 \end{lemma}
 \begin{proof}
 Seguimos por indução em $n$.
-para $n=1$, se $p|q_1$, temos que $q_1=pu$ para algum $u\in R$.
+Para $n=1$, se $p|q_1$, temos que $q_1=pu$ para algum $u\in R$.
 Assim, $p\in R^*$ ou $u\in R^*$.
 Como $p \notin R^*$, segue que $u \in R^*$, logo, $p$ é associado à $q_1$.
 
@@ -565,13 +564,13 @@ Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não 
     Para ver que tal sequência existe, seja $p_0=a$. Como $a$ não é invertível, $\langle p_n\rangle \neq R$, e $p_0|a$.
 
     Para o passo sucessor da recursão, construído $p_n$, como $\langle p_n\rangle\neq R$, sabemos que $p_n$ não é invertível.
-    Além disso, $0\neq p_n$ pois $p_n|a$.
+    Além disso, $0\neq p_n$, pois $p_n|a$.
     Pelo mesmo motivo, $p_n$ não é irredutível.
     Logo, existem $b, c \in R$ tais que $p_n=bc$ e nem $b$, nem $c$ são invertíveis.
     Seja $p_{n+1}=b$.
 
     Como $p_{n+1}|p_n$ e $p_n|p$, segue que $p_{n+1}|p$.
-    Como $b$ não é invertível, $\langle p_{n+1}\rangle\neq R$.
+    Uma vez que $b$ não é invertível, $\langle p_{n+1}\rangle\neq R$.
 
     Como $p_{n+1}|p_n$, temos que $\langle p_n\rangle\subseteq \langle p_{n+1}\rangle$.
     Porém, a inclusão é própria, caso contrário, teríamos $p_{n+1}\in \langle p_n\rangle$, o que nos dá $p_n|p_{n+1}$.
@@ -629,8 +628,8 @@ A noção de domínio Euclideano generaliza os anéis que possuem essa proprieda
     Um domínio de integridade $R$ é um domínio Euclideano
     se existe uma função $\nu:R\setminus \{0\} \to \mathbb N=\{0, 1, \dots\}$ satisfazendo:
     \begin{itemize}
-        \item Para todos $a, b \in R$ com $b\neq 0$, existem $q, r \in R$ com $a=bq+r$ e ($r=0$ ou $\nu(r)<\nu(b)$).
-        \item Para todos $a, b \in R\setminus \{0\}$, $\nu(ab)\geq \nu(a)$.
+        \item para todos $a, b \in R$ com $b\neq 0$, existem $q, r \in R$ com $a=bq+r$ e ($r=0$ ou $\nu(r)<\nu(b)$), e,
+        \item para todos $a, b \in R\setminus \{0\}$, $\nu(ab)\geq \nu(a)$.
     \end{itemize}
 
     Tal função $\nu$ é chamada de valoração, ou grau.
@@ -686,7 +685,7 @@ Mais adiante, veremos que esse será o caso para anéis de polinômios sobre cor
 
     Se $r'=0$, temos que $\nu(-r)=\nu(r)<\nu(b)\leq(\nu(q-q')b)=\nu(r)$, o que é absurdo.
     
-    Se $r, r'\neq 0$, temos que $\nu(r'-r)\leq \max(\nu(r), \nu(r'))<\nu(b)\leq(\nu(q-q')b)=\nu(r)$, o que é absurdo.
+    Finalmente, se $r, r'\neq 0$, temos que $\nu(r'-r)\leq \max(\nu(r), \nu(r'))<\nu(b)\leq(\nu(q-q')b)=\nu(r)$, o que é absurdo.
 \end{proof}
 
 \begin{prop}
@@ -729,7 +728,7 @@ Todo domínio Euclideano é um domínio de ideais principais.
 
 \begin{exer}
     Seja $D$ um domínio de integridade e $a, b \in R$ não nulos.
-    Redija com suas palavras, de forma que considere satisfatória, uma demonstração para o fato de que quaisquer dois mínimos múltiplos comuns de $a$ e $b$ são associados entre si, e que quaisquer dois máximos divisores comuns de $a$ e $b$ são associados entre si, caso existam.
+    Redija com suas palavras, de forma que considere satisfatória, uma demonstração para que quaisquer dois mínimos múltiplos comuns de $a$ e $b$ são associados entre si, e que quaisquer dois máximos divisores comuns de $a$ e $b$ são associados entre si, caso existam.
 \end{exer}
 \begin{exer}
     Seja $R$ um domínio Euclideano munido de função grau $\nu$ e $a \in R$ não nulo.

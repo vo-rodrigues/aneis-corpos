@@ -3,32 +3,32 @@
 
 \section{Definição e Propriedades Básicas}
 
-Grupos são estruturas matemáticas munidas de uma operação binária com algumas propriedades espeiciais.
+Grupos são estruturas matemáticas munidas de uma operação binária com algumas propriedades especiais.
 O principal objetivo deste texto é servir como texto para um estudo introdutório sobre anéis e corpos, que são estruturas matemáticas que possuem duas operações binárias com propriedades especiais.
 Conforme veremos no Capítulo 3, todo anel e todo corpo, com uma dessas operações, forma um grupo.
 Assim, é útil, para o estudo de anéis e corpos, o conhecimento de noções básicas sobre grupos.
 
-Apesar das noções de anel e de corpo serem, a nível de definição, noções mais complexas que a de grupo, a noção de grupo, em parte por ser menos restritiva, necessita o desenvolvimento de ferramentas específicas para seu estudo completo.
+Apesar das noções de anel e de corpo serem, ao nível de definição, noções mais complexas que a de grupo, a noção de grupo, em parte por ser menos restritiva, necessita o desenvolvimento de ferramentas específicas para seu estudo completo.
 A área do conhecimento matemático resultante do desenvolvimento dessa teoria é extremamente rica, e chamada de \emph{Teoria dos Grupos}.
 Nosso objetivo, por outro lado, é focar no estudo inicial das teorias de anéis e corpos, e, portanto, não mergulharemos nesta importante área.
 
 Assim, não é objetivo deste capítulo apresentar uma introdução ao estudo de grupos, mas sim apenas introduzir as noções e resultados básicos próprios de grupos que são estritamente necessários para os resultados envolvendo anéis e corpos descritos no restante do texto.
 
 \begin{definition}
-Um grupo é uma quadrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é uma operação binária em $G$ e $0 \in G$, e satisfazem:
+Um grupo é uma quádrupla $(G,\cdot,e)$, tal que $G$ é um conjunto, $\cdot$ é uma operação binária em $G$ e $0 \in G$, e satisfazem:
 
 \begin{itemize}
     \item (\textbf{Propriedade associativa}) $\forall a, b, c \in G$ $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
     \item (\textbf{Elemento neutro}) $\forall a \in G$  $e \cdot a = a \cdot e = a$.
     \item (\textbf{Elemento inverso}) $\forall a \in G$ $\exists b \in G$ $a \cdot b = b \cdot a = e$.
 \end{itemize}
-Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comunmente, \emph{Abeliano}:
+Se, adicionalmente, a seguinte propriedade é satisfeita, o grupo é chamado de \emph{comutativo}, ou, mais comumente, \emph{Abeliano}:
 \begin{itemize}
     \item (\textbf{Comutatividade}) $\forall a, b \in G\, a \cdot b = b \cdot a$.
 \end{itemize}
 
-Caso valham apenas as propriedades associativas e do elemento neutro, dizemos que $(G, \cdot, e)$ é um \emph{monóide}.
-Caso valha, adicionalmente, a propriedade comutativa, dizemos que $(G, \cdot, e)$ é um \emph{monóide comutativo}.
+Caso valham apenas as propriedades associativas e do elemento neutro, dizemos que $(G, \cdot, e)$ é um \emph{monoide}.
+Caso valha, adicionalmente, a propriedade comutativa, dizemos que $(G, \cdot, e)$ é um \emph{monoide comutativo}.
 \end{definition}
 
 Alguns exemplos:
@@ -51,11 +51,11 @@ Alguns exemplos:
 
 Algumas observações importantes sobre a notação utilizada no estudo de grupos:
 \begin{itemize}
-\item Ao discursar sobre grupos e monóides, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$, conforme fizemos acima ao mencionar que $\mathbb Z$ é um grupo.
+\item ao discursar sobre grupos e monoides, é comum omitir a operação e o elemento neutro, referindo-se apenas ao conjunto $G$, conforme fizemos acima ao mencionar que $\mathbb Z$ é um grupo.
 O mais formal, porém muito menos usual, feito principalmente em situações em há chance de confusão, é escrever que, por exemplo, $(\mathbb Z, +, 0)$ é um grupo.
-\item Como também ocorre com $\mathbb Z$, caso o grupo ou monóide seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
+\item Como também ocorre com $\mathbb Z$, caso o grupo ou monoide seja Abeliano, é comum que sua operação binária seja denotada por $+$ ou outro símbolo similar.
 Nesse contexto, o elemento neutro é frequentemente denotado por $0$.
-\item Caso o grupo ou monóide em discurso não seja necessariamente Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
+\item Caso o grupo ou monoide em discurso não seja necessariamente Abeliano, é comum que sua operação binária seja denotada por $\cdot$ ou outro símbolo similar.
 Nesse contexto, o elemento neutro é frequentemente denotado por $e$, e a operação é frequentemente omitida, ou seja, $a \cdot b$ é frequentemente escrito como $ab$.
 
 Porém, há grupos Abelianos cujas operações também são denotadas por $\cdot$, como no caso o grupo $\mathbb T$ mencionado acima.
@@ -108,7 +108,7 @@ Para o segundo caso, define-se também que $a-b=a+(-b)$.
 
     Pela definição de inverso, segue que $be=ce$.
 
-    Pela neutralidade de $e$, segue que $b=c$.
+    Finalmente, pela neutralidade de $e$, segue que $b=c$.
 \end{proof}
 
 \begin{corol}[Cancelamento II]\label{prop:group_cancelII}
@@ -132,14 +132,14 @@ Analogamente, se $ba=a$, então $b=e$.
     \end{enumerate}
 \end{prop}
 \begin{proof}
-    \ref{prop:regraSinal_A}: Temos que $(a^{-1})^{-1}a^{-1}=e=aa^{-1}$.
+    \ref{prop:regraSinal_A}: temos que $(a^{-1})^{-1}a^{-1}=e=aa^{-1}$.
     Cancelando $a^{-1}$, segue.
     
-    \ref{prop:regraSinal_B}: Temos que $(ab)^{-1}(ab)=e=(b^{-1}a^{-1})ab$.
+    \ref{prop:regraSinal_B}: temos que $(ab)^{-1}(ab)=e=(b^{-1}a^{-1})ab$.
     Cancelando $ab$, segue que $(ab)^{-1}=b^{-1}a^{-1}$.
     Analogamente, $(ba)^{-1}=a^{-1}b^{-1}$.
 
-    \ref{prop:regraSinal_C}: Temos que $(e^{-1})e=e=ee$.
+    \ref{prop:regraSinal_C}: temos que $(e^{-1})e=e=ee$.
     Cancelando $e$ à direita, segue.
 
 
@@ -151,14 +151,14 @@ Nessa seção, formalizaremos a noção de somatório.
 É desejável que o leitor já possua familiaridade com alguma notação de somatório, não sendo nosso objetivo fornecer ao leitor um primeiro contato. Aqui apresentaremos a notação e as técnicas de ``substituição de variáveis'' que serão utilizadas.
 
 \begin{definition}[Soma de família finita]\label{def:group_sum}
-Seja $G=(G, +, 0)$ um monóide comutativo.
+Seja $G=(G, +, 0)$ um monoide comutativo.
 Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in F)$, onde $F$ é um conjunto de $n$ índices e $a_i \in G$ para todo $i \in F$, como se segue:
 
 \begin{itemize}
     \item \textbf{Notação:} se $a=(a_i)_{i\in F}$ é uma sequência de elementos de $G$, então usamos as notações:
     \[\sum a=\sum(a_i: i\in F)=\sum_{i\in F} a_i.\]
-    \item Caso base $n=0$ (soma vazia): só existe uma família com $0$ elementos, que é a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$.
-    Definimos: \[\sum a=\sum_{i \in \emptyset}a_i=0\].
+    \item Caso base $n=0$ (soma vazia): só existe uma família com $0$ elementos, a família vazia $a=()=\emptyset=(a_i:i\in \emptyset)$.
+    Definimos: \[\sum a=\sum_{i \in \emptyset}a_i=0.\]
     \item Passo recursivo $n\rightarrow n+1$: considere uma família $(a_i)_{i\in F}$, onde $|F|=n+1$.
     Define-se:
     \[\sum(a_i: i \in F)=\sum(a_i: i \in F\setminus\{j\})+a_j,\]
@@ -168,14 +168,14 @@ Define-se, recursivamente para $n\geq 0$, o somatório de famílias $(a_i: i \in
 É claro que, para mostrar que a definição acima é consistente, precisamos mostrar que a soma não depende da escolha de $j$.
 
 \begin{lemma}
-Qualquer que seja o tamanho (finito) de $F$, $\sum(a_i)_{i\in F}$ está bem definido.
+Qualquer que seja $F$, $\sum(a_i)_{i\in F}$ está bem definido.
 \end{lemma}
 
 \begin{proof}
     Seja $F$ um conjunto finito.
 Se $|F|=0$, então $F=\emptyset$, e a soma é $0$.
 Se $|F|=1$, então $F=\{j\}$ -- só há uma escolha para $j$, e a soma é $a_j$.
-    Se $|F|=n+1$ para $n\geq 1$, tome $j, k \in F$.
+    Para o passo indutivo, se $|F|=n+1$ para $n\geq 1$, tome $j, k \in F$.
     Devemos ver que $\left(\sum_{i\in F\setminus\{j\}} a_i\right)+a_j=\left(\sum_{i\in F\setminus\{k\}} a_i\right)+a_k$.
     Com efeito:
 
@@ -191,7 +191,7 @@ A partir dessa generalidade, pode-se chegar na notação mais utilizada envolven
 Como fazemos no cálculo de integrais, muitas vezes é desejável utilizar técnicas de substituição de variáveis para calcular ou simplificar somatórios.
 A proposição abaixo formaliza esta técnica.
 \begin{prop}[Mudança de variável em somatório]\label{prop:group_sumVarChange}   
-    Seja $G$ um monóide comutativo.
+    Seja $G$ um monoide comutativo.
     Seja $(a_i: i \in I)$ uma família finita em $G$ e $\phi:J\rightarrow I$ uma função bijetora.
     Então:
 
@@ -212,7 +212,7 @@ Segue que:
 
 Também podemos juntar, sempre que necessário, duas somas disjuntas sob um único sinal de somatório.
 \begin{prop}[Concatenação de somatórios]\label{prop:group_sumConcat}
-    Seja $I, J$ conjuntos disjuntos e $G$ um monóide comutativo. Considere famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
+    Seja $I, J$ conjuntos disjuntos e $G$ um monoide comutativo. Considere famílias $(a_i: i \in I)$ e $(a_i: i \in J)$, e a família $(a_i: i \in I\cup J)$.
     Vale a relação:
 
     \[\sum_{i \in I}a_i+\sum_{i \in I}a_i=\sum_{i \in I\cup J}a_i\]
@@ -228,8 +228,8 @@ Também podemos juntar, sempre que necessário, duas somas disjuntas sob um úni
 \end{proof}
 
 Antes de enunciar a próxima proposição, precisamos falar sobre notações de índices duplos.
-Se $K$ é um conjunto que consiste apenas de pares ordenados $(i, j)$, não é incomum encontrarmos na literatura a notação $\sum_{(i, j)\in K}a_{ij}$.
-bem como encontrar a notação $(a_{ij}:(i, j)\in K))$.
+Se $K$ é um conjunto que consiste apenas em pares ordenados $(i, j)$, não é incomum encontrarmos na literatura a notação $\sum_{(i, j)\in K}a_{ij}$,
+bem como encontrar a notação $(a_{ij}:(i, j)\in K)$.
 
 Tais notações são usadas no contexto no qual uma para todo $i, j$ com $(i, j)\in K$, está definido um elemento $a_{ij}$.
 Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)\pi_2(k)}: k \in K)$, e $\sum_{(i, j)\in K}a_{ij}$ denota $\sum_{k \in K}a_{\pi_1(k)\pi_2(k)}$, onde $\pi_1$ e $\pi_2$ são as funções coordenadas de pares ordenados.
@@ -238,7 +238,7 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
     Seja $I$ um conjunto não vazio e, para cada $i \in F$, seja $F_i$ um conjunto.
     Considere o conjunto finito $K=\bigcup_{i \in I}\{i\}\times F_i=\{(i, j): i \in I, j \in F_i\}$.
 
-    Para cada $i \in I$, considere uma família de elementos de um monóide comutativo $G$, $(a_{ij}: j \in F_i)$.
+    Para cada $i \in I$, considere uma família de elementos de um monoide comutativo $G$, $(a_{ij}: j \in F_i)$.
     Considere também as famílias $(a_{ij}: (i, j)\in K)=(a_{ij}: i\in I, j \in F_i)$ e $(\sum_{j \in F_i}: i\in I)$. Vale a relação:
 
     \[\sum_{i \in I}\left(\sum_{j \in F_i}a_{ij}\right)=\sum_{(i, j)\in K}a_{ij}\]
@@ -267,7 +267,7 @@ Para se encaixar no nosso formalismo, $(a_{ij}:i, j \in K)$ denota $(a_{\pi_1(k)
 Agora provaremos a comutação de somatórios.
 
 \begin{prop}\label{prop:group_sumCommut}
-    Sejam $I, J$ conjuntos não vazios e considere uma família $(a_{ij}:(i, j)\in I\times J)=(a_{ij}:i \in I, j \in J)$ em um monóide comutativo $G$.
+    Sejam $I, J$ conjuntos não vazios e considere uma família $(a_{ij}:(i, j)\in I\times J)=(a_{ij}:i \in I, j \in J)$ em um monoide comutativo $G$.
 
     Para cada $i \in I$, considere a família $(a_{ij}: j \in J)$, e, para cada $j \in J$, considere a família $(a_{ij}: i \in I)$.
 
@@ -290,6 +290,6 @@ Agora provaremos a comutação de somatórios.
 \begin{exer}
     Suponha que $a$, $b$ e $c$ sejam elementos de um anel $A$, e que $a$ não é divisor de $0$.
     
-    Mostre que se $ab = ac$, então ou $a = 0$ ou $b = c$ (isto é, se $a\neq 0$, podemos cancela-lo).
+    Mostre que se $ab = ac$, então $a = 0$ ou $b = c$ (isto é, se $a\neq 0$, podemos cancelá-lo).
 \end{exer}
 

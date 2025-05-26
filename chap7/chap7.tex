@@ -5,7 +5,7 @@ Neste capítulo, estudaremos o produto direto de anéis.
 Dados anéis $R$ e $S$, é possível dar à $R\times S$ uma estrutura natural de anel.
 \begin{definition}[Produto Direto de dois anéis]
     Sejam $R, S$ anéis.
-    O produto direto de $R$ e $S$ é o conjunto $R\times S$ munido das operações ``ponto à ponto'': dados $a=(a_1, a_2)\in R\times S$ e $b=(b_1, b_2)\in R\times S$, temos:
+    O produto direto de $R$ e $S$ é o conjunto $R\times S$ munido das operações ``ponto a ponto'': dados $a=(a_1, a_2)\in R\times S$ e $b=(b_1, b_2)\in R\times S$, temos:
     \[a+b=(a_1+b_1, a_2+b_2)\]
     \[a\cdot b=(a_1\cdot b_1, a_2\cdot b_2)\]
     \[0=(0_R, 0_S)\]
@@ -25,7 +25,7 @@ Deixaremos a prova deste fato como exercício (ver Exercício~\ref{exer:prod_ane
 \begin{definition}[Produtos de anéis]
     Seja $(R_i)_{i \in I}$ uma família de anéis, onde cada $R_i$ tem as operações $+_i, \cdot_i$ e constantes $0_i, 1_i$.
     
-    O produto (direto) de $(R_i)_{i \in I}$ é o conjunto $\prod_{i \in I} R_i$ munido das operações ``ponto à ponto'': dados $a=(a_i: i \in I), b=(b_i: i \in I)$ em $\prod_{i \in I}R_i$:
+    O produto (direto) de $(R_i)_{i \in I}$ é o conjunto $\prod_{i \in I} R_i$ munido das operações ``ponto a ponto'': dados $a=(a_i: i \in I), b=(b_i: i \in I)$ em $\prod_{i \in I}R_i$:
 
     $$a+b=(a_i: i \in I)+(b_i: i \in I)=(a_i+_i b_i: i \in I)=(a_i+_ib_i)_{i \in I}$$
     $$a\cdot b=(a_i: i \in I)\cdot (b_i: i \in I)=(a_i\cdot _i b_i: i \in I)=(a_i\cdot _ib_i)_{i \in I}$$
@@ -41,10 +41,10 @@ Deixaremos a prova deste fato como exercício (ver Exercício~\ref{exer:prod_ane
     Sejam $a=(a_i: i \in I), b=(b_i: i \in I)$ e $c=(c_i: i \in I)$ em $\prod_{i \in I}R_i$.
     \begin{itemize}
         \item \textbf{Associatividade da soma:} $(a+b)+c=(a_i+_i b_i)_{i \in I}+c=((a_i+_i b_i)+_ic_i)_{i \in I}=(a_i+_i (b_i+_i c_i))_{i \in I}=a+(b+c)$
-        \item \textbf{Associatividade do produto:} Análogo.
+        \item \textbf{Associatividade do produto:} análogo.
         \item \textbf{Comutatividade da soma:} $a+b=(a_i+_i b_i)_{i \in I}=(b_i+_i a_i)_{i \in I}=b+a$
         \item \textbf{Neutro da soma:} $a+0=(a_i+_i 0_i)_{i \in I}=(a_i)_{i \in I}=a$
-        \item \textbf{Inverso da soma:} Dado $a=(a_i)_{i \in I}$, considere $-a=(-a_i)_{i \in I}$. Então $a+(-a)=(a_i+_i (-a_i))_{i \in I}=(0_i)_{i \in I}=0$.
+        \item \textbf{Inverso da soma:} dado $a=(a_i)_{i \in I}$, considere $-a=(-a_i)_{i \in I}$. Então $a+(-a)=(a_i+_i (-a_i))_{i \in I}=(0_i)_{i \in I}=0$.
         \item \textbf{Distributividade:} $a\cdot (b+c)=(a_i\cdot _i (b_i+c_i))_{i \in I}=(a_i\cdot _i b_i+a_i\cdot _i c_i)_{i \in I}=a\cdot b+a\cdot c$.
         \item \textbf{Distributividade II:} $(a+b)\cdot c=((a_i+b_i)\cdot _i c_i)_{i \in I}=(a_i\cdot _i c_i+b_i\cdot _i c_i)_{i \in I}=a\cdot c+b\cdot c$.
         \item \textbf{Neutro do produto:} $a\cdot 1=(a_i\cdot _i 1_i)_{i \in I}=(a_i)_{i \in I}=a$ e $1\cdot a=(1_i\cdot _i a_i)_{i \in I}=(a_i)_{i \in I}=a$.
@@ -178,7 +178,7 @@ Deixaremos a prova deste fato como exercício (ver Exercício~\ref{exer:prod_ane
     Para cada anel $S$ e cada par de homomorfismos de anéis $h_1:S\rightarrow A$ e $h_2:S\rightarrow B$, existe um único homomorfismo de anéis $g:S\rightarrow A\times B$ tal que $\pi_1\circ g=h_1$ e $\pi_2\circ g=h_2$.
 \end{exer}
 \begin{exer}
-Decida quais dos seguintes conjuntos sao subaneis do anel produto $\mathbb R^{[0, 1]}$, onde $[0, 1]$ é o intervalo fechado dos números reais entre $0$ e $1$.
+Decida quais dos seguintes conjuntos são subanéis do anel produto $\mathbb R^{[0, 1]}$, onde $[0, 1]$ é o intervalo fechado dos números reais entre $0$ e $1$.
 \begin{enumerate}[label=\alph*)]
     \item O conjunto de todas as funções $f:[0, 1]\rightarrow \mathbb R$ tais que $f(q)=0$ para todo $q\in [0, 1]$.
     \item O conjunto de todas as funções polinomiais $f:[0, 1]\rightarrow \mathbb R$.

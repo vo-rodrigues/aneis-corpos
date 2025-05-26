@@ -1,5 +1,5 @@
 \chapter{Extensão de corpos}
-Neste capítulo, estudaremos o básico da teoria de extensões de corpos, dando como aplicação a resolução de problemas clássicos envolvendo constritibilidade com régua e compasso.
+Neste capítulo, estudaremos o básico da teoria de extensões de corpos, dando como aplicação a resolução de problemas clássicos envolvendo construtibilidade com régua e compasso.
 \section{Definições básicas}
 \begin{definition}
 Dizemos que um corpo $K$ estende um corpo $L$ se $L\subseteq K$ e $L$ é um subanel (subcorpo) de $K$. Escrevemos que $K/L$ é uma extensão de corpos.
@@ -90,13 +90,13 @@ Seja $F/E$ uma extensão de corpos e $A, B \subseteq F$. Então $E[A\cup B]=E[A]
 \begin{proof}
     Temos que $E[A\cup B]$ é o menor subanel de $F$ que contém $E$ e $A\cup B$. Temos que $E[A][B]$ contém $E[A]$ e $B$, logo, contém $E$, $A$ e $B$, assim, $E[A\cup B]\subseteq E[A][B]$.
 
-    Reciprocamente, $E[A][B]$ é o menor subanel de $F$ que contém $E[A]$ e $B$. Temos que $E[A]\subseteq E[A\cup B]$ pois $E[A\cup B]$ contém $E$ e $A$, e $E[A][B]$ contém $B$, logo, $E[A][B]\subseteq E[A\cup B]$.
+    Reciprocamente, $E[A][B]$ é o menor subanel de $F$ que contém $E[A]$ e $B$. Temos que $E[A]\subseteq E[A\cup B]$, pois $E[A\cup B]$ contém $E$ e $A$, e $E[A][B]$ contém $B$, logo, $E[A][B]\subseteq E[A\cup B]$.
 
     Analogamente, $E(A\cup B)=E(A)(B)$.
 \end{proof}
 
 \begin{lemma}
-    Seja $F/E$ uma extensãoe $C$ um gerador de $F/E$. Então $F=\bigcup\{E(A): A \in [C]^{<\infty}\}$. Analogamente, $E[C]=\bigcup\{E[A]: A \in [C]^{<\infty}\}$.
+    Seja $F/E$ uma extensão de corpos e $C$ um gerador de $F/E$. Então $F=\bigcup\{E(A): A \in [C]^{<\infty}\}$. Analogamente, $E[C]=\bigcup\{E[A]: A \in [C]^{<\infty}\}$.
 \end{lemma}
 
 \begin{proof}
@@ -120,7 +120,8 @@ Seja $F/E$ uma extensão de corpos e $A, B \subseteq F$. Então $E[A\cup B]=E[A]
 Dizemos que uma extensão $F/E$ é finitamente gerada por $A\subseteq F$ se $F=E(A)$.
 
 Dizemos que $F/E$ é finitamente gerada e existe $A\subseteq F$ finito tal que $F=E(A)$.
-Dizemos que $F/E$ é de grau finito se $[F:E]$ é finito.
+
+Finalmente, dizemos que $F/E$ é de grau finito se $[F:E]$ é finito.
 \end{definition}
 \section{Extensões algébricas}
 Nesta seção, discutiremos extensões e elementos algébricos, mencionando elementos transcendentes conforme necessário.
@@ -140,12 +141,12 @@ Uma extensão algébrica de $E$ é um corpo $F$ contendo $E$ tal que todo elemen
 \end{prop}
 \begin{proof}
     Seja $I=\{p \in E[x]: p(a)=0\}$. $I$ é o núcleo da avaliação em $a$, e, portanto, é um ideal de $E[x]$.
-    Pelo primeiro teorema do isomorfismo, $E[x]/I$ é isomorfo à $E[x]$, que é um subanel de um corpo, e, portanto, um domínio de integridade. Logo, $I$ é primo.
+    Pelo primeiro teorema do isomorfismo, $E[x]/I$ é isomorfo à $E[a]$, que é um subanel de um corpo, e, portanto, um domínio de integridade. Logo, $I$ é primo.
     Como $I$ é também não nulo, $I$ é maximal.
     Logo, $E[x]$ é um corpo, e este é o menor subanel de $F$ contendo $E$ e $a$, logo, é também o menor subcorpo.
 
-    Seja $q$ um gerador de $I$, que podemos supor ser mônico pois $I$ é um ideal.
-    Ele é irredutivel, pois $I=(q)$ é primo não nulo, e, portanto, $q$ é primo.
+    Seja $q$ um gerador de $I$, que podemos supor ser mônico, pois $I$ é um ideal.
+    Ele é irredutível, pois $I=(q)$ é primo não nulo, e, portanto, $q$ é primo.
     Se $p$ é um polinômio irredutível que anula $a$, temos que $p=qx$ para algum $x \in E[x]$. Como $p$ é irredutível, $q \in E$ ou $x \in E$. Como $q \notin E$, temos que $x \in E$, e, assim, o coeficiente dominante de $p$ é o de $qx$, que é $x$, logo, $x=1$.
 \end{proof}
 \begin{corol}
@@ -168,10 +169,10 @@ Uma extensão algébrica de $E$ é um corpo $F$ contendo $E$ tal que todo elemen
 \end{proof}
 
 \begin{prop}
-    Seja $F/E$ uma extensão de corpos de grau finito. Então $F/E$ é algébrica e finitamenge gerada.
+    Seja $F/E$ uma extensão de corpos de grau finito. Então $F/E$ é algébrica e finitamente gerada.
 \end{prop}
 \begin{proof}
-    Seja $n=[F:E]$ e $a \in F/E$. Então $(1, a, a^2, \dots, a_{n})$ é LD, logo existem $a_0, \dots, a_n \in E$ não todos nulos tais que $a_0+a_1a+\dots+a_na^n=0$, sendo $p(x)=a_0+a_1x+\dots+a_nx^n$, temos que $p(a)=0$.
+    Seja $n=[F:E]$ e $a \in F/E$. Então $(1, a, a^2, \dots, a_{n})$ é LD, logo existem $a_0, \dots, a_n \in E$, não todos nulos, tais que $a_0+a_1a+\dots+a_na^n=0$, sendo $p(x)=a_0+a_1x+\dots+a_nx^n$, temos que $p(a)=0$.
     Assim, $a$ é algébrico sobre $E$.
 
     Seja $(b_1, \dots, b_n)$ uma base de $F$ como $E$-espaço vetorial. Então $F=E[b_1, \dots, b_n]$, logo, $F/E$ é finitamente gerada.
@@ -182,7 +183,7 @@ Uma extensão algébrica de $E$ é um corpo $F$ contendo $E$ tal que todo elemen
     Seja $F/E$ uma extensão e $a \in F$ um elemento algébrico sobre $E$. Então $E(a)/E$ é uma extensão algébrica.
 \end{corol}
 \begin{proof}
-    Seja $b \in E(a)$. Temos que $E\subseteq E(b)\subseteq E(a)$. Como $[E(a):E]$ é finito, $[E(b):E]$ é finito, e, portanto, $E(b)/E$ é algébrica.
+    Segue da proposição anterior, pois $E(a)/E$ tem grau finito.
 \end{proof}
 
 Uma recíproca parcial vale:
@@ -245,7 +246,7 @@ Seja $F/E$ uma extensão algébrica. São equivalentes:
     Suponha que $F/E$ é uma extensão algébrica. Então $F/K$ é uma extensão algébrica, pois $E[x]\subseteq K[x]$, e $K/F$ é uma extensão algébrica, pois $K\subseteq F$.
 
     Reciprocamente, suponha que $F/K$ e $K/E$ são extensões algébricas. Fixe $a \in F$.
-    Temos que existem $k_0, \dots, k_n \in K$ tais que $k_0+k_1a+\dots+k_na^n=0$. Como $K/E$ é algébrica, sendo $A=\{k_0, \dots, k_n\}$, temos que $E(A)$ é uma extensão algébrica e finitamente gerada de $E$, e, pportanto, tem dimensão finita $[E(A):E]$. Como $k_0, \dots, k_n \in E(A)$, temos que $a$ é algébrico sobre $E(A)$, e, portanto, $[E(A)(a):E(A)]$ é finito. Logo, $[E(A)(a):E]$ é finito, o que implica que $a$ é algébrico sobre $E$.
+    Temos que existem $k_0, \dots, k_n \in K$ tais que $k_0+k_1a+\dots+k_na^n=0$. Como $K/E$ é algébrica, sendo $A=\{k_0, \dots, k_n\}$, temos que $E(A)$ é uma extensão algébrica e finitamente gerada de $E$, e, portanto, tem dimensão finita $[E(A):E]$. Como $k_0, \dots, k_n \in E(A)$, temos que $a$ é algébrico sobre $E(A)$, e, portanto, $[E(A)(a):E(A)]$ é finito. Logo, $[E(A)(a):E]$ é finito, o que implica que $a$ é algébrico sobre $E$.
 \end{proof}
 
 \begin{prop}
@@ -281,7 +282,7 @@ Como uma interseção arbitrária de subcorpos é um subcorpo, $E(a)$ está bem 
 
     Se $p, q \in \mathbb R^2$ com $p\neq q$, denotamos por $\reta(p, q)=\{p+t(q-p): t \in \mathbb R\}$ a única reta que passa por $p$ e $q$.
 
-    Se $C\subseteq \mathbb R^2$, define-se $\dist(C)=\{\|a-b\|: a, b \in C, a\neq b\}$.
+    Finalmente, se $C\subseteq \mathbb R^2$, define-se $\dist(C)=\{\|a-b\|: a, b \in C, a\neq b\}$.
 \end{definition}
 
 A definição a seguir será utilizada apenas nesta seção.
@@ -375,7 +376,7 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
     $\mathbb K$ é o menor subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$.
 \end{prop}
 \begin{prop}
-    $\mathbb K$ é um subcorpo de $\mathbb R$ fechado por raizes quadradas de números não negativos.
+    $\mathbb K$ é um subcorpo de $\mathbb R$ fechado por raízes quadradas de números não negativos.
 \end{prop}
 
 \begin{proof}
@@ -389,10 +390,10 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 
     Se $a, b \in \mathbb K$, então $ab \in \mathbb K$: se $b=0$, $ab=0\in \mathbb K$. Se $b\neq 0$, temos que $\frac 1b\in \mathbb K$, logo, $\frac{a}{\frac1b}=ab\in \mathbb K$.
 
-    Se $a\geq 0  \in \mathbb K$, então sendo $l=\frac{c+1}{2} (1, \sqrt c))\in \cir((l, 0), l)\cap \reta((1, 0), (1, 1))$ pois $(1, 0)+\sqrt c((1, 1)-(1, 0))=(1, \sqrt c)$, e $(l-1)^2+(\sqrt c)^2=l^2-2l+1+c=l^2-c-1+1+c=l^2$. Assim, $\sqrt c \in \mathbb K$.
+    Finalmente, se $a\geq 0  \in \mathbb K$, então sendo $l=\frac{c+1}{2}$, temos que $(1, \sqrt c)\in \cir((l, 0), l)\cap \reta((1, 0), (1, 1))$, pois $(1, 0)+\sqrt c((1, 1)-(1, 0))=(1, \sqrt c)$, e $(l-1)^2+(\sqrt c)^2=l^2-2l+1+c=l^2-c-1+1+c=l^2$. Assim, $\sqrt c \in \mathbb K$.
 \end{proof}
 \begin{prop}
-    $\mathbb K$ é o menor subcorpo de $\mathbb R$ fechado por raizes quadradas de números não negativos.
+    $\mathbb K$ é o menor subcorpo de $\mathbb R$ fechado por raízes quadradas de números não negativos.
 \end{prop}
 \begin{proof}
     Devemos ver que se $L$ é um subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$, então $\mathbb K\subseteq \mathbb L$.
@@ -416,10 +417,10 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
     \textbf{Caso 3:} $(x, y)\in \reta(a, b)\cap \cir(c, s)$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $c \in \mathbb P_n$ com $s \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$, $b=(b_1, b_2)$ e $c=(c_1, c_2)$.
 
     Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb$ e $\|a+tb-c\|=s$. Isso ocorre se, e somente se $(a_1+tb_1-c_1)^2+(a_2+tb_2-c_2)^2=s^2$.
-    Da fórmula quadrática, $t$, que existe, é uma combinação de somas, diferenças, produtos e raizes quadradas de $a_1, b_1, c_1, a_2, b_2, c_2, s^2$, que são todos, por hipótese de indução, elementos de $L$. Logo, $t \in L$. Assim, $x=a_1+tb_1\in L$.
+    Da fórmula quadrática, $t$, que existe, é uma combinação de somas, diferenças, produtos e raízes quadradas de $a_1, b_1, c_1, a_2, b_2, c_2, s^2$, que são todos, por hipótese de indução, elementos de $L$. Logo, $t \in L$. Assim, $x=a_1+tb_1\in L$.
 
     \textbf{Caso 4:} $(x, y)\in \cir(a, s)\cap \cir(b, s')$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $s, s' \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$ e $b=(b_1, b_2)$.
-    Nesse caso, $(x-a_1)^2+(y-a_2)^2=s^2$ e $(x-b_1)^2+(y-b_2)^2=s'^2$. Da primeira equaçã, $x-a_1=\sqrt(s^2-(y-a_2)^2)$ ou $x-a_1=-\sqrt(s^2-(y-a_2)^2)$. Em qualquer caso, é claro que $x \in L$.
+    Nesse caso, $(x-a_1)^2+(y-a_2)^2=s^2$ e $(x-b_1)^2+(y-b_2)^2=s'^2$. Da primeira equação, $x-a_1=\sqrt(s^2-(y-a_2)^2)$ ou $x-a_1=-\sqrt(s^2-(y-a_2)^2)$. Em qualquer caso, é claro que $x \in L$.
 \end{proof}
 
 
@@ -441,7 +442,7 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \begin{proof}
     Veremos que o conjunto $L$ de tais $a$ é um subcorpo de $\mathbb R$ fechado por raiz quadrada de valores positivos.
 
-    Temos que $1 \in L$ pois $\mathbb Q(1)/\mathbb Q$ tem grau 1.
+    Temos que $1 \in L$, pois $\mathbb Q(1)/\mathbb Q$ tem grau 1.
     Se $a, b \in \mathbb L$, então $a-b, ab \in \mathbb L$, pois, sendo $a_0, \dots, a_n, b_0, \dots, b_m\in \mathbb R$ tais que $a_0, b_0 \in \mathbb Q$ tem grau $1$ ou $2$, $a_{i+1}\in \mathbb Q(a_1, \dots, a_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_i)$ e $a_n=a$, $b_n=b$.
     
     Temos que $(a_0, \dots, a_n, b_0, \dots, b_m)$ é uma sequência desse mesmo tipo: como $\mathbb Q(b_0)/\mathbb Q$ tem grau $1$ ou $2$, existe um polinômio de coeficientes racionais de grau $1$ ou $2$ que anula $b_0$. O mesmo polinômio anula $b_0$ em $\mathbb Q(a_1, \dots, a_n)$, logo, $b_0$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_1, \dots, a_n)$. Dado $i<m$, por motivo similar, $b_{i+1}\in \mathbb Q(b_1, \dots, b_i)$ tem grau $1$ ou $2$ sobre $\mathbb Q(a_0, \dots, _n, b_0, \dots, b_i)$.
@@ -451,7 +452,7 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 
 \section{Exercícios}
 \begin{exer}
-    Seja $F$ um corpo estedendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
+    Seja $F$ um corpo estendendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
 \end{exer}
 
 \begin{exer}

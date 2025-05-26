@@ -63,7 +63,7 @@ Seja $R$ um anel comutativo e $I$ um ideal próprio de $R$. São equivalentes:
     Temos que $a \notin I$.
     Como $I+\langle a\rangle$ é um ideal que contém $I$ propriamente, segue que $I+\langle a\rangle=R$.
     Logo, existe $b \in R$ e $c \in I$ tais que $c+ba=1$.
-    Logo, $q(1)=q(c)+q(ba)=0+q(b)q(a)=q(b)x$.
+    Assim, $q(1)=q(c)+q(ba)=0+q(b)q(a)=q(b)x$.
     Portanto, $x$ é invertível.
 \end{proof}
 
@@ -118,7 +118,7 @@ Como consequência, temos:
 Conforme vimos, nem todo domínio de integridade é um corpo, sendo $\mathbb Z$ é o contra-exemplo mais usual.
 Apesar disso, parece que, em algum sentido, $\mathbb Q$ é o ``menor'' corpo que contém $\mathbb Z$.
 
-Uma das construções mais usuals do corpo $\mathbb Q$ utiliza classes de equivalências de pares de elementos de $\mathbb Z$.
+Uma das construções mais usuais do corpo $\mathbb Q$ utiliza classes de equivalências de pares de elementos de $\mathbb Z$.
 Nesta seção, estudaremos esta construção de modo generalizado.
 
 Iniciaremos apresentando uma construção do corpo de frações.
@@ -142,7 +142,7 @@ A relação $\sim$ captura a ideia que duas frações $\frac{a}{b}$ e $\frac{c}{
 \begin{proof}
     Seja $(a, b), (c, d), (e, f) \in R\times \{0\}$.
     \begin{itemize}
-        \item Temos que $(a, b)\sim (a, b)$ pois $ab=ba$.
+        \item Temos que $(a, b)\sim (a, b)$, pois $ab=ba$.
         \item Simetria: se $(a, b)\sim (c, d)$, temos que $ad=bc$.
         Logo, $cb=da$, o que nos dá $(c, d)\sim (a, b)$.
         \item Transitividade: suponha que $(a, b)\sim (c, d)$ e $(c, d)\sim (e, f)$.
@@ -169,8 +169,8 @@ Agora, definiremos as operações em $\Frac(R)$.
 \begin{definition}
     Seja $R$ um domínio de integridade. Define-se, em $\Frac(R)$, as operações a seguir. Para $a, b, c, d \in R$ tais que $b, d\neq 0$:
     \begin{itemize}
-        \item Soma: $\displaystyle\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$.
-        \item Produto: $\displaystyle\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
+        \item soma: $\displaystyle\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$, e,
+        \item produto: $\displaystyle\frac{a}{b}\cdot\frac{c}{d}=\frac{ac}{bd}$.
     \end{itemize}
 \end{definition}
 
@@ -203,7 +203,7 @@ Agora veremos que $\Frac(R)$ é um corpo.
     
     Então $\Frac(R)$ é um corpo cujo zero é $\frac{0}{1}$, cuja identidade multiplicativa é $\frac{1}{1}$ e com opostos aditivos $-\frac{a}{b}=\frac{-a}{b}$.
 
-    Além do mais, se $\frac{a}{b}$ é não nulo, então $a\neq 0$ e $\frac{b}{a}$ é seu inverso multiplicativo.
+    Além disso, se $\frac{a}{b}$ é não nulo, então $a\neq 0$ e $\frac{b}{a}$ é seu inverso multiplicativo.
 \end{theorem}
 \begin{proof}
     Primeiro, veremos que $\Frac(R)$, com a soma, é um grupo abeliano.
@@ -271,7 +271,7 @@ Existe uma identificação natural de $R$ em $\Frac(R)$, como dada a seguir:
     Preservação dos produtos: Temos que $\phi(a)\cdot\phi(b)=\frac{a}{1}\cdot\frac{b}{1}=\frac{ab}{1^2}=\phi(ab)$.
 \end{proof}
 
-Devido à isso, é natural identificar $a \in R$ com $\phi(a)=\frac{a}{1}$, de modo a dar sentido à igualdade $a=\frac{a}{1}$.
+Devido a isso, é natural identificar $a \in R$ com $\phi(a)=\frac{a}{1}$, de modo a dar sentido à igualdade $a=\frac{a}{1}$.
 
 Notemos ainda que, se $a, b\in R$ e $b\neq 0$, então $\frac{a}{b}=\phi(a)\phi^{-1}(b)$.
 Desse modo, pode-se pensar que, em algum sentido, $\Frac(R)$ é o menor corpo que contém $R$.
@@ -282,7 +282,7 @@ A proposição abaixo não apenas formaliza essa ideia, mas define categoricamen
 
     Então, para cada corpo $K$ e cada monomorfismo $f:R\rightarrow K$, existe um único homomorfismo de anéis $g$ tal que $g\circ\phi=f$.
 
-    Além disso, se $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um monomorfismo de anéis tal que para todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$ tal que $g\circ\psi=f$, então $L$ é isomorfo a $\Frac(R)$ -- e existe um único isomorfismo de anéis $u:L\rightarrow K$ tal que $u\circ\phi=\psi$.
+    Além disso, se $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um monomorfismo de anéis, tal que para todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$, tal que $g\circ\psi=f$, então $L$ é isomorfo a $\Frac(R)$ -- e existe um único isomorfismo de anéis $u:L\rightarrow K$ tal que $u\circ\phi=\psi$.
 \end{theorem}
 
 \begin{proof}
@@ -319,7 +319,7 @@ A proposição abaixo não apenas formaliza essa ideia, mas define categoricamen
     \[=\bar g\circ \phi(a)\cdot \bar g(\phi(b)^{-1})=f(a)\bar g(\phi(b))^{-1}=f(a)f(b)^{-1}=g\left(\frac{a}{b}\right).\]
 
     Isso prova a primeira parte do teorema.
-    Para a segunda parte, suponha que $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um homomorfismo de anéis tal que para todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$ tal que $g\circ\psi=f$.
+    Para a segunda parte, suponha que $(L, \psi)$ é um par tal que $L$ é um corpo e $\psi:R\rightarrow L$ é um homomorfismo de anéis, tal que todo corpo $K$ e todo monomorfismo $f:R\rightarrow K$ existe um homomorfismo de anéis $g$, tal que $g\circ\psi=f$.
 
     Aplicando a propriedade de $(L, \psi)$ para o corpo $K$ e homomorfismo $\phi$, existe um único homomorfismo de anéis $u:L\rightarrow K$ tal que $u\circ \psi=\phi$.
     Basta ver que $u$ é isomorfismo.
@@ -338,7 +338,7 @@ A proposição abaixo não apenas formaliza essa ideia, mas define categoricamen
 \end{proof}
 \section{Exercícios}
 \begin{exer}
-    Demonstre, com suas próprias palavras, de modo que considere satisfatório, a seguinte afirmação demonstrada no texto: Todo domínio de integridade finito é um corpo.
+    Demonstre, com suas próprias palavras, de modo que considere satisfatório, a seguinte afirmação demonstrada no texto: todo domínio de integridade finito é um corpo.
 \end{exer}
 \begin{exer}
     Mostre que cada corpo de característica zero contém um subcorpo isomorfo à $\mathbb Q$.

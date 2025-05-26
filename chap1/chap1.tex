@@ -2,11 +2,11 @@
 \chapter{Pré-Requisitos Conjuntistas}
 Durante o texto, precisamos de algumas definições e resultados envolvendo noções básicas sobre conjuntos e funções.
 
-Não é objetivo deste capítulo desenvolver formalmente os princípios da teoria dos conjuntos, mas apenas estabelecer convenções notacionais e fixar algumas definições que serão utilizadas ao longo do texto. Assume-se familiaridade do leitor com funções e com manipulação de conjuntos a nível básico.
+Não é objetivo deste capítulo desenvolver formalmente os princípios da teoria dos conjuntos, mas apenas estabelecer convenções notacionais e fixar algumas definições que serão utilizadas ao longo do texto. Assume-se familiaridade do leitor com funções e com manipulação de conjuntos ao nível básico.
 Um curso de pré-cálculo ou um curso básico de álgebra linear apresentam conhecimentos mais do que suficientes para acompanhar a leitura deste texto.
 
 \section{Pares ordenados}
-Um par ordenado é um conjunto especial constituido a partir de dois outros conjuntos, $a, b$, e denotado por $(a, b)$.
+Um par ordenado é um conjunto especial constituído a partir de dois outros conjuntos, $a, b$, e denotado por $(a, b)$.
 Sua principal propriedade é que $a, b$ são pares ordenados, vale que $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$.
 
 Formalmente, em Teoria dos Conjuntos, um par ordenado é definido como qualquer conjunto que possui esta propriedade.
@@ -17,19 +17,19 @@ A definição de Kuratowski pode parecer estranha, ou anti-natural, mas satisfaz
 Por isso mesmo, não é desejável que teoremas sobre Álgebra dependam dela. E não dependerão. Tudo que será utilizado ao longo de todo o texto é a propriedade mencionada no parágrafo anterior.
 
 Se $x$ é um par ordenado, existem únicos $a, b$ tais que $x=(a, b)$.
-Tais $a, b$ são chamados de \emph{primeira coordenada} e \{segunda coordenada\}, respectivamente, e, em alguns contextos, será conveniente denota-los por $\pi_1(x)$ e $\pi_2(x)$.
+Tais $a, b$ são chamados de \emph{primeira coordenada} e \{segunda coordenada\}, respectivamente, e, em alguns contextos, será conveniente denotá-los por $\pi_1(x)$ e $\pi_2(x)$.
 
 \section{Famílias e produtos cartesianos}
-Funções são objetos matemáticos normalmente pensados como entes $f:X\rightarrow Y$ que recebem uma entrada $x$, dentro de um conjunto de possíveis entradas $x \in X$ e devolvem uma saída $f(x)\in Y$.
+Funções são objetos matemáticos normalmente pensados como entes $f:X\rightarrow Y$ que recebem uma entrada $x$, em um conjunto de possíveis entradas $x \in X$ e devolvem uma saída $f(x)\in Y$.
 O conjunto $X$ é chamado de \emph{domínio} de $f$, e denotado por $\dom f$. O conjunto de todos os valores assumidos por $f$ é a \emph{imagem} de $f$, e denotado por $\ran(f)=\{f(x): x \in X\}$.
 Um conjunto que contém a imagem é chamado de um \emph{contradomínio} de $f$.
 Na notação $f:X\rightarrow Y$, estamos dizendo que $Y$ é um contradomínio de $f$, de modo que $\ran(f)\subseteq Y$.
-Note que o contradomínio de uma função não é único: por exemplo, considerando que o conjunto dos números complexos, $\mathbb C$, possui uma cópia do conjuntodos números reais, $\mathbb R$, dentro de si, a função $f:\mathbb R\rightarrow \mathbb R$ dada por $f(x)=x^2$ tem como contradomínios tanto $\mathbb R$ como $\mathbb C$
-Formalmente, a função propriamente dita costuma ser definida como o o conjunto dos pares ordenados $\{(x, f(x)): x \in X\}$, mas tais detalhes serão de pouca relevância nesse texto.
+Note que o contradomínio de uma função não é único: por exemplo, considerando que o conjunto dos números complexos, $\mathbb C$, possui uma cópia do conjunto dos números reais, $\mathbb R$, dentro de si, a função $f:\mathbb R\rightarrow \mathbb R$ dada por $f(x)=x^2$ tem como contradomínios tanto $\mathbb R$ como $\mathbb C$
+Formalmente, a função propriamente dita costuma ser definida como o conjunto dos pares ordenados $\{(x, f(x)): x \in X\}$, mas tais detalhes serão de pouca relevância nesse texto.
 
-Muitas vezes, em Matemática, pensamos no conceito de função com o intuito de representar um conjunto de valores indexados, em que a ideia de ``dispositivo de entrada/saída'' muito presente por exemplo em Cálculo Diferencial em integral perde importância. Uma dessas ocasiões é no tratamento de sequências. Formalmente, sequências são funções cujo domínio é o conjunto dos números naturais, mas, em muitos contextos, pensa-se em sequências como uma coleção de objetos enumerados, e não como um dispositivo de entrada/saída.
+Muitas vezes, em Matemática, pensamos no conceito de função com o intuito de representar um conjunto de valores indexados, em que a ideia de ``dispositivo de entrada/saída'' muito presente, por exemplo, em Cálculo Diferencial em integral perde importância. Uma dessas ocasiões é no tratamento de sequências. Formalmente, sequências são funções cujo domínio é o conjunto dos números naturais, mas, em muitos contextos, pensa-se em sequências como uma coleção de objetos enumerados, e não como um dispositivo de entrada/saída.
 
-Nesses contextos, é muito usual trocar a terminologia usual utilizada para tratar funções por uma outra terminologia, em que a função, mesmo sendo o mesmo objeto matemático que no outro contexto, passa a ser chamada de \emph{família}.
+Nesses contextos, é muito usual trocar a terminologia usual utilizada para tratar funções por outra terminologia, em que a função, mesmo sendo o mesmo objeto matemático que no outro contexto, passa a ser chamada de \emph{família}.
 
 Uma família $a=(a_i: i \in I)=(a_i)_{i \in I}$ é uma função cujo domínio é $I$.
 Nessa notação, pensamos em $i$ como sendo uma variável muda, como ocorre com o símbolo $x$ nos parágrafos anteriores.
@@ -42,7 +42,7 @@ Nesse texto, consideraremos que $(a_i: i \in I)$ e $((i, a(i)): i \in I)$ são o
 A distinção é meramente notacional, e pode ser intercambiada a qualquer momento sem nenhuma perda de formalismo matemático.
 
 No quadro abaixo, apresentamos uma comparação entre as duas notações.
-Enfatizamos novamente que, matemáticamente, funções e famílias podem ser vistas como o mesmo objeto.
+Enfatizamos novamente que, matematicamente, funções e famílias podem ser vistas como o mesmo objeto.
 \begin{table}[h]
     \centering
     \begin{tabular}{lllll}
@@ -64,8 +64,8 @@ Como exemplos, consideremos sequências infinitas e finitas:
     Uma sequência é uma família cujo conjunto de índices é $\mathbb N$.
     Compare a intuição que passa as notações:
     \begin{itemize}
-    \item Considere a sequência $u=(\frac{1}{2^n}))_{n \in \mathbb N}$...
-    \item Considere a função $u:\mathbb N\rightarrow \mathbb R$ dada por $u(n)=\frac{1}{2^n}$...
+    \item considere a sequência $u=(\frac{1}{2^n}))_{n \in \mathbb N}$...
+    \item considere a função $u:\mathbb N\rightarrow \mathbb R$ dada por $u(n)=\frac{1}{2^n}$...
     \end{itemize}
 \end{exemplo}
 
@@ -89,7 +89,7 @@ Primeiro, vamos lembrar a definição de produto cartesiano de dois conjuntos.
 \end{definition}
 
 Pares ordenados são conjuntos especiais que carregam duas coordenadas de modo a permitem distinguir a ordem dos elementos.
-Sua propriedade principal é a de se $a, b, c, d$ são conjuntos,então $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$.
+Sua propriedade principal é a de se $a, b, c, d$ são conjuntos, então $(a, b)=(c, d)$ se, e somente se $a=c$ e $b=d$.
 Uma construção usual, chamada de par de Kuratowski, para a qual não é difícil provar que vale essa propriedade, é dada por $(a, b)=\{\{a\}, \{a, b\}\}$. Porém, isso não será importante neste texto.
 
 
@@ -112,7 +112,7 @@ O produto cartesiano de conjuntos é o conjunto $\prod_{i \in I} A_i$ definido c
     \[A^n=\{(a_i)_{i<n}:\forall i<n\, a_i \in A\}=\{(a_0, \dots, a_{n-1}):a_0, \dots, a_{n-1}\in A\}\approx A\times \dots \times A \,(n \text{ vezes}).\]
 
     \section{Operações}
-Ao trabalharmos com estruturas algébricas necessitaremos da noção de operação, que se define como a seguir:
+Ao trabalharmos com estruturas algébricas necessitaremos da noção de operação, que se define como a seguir.
 \begin{definition}[Operações $n$-árias]
     Se $X$ é um conjunto e $n \in \mathbb N$, uma operação $n$-ária em $X$ é uma função $f:X^n\rightarrow X$.
 \end{definition}

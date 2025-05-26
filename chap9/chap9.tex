@@ -29,7 +29,7 @@ Antes de definirmos o que, formalmente, é esse objetivo, vamos enunciar algumas
     \begin{align*}
         \left(\sum_{i=0}^\infty a_ix^i\right)+\left(\sum_{i=0}^\infty b_ix^i\right)=\left(\sum_{i=0}^\infty (a_i+bi)x^i\right)
     \end{align*}
-    \item \textbf{Produto:} intuitivamente, se, no lado esquerdo da igualdade, valerem propriedades distributivas ``infinitas'', como podemos definir produto? Ora, o coeficiente $c_i$ da série produto resultante deveria ser obtido agrumando (através de soma) os coeficientes $a_jb_k$ com $j+k=i$. Isso é equivalente à igualdade abaixo:
+    \item \textbf{Produto:} intuitivamente, se, no lado esquerdo da igualdade, valerem propriedades distributivas ``infinitas'', como podemos definir produto? Ora, o coeficiente $c_i$ da série produto resultante deveria ser obtido agrupando (por meio de uma soma) os coeficientes $a_jb_k$ com $j+k=i$. Isso é equivalente à igualdade abaixo:
     \begin{align*}
         \left(\sum_{i=0}^\infty a_ix^i\right)\cdot\left(\sum_{i=0}^\infty b_ix^i\right)=\sum_{i=0}^\infty \left(\sum_{j=0}^i a_{j}b_{i-j}\right)x^i
     \end{align*}
@@ -46,7 +46,7 @@ Nesse contexto, escrevemos, para $(a_i: i \in \mathbb N)\in R^{\mathbb N}$:
 Reforçamos que, neste contexto, não há nenhuma soma infinita ocorrendo, e o lado esquerdo é simplesmente definido como uma notação alternativa para o lado direito.
 Note ainda que, com essa definição, a propriedade da igualdade acima vale automaticamente.
 
-Se $p\in \mathbb R\llbracket x\rrbracket$, escrevemos $p(x)=p$ para reforçar o fato de que estamos lidando com uma série formal, e escrevemos $p(x)=\sum_{i=0}^\infty p_ix^i$. Os elementos $p_i$ são chamados de \emph{coeficientes} de $p(x)$, e $p_0$ é chamado de \emph{coeficiente constante}.
+Se $p\in \mathbb R\llbracket x\rrbracket$, escrevemos $p(x)=p$ para reforçar que estamos lidando com uma série formal, e escrevemos $p(x)=\sum_{i=0}^\infty p_ix^i$. Os elementos $p_i$ são chamados de \emph{coeficientes} de $p(x)$, e $p_0$ é chamado de \emph{coeficiente constante}.
 
 \textbf{Operações}:
 Se $p(x), q(x) \in R\llbracket x\rrbracket$, define-se:
@@ -341,7 +341,7 @@ Temos que $\beta'=\beta\circ \theta^{-1}:X\rightarrow S$ é uma função.
 Então existe um único homomorfismo $g: R[X]\rightarrow S$ tal que $g\circ \phi=f$ e $g\circ \alpha=\beta'$.
 Desta última, $\alpha\circ \theta=\beta$.
 
-Para ver que $g$ é o único tal homomorfismo, se $h: R[Y]\rightarrow S$ é um homomorfismo tal que $h\circ \phi=f$ e $h\circ \alpha\circ \theta=\beta$, então então $h\circ \alpha=\beta'$.
+Para ver que $g$ é o único tal homomorfismo, se $h: R[Y]\rightarrow S$ é um homomorfismo tal que $h\circ \phi=f$ e $h\circ \alpha\circ \theta=\beta$, então $h\circ \alpha=\beta'$.
 Pela unicidade de $g$, segue que $g=h$.
 \end{proof}
 \begin{prop}
@@ -353,7 +353,7 @@ Pela unicidade de $g$, segue que $g=h$.
 
     Com efeito, seja $S$ um anel comutativo, $f:R\rightarrow S$ um homomorfismo e $\beta:X\rightarrow S$ uma função.
     Então, existe um único homomorfismo $g:R[x]\rightarrow S$ tal que $g\circ \psi=f$ e $g(x)=\beta(x)$.
-    Então, existe um único homomorfismo $h:R[x][y]\rightarrow S$ tal que $h\circ \psi'=g$ e $h(y)=\beta(y)$.
+    Logo, existe um único homomorfismo $h:R[x][y]\rightarrow S$ tal que $h\circ \psi'=g$ e $h(y)=\beta(y)$.
     Assim, $h\circ \phi=h\circ(\psi'\circ \psi)=(h\circ \psi')\circ \psi=g\circ \psi=f$, $h(\alpha(y))=h(y)=\beta(y)$ e $h(\alpha(x))=h\circ \psi'(x)=g(x)=\beta(x)$.
 
     Para ver a unicidade de $h$, se $\bar h$ é outra tal função, temos que $\bar h\circ \psi=(\bar h\circ \psi')\circ \psi=f$ e $\bar h\circ \alpha(x)=\bar h\circ \psi'(x)=\beta(x)$, logo, $\bar h\circ \psi'=g$.
@@ -378,9 +378,9 @@ Então existe um único isomorfismo $\bar f:R[x]\rightarrow S[x]$ que satisfaz $
     Na notação acima, para $p \in R[x]$, $\bar f(p)$ é chamado de $f(p)$.
 \end{definition}
 \section{Polinômios de várias variáveis}
-Nesta seção, daremos uma contrução particular para $R[X]$, onde $X$ é um conjunto arbitrário de indeterminadas e $R$ é um anel comutativo.
+Nesta seção, daremos uma construção particular para $R[X]$, onde $X$ é um conjunto arbitrário de indeterminadas e $R$ é um anel comutativo.
 
-Se $x, y, z \in X$, precisamos dar sentido à expressões como $x^2y^3z^4$ e $xy^2+xz^3$. A definição abaixo cuida disso.
+Se $x, y, z \in X$, precisamos dar sentido às expressões como $x^2y^3z^4$ e $xy^2+xz^3$. A definição abaixo cuida disso.
 
 \begin{definition}
     Seja $X$ um conjunto qualquer. O conjunto $\mathbb N^{(X)}$ é o conjunto de funções $u:X\rightarrow \mathbb N$ tal que $\supp u=\{x \in X: f(x)\neq 0\}$ é finito.
@@ -393,7 +393,8 @@ Se $x, y, z \in X$, precisamos dar sentido à expressões como $x^2y^3z^4$ e $xy
 \end{lemma}
 \begin{proof}
     A única afirmação não imediata é a última, que provaremos a seguir.
-    Se $u*v=w$, temos que $\supp u, \supp v\subseteq \supp w$, que é finito. Assim, $u, v$ são $0$ fora de $\supp w$, e não podem ter valor maior do que $w(x)$ para $x\in \supp w$. Assim, há no máximo $N=\prod_{x \in \supp w}(w(x)+1)$ escolhas para $u, v$, logo, no máximo $N^2$ escolhas para $(u, v)$.
+    Se $u*v=w$, temos que $\supp u, \supp v\subseteq \supp w$, que é finito. Assim, $u, v$ são $0$ fora de $\supp w$, e não podem ter valor maior do que $w(x)$ para $x\in \supp w$.
+    Portanto, há no máximo $N=\prod_{x \in \supp w}(w(x)+1)$ escolhas para $u, v$, logo, no máximo $N^2$ escolhas para $(u, v)$.
 
     Observação: o número $N^2$ acima é uma cota superior para o número de pares $(u, v)$ tal que $u*v=w$, mas, no geral, ele é substancialmente menor do que este.
 \end{proof}
@@ -436,13 +437,13 @@ Desta forma, o que buscamos é, para se obter uma série formal com coeficientes
         \[p\cdot 1=\sum_{u \in \mathbb N^{(X)}}\left(\sum_{v*w=u} p_{v}\delta_{1w}\right)u=\sum_{u \in \mathbb N^{(X)}}p_{u}u=p\]
 
         \item \textbf{Comutatividade:} A $u$-ésima coordenada de $pq$ é $\sum_{v*w=u} p_vq_w=\sum(p_vq_w: (v, w)\in A)$, onde $A=\{(v, w)\in \mathbb N^{(X)}\times \mathbb N^{(X)}: v*w=u\}$. A função $\phi: A\rightarrow A$ dada por $\phi(v, w)=(w, v)$ é bijetora, pois é injetora e $A$ é finito. Assim:
-        \[\sum(p_vq_w: (v, w)\in A)=\sum(p_wq_v: (v, w)\in A)=\sum(q_vp_w: (v, w)\in A)=\sum_{v*w=u}q_vp_w\]
+        \[\sum(p_vq_w: (v, w)\in A)=\sum(p_wq_v: (v, w)\in A)=\sum(q_vp_w: (v, w)\in A)=\sum_{v*w=u}q_vp_w,\]
 
         que é a $u$-ésima coordenada de $qp$.
     
         \item \textbf{Associatividade:} Temos que a $u$-ésima coordenada de $((pq)r$ é dada por:
 
-        \[\sum_{v*w=u}\pi_v(pq)r_wu=\sum_{v*w=u}\sum_{s*t=v}p_sq_tr_wu=\sum(p_sq_tr_w: (s, t, v, w)\in A)\]
+        \[\sum_{v*w=u}\pi_v(pq)r_wu=\sum_{v*w=u}\sum_{s*t=v}p_sq_tr_wu=\sum(p_sq_tr_w: (s, t, v, w)\in A),\]
 
         onde $A=\{(s, t, v, w): s*t=v, v*w=u\}$. Seja $B=\{(a, b, c): a*b*c=u\}$. A função $\phi:B\rightarrow A$ dada por $\phi(a, b, c)=(a, b, a*b, c)$ é bijetora (verifique), logo:
 
@@ -600,13 +601,13 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     
     Assim, sendo $p(x)=\sum_{i=0}^n a_ix^i$, temos que $g(p(x))(s)=\sum_{i=0}^n a_is^i$.
 
-    Está claro que $g$ é sobrejetora no conjunto das funções polinomais, e, portanto, este forma um anel. Além disso, se $R$ é um domínio infinito e $g(p(x))=0$, então $p(s)=0$ para todo $s \in R$.
+    Está claro que $g$ é sobrejetora no conjunto das funções polinomiais, e, portanto, este forma um anel. Além disso, se $R$ é um domínio infinito e $g(p(x))=0$, então $p(s)=0$ para todo $s \in R$.
     Se $p(x)\neq 0$, o número de raízes de $p(x)$ seria finito. Como $R$ é infinito, $p(x)$ tem infinitas raízes, assim, $p(x)=0$.
 \end{proof}
 
 \section{Exercícios}
 \begin{exer}
-    Seja $K$ um corpo. Demonstre, de acordo com o roteiro abaixo, que o ideal $\langle x-a\rangle$ é maximal no domínio $K[x]$:
+    Seja $K$ um corpo. Demonstre, conforme o roteiro abaixo, que o ideal $\langle x-a\rangle$ é maximal no domínio $K[x]$.
     \begin{enumerate}[label=\alph*)]
         \item Considere o homomorfismo avaliação de $K[x]$ em $K$ que avalia $p(x)$ em $a$. Mostre que o núcleo desse homomorfismo é $\langle x-a\rangle$.
         \item Demonstre que $K[x]/\langle x-a\rangle$ é isomorfo a $K$.
@@ -617,17 +618,17 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     Considere o anel de polinômios $K[x, y]=K[x][y]$ e  $I=\langle y\rangle$.
     \begin{itemize}
         \item Mostre que $I$ não é um ideal maximal exibindo um ideal próprio que o contém.
-        \item Mostre que $I$ não é maximal estudando o quociente $K[x, y]/I$.
+        \item Prove que $I$ não é maximal estudando o quociente $K[x, y]/I$.
     \end{itemize}
 \end{exer}
 \begin{exer}
 Mostre que $\mathbb R[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb C$.
 \end{exer}
 \begin{exer}
-    Mostre que $\mathbb Z[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb Z[i]$.
+    Prove que $\mathbb Z[x]/\langle x^2+1\rangle$ é isomorfo à $\mathbb Z[i]$.
 \end{exer}
 \begin{exer}\label{exer:polinomio_serieDominio}
-    Mostre que se $R$ é um domínio de integridade, então $R\llbracket x \rrbracket$ é um domínio de integridade.
+    Prove que se $R$ é um domínio de integridade, então $R\llbracket x \rrbracket$ é um domínio de integridade.
 \end{exer}
 
 \begin{exer}
