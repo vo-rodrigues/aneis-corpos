@@ -460,9 +460,63 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \end{proof}
 
 \begin{definition}
-Dizemos que um ângulo $\alpha$ é construtível com régua e compasso se existem $a, b, c \in \mathbb P$ tais que a medida do ângulo $\angle{abp}$
+Dizemos que um ângulo $\alpha$ é construtível com régua e compasso se existem $a, b, c \in \mathbb P$ tais que a medida do ângulo $\angle{abp}$ é $\alpha$.
 \end{definition}
 
+Da geometria analítica, temos que:
+\begin{prop}
+    Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se $(\cos \alpha, \sin \alpha) \in \mathbb P$.
+\end{prop}
+Disso, segue que:
+\begin{prop}
+    Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se $\cos \alpha \in \mathbb K$.
+\end{prop}
+\begin{proof}
+Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt(1+\cos \alpha^2)$ ou $\sin \alpha=-\sqrt(1+\cos \alpha^2)$. Ambos esses números estão em $\mathbb K$.
+\end{proof}
+
+\begin{prop}
+    É impossível trissectar, com régua e compasso, um ângulo de $60$ graus ($\pi/3$).
+\end{prop}
+\begin{proof}
+    Da trigonometria, sabemos que para todo $\theta, \theta'$, temos que $\cos(\theta+\theta')=\cos(\theta)\cos(\theta')-\sin(\theta)\sin(\theta')$ e $\sin(\theta+\theta')=\sin(\theta)\cos(\theta')+\cos(\theta)\sin(\theta')$.
+
+    Pondo $\theta'=2\theta$ na primeira equação, segue que:
+    \begin{align*}
+        \cos(3\theta)=&\cos(\theta)\cos(2\theta)-\sin(\theta)\sin(2\theta) \\
+        =&\cos(\theta)(\cos^2(\theta)-\sin^2(\theta))-\sin(\theta)(2\sin(\theta)\cos(\theta)) \\
+        =&\cos(\theta)(\cos^2(\theta)-\sin^2(\theta)-2\sin^2(\theta)) \\
+        =&\cos(\theta)(\cos^2(\theta)-3\sin^2(\theta)) \\
+        =&\cos(\theta)(\cos^2(\theta)-3(1-\cos^2(\theta))) \\
+        =&\cos(\theta)(4\cos^2(\theta)-3) \\
+        =&4\cos^3(\theta)-3\cos(\theta).
+    \end{align*}    
+
+    Pondo $\theta=\pi/9$, segue que $\cos(\pi/3)=\frac{1}{2}=4\cos^3(\pi/9)-3\cos(\pi/9)$. Assim, $p(x)=8x^3-6x-1$ anula $\cos(\pi/6)$, e, portanto, $\cos(\pi/9)$ é algébrico sobre $\mathbb Q$.
+    $p(x)$ é irredutível sobre $\mathbb Q$: se não for, ele possui um divisor de grau $1$ (pois seu grau é $3$). Porém, se $a, b \in \mathbb Z$, $b\neq 0$ e $1\in \MDC(a, b)$, então $a|1$ e $b|8$. Note que nenhum elemento de $\{1, -1, \frac{1}{2}, -\frac{1}{2}, \frac{1}{4}, -\frac{1}{4}, \frac{1}{8}, -\frac{1}{8}\}$ é raiz de $p(x)$, logo, $p(x)$ não possui raízes racionais.
+
+    Como $\cos(\pi/9)$ é algébrico sobre $\mathbb Q$ de grau $3$ e $3$ não é uma potência de $2$, segue que $\cos(\pi/9)$ não está em $\mathbb K$. Logo, $\pi/9$ não é construtível com régua e compasso.
+\end{proof}
+\begin{prop}
+    É impossível construir, com régua e compasso, um polígono regular de $18$ lados.
+\end{prop}
+\begin{proof}
+    Os ângulos internos de tal polígono tem $160$ graus. Logo, o externo tem $20$ graus. Como vimos, ângulos de $20$ graus não são construtíveis com régua e compasso.
+\end{proof}
+
+\begin{prop}
+    É impossível construir, com régua e compasso, um quadrado com a área de um círculo de raio $1$.
+\end{prop}
+\begin{proof}
+Tal cículo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. Porém, $\sqrt \pi$ não está em $\mathbb K$, pois é transcendente (caso contrário $\pi$ seria algébrico).
+\end{proof}
+
+\begin{prop}
+É impossível construir, com régua e compasso, a base de um cubo de volume $2$.
+\end{prop}
+\begin{proof}
+    Para tanto, teríamos uma reta de comprimento $\sqrt[3]{2}$, número anulado por $x^3-2$, que é irredutível sobre $\mathbb Q$ (pois não possui raízes racionais). Logo, $\sqrt[3]{2}$ não está em $\mathbb K$, pois $[\mathbb Q(\sqrt[3]{2}):\mathbb Q]=3$ e $3$ não é uma potência de $2$.
+\end{proof}
 \section{Exercícios}
 \begin{exer}
     Seja $F$ um corpo estendendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
