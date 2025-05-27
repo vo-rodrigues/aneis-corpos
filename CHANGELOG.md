@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3
+* Números construtíveis com resolução dos problemas clássicos gregos.
+* Inúmeras correções gramaticais.
+
 ## 0.2.2
 * Números construtíveis com resolução dos problemas clássicos gregos.
 * Inúmeras correções gramaticais.
