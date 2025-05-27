@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.2.2
+* Números construtíveis com resolução dos problemas clássicos gregos.
+* Inúmeras correções gramaticais.
+
 ## 0.2.1
 * Texto inicial do Capítulo 10 melhor organizado e ligeiramente aprimorado.
-* Capítulo 10 substancialmente expandido. Construção dos números construtíveis iniciada.
+* Capítulo 10 substancialmente expandido. Números construtíveis com resolução dos problemas clássicos gregos.
+* Inúmeras correções gramaticais.
 * Definição dos homomorfismos avaliação em polinômios.
 * Dois novos exercícios sobre polinômios.
 
