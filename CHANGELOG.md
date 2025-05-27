@@ -1,8 +1,7 @@
 # Changelog
 
 ## 0.2.3
-* Números construtíveis com resolução dos problemas clássicos gregos.
-* Inúmeras correções gramaticais.
+* Novos exercícios no Capítulo 10.
 
 ## 0.2.2
 * Números construtíveis com resolução dos problemas clássicos gregos.
