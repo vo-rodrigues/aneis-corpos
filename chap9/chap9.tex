@@ -530,7 +530,7 @@ Seja $R$ um domínio de integridade. Os únicos elementos invertíveis de $R[x]$
 \end{prop}
 \begin{proof}
     Se $a \in R$ é invertível, então $aa^{-1}=1$ também em $R[x]$.
-    Se $a \in R[x]$ e existe $b$ tal que $ab=1$, temos que $\deg(a)+\deg(b)=0$, logo, $\deg a)=\deg b=0$ e, assim, $a, b \in R$, e, portanto, $a, b \in R^*$.
+    Se $a \in R[x]$ e existe $b$ tal que $ab=1$, temos que $\deg(a)+\deg(b)=0$, logo, $\deg (a)=\deg b=0$ e, assim, $a, b \in R$, e, portanto, $a, b \in R^*$.
 \end{proof}
 \section{Raízes de polinômios}
 \begin{definition}
@@ -555,12 +555,12 @@ Se $R$ é um domínio de integridade e $K$ é seu corpo de frações, podemos id
 \begin{prop}
 Seja $R$ um domínio de fatoração única e $F$ o corpo de frações de $R$. Seja $p(x)\in R[x]\subseteq K[x]$ não nulo e $u, v \in D$ com $v \neq 0$ e $1\in \MDC(u, v)$.
 
-Então, se $\frac{u}{v}$ é uma raiz de $p(x)=a_nx^n+\dots+a_1x+a_0$ onde $n=\gr p(x)$, temos que $u|a_n$ e $v|a_0$.
+Então, se $\frac{u}{v}$ é uma raiz de $p(x)=a_nx^n+\dots+a_1x+a_0$ onde $n=\gr p(x)$, temos que $u|a_0$ e $v|a_n$.
 \end{prop}
 \begin{proof}
     Temos que $0=\sum_{i=0}^na_i \frac{u^i}{v^i}$. Multiplicando por $v^n$, temos que $0=\sum_{i=0}^n a_i u^iv^{n-i}$.
 
-    Como $p(x)$ tem raízes, $n>0$, $-a_nu^n=\sum_{i=0}^{n-1}a_iu^iv^{n-i}=v\sum_{i=0}^{n-1}a_iu^iv^{n-i-1}$. Como $v|anu^n$ e $1\in \MDC(v, u)$ e estamos em um domínio de fatoração única, temos que $v|a_n$.
+    Como $p(x)$ tem raízes, $n>0$, $-a_nu^n=\sum_{i=0}^{n-1}a_iu^iv^{n-i}=v\sum_{i=0}^{n-1}a_iu^iv^{n-i-1}$. Como $v|a_n u^n$ e $1\in \MDC(v, u)$ e estamos em um domínio de fatoração única, temos que $v|a_n$.
 
     Similarmente, $-a_0v^n=\sum_{i=1}^n a_i u^iv^{n-i}=u\sum_{i=1}^n a_i u^{i-1}v^{n-i}$. Como $u|a_0v^n$ e $1\in \MDC(u, v)$ e estamos em um domínio de fatoração única, temos que $u|a_0$.
 \end{proof}
