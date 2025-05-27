@@ -117,7 +117,7 @@ Seja $F/E$ uma extensão de corpos e $A, B \subseteq F$. Então $E[A\cup B]=E[A]
     Temos que $\{p(a): p \in E[x]\}$ é a imagem de $E[x]$ pela avaliação em $a$, e, portanto, é um subanel de $F$ que claramente contém $E$ e $A$. Pela definição de $p(a)$, é imediato que qualquer subanel de $F$ que contém $E$ e $a$ também contém $\{p(a): p \in E[x]\}$.
 \end{proof}
 \begin{definition}
-Dizemos que uma extensão $F/E$ é finitamente gerada por $A\subseteq F$ se $F=E(A)$.
+Dizemos que uma extensão $F/E$ é gerada por $A\subseteq F$ se $F=E(A)$.
 
 Dizemos que $F/E$ é finitamente gerada e existe $A\subseteq F$ finito tal que $F=E(A)$.
 
@@ -463,11 +463,11 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 Dizemos que um ângulo $\alpha$ é construtível com régua e compasso se existem $a, b, c \in \mathbb P$ tais que a medida do ângulo $\angle{abp}$ é $\alpha$.
 \end{definition}
 
-Da geometria analítica, temos que:
+Da geometria analítica, temos o seguinte.
 \begin{prop}
-    Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se $(\cos \alpha, \sin \alpha) \in \mathbb P$.
+    Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se o ponto $(\cos \alpha, \sin \alpha)$ é construtível.
 \end{prop}
-Disso, segue que:
+Disso, segue a seguinte proposição.
 \begin{prop}
     Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se $\cos \alpha \in \mathbb K$.
 \end{prop}
@@ -479,7 +479,11 @@ Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt(1+\cos \alpha^2)$ o
     É impossível trissectar, com régua e compasso, um ângulo de $60$ graus ($\pi/3$).
 \end{prop}
 \begin{proof}
-    Da trigonometria, sabemos que para todo $\theta, \theta'$, temos que $\cos(\theta+\theta')=\cos(\theta)\cos(\theta')-\sin(\theta)\sin(\theta')$ e $\sin(\theta+\theta')=\sin(\theta)\cos(\theta')+\cos(\theta)\sin(\theta')$.
+    Da trigonometria, sabemos que para todo $\theta, \theta'$, temos que:
+    \begin{align*}
+        \cos(\theta+\theta')&=\cos(\theta)\cos(\theta')-\sin(\theta)\sin(\theta')\\
+        \sin(\theta+\theta')&=\sin(\theta)\cos(\theta')+\cos(\theta)\sin(\theta').
+    \end{align*}
 
     Pondo $\theta'=2\theta$ na primeira equação, segue que:
     \begin{align*}
@@ -508,7 +512,7 @@ Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt(1+\cos \alpha^2)$ o
     É impossível construir, com régua e compasso, um quadrado com a área de um círculo de raio $1$.
 \end{prop}
 \begin{proof}
-Tal cículo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. Porém, $\sqrt \pi$ não está em $\mathbb K$, pois é transcendente (caso contrário $\pi$ seria algébrico).
+Tal círculo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. Porém, $\sqrt \pi$ não está em $\mathbb K$, pois é transcendente (caso contrário $\pi$ seria algébrico).
 \end{proof}
 
 \begin{prop}
