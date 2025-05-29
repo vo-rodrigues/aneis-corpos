@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.3
+## 0.2.4
 * Pequenas correções no Capítulo 10.
 
 ## 0.2.3
