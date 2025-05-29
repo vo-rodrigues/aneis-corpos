@@ -309,7 +309,7 @@ A definição a seguir será utilizada apenas nesta seção.
 
     Temos que $(0, \sqrt 3) \in \cir((-1, 0), 2)\cap \cir((1, 0), 2)$, logo, $(0, \sqrt 3) \in  \mathbb P_2$.
 
-    Agora note que $(0, 1) \in \cir((0, 0), 1)\cap \reta((0, 0), (0, sqrt 3))$ e que $(1, 1)\in \cir((1, 0), 1)\cap \cir((0, 1), 1)$.
+    Agora note que $(0, 1) \in \cir((0, 0), 1)\cap \reta((0, 0), (0, \sqrt 3))$ e que $(1, 1)\in \cir((1, 0), 1)\cap \cir((0, 1), 1)$.
 \end{proof}
 
 \begin{lemma}
@@ -332,7 +332,10 @@ Se $(x, y) \in \mathbb P$, então $(x, 0), (0, y) \in \mathbb P$.
 \end{lemma}
 
 \begin{proof}
-Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x, y), s)\cap \reta((0, 0), (1, 0))$ e $(0, 2y) \in \cir((x, y), s)\cap \reta((0, 0), (0, 1))$. Logo, $(x, 0), (0, y)\in \mathbb P$. Finalmente, $(x, 0)\in \cir((0, 0), s)\cap \cir((2x, 0), s)$ e $(0, y)\in \cir((0, 0), s)\cap \cir((0, 2y), s)$.
+Sem perda de generalidade, podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$.
+Então $(2x, 0) \in \cir((x, y), s)\cap \reta((0, 0), (1, 0))$ e $(0, 2y) \in \cir((x, y), s)\cap \reta((0, 0), (0, 1))$.
+Daí, $(x, -y)\in \cir((0, 0), s)\cap \cir((2x, 0), s)$ e $(-x, y)\in \cir((0, 0), s)\cap \cir((0, 2y), s)$.
+Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0, y) \in \reta((-x, y), (0, y))\cap \reta((0, 0), (0, 1))$.
 \end{proof}
 \begin{prop}
     Sejam $x, y \in \mathbb R$. São equivalentes:
@@ -372,9 +375,7 @@ Podemos supor que $x, y\neq 0$. Seja $s=\|(x, y)\|$. Então $(2x, 0) \in \cir((x
 \end{proof}
 
 
-\begin{prop}
-    $\mathbb K$ é o menor subcorpo de $\mathbb R$ tal que para todo $c \in \mathbb K$, se $c\geq 0$ então $\sqrt c \in \mathbb K$.
-\end{prop}
+
 \begin{prop}
     $\mathbb K$ é um subcorpo de $\mathbb R$ fechado por raízes quadradas de números não negativos.
 \end{prop}
