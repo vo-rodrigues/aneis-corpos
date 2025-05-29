@@ -1,6 +1,9 @@
 # Changelog
 
 ## 0.2.3
+* Pequenas correções no Capítulo 10.
+
+## 0.2.3
 * Novos exercícios no Capítulo 10.
 
 ## 0.2.2
