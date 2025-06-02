@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.5
+* Erros nas demonstrações de que os construtíveis formam o menor corpo fechado por raízes quadradas de números não negativos corrigidos.
+
 ## 0.2.4
 * Pequenas correções no Capítulo 10.
 

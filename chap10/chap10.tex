@@ -359,24 +359,6 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
 \end{proof}
 
 \begin{prop}
-    $\mathbb K$ é um subcorpo de $\mathbb R$.
-\end{prop}
-
-\begin{proof}
-    Temos que $1, 0 \in \mathbb K$.
-
-    Se $a, b \in \mathbb K$ e $a>b$, então $a-b, b-a \in \mathbb K$: temos que $(a, 0), (b, 0) \in \mathbb P$, então $b-a \in \dist(\mathbb P)\subseteq \mathbb K$, e $(a-b, 0) \in \cir((0, 0), b-a)\cap \reta((0, 0), (1, 0))$.
-
-    Note que isso implica que se $a, b \in \mathbb K$, então $b-a\in \mathbb K$. Em particular, $-a \in \mathbb K$.
-
-    Se $a, b \in \mathbb K$ e $b\neq 0$, então $-b \in \mathbb K$, e, portanto, $(a, -b)\in \mathbb P$. Note que $\reta((0, 0), (1, 0))\cap \reta((0, 1), (a, -b))=\{(\frac ab, 0)\}$, logo, $\frac ab \in \mathbb K$.
-
-    Se $a, b \in \mathbb K$, então $ab \in \mathbb K$: se $b=0$, $ab=0\in \mathbb K$. Se $b\neq 0$, temos que $\frac 1b\in \mathbb K$, logo, $\frac{a}{\frac1b}=ab\in \mathbb K$.
-\end{proof}
-
-
-
-\begin{prop}
     $\mathbb K$ é um subcorpo de $\mathbb R$ fechado por raízes quadradas de números não negativos.
 \end{prop}
 
@@ -387,7 +369,7 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
 
     Note que isso implica que se $a, b \in \mathbb K$, então $b-a\in \mathbb K$. Em particular, $-a \in \mathbb K$.
 
-    Se $a, b \in \mathbb K$ e $b\neq 0$, então $-b \in \mathbb K$, e, portanto, $(a, -b)\in \mathbb P$. Note que $\reta((0, 0), (1, 0))\cap \reta((0, 1), (a, -b))=\{(\frac ab, 0)\}$, logo, $\frac ab \in \mathbb K$.
+    Se $a, b \in \mathbb K$ e $b\neq 0$, então $1-b \in \mathbb K$, e, portanto, $(a, 1-b)\in \mathbb P$. Note que $\reta((0, 0), (1, 0))\cap \reta((0, 1), (a, 1-b))=\{(\frac ab, 0)\}$, logo, $\frac ab \in \mathbb K$.
 
     Se $a, b \in \mathbb K$, então $ab \in \mathbb K$: se $b=0$, $ab=0\in \mathbb K$. Se $b\neq 0$, temos que $\frac 1b\in \mathbb K$, logo, $\frac{a}{\frac1b}=ab\in \mathbb K$.
 
@@ -411,9 +393,22 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
 
     \textbf{Caso 2:} $(x, y)\in \reta(a, b)\cap \reta(c, d)$, onde $\reta(a, b)\neq \reta(c, d)$ e $a, b, c, d \in \mathbb P_n$ com $a\neq b$ e $c\neq d$. Por hipótese, as coordenadas de $a, b, c, d$ estão em $L$.
 
-    Nesse caso, existe $t \in \mathbb R$ tal que $(x, y)=a+tb=c+td$, e, portanto, $a-c=t(d-b)$. Se $d=b$, segue que $a=c$, logo, $\reta(a, b)= \reta(c, d)$, o que é absurdo. Logo, $d\neq b$.
+    Nesse caso, existem $s, t \in \mathbb R$ tal que $(x, y)=a+tb=c+sd$, e, portanto, $a+tb=c+sd$. Escrevendo $a=(a_1, a_2)$, $b=(b_1, b_2)$,$c=(c_1, c_2)$,$d=(d_1, d_2)$, temos o sistema linear em $s, t$:
 
-    Escreva $a=(a_1, a_2)$, $b=(b_1, b_2)$, $c=(c_1, c_2)$ e $d=(d_1, d_2)$. Como $b\neq d$, temos $b_1\neq d_1$ ou $b_2\neq d_2$. Se $b_1\neq d_1$, segue que $\frac{a_1-c_1}{b_1-d_1}=t\in L$, e, portanto, $x=a_1+tb_1\in L$. Analogamente, se $b_2\neq d_2$, $\frac{a_2-c_2}{b_2-d_2}$, e $x=a_1+tb_1\in L$.
+    \begin{equation*}
+        \begin{pmatrix}
+            d_1 & -b_1\\d_2 & -b_2
+        \end{pmatrix}
+        \begin{pmatrix}
+            s\\t
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            a_1-c_1\\a_2-c_2
+        \end{pmatrix}
+    \end{equation*}
+
+    Como tal sistema tem solução, temos que $s, t$ se escrevem como uma combinação de números racionais com $a_1, a_2, b_1, b_2, c_1, c_2, d_1, d_2$, o que é um elemento de $L$. Logo, como $(x, y)=a+tb$, segue que $x, y \in L$.
 
     \textbf{Caso 3:} $(x, y)\in \reta(a, b)\cap \cir(c, s)$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $c \in \mathbb P_n$ com $s \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$, $b=(b_1, b_2)$ e $c=(c_1, c_2)$.
 
@@ -421,7 +416,7 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
     Da fórmula quadrática, $t$, que existe, é uma combinação de somas, diferenças, produtos e raízes quadradas de $a_1, b_1, c_1, a_2, b_2, c_2, s^2$, que são todos, por hipótese de indução, elementos de $L$. Logo, $t \in L$. Assim, $x=a_1+tb_1\in L$.
 
     \textbf{Caso 4:} $(x, y)\in \cir(a, s)\cap \cir(b, s')$, onde $a, b \in \mathbb P_n$ com $a\neq b$ e $s, s' \in \dist(\mathbb P_n)$. Sejam $a=(a_1, a_2)$ e $b=(b_1, b_2)$.
-    Nesse caso, $(x-a_1)^2+(y-a_2)^2=s^2$ e $(x-b_1)^2+(y-b_2)^2=s'^2$. Da primeira equação, $x-a_1=\sqrt(s^2-(y-a_2)^2)$ ou $x-a_1=-\sqrt(s^2-(y-a_2)^2)$. Em qualquer caso, é claro que $x \in L$.
+    Nesse caso, $(x-a_1)^2+(y-a_2)^2=s^2$ e $(x-b_1)^2+(y-b_2)^2=s'^2$. Novamente, tais equações são resolvíveis pela fórmula quadrática, e com ela conclui-se que $x, y \in L$.
 \end{proof}
 
 
@@ -438,7 +433,7 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
 \end{proof}
 
 \begin{prop}
-    Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$. Mais especificamente, se $a \in \mathbb K$, então existem $(a_0, \dots, a_n)\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$
+    Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$. Mais especificamente, se $a \in \mathbb K$, então existem $(a_0, \dots, a_n)\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
 \end{prop}
 \begin{proof}
     Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $\mathbb a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência.
