@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.6
+* Erros de digitação em enunciados de exercícios corrigidos. Novo exercício no Capítulo 3.
+
 ## 0.2.5
 * Erros nas demonstrações de que os construtíveis formam o menor corpo fechado por raízes quadradas de números não negativos corrigidos.
 
