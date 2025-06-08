@@ -604,7 +604,58 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     Está claro que $g$ é sobrejetora no conjunto das funções polinomiais, e, portanto, este forma um anel. Além disso, se $R$ é um domínio infinito e $g(p(x))=0$, então $p(s)=0$ para todo $s \in R$.
     Se $p(x)\neq 0$, o número de raízes de $p(x)$ seria finito. Como $R$ é infinito, $p(x)$ tem infinitas raízes, assim, $p(x)=0$.
 \end{proof}
+\section{O critério da irredutibilidade de Eisenstein}
+    Algumas vezes pode ser complicado decidir se certo polinômio é irredutível.
 
+    Sabemos que $x^2-2\in \mathbb Q[x]$ é irredutível, pois, estudando-se os graus, caso tivesse um divisor não invertível, deveria ter um divisor de grau $1$ -- e, portanto, deveria ter uma raiz em $\mathbb Q$, o que sabemos não existir.
+
+    Da mesma forma, pode-se argumentar que $x^3-2\in \mathbb Q[x]$ é irredutível. Porém, o mesmo argumento não se aplica a $x^4-2\in \mathbb Q[x]$: sabemos que tal polinômio não possui uma raiz racional, porém, isso não implica que ele não possui, por exemplo, um divisor de grau $2$.
+    Conforme veremos adiante, tal polinômio é, de fato, irredutível sobre $\mathbb Q$, e mostraremos isso a partir de outro argumento.
+
+    Note ainda que $x^4+1\in \mathbb R[x]$ não possui raiz real, porém, $x^4+1=(x^2+\sqrt 2 x+1)(x^2-\sqrt 2 x+1)$, logo, $x^4+1$ não é irredutível em $\mathbb R[x]$, embora não tenha raiz.
+
+    \begin{definition}
+        Seja $R$ um domínio de MDC's e $p \in R[x]\setminus \{0\}$. Um \emph{conteúdo} de $p$ é um MDC se seus coeficientes. Explicitamente, se $p=\sum_{i=0}^n a_i x^i$ com $a_n\neq 0$, então um \emph{conteúdo} de $p$ é um elemento de $\MDC(a_0, \dots, a_n)$.
+
+        O conjunto de todos os conteúdos de $p$ é denotado por $C(p)$.
+        Explicitamente, $C(p)=\MDC(a_0, \dots, a_n)$.
+
+        Se $1 \in C(p)$, dizemos que $p$ é $\emph{primitivo}$.
+    \end{definition}
+
+    Observação: se escrevermos $p=\sum_{i=0}^n a_i x^i$ com $n>\gr p$ adicionando coeficientes $0$ à escrita, então $\MDC(a_0, \dots, a_n)=C(p)$, pois para qualquer conjunto finito $A$, $\MDC(A)=\MDC(A\cup \{0\})$.
+
+    \begin{lemma}[Gauss]
+        Seja $R$ um domínio de fatoração única e $p, q \in R[x]\setminus\{0\}$. Então $C(pq)=\{ab: a \in C(p), b \in C(q)=C(p)C(q)$.
+        Em particular, um produto de polinômios primitivos é primitivo.
+    \end{lemma}
+
+    \begin{proof}
+        Sejam $a \in C(p)$, $b \in C(q)$. Basta ver que $ab \in C(pq)$.
+
+        Escreva $p=\sum_{i=0}^n a_ix^i$, $q=\sum_{i=0}^m b_i x^i$. Então $pq=\sum_{i=0}^{n+m}\sum_{j=0}^{i}a_{i-j}b_jx^i$, onde $a_{i}=0$ se $n<i\leq n+m$ e $b_i=0$ se $m<i\leq n+m$.
+
+        Seja, para $i\leq n+m$, $c_i=\sum_{j=0}^{i}a_{i-j}b_j$. Devemos ver que $ab \in \MDC(c_0, \dots, c_{n+m})$.
+
+        Dado $i\leq n+m$ e $j\leq i$, temos $j\leq 0$, temos que $a|a_{i-j}$ e $b|b_j$, logo, $ab|a_{i-j}b_j$, logo, $ab|\left(\sum_{j=0}^{i}a_{i-j}b_j\right)=c_i$.
+
+        Para cada $i\leq m+n$, existe $a_i'$ e $b_i'$ tais que $a_i=aa_i'$ e $b_i=bb'_i$.
+        Então, para cada $i\leq m+n$, $c_i=ab\sum_{i=0}^{n+m}a_{i-j}'b_j'$.
+        Seja $c_i'=\sum_{i=0}^{n+m}a_{i-j}'b_j'$.
+
+        Segue que $\MDC(c_0, \dots, c_{n+m})=\MDC(abc'_0, \dots,abc_{n+m}')=ab\MDC(c'_0, \dots, c_{n+m}')$. Assim, basta ver que $1 \in \MDC(c'_0, \dots, c_{n+m}')$. Para tanto, basta ver que se $p \in R$ é primo, então $p$ não é divisor comum de $(c'_0, \dots, c'_{n+m})$.
+        Fixe $p$.
+
+        Note que: 
+        \begin{equation*}
+        a\in \MDC(a_0, \dots, a_{n+m})=\MDC(a_0, \dots, a_n)=\MDC(aa_0', \dots, aa'_n)=a\MDC(a_0', \dots, a'_n).
+        \end{equation*}
+        Logo, $1 \in \MDC(a'_0, \dots, a'_n)$. Seja $r$ o primeiro inteiro tal que $p\not|a'_r$.
+
+        Analogamente, $1 \in \MDC(b'_0, \dots, b'_m)$. Seja $s$ o primeiro inteiro tal que $p\not|b'_s$.
+
+        Temos que se $p\not| c'_{r+s}$: com efeito, $c'_{r+s}=\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)+a_rb_s$. Temos que $p|\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)$, pois divide cada somando, mas $p\not |a_rb_s$ pois $p$ é primo, deveríamos ter $p|a_r$ ou $p|a_s$. Assim, $p\not | c'_{r+s}$.
+    \end{proof}
 \section{Exercícios}
 \begin{exer}
     Seja $K$ um corpo. Demonstre, conforme o roteiro abaixo, que o ideal $\langle x-a\rangle$ é maximal no domínio $K[x]$.

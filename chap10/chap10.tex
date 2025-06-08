@@ -436,7 +436,7 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
     Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$. Mais especificamente, se $a \in \mathbb K$, então existem $(a_0, \dots, a_n)\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
 \end{prop}
 \begin{proof}
-    Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $\mathbb a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência.
+    Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência.
 
     Para provar a segunda afirmação, procederemos por indução em $n$ para mostrar que para todo $a \in K_n$, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
 
@@ -468,7 +468,7 @@ Disso, segue a seguinte proposição.
     Um ângulo $\alpha$ é construtível com régua e compasso se, e somente se $\cos \alpha \in \mathbb K$.
 \end{prop}
 \begin{proof}
-Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt(1+\cos \alpha^2)$ ou $\sin \alpha=-\sqrt(1+\cos \alpha^2)$. Ambos esses números estão em $\mathbb K$.
+Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt{1-(\cos \alpha)^2}$ ou $\sin \alpha=-\sqrt{1-(\cos \alpha)^2}$. Ambos esses números estão em $\mathbb K$.
 \end{proof}
 
 \begin{prop}
@@ -508,7 +508,7 @@ Se $\cos \alpha \in \mathbb K$, temos que $\sin \alpha=\sqrt(1+\cos \alpha^2)$ o
     É impossível construir, com régua e compasso, um quadrado com a área de um círculo de raio $1$.
 \end{prop}
 \begin{proof}
-Tal círculo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. Porém, $\sqrt \pi$ não está em $\mathbb K$, pois é transcendente (caso contrário $\pi$ seria algébrico).
+Tal círculo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. Porém, $\sqrt \pi$ não está em $\mathbb K$, caso contrário, teríamos $\pi \in \mathbb K$, mas $\pi$ é transcendente sobre $\mathbb Q$.
 \end{proof}
 
 \begin{prop}
@@ -517,6 +517,34 @@ Tal círculo tem área $\pi$. Um quadrado com área $\pi$ tem lado $\sqrt \pi$. 
 \begin{proof}
     Para tanto, teríamos uma reta de comprimento $\sqrt[3]{2}$, número anulado por $x^3-2$, que é irredutível sobre $\mathbb Q$ (pois não possui raízes racionais). Logo, $\sqrt[3]{2}$ não está em $\mathbb K$, pois $[\mathbb Q(\sqrt[3]{2}):\mathbb Q]=3$ e $3$ não é uma potência de $2$.
 \end{proof}
+
+\section{Corpos de decomposição}
+
+Nesta seção, iniciaremos o estudo da decomposição de polinômios, caminhando para o estudo dos fechos algébricos dos corpos.
+\begin{definition}
+    Seja $E$ um corpo, $p \in E[x]$ um polinômio de grau $n\geq 1$ e $F/E$ uma extensão de corpos.
+    
+    \begin{itemize}
+        \item Dizemos que \emph{$p$ se fatora em $F$}, ou \emph{$p$ se decompõe em $F$} se existem $a_1, \dots, a_n, u \in E$ tais que $p=u\prod_{i=1}^n(x-a_i)$ em $F[x]$.
+        \item Se, adicionalmente, $F=E[a_1, \dots, a_n]$, dizemos que $F$ é um \emph{corpo de decomposição de $F$ sobre $E$}.
+    \end{itemize}
+\end{definition}
+Vamos dar alguns exemplos.
+\begin{exemplo}
+$\mathbb q[\sqrt 2]$ é o corpo de decomposição de $x^2-2$ sobre $\mathbb Q$, pois $x^2-2=(x-\sqrt 2)(x+\sqrt 2)$ e  $\mathbb Q\left[\sqrt 2, -\sqrt 2\right]=\mathbb Q\left[\sqrt 2\right]$.
+\end{exemplo}
+\begin{exemplo}
+$\mathbb R$ é o corpo de decomposição de $x^2-2$ sobre $\mathbb R$, pois $x^2-2=(x-\sqrt 2)(x+\sqrt 2)$ e  $\mathbb R=\mathbb R\left[\sqrt 2, -\sqrt 2\right]$.
+\end{exemplo}
+
+\begin{exemplo}
+$\mathbb C$ é o corpo de decomposição de $x^2+1$ sobre $\mathbb R$, pois $x^2+1=(x-i)(x+i)$ e  $\mathbb C=\mathbb R[i]=\mathbb R[i, -i]$.
+\end{exemplo}
+
+\begin{exemplo}
+O polinômio $x^2-2\in \mathbb Q[x]$ se decompõe em $\mathbb Q[\sqrt[4] 2]$, pois $\sqrt 2, -\sqrt 2 \in \mathbb Q[\sqrt[4] 2]$.
+Porém, $\mathbb Q[\sqrt[4] 2]$ não é um corpo de decomposição de $x^2-2$ sobre $\mathbb Q$, uma vez que $\mathbb Q[\sqrt[4] 2]\neq \mathbb Q[\sqrt 2, -\sqrt 2]=\mathbb Q[\sqrt 2]$: o primeiro corpo é um $\mathbb Q$-espaço vetorial de dimensão $4$, pois $\sqrt[4] 2$ é raiz do polinômio $x^4-2$, que é irredutível sobre $\mathbb Q$, e $\sqrt 2$ é raiz do polinômio $x^2-2$, que é irredutível sobre $\mathbb Q$.
+\end{exemplo}
 \section{Exercícios}
 \begin{exer}
     Seja $F$ um corpo estendendo $E$ e $a \in F$ um elemento transcendente sobre $E$. Mostre que $E[a]$ é isomorfo ao anel de polinômios $E[x]$.
@@ -550,4 +578,7 @@ Seja $F/E$ uma extensão de corpos e $u, v \in F$ elementos de grau $m, n<\infty
 \end{exer}
 \begin{exer}
 Mostre que os subcorpos $\mathbb Q(i), \mathbb Q(\sqrt 2)$ de $\mathbb C$ são isomorfos como $\mathbb Q$-espaços vetoriais, mas não são isomorfos como corpos.
+\end{exer}
+\begin{exer}
+Seja $L$ um subcorpo de $\mathbb R$. Mostre que $a \in \mathbb L$ é algébrico sobre $L$ se, e somente se $\sqrt a$ é algébrico sobre $L$.
 \end{exer}
