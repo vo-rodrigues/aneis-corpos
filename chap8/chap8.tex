@@ -17,48 +17,48 @@ Uma esquematização encontra-se no diagrama abaixo:
 \section{Definição de divisibilidade}
 
 \begin{definition}
-Seja $R$ um anel comutativo. Definimos a relação de divisibilidade, $|$, em $R$, como se segue:
+Seja $R$ um anel comutativo. Definimos a relação de divisibilidade, $\mid $, em $R$, como se segue:
 
-Para $a, b \in R$, dizemos que $a|b$ ($a$ divide $b$) se existe $c \in R$ tal que $b=ac$.
+Para $a, b \in R$, dizemos que $a\mid b$ ($a$ divide $b$) se existe $c \in R$ tal que $b=ac$.
 \end{definition}
 Algumas propriedades básicas:
 \begin{prop}
     Seja $R$ um anel comutativo.
-    Então a relação de divisibilidade $|$ em $R$ é uma pré-ordem, ou seja, é reflexiva e transitiva. Além disso, $1$ é elemento mínimo, e $0$, elemento máximo
+    Então a relação de divisibilidade $\mid $ em $R$ é uma pré-ordem, ou seja, é reflexiva e transitiva. Além disso, $1$ é elemento mínimo, e $0$, elemento máximo
 \end{prop}
 
 \begin{proof}Sejam $a, b, c \in R$.
-    Temos que $a|a$, pois $a=1\cdot a$.
+    Temos que $a\mid a$, pois $a=1\cdot a$.
 
-    Se $a|b$ e $b|c$, existem $e, f \in R$ tais que $b=ae$ e $c=bf$.
-    Logo, $c=bf=aef=a(ef)$, o que implica em que $a|c$.
+    Se $a\mid b$ e $b\mid c$, existem $e, f \in R$ tais que $b=ae$ e $c=bf$.
+    Logo, $c=bf=aef=a(ef)$, o que implica em que $a\mid c$.
 
     Temos que $0$ é elemento máximo, já que para todo $a \in R$, $0=0a$.
     Por outro lado, $1$ é elemento mínimo, já que para todo $a \in R$, $a=1a$.
 \end{proof}
 
-Note que $a|0$ não implica, pelas nossas definições, que $a$ é divisor de zero, uma vez que necessitaríamos da existência de $b \in R$ não nulo tal que $ab=0$.
+Note que $a\mid 0$ não implica, pelas nossas definições, que $a$ é divisor de zero, uma vez que necessitaríamos da existência de $b \in R$ não nulo tal que $ab=0$.
 Divisores de zero geram diversas patologias na teoria da divisibilidade, e estas não serão objeto primário de nosso estudo.
 
 Assim, nos restringiremos aos anéis comutativos que não possuem divisores de zero, ou seja, aos domínios de integridade.
-Note que, nesses domínios, se $b\neq 0$ e $b|a$, então existe um \emph{único} $c\in R$ tal que $a=bc$.
+Note que, nesses domínios, se $b\neq 0$ e $b\mid a$, então existe um \emph{único} $c\in R$ tal que $a=bc$.
 Este elemento $c$ é, muitas vezes, chamado de quociente de $a$ por $b$.
 
-Outra vantagem é a caracterização de $a|b$ e $b|a$ a seguir:
+Outra vantagem é a caracterização de $a\mid b$ e $b\mid a$ a seguir:
 \begin{prop}
     Seja $R$ um anel domínio de integridade. Se $a, b\in R$, são equivalentes:
 
     \begin{enumerate}
-        \item $a|b$ e $b|a$.
+        \item $a\mid b$ e $b\mid a$.
         \item Existe $u \in R$ invertível tal que $a=ub$.
     \end{enumerate}
 
     \begin{proof}
-        Primeiro, suponha que $a|b$ e $b|a$.
+        Primeiro, suponha que $a\mid b$ e $b\mid a$.
         Temos que existem $c, d$ com $a=cb$ e $b=da$.
         Substituindo, temos que $b=dcb$. Cancelando, $1=dc$. Assim, $c$ é invertível.
 
-        Reciprocamente, como $u$ é invertível, $a=ub$ e $u^{-1}a=b$, logo, $a|b$ e $b|a$.
+        Reciprocamente, como $u$ é invertível, $a=ub$ e $u^{-1}a=b$, logo, $a\mid b$ e $b\mid a$.
     \end{proof}
 \end{prop}
 
@@ -91,13 +91,13 @@ Enunciaremos a primeira delas a seguir:
 Seja $R$ um anel comutativo e $a, b \in R$.
 São equivalentes:
 \begin{enumerate}[label=\alph*)]
-    \item $a|b$.
+    \item $a\mid b$.
     \item $b \in \langle a \rangle$.
     \item $\langle b\rangle \subseteq \langle a \rangle$.
 \end{enumerate}
 \end{prop}
 \begin{proof}
-    Primeiro, suponha que $a|b$.
+    Primeiro, suponha que $a\mid b$.
     Então existe $c \in R$ tal que $b=ac$.
     Como $\langle a=\{ac: c \in R\}$, segue b).
 
@@ -106,7 +106,7 @@ São equivalentes:
 
     Agora suponha que $\langle b\rangle \subseteq \langle a\rangle$.
     Em particular, $b \in \langle a\rangle$.
-    Pela definição de $\langle a \rangle$, existe $c \in R$ tal que $b=ac$, e, assim, $a|b$.
+    Pela definição de $\langle a \rangle$, existe $c \in R$ tal que $b=ac$, e, assim, $a\mid b$.
 \end{proof}
 
 \section{Mínimo múltiplo comum e Máximo divisor comum}
@@ -117,14 +117,14 @@ Seja $R$ um anel comutativo e $a_0, \dots, a_n \in R$ não nulos.
 
 Um mínimo múltiplo comum de $a_0, \dots, a_n$ é, se existe, um elemento $m\in R$ tal que:
 \begin{itemize}
-    \item $a_0|m$, $\dots$, $a_n|m$
-    \item Se $c\in R$ é tal que $a_0|c$, $\dots$, $a_n|c$, então $m|c$.
+    \item $a_0\mid m$, $\dots$, $a_n\mid m$
+    \item Se $c\in R$ é tal que $a_0\mid c$, $\dots$, $a_n\mid c$, então $m\mid c$.
 \end{itemize}
 
 Um máximo divisor comum de $a_0, \dots, a_n$ é, se existe, um elemento $d\in R$ tal que:
 \begin{itemize}
-    \item $d|a_0$, $\dots$, $d|a_n$.
-    \item Se $c\in R$ é tal que $c|a_0$, $\dots$,  $c|a_n$, então $c|d$.
+    \item $d\mid a_0$, $\dots$, $d\mid a_n$.
+    \item Se $c\in R$ é tal que $c\mid a_0$, $\dots$,  $c\mid a_n$, então $c\mid d$.
 \end{itemize}
 
 O conjunto de todos os MMC's de $a, b$ é $\MMC(a_0, \dots, a_n)$.
@@ -145,17 +145,17 @@ De fato:
 \end{lemma}
 \begin{proof}
 Sejam $d, d'$ máximos divisores comuns de $a_0, \dots, a_n$.
-Então, $d|a_0$, $\dots$, $d|a_n$, $d'|a_0$, $\dots$, $d'|a_n$.
-Logo, $d|d'$ e $d'|d$.
+Então, $d\mid a_0$, $\dots$, $d\mid a_n$, $d'\mid a_0$, $\dots$, $d'\mid a_n$.
+Logo, $d\mid d'$ e $d'\mid d$.
 Portanto, $d$ e $d'$ são associados entre si.
 
 Similarmente, sejam $m, m'$ mínimos múltiplos comuns de $a_0, \dots, a_n$.
-Então, $m|a_0$, $\dots$, $m|a_n$, $m'|a_0$, $\dots$, $m'|a_n$.
-Logo, $m|m'$ e $m'|m$.
+Então, $m\mid a_0$, $\dots$, $m\mid a_n$, $m'\mid a_0$, $\dots$, $m'\mid a_n$.
+Logo, $m\mid m'$ e $m'\mid m$.
 Portanto, $m$ e $m'$ são associados entre si.
 
-Para a recíproca, se $d$ é MDC de $a_0, \dots, a_n$ e $d'$ é associado à $d$, então $d'|a_0$, $\dots$, $d'|a_n$, pois $d|a_0$, $\dots$, $d|a_n$ e $d'|d$.
-Se $x\in R$ é tal que $x|a_0$, $\dots$, $x|a_n$, então $d'|d$ e $d|x$, logo $d'|x$.
+Para a recíproca, se $d$ é MDC de $a_0, \dots, a_n$ e $d'$ é associado à $d$, então $d'\mid a_0$, $\dots$, $d'\mid a_n$, pois $d\mid a_0$, $\dots$, $d\mid a_n$ e $d'\mid d$.
+Se $x\in R$ é tal que $x\mid a_0$, $\dots$, $x\mid a_n$, então $d'\mid d$ e $d\mid x$, logo $d'\mid x$.
 
 Similarmente, se $m$ é MMC de $a, b$ e $m'$ é associado à $m$, então $m'$ é MMC de $a, b$.
 \end{proof}
@@ -163,7 +163,7 @@ No geral, em domínios de integridade, podem existir pares de elementos sem MMC 
 Porém:
 
 \begin{lemma}
-Sejam $a, b \in R$ tais que $a|b$.
+Sejam $a, b \in R$ tais que $a\mid b$.
 Então $a \in \MDC(a, b)$ e $b \in \MDC(a, b)$.
 
 Em particular, $0 \in \MDC(a, 0)$ e $a \in \MMC(a, 0)$.
@@ -171,12 +171,12 @@ Além disso, se $a, b \neq 0$, temos $0 \notin \MMC(a, b)$. e $0 \notin \MDC(a, 
 \end{lemma}
 
 \begin{proof}
-    Suponha que $a|b$.
-    Temos que $a|b$ e $a|a$, logo, $a$ é divisor comum de $a, b$.
-    Se $r$ é divisor comum de $a, b$, temos que $r|a$, logo, $a \in \MDC(a, b)$.
+    Suponha que $a\mid b$.
+    Temos que $a\mid b$ e $a\mid a$, logo, $a$ é divisor comum de $a, b$.
+    Se $r$ é divisor comum de $a, b$, temos que $r\mid a$, logo, $a \in \MDC(a, b)$.
 
-    Temos que $a|b$ e $b|b$, logo, $b$ é múltiplo comum de $a, b$.
-    Se $r$ é múltiplo comum de $a, b$, temos que $b|r$, logo, $b \in \MMC(a, b)$.
+    Temos que $a\mid b$ e $b\mid b$, logo, $b$ é múltiplo comum de $a, b$.
+    Se $r$ é múltiplo comum de $a, b$, temos que $b\mid r$, logo, $b \in \MMC(a, b)$.
 
     Para a última afirmação, se $a, b \neq 0$, temos que $0 \notin \MDC(a, b)$, já que $0$ divide apenas $0$.
     Além disso, $0 \notin MMC(a, b)$, pois $ab\neq 0$ é múltiplo comum de $a, b$ e não é múltiplo de $0$.
@@ -189,7 +189,7 @@ As definições abaixo generalizam a noção de primo.
 
 \begin{prop}[Elementos primos]
     Seja $R$ um anel comutativo
-    Dizemos que $p \in R$ é um elemento primo se $p\notin R^*$, $p\neq 0$, e, para todos $a, b \in R$, se $p|ab$, então $p|a$ ou $p|b$.
+    Dizemos que $p \in R$ é um elemento primo se $p\notin R^*$, $p\neq 0$, e, para todos $a, b \in R$, se $p\mid ab$, então $p\mid a$ ou $p\mid b$.
 \end{prop}
 
 \begin{prop}[Elementos irredutíveis]
@@ -206,16 +206,16 @@ Elementos primos se relacionam com ideais primos, como vemos a seguir:
     Primeiro, suponha que $p$ é primo.
     Segue que $\langle p\rangle=\{ap: a \in R\}$ não é $0$, pois $p \in R$, e não é $R$, pois $p\notin R^*$.
     Agora, seja $a, b \in R$ tais que $ab \in \langle p\rangle$.
-    Então $p|ab$.
-    Logo, $p|a$ ou $p|b$, o que implica que $a\in \langle p\rangle$ ou $b \in \langle p\rangle$.
+    Então $p\mid ab$.
+    Logo, $p\mid a$ ou $p\mid b$, o que implica que $a\in \langle p\rangle$ ou $b \in \langle p\rangle$.
 
     Reciprocamente, suponha que $\langle p\rangle$ é um ideal primo.
     Veremos que $p$ é primo.
     Temos que $p\neq 0$ e $p$ não é invertível (pois $\langle p\rangle\neq R$).
-    Agora, seja $a, b \in R$ tais que $p|ab$.
+    Agora, seja $a, b \in R$ tais que $p\mid ab$.
     Logo, $ab \in \langle p\rangle$.
     Como $\langle p\rangle$ é primo, temos que $a \in \langle p\rangle$ ou $b \in \langle p\rangle$.
-    Logo, $p|a$ ou $p|b$.
+    Logo, $p\mid a$ ou $p\mid b$.
 \end{proof}
 
 A seguinte proposição relaciona primos e irredutíveis em domínios de integridade.
@@ -228,17 +228,17 @@ A seguinte proposição relaciona primos e irredutíveis em domínios de integri
     Seja $p \in R$ primo.
     Para ver que $p$ é irredutível, fixe $a, b \in R$ e suponha que $p=ab$.
     
-    Como $ab=p$, temos que $p|ab$.
-    Logo, $p|a$ ou $p|b$.
-    Supondo $p|a$, temos que $a=pc$ para algum $c \in R$.
+    Como $ab=p$, temos que $p\mid ab$.
+    Logo, $p\mid a$ ou $p\mid b$.
+    Supondo $p\mid a$, temos que $a=pc$ para algum $c \in R$.
     Logo, $p=pcb$, e, portanto, $1=cb$, o que mostra que $b \in R^*$.
 
-    O caso em que $p|b$ é análogo.
+    O caso em que $p\mid b$ é análogo.
 \end{proof}
 A recíproca vale em domínios de ideais principais.
 
 \begin{prop}
-    Seja $R$ um domínio de ideais principais
+    Seja $R$ um domínio de ideais principais.
     Então, se $p \in R$ é irredutível, $p$ é primo.
 \end{prop}
 \begin{proof}
@@ -262,6 +262,9 @@ Se $q \in R$ é associado à $p$, então $q$ é irredutível.
 \begin{proof}
     Seja $u$ invertível tal que $q=pu$.
 
+    Primeiro, note que $q$ não é invertível, do contrário, teríamos que $p=qu^{-1} \in R^*$.
+    Além disso, $q\neq 0$ já que $u, p\neq 0$.
+
     Se $a, b \in R$ tão tais que $q=ab$, então $pu=ab$.
     Então, $p=(u^{-1}a)b$.
     Assim, $u^{-1}a$ é invertível ou $b$ é invertível.
@@ -273,13 +276,14 @@ Se $q \in R$ é associado à $p$, então $q$ é irredutível.
     Seja $R$ um domínio de integridade e $p$ um elemento primo.
     
     Se $q \in R$ é associado à $p$, então $q$ é primo.
-    
 \end{lemma}
     
 \begin{proof}
-    Se $a, b \in R$ tão tais que $q|ab$, como $p|q$, segue que $p|ab$.
-    Logo, $p|a$ ou $p|b$.
-    Como $q|p$, segue que $q|a$ ou $a|b$.
+    Como na proposição anterior, temos que $q\notin R^*$ e $q\neq 0$.
+
+    Se $a, b \in R$ tão tais que $q\mid ab$, como $p\mid q$, segue que $p\mid ab$.
+    Logo, $p\mid a$ ou $p\mid b$.
+    Como $q\mid p$, segue que $q\mid a$ ou $a\mid b$.
 \end{proof}
 
 
@@ -293,52 +297,47 @@ Nesta seção, estudaremos a classe de domínios de integridade que generaliza e
     Um domínio de integridade $R$ é um domínio de MDC se para todos $a, b \in R$ existe um mdc de $a$ e $b$.
 \end{definition}
 
+\begin{lemma}
+    Seja $R$ um domínio de MDC. Então para todos $a_0, \dots, a_n \in R$, $\MDC(a_0, \dots, a_n)\neq \emptyset$.
+\end{lemma}
+\begin{proof}
+Indução em $n$.
+
+Para $n=0$, temos que $a_0\in \MDC(a_0)$.
+
+Suponha que a tese vale para $n$.
+Veremos que vale para $n+1$.
+Com efeito, sejam dados $a_0, \dots, a_{n+1}\in R$. Fixe $m \in \MDC(a_0, \dots, a_n)$.
+Tome $k \in \MDC(m, a_{n+1})$.
+
+Temos que $k\mid m$, logo $k\mid a_0, \dots, k\mid a_n$, e $k\mid a_{n+1}$.
+
+Agora, se $x \in R$ é tal que $x\mid a_0, \dots, x\mid a_{n+1}$, então $x\mid m$ e $x\mid a_{n+1}$, logo $x\mid k$.
+\end{proof}
+
 Como primeira propriedade, temos:
 
 \begin{prop}
-    Seja $R$ um domínio de MDC e $a, b\in R$.
-    Então, para todo $x \in R$, temos $x\MDC(a, b)=\MDC(xa, xb)$.
+    Seja $R$ um domínio de MDC e $a_0, \dots, a_n\in R$.
+    Então, para todo $x \in R$, temos $x\MDC(a_0, \dots, a_n)=\MDC(xa_0, \dots, xa_n)$.
 \end{prop}
 \begin{proof}
     Se $x=0$, a igualdade nos diz que $\{0\}=\{0\}$.
     Assim, suponha que $x\neq 0$.
 
-    Seja $m\in \MDC(a, b)$ e $\bar m \in \MDC(xa, xb)$.
+    Seja $m\in \MDC(a_0, \dots, a_n)$ e $\bar m \in \MDC(xa_0,\dots xa_n)$.
     Veremos que $xm$ e $\bar m$ são associados.
 
-    Como $m$ é MDC de $a$ e $b$, temos que $m|a$ e $m|b$.
-    Logo, $xm|xa$ e $xm|xb$.
-    Assim, $xm|\bar m$.
+    Como $m\in \MDC(a_0, \dots, a_n)$, temos que $m\mid a_0, \dots, m\mid a_n$.
+    Logo, $xm\mid xa_0, \dots, xm\mid xa_n$.
+    Assim, $xm\mid \bar m$.
 
-    Para a recíproca, temos que $x|xa$ e $x|xb$. Segue que $x|\bar m$.
+    Para a recíproca, temos que $x\mid xa_0, \dots, x\mid xa_n$. Segue que $x\mid \bar m$.
     Escreva $\bar m=xc$ para algum $c \in R$.
-    Temos que $xc|xa$ e $xc|xb$.
-    Cancelando, $c|a$ e $c|b$.
-    Logo, $c|m$. Assim, $\bar m=xc|xm$.
+    Temos que $xc\mid xa_0, \dots, xc\mid xa_n$.
+    Cancelando, $c\mid a_0, \dots, c\mid a_n$.
+    Logo, $c\mid m$. Assim, $\bar m=xc\mid xm$.
 \end{proof}
-
-\begin{prop}
-    Seja $R$ um domínio de MDC e $a, b\in R$.
-    Então, para todo $x \in R$, temos $x\MDC(a, b)=\MDC(xa, xb)$.
-\end{prop}
-\begin{proof}
-    Se $x=0$, a igualdade nos diz que $\{0\}=\{0\}$.
-    Assim, suponha que $x\neq 0$.
-
-    Seja $m\in \MDC(a, b)$ e $\bar m \in \MDC(xa, xb)$.
-    Veremos que $xm$ e $\bar m$ são associados.
-
-    Como $m$ é MDC de $a$ e $b$, temos que $m|a$ e $m|b$.
-    Logo, $xm|xa$ e $xm|xb$.
-    Assim, $xm|\bar m$.
-
-    Para a recíproca, temos que $x|xa$ e $x|xb$. Segue que $x|\bar m$.
-    Escreva $\bar m=xc$ para algum $c \in R$.
-    Temos que $xc|xa$ e $xc|xb$.
-    Cancelando, $c|a$ e $c|b$.
-    Logo, $c|m$. Assim, $\bar m=xc|xm$.
-\end{proof}
-
 
 Poderíamos definir também a noção de domínio de MMC, mas isso não é necessário:
 
@@ -362,12 +361,12 @@ Poderíamos definir também a noção de domínio de MMC, mas isso não é neces
     Seja $d \in \MDC(a, b)$.
     Escreva $a=da'$ e $b=db'$.
     Seja $m=da'b'=ab'=ba'$.
-    Está claro que $a|m$ e $b|m$, e $ab=md$.
+    Está claro que $a\mid m$ e $b\mid m$, e $ab=md$.
 
-    Suponha que $x\in R$ é tal que $a|x$ e $b|x$.
-    Então $md=ab|xb$ e $md=ab|xa$.
-    Como $xd\in \MDC(ax, bx)$, temos que $xd|md$.
-    Como $d\neq 0$, temos que $x|m$.
+    Suponha que $x\in R$ é tal que $a\mid x$ e $b\mid x$.
+    Então $md=ab\mid xb$ e $md=ab\mid xa$.
+    Como $xd\in \MDC(ax, bx)$, temos que $xd\mid md$.
+    Como $d\neq 0$, temos que $x\mid m$.
     Isso conclui que $m \in \MMC(a, b)$.
 
     Reciprocamente, suponha que para todos $a, b \in R$, $\MMC(a, b)\neq \emptyset$. Veremos que para todos $a, b \in R$, $\MDC(a, b)\neq \emptyset$.
@@ -375,23 +374,23 @@ Poderíamos definir também a noção de domínio de MMC, mas isso não é neces
     Assim, vamos supor $a, b \neq 0$.
 
     Fixe $m \in \MMC(a, b)$.
-    Temos que $a|m$ e $b|m$, que $ab|am$ e $ab|bm$.
+    Temos que $a\mid m$ e $b\mid m$, que $ab\mid am$ e $ab\mid bm$.
     Escreva $m=aa'=bb'$.
-    Como $ab$ é múltiplo de $a$ e $b$, temos que $m|ab$.
+    Como $ab$ é múltiplo de $a$ e $b$, temos que $m\mid ab$.
     Escreva $ab=dm$.
     Afirmamos que $d \in \MDC(a, b)$.
     
     Com efeito, $ab=dm=daa'=dbb'$, logo, $b=da'$ e $b=db'$.
-    Assim, $d|a$ e $d|b$.
-    Agora seja $x\in R$ tal que $x|a$ e $x|b$.
-    Temos que $x|ab$.
+    Assim, $d\mid a$ e $d\mid b$.
+    Agora seja $x\in R$ tal que $x\mid a$ e $x\mid b$.
+    Temos que $x\mid ab$.
     Escreva $ab=xy$, $a=\bar ax$, $b=\bar by$.
     Então $ab=\bar axb=\bar bxa=xy$, assim, $\bar ab=\bar ba=y$.
-    Logo, $b|y$ e $a|y$, e, assim, $m|y$.
+    Logo, $b\mid y$ e $a\mid y$, e, assim, $m\mid y$.
 
     Escreva $y=my'$.
     Segue que $ab=xy=xmy'=dm$.
-    Cancelando $m$, segue que $xy'=d$, ou seja, $x|d$.
+    Cancelando $m$, segue que $xy'=d$, ou seja, $x\mid d$.
 \end{proof}
 
 \begin{corol}
@@ -416,102 +415,126 @@ Logo, $(xm)\in \MMC(xa, xb)$.
     
 \begin{proof}
     Seja $p \in R$ um elemento irredutível.
-    Sejam $a, b \in R$ com $p|ab$.
-    Veremos que $p|a$ ou $p|b$.
+    Sejam $a, b \in R$ com $p\mid ab$.
+    Veremos que $p\mid a$ ou $p\mid b$.
 
     Seja $d\in\MDC(p, a)$.
     Então $bd\in \MDC(pb, ab)$.
-    Como $p|pb$ e $p|ab$, segue que $p|bd$.
+    Como $p\mid pb$ e $p\mid ab$, segue que $p\mid bd$.
 
-    Então $d|p$ e $d|a$.
-    Como $d|p$, então $d$ é invertível ou é associado à $p$.
+    Como $d\mid p$, então $d$ é invertível ou é associado à $p$.
 
-    Se $d$ é associado à $p$, temos que $p|d$, e, portanto, $p|a$.
+    Se $d$ é associado à $p$, temos que $p\mid d$, e, portanto, $p\mid a$.
 
-    Se $d$ é invertível, temos, de $p|bd$, que $p|b$.
+    Se $d$ é invertível, temos, de $p\mid bd$, que $p\mid b$.
 \end{proof}
 
-Finalmente, em um domínio de MDC, MDCs e MMCs de quantidades finitas arbitrárias de elementos existem.
+Finalmente, em um domínio de MMCs de quantidades finitas arbitrárias de elementos existem.
 
 \begin{prop}
-    Seja $R$ um domínio de MDC e $a_1, \dots, a_n \in R$.
-    Então $\MDC(a_1, \dots, a_n)$ e $\MMC(a_1, \dots, a_n)$ não são vazios.
+    Seja $R$ um domínio de MDC e $a_0, \dots, a_n \in R$.
+    Então $\MMC(a_0, \dots, a_n)\neq \emptyset$ não são vazios.
 \end{prop}
 
 \begin{proof}
 Provaremos por indução em $n$.
-Para $n=1$, note que $a\in \MDC(a)$ e $a \in \MMC(a)$.
-Para $n=2$, temos que $\MDC(a_1, a_2)$ e $\MMC(a_1, a_2)$ não são vazios pelo já estudado.
-
+Para $n=0$, note que $a \in \MMC(a)$.
 Suponha que a proposição vale para $n$. Sejam $a_1, \dots, a_{n+1} \in R$.
-Seja $d\in \MDC(a_1, \dots, a_n)$ e $m\in \MMC(a_1, \dots, a_n)$.
+Seja $m\in \MMC(a_1, \dots, a_n)$.
 
-Seja $d' \in \MDC(a_{n+1}, d)$ e $m' \in \MMC(a_{n+1}, m)$.
-Afirmamos que $d'$ é um MDC de $a_1, \dots, a_{n+1}$ e $m'$ é um MMC de $a_1, \dots, a_{n+1}$.
+Seja $m' \in \MMC(a_{n+1}, m)$.
+Afirmamos que $m'\in \MMC(a_1, \dots, a_{n+1})$.
 
-$d'$ é divisor comum de $a_1, \dots, a_{n+1}$: temos que $d'|a_{n+1}$ e, como $d'|d$, segue que $d'|a_1, \dots, d'|a_n$.
-Se $x$ é divisor comum de $a_1, \dots, a_{n+1}$, então $x|d$ e $x|a_{n+1}$, logo, $x|d'$.
+$m'$ é múltiplo comum de $a_1, \dots, a_{n+1}$: temos que $a_{n+1}\mid m'$, $m\mid m'$, logo $a_1\mid m'$, $\dots$, $a_n\mid m'$.
 
-$m'$ é múltiplo comum de $a_1, \dots, a_{n+1}$: temos que $a_{n+1}|m'$, $m|m'$, logo $a_1|m'$, $\dots$, $a_n|m'$.
-Se $x$ é múltiplo comum de $a_1, \dots, a_{n+1}$, então $m|x$ e $a_{n+1}|x$, logo $m'|x$.
+Se $x$ é múltiplo comum de $a_1, \dots, a_{n+1}$, então $m\mid x$ e $a_{n+1}\mid x$, logo $m'\mid x$.
 \end{proof}
 \section{Domínios de Fatoração Única}
 Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou Anéis Fatoriais, são domínios de integridade que capturam outra propriedade dos números inteiros:
 a do Teorema Fundamental da Aritmética.
 
 \begin{definition}
-    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ tal que para todo $a\in R\setminus \{0\}$ não invertível, existe um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ e $u\in R^*$ tais que $a=up_1\cdots p_n$ e que, além disso, para quaisquer inteiros $m\geq 1$ e irredutíveis $q_1, \dots, q_m$ para os quais existam $u'$ tal que $a=u'q_1\cdots q_m$, segue que $n=m$ e que existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+    Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ que satisfaz as condições abaixo.
+    
+    \begin{enumerate}
+        \item Para todo $a\in R\setminus \{0\}$ não invertível, existe um inteiro $n\geq 1$, irredutíveis $p_1, \dots, p_n$ tais que $a=p_1\cdots p_n$.
+        \item Para todos $m, n\geq 1$ e irredutíveis $q_1, \dots, q_m, p_1, \dots, p_m$, se $q_1\dots q_m p_1\dots p_m$, então $n=m$ e existe uma permutação $\sigma:\{1\dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
+    \end{enumerate}
 \end{definition}
 
-\begin{prop}
-    Todo DFU é um domínio de MDC.
-\end{prop}
+\begin{exemplo}
+    Conforme argumentaremos mais a frente, $\mathbb Z$ é um domínio de fatoração única. Note que $2, 3, -2, -3$ são irredutíveis em $\mathbb Z$, e que $6=2\cdot 3=(-2)\cdot(-3)$. Perceba que $2$ é associado à $-2$ e $3$ é associado à $-3$.
+\end{exemplo}
+
+\begin{lemma}
+    Seja $R$ um DFU. Se $n, m\geq 1$ e $p_1, \dots, p_n, q_1, \dots, q_m$ são elementos irredutíveis e $(p_1\dots p_n)|(q_1\dots q_m)$, então existe $\sigma:\{1, \dots, n\}\rightarrow\{1, \dots, m\}$ injetora tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i \in \{1, \dots, n\}$. 
+\end{lemma}
 \begin{proof}
-Seja $R$ um DFU e $a, b \in R$ não nulos.
-Se $a|b$ ou $b|a$, temos que o $\MDC(a, b)\neq \emptyset$.
-Assim, vamos supor que $a\not|b$ e $b\not|a$
+    Seja $x$ tal que $q_1 \dots q_m=x p_1\dots, p_n$. Temos que $x\neq 0$, pois $q_1\dots q_n\neq 0$, uma vez que $R$ é um domínio.
 
-Escreva $a=p_1\dots p_n$ e $b=q_1\dots q_m$.
-Reordenando se necessário e fatorando alguma unidade, podemos reescrever:
+    Se $x$ é invertível, $(xp_1)$ é associado à $p_1$, logo, $x p_1$ é irredutível. Como $R$ é um DFU, $n=m$ e existe $\sigma$ permutação de $\{1, \dots, n\}$ tal que $xp_1$ é associado à $q_{\sigma(1)}$ e, para $2\leq i\leq n$, $p_i$ é associado à $q_i$. Como $p_1$ é associado à $xp_1$, segue a tese.
 
-\[a=\prod_{i \in I} c_i \prod_{j \in J} a_j\]
-\[b=\prod_{i \in I} c_i \prod_{k \in K} b_k\]
-
-Onde cada $c_i, a_j, b_k$ são irredutíveis, nenhum $a_j$ é associado a nenhum $b_k$, e consideramos que o produto vazio é $1$.
-Como $a\not |b$ e $b\not | a$, temos que $J, K\neq\emptyset$.
-Afirmamos que $c=\prod_{i \in I} c_i$ é um MDC de $a$ e $b$.
-
-Está claro que $c|a$ e $c|b$.
-Suponha que $d|a$ e $d|b$.
-Devemos ver que $d|c$.
-Temos que $d\neq 0$, e se $d$ é invertível, segue a tese.
-Suponha por absurdo que $d\not | c$.
-Se $d$ não é invertível, escreva $d=d_1\dots d_k$ com $d_i$ irredutíveis.
-Como $d_1\dots d_k|\prod_{i \in I} c_i \prod_{j \in J} a_j$, pela unicidade de fatoração, todo $d_l$ é associado a algum $c_i$ ou $d_k$, de forma injetora.
-Como $d\not |c$, algum $d_l$ é associado a algum $a_j$.
-Porém, $d_1\dots d_k|\prod_{i \in I} c_i \prod_{k \in K} c_k$, e, portanto, esse mesmo $d_l$ é associado a algum $c_k$.
-Assim, $a_j$ é associado à $c_k$, um absurdo.
+    Se $x$ não é invertível escreva $x=p_{n+1}\dots p_{n+k}$, com $x_1, \dots, x_k$ irredutíveis. Temos que $q_1\dots q_m=p_1\dots p_{n+k}$. Como $R$ é um DFU, $k+n=m$ e existe $\sigma$ permutação em $n+k=m$ tal que $p_i$ é associado à $q_{\sigma(i)}$ para todo $i<k$. Restringindo-se $\sigma$ à $\{1, \dots, n\}$, segue a tese.
 \end{proof}
 
-\begin{corol}
+\begin{corol}\label{corol:DFUprime}
 Em um DFU, todo elemento irredutível é primo.
 Assim, em um DFU, todo elemento não nulo e não invertível se escreve como um produto de primos.
 \end{corol}
 
-A recíproca é verdadeira. Primeiro, precisamos:
+Para a próxima proposição, observe que se $R$ é um domínio, $a, b, c, d \in R\setminus \{0\}$ e se $a$ é associado à $b$ e $a\neq 0$, então $c\mid d$ se, e somente se $ac\mid ad$.
+\begin{prop}
+    Todo DFU é um domínio de MDC.
+\end{prop}
+\begin{proof}
+Seja $R$ um DFU.
+Se $a\mid b$ ou $b\mid a$, temos que o $\MDC(a, b)\neq \emptyset$.
+Assim, vamos supor que $a\nmid b$ e $b\nmid a$. Em particular, $a, b \neq 0$ e $a, b \notin R^*$.
+
+Escreva $a=p_1\dots p_n$ e $b=q_1\dots q_m$ com $p_1, \dots, p_n$ e $q_1, \dots, q_m$ irredutíveis.
+
+Reordenando, podemos transformar $(p_1, \dots, p_n)$ nas sequências $(c_1, \dots, c_k)$ e $(c_{k+1}, \dots, c_{k+l})$, e $(q_1, \dots, q_m)$ nas sequências $(c_1', \dots, c_k')$ e $(c_{k+1}', \dots, c_{k+l'}')$ de modo que:
+
+\[a=\prod_{i=1}^{k+l}c_i,\]
+\[b=\prod_{i=1}^{k+l'}c_i'.\]
+
+Onde cada $c_i$ é associado a $c_i'$ para $1\leq i\leq k$ e nenhum $c_i$ é associado a nenhum $c_j'$ para $k+1\leq i\leq k+l$ e $k+1\leq j\leq k+l'$.
+Note que $a\nmid b$ e $b\nmid  a$, temos que as famílias $(c_{k+1}, \dots, c_{k+l})$ e $(c_{k+1}', \dots, c_{k+l'}')$ são não vazias.
+
+
+Afirmamos que $c=\prod_{i \in I} c_i$ é um MDC de $a$ e $b$.
+
+Está claro que $c\mid a$ e $c\mid b$.
+Suponha que $d\mid a$ e $d\mid b$.
+Devemos ver que $d\mid c$.
+Temos que $d\neq 0$, e se $d$ é invertível, segue a tese.
+
+Suponha por absurdo que $d\nmid  c$.
+
+Se $d$ não é invertível, escreva $d=d_1\dots d_t$ com $d_i$ irredutíveis. Veremos, por indução, que para todo $s\in\{1, \dots, t\}$, que $d_1\dots d_s|c$, o que concluirá a prova.
+
+Para $s=1$, temos que $d_1|c_1\dots c_{k+l}$ e $d_1|c_1'\dots c_{k+l}'$. Pelo lema anterior, existem $i, j$ tais que $d_1$ é associado à $c_i$ e $d_1$ é associado à $c_j'$. Se $i, j>k$ temos que $c_i$ é associado à $c_j'$, o que é um absurdo. Assim, $i\leq k$ ou $j\leq k$, e, em qualquer caso, temos $d_1|c$.
+
+Suponha que a hipótese vale para $s<t$. Veremos que vale para $s+1$.
+
+Temos que $d_1\dots d_s|c$, logo, pelo lema anterior, existe $\sigma:\{1, \dots, s\}\rightarrow\{1, \dots, k\}$ injetora tal que cada $d_i$ é associado à $c_{\sigma(i)}$, e, consequentemente, à $c_{\sigma(i)}'$. Como $d_1\dots d_sd_{s+1}|c_1\dots c_{k+l}$, cancelando os elementos associados por $\sigma$, temos que existe $\bar i$ fora da imagem de $\sigma$ tal que $d_{s+1}$ é associado à $c_{\bar i}$. Analogamente, existe $\bar j$ fora da imagem de $\sigma$ tal que $d_{s+1}$ é associado à $c_{\bar j}'$. Se $\bar i, \bar j>k$, temos um absurdo. Logo, sem perda de generalidade, $\bar i\leq k$ e $d_1\dots d_{s+1}|c_{\sigma(1)}\dots c_{\sigma(s)}c_{\bar j}$ e $c_{\sigma(1)}\dots c_{\sigma(s)}c_{\bar j}|c$.
+\end{proof}
+
+
+A recíproca do Corolário~\ref{corol:DFUprime} é verdadeira. Primeiro, precisamos:
 
 \begin{lemma}
 Seja $R$ um domínio de integridade, $p\in R$ um elemento primo e $q_1, \dots, q_n\in R$ irredutíveis.
-Se $p|q_1\cdots q_n$, então existe $i$ tal que $p$ é associado à $q_i$.
+Se $p\mid q_1\cdots q_n$, então existe $i$ tal que $p$ é associado à $q_i$.
 \end{lemma}
 \begin{proof}
 Seguimos por indução em $n$.
-Para $n=1$, se $p|q_1$, temos que $q_1=pu$ para algum $u\in R$.
+Para $n=1$, se $p\mid q_1$, temos que $q_1=pu$ para algum $u\in R$.
 Assim, $p\in R^*$ ou $u\in R^*$.
 Como $p \notin R^*$, segue que $u \in R^*$, logo, $p$ é associado à $q_1$.
 
-Para o passo indutivo, suponha que a tese é verdadeira para $n$ e que $p|(q_1\dots q_{n+1})$.
-Temos que $p|(q_1\dots q_{n})$ ou $p|q_{n+1}$.
+Para o passo indutivo, suponha que a tese é verdadeira para $n$ e que $p\mid (q_1\dots q_{n+1})$.
+Temos que $p\mid (q_1\dots q_{n})$ ou $p\mid q_{n+1}$.
 As hipóteses indutivas concluem a prova.
 \end{proof}
 
@@ -520,8 +543,6 @@ Suponha que $R$ é um domínio em que todo elemento não nulo, não invertível 
 Então $R$ é um DFU.
 \end{prop}
 \begin{proof}
-    Basta ver que se $u, v \in R^*$, $n, m\geq 1$ e $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis, então $n=m$ e existe uma permutação $\sigma:\{1, \dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
-
     Primeiro, verificaremos que todo irredutível é primo.
     Suponha que $q$ é irredutível.
     Escreva $q=p_1\cdots p_n$, com $p_1, \dots, p_n$ primos.
@@ -529,19 +550,24 @@ Então $R$ é um DFU.
     Assim, pelo lema, existe $i$ tal que $p_i$ é associado a $q$.
     Em particular, $q$ é primo.
 
-    Agora provaremos por indução em $k=\max\{m, n\}$ que, para todo $m, n\geq1$ com $m, n\leq k$, se $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis (primos), então $n=m$ e existe uma permutação $\sigma:\{1, \dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
 
-    Para $k=1$, temos que $u p_1= v q_1$.
-    Logo, $p_1, q_1$ são associados.
+    Para provar a proposição, mostraremos, por indução em $k\geq 1$, que para todos $n, m$ com $1\leq n, m\leq k$ e $p_1, \dots, p_n, q_1, \dots, q_m$  irredutíveis, se $p_1\dots p_n$ é associado à $q_1\dots q_m$, então $n=m$ e existe uma permutação $\sigma:\{1, \dots, n\}\rightarrow \{1, \dots, n\}$ tal que $p_i$ é associado a $q_{\sigma(i)}$ para todo $i=1, \dots, n$.
 
-    Para o passo indutivo, suponha que a tese é verdadeira para $k$ e que $p_1, \dots, p_n, q_1, \dots, q_m$ são irredutíveis (primos) com $n, m\leq k+1$.
+    Para $k=1$, temos que $n=m=1$ e $p_1$ é associado à $q_1$.
+
+    Para o passo indutivo, suponha que a tese é verdadeira para $k$. Sejam $p_1, \dots, p_{n}, q_1, \dots, q_{m}$ irredutíveis (primos) com $1\leq n, m\leq k+1$ tais que $p_1\dots p_{n}=q_1\dots q_{m}$.
     Se $m, n\leq k$, a hipótese indutiva conclui a prova.
     Sem perda de generalidade, vamos supor $n=k+1$.
-    Assim, $(up_1\cdots p_{k})p_{k+1}=vq_1\cdots q_{m}$.
-    Como $p_{k+1}|q_1\cdots q_m$, segue do lema anterior que existe $i$ tal que $p_{k+1}$ é associado a $q_i$.
-    Tome $\theta: \{1, \dots, m\}\rightarrow \{1, \dots, m\}$ de modo que  $\theta(i)=m$. Escreva $p_{k+1}=w q_i$.
-    Cancelando, segue que $(uw)q_1\cdots q_k = vq_{\theta(1)}\cdots q_{i-1}q_{i+1} q_{\theta(m-1)}$.
-    Por hipótese indutiva, temos que existe $m-1=k$ e existe $\sigma: \{1, \dots, k\}\rightarrow \{1, \dots, k\}$ tal que $p_j$ é associado a $q_{\theta(\sigma(j))}$ para todo $j=1, \dots, k$.
+    Assim, $(p_1\cdots p_{k})p_{k+1}=q_1\cdots q_{m}$.
+
+    Como $p_{k+1}\mid q_1\cdots q_m$, segue do lema anterior que existe $i$ tal que $p_{k+1}$ é associado a $q_i$.
+
+    Notemos que $m\geq 2$, caso contrário teremos que $p_1\dots p_k$ é invertível, o que implica que cada $p_i$ é invertível.
+
+    Tome $\theta: \{1, \dots, m\}\rightarrow \{1, \dots, m\}$ de modo que  $\theta(m)=i$. Escreva $p_{k+1}=w q_i$ com $w \in R^*$.
+    Temos que $p_1\cdots p_{k}w p_i=q_1\cdots q_{m}=q_{\theta(1)}\cdots q_{\theta(m)}$.
+    Cancelando, segue que $wp_1\cdots p_{k}=q_{\theta(1)}\cdots q_{\theta(m-1)}$.
+    Por hipótese indutiva, temos que $m-1=k$ e existe $\sigma: \{1, \dots, k\}\rightarrow \{1, \dots, k\}$ tal que $wp_1$ é associado à $q_{\theta(\sigma(1))}$, e, para $2\leq j\leq k-1$, $p_j$ é associado a $q_{\theta(\sigma(j))}$ para todo $j=1, \dots, k$.
 
     Seja $\sigma'=\theta\circ\sigma \cup \{(k+1, i)\}$, o que conclui a prova.
 \end{proof}
@@ -555,28 +581,25 @@ Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não 
     Fique $a \in R$ como no enunciado e suponha por absurdo que $a$ não possui divisor irredutível. Recursivamente, construiremos uma sequência $(p_n: n \in \mathbb N)$ de elementos de $\mathbb R$ satisfazendo:
     \begin{enumerate}[label=\alph*)]
         \item $p_0=a$.
-        \item $p_n|p$ para todo $n \in \mathbb N$
+        \item $p_n\mid p$ para todo $n \in \mathbb N$
         \item $\langle p_n\rangle\neq R$.
         \item $\langle p_n\rangle\subsetneq \langle p_{n+1}\rangle$.
     \end{enumerate}
     O que nos dará um absurdo, por d).
 
-    Para ver que tal sequência existe, seja $p_0=a$. Como $a$ não é invertível, $\langle p_n\rangle \neq R$, e $p_0|a$.
+    Para ver que tal sequência existe, seja $p_0=a$. Como $a$ não é invertível, $\langle p_n\rangle \neq R$, e $p_0\mid a$.
 
     Para o passo sucessor da recursão, construído $p_n$, como $\langle p_n\rangle\neq R$, sabemos que $p_n$ não é invertível.
-    Além disso, $0\neq p_n$, pois $p_n|a$.
+    Além disso, $0\neq p_n$, pois $p_n\mid a$.
     Pelo mesmo motivo, $p_n$ não é irredutível.
-    Logo, existem $b, c \in R$ tais que $p_n=bc$ e nem $b$, nem $c$ são invertíveis.
+    Logo, existem $b, c \in R$ tais que $p_n=bc$ e nem $b$, nem $c$ são invertíveis, nem associados à $p_n$.
     Seja $p_{n+1}=b$.
 
-    Como $p_{n+1}|p_n$ e $p_n|p$, segue que $p_{n+1}|p$.
+    Como $p_{n+1}\mid p_n$ e $p_n\mid p$, segue que $p_{n+1}\mid p$.
     Uma vez que $b$ não é invertível, $\langle p_{n+1}\rangle\neq R$.
 
-    Como $p_{n+1}|p_n$, temos que $\langle p_n\rangle\subseteq \langle p_{n+1}\rangle$.
-    Porém, a inclusão é própria, caso contrário, teríamos $p_{n+1}\in \langle p_n\rangle$, o que nos dá $p_n|p_{n+1}$.
-    Assim, existe $d$ tal que $b=dp_n$.
-    Logo, $p_n=bc=dp_nc$.
-    Cancelando $p_n\neq 0$, temos que $1=dc$, o que nos dá um absurdo, pois $c$ não é invertível.
+    Como $p_{n+1}\mid p_n$, temos que $\langle p_n\rangle\subseteq \langle p_{n+1}\rangle$.
+    Porém, a inclusão é própria, caso contrário, teríamos $p_{n+1}$ e $p_n$ são associados.
 \end{proof}
 
 \begin{lemma}
@@ -599,7 +622,7 @@ Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não 
     Logo, existem $p_{n+1}$ e $a_{n+1}$ tais que $a_n=p_{n+1}a_{n+1}$ com $p_{n+1}$ irredutível.
 
     Isso completa a construção.
-    Assim, $a_{n+1}|a_{n}$, mas $a_{n}\not \neq a_{n+1}$, ou teríamos que existe $b$ tal que $a_{n+1}=ba_n$, e, substituindo, seguiria que $a_n=a_nbp_{n+1}$, o que nos dá $p_{n+1}$ é invertível, um absurdo.
+    Assim, $a_{n+1}\mid a_{n}$, mas $a_{n}\not \neq a_{n+1}$, ou teríamos que existe $b$ tal que $a_{n+1}=ba_n$, e, substituindo, seguiria que $a_n=a_nbp_{n+1}$, o que nos dá $p_{n+1}$ é invertível, um absurdo.
 
     Portanto, segue que para todo $n$, $\langle a_n\rangle\subsetneq \langle a_{n+1}\rangle$, uma contradição.
 \end{proof}
@@ -609,14 +632,17 @@ Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não 
 \end{corol}
 
 \begin{prop}[Lema de Bézout]
-    Seja $R$ um domínio de ideais principais, $a, b \in R$ e $d$ um MDC de $a, b$.
-    Então existem $x, y \in R$ tais que $xa+yb=d$.
+    Seja $R$ um domínio de ideais principais, $a_0, \dots, a_n \in R$ e $d\in \MDC(a_0, \dots, a_n)$
+    Então existem $x_0, \dots, x_n \in R$ tais que $d=x_0a_0+\dots+x_na_n$ e $d$ gera o ideal $\langle a_0, \dots, a_n\rangle$.
 \end{prop}
 \begin{proof}
-    Seja $d'$ um gerador do ideal $\langle a, b\rangle$.
-    Então $d'|a$ e $d'|b$.
-    Logo, $d'|d$.
-    Assim, $d \in \langle a, b\rangle=\{ax+by: x, y \in R\}$, o que conclui a prova.
+    Seja $d'$ um gerador do ideal $\langle a_0, \dots, a_n\rangle$.
+
+    Para cada $i\leq n$, $d|a_i$, logo, $a_i \in \langle d\rangle$, assim, segue que $\langle a_0, \dots, a_n\rangle \subseteq \langle d\rangle$.
+
+        Seja $d'$ um gerador do ideal $\langle a_0, \dots, a_n\rangle$. Temos que, para cada $i\leq n$, $d'|a_i$, logo, $d'|d$. Assim, $\langle d\rangle\subseteq \langle d'\rangle\subseteq = a_0, \dots, a_n\rangle$.
+
+        Conclui-se que $\langle d\rangle = \langle a_0, \dots, a_n\rangle$. Em particular, $d \in \langle a_0, \dots, a_n\rangle$, o que nos dá a existência de $x_0, \dots, x_n \in R$ tais que $d=x_0a_0+\dots+x_na_n$.
 \end{proof}
 \section{Domínios Euclideanos}
 O anel dos números inteiros possui uma propriedade muito importante:
@@ -650,7 +676,7 @@ Um primeiro resultado simples:
     Primeiro, é claro que se $a, b\in \mathbb Z$ são não nulos, então $|ab|=|a||b|\geq |a|1=|a|$.
 
     Agora, sejam $a, b\in \mathbb Z$ com $b\neq 0$.
-    Sabemos que existem $q, r \in \mathbb Z$ tais que $a=q|b|+r$ e $0\leq r < |b|$.
+    Sabemos que existem $q, r \in \mathbb Z$ tais que $a=q|b| +r$ e $0\leq r < | b| $.
     Se $b>0$, isso conclui a prova.
     Se $b<0$, então $a=(-q)b+r$, e isso conclui a prova.
 \end{exemplo}
@@ -658,7 +684,7 @@ Um primeiro resultado simples:
 \begin{exemplo}
     No geral, não podemos exigir a unicidade de $q, r$.
     De fato, em $\mathbb Z$, considere $a=3$, $b=2$.
-    Então $3=1\cdot 2+1$ com $|1|<|2|$, mas também $3=2\cdot 2+(-1)$ com $|-1|<|2|$.
+    Então $3=1\cdot 2+1$ com $|1| <|2| $, mas também $3=2\cdot 2+(-1)$ com $|-1|<|2|$.
 \end{exemplo}
 
 Porém, temos o resultado a seguir.
@@ -734,4 +760,26 @@ Todo domínio Euclideano é um domínio de ideais principais.
     Seja $R$ um domínio Euclideano munido de função grau $\nu$ e $a \in R$ não nulo.
     Seja $m$ o menor valor assumido por $\nu$.
     Prove que $a$ é invertível se, e somente se $\nu(a)=m$.
+\end{exer}
+
+\begin{exer}
+    Determine todas as unidades de $\mathbb Z[i]$.
+\end{exer}
+
+\begin{exer}
+    Seja $R$ um domínio e $a, b, c, d \in R$, com $a, b$ não nulos e associados. Mostre que $c\mid d$ se, e somente se $ac\mid bd$.
+\end{exer}
+\begin{exer}
+    Seja $R$ um domínio e $a, b, c, d \in R$, com $a, b$ não nulos e associados. Mostre que $ac$ é associado à $bd$ se, e somente se $c$ é associado à $d$.
+\end{exer}
+
+\begin{exer}
+    Seja $R$ um domínio e $a, b \in R$ irredutíveis. Mostre que $a|b$ se, e somente se $a$ e $b$ são associados.
+\end{exer}
+\begin{exer}
+    Seja $R$ um domínio e $a \in R$ irredutível. Mostre que para todo $x \in R$, $ax\notin R^*$.
+\end{exer}
+
+\begin{exer}
+    Seja $R$ um domínio de fatoração única e $a_0, \dots, a_n \in R$ não todos nulos. Mostre que $1 \in \MDC(a_0, \dots, a_n)$ se, e somente se, para todo $p \in R$ irredutível existe $i \in \{0, \dots, n\}$ tal que $p\nmid a_i$.
 \end{exer}
