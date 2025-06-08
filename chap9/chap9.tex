@@ -604,7 +604,7 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     Está claro que $g$ é sobrejetora no conjunto das funções polinomiais, e, portanto, este forma um anel. Além disso, se $R$ é um domínio infinito e $g(p(x))=0$, então $p(s)=0$ para todo $s \in R$.
     Se $p(x)\neq 0$, o número de raízes de $p(x)$ seria finito. Como $R$ é infinito, $p(x)$ tem infinitas raízes, assim, $p(x)=0$.
 \end{proof}
-\section{O critério da irredutibilidade de Eisenstein}
+\section{Divisibilidade em anéis de polinômios}
     Algumas vezes pode ser complicado decidir se certo polinômio é irredutível.
 
     Sabemos que $x^2-2\in \mathbb Q[x]$ é irredutível, pois, estudando-se os graus, caso tivesse um divisor não invertível, deveria ter um divisor de grau $1$ -- e, portanto, deveria ter uma raiz em $\mathbb Q$, o que sabemos não existir.
@@ -650,11 +650,11 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
         \begin{equation*}
         a\in \MDC(a_0, \dots, a_{n+m})=\MDC(a_0, \dots, a_n)=\MDC(aa_0', \dots, aa'_n)=a\MDC(a_0', \dots, a'_n).
         \end{equation*}
-        Logo, $1 \in \MDC(a'_0, \dots, a'_n)$. Seja $r$ o primeiro inteiro tal que $p\not|a'_r$.
+        Logo, $1 \in \MDC(a'_0, \dots, a'_n)$. Seja $r$ o primeiro inteiro tal que $p\nmid a'_r$.
 
-        Analogamente, $1 \in \MDC(b'_0, \dots, b'_m)$. Seja $s$ o primeiro inteiro tal que $p\not|b'_s$.
+        Analogamente, $1 \in \MDC(b'_0, \dots, b'_m)$. Seja $s$ o primeiro inteiro tal que $p\nmid b'_s$.
 
-        Temos que se $p\not| c'_{r+s}$: com efeito, $c'_{r+s}=\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)+a_rb_s$. Temos que $p|\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)$, pois divide cada somando, mas $p\not |a_rb_s$ pois $p$ é primo, deveríamos ter $p|a_r$ ou $p|a_s$. Assim, $p\not | c'_{r+s}$.
+        Temos que se $p\nmid c'_{r+s}$: com efeito, $c'_{r+s}=\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)+a_rb_s$. Temos que $p|\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)$, pois divide cada somando, mas $p\nmid a_rb_s$, pois $p$ é primo, deveríamos ter $p|a_r$ ou $p|a_s$. Assim, $p\nmid c'_{r+s}$.
     \end{proof}
 \section{Exercícios}
 \begin{exer}
