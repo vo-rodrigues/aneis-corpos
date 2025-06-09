@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+* Iniciada seção sobre corpos de decomposição. Não há muito além da definição por enquanto.
+* Capítulo 8 revisado e aprimorado.
+* Critérios de Eisenstein e equivalência entre R e R[x] serem DFUs provados.
+* Alguns erros de digitação corrigidos.
+
 ## 0.2.6
 * Erros de digitação em enunciados de exercícios corrigidos. Novo exercício no Capítulo 3.
 
