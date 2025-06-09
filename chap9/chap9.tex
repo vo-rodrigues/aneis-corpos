@@ -614,7 +614,18 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
 
     Note ainda que $x^4+1\in \mathbb R[x]$ não possui raiz real, porém, $x^4+1=(x^2+\sqrt 2 x+1)(x^2-\sqrt 2 x+1)$, logo, $x^4+1$ não é irredutível em $\mathbb R[x]$, embora não tenha raiz.
 
-    \begin{definition}
+    Para melhor estudar a reducibilidade em polinômios, definiremos a noção de conteúdo. Tal noção é motivada pelo seguinte lema:
+
+    \begin{lemma}
+    Seja $R$ um domínio de integridade, $p \in R[x]\setminus \{0\}$ e $a \in R\setminus \{0\}$. Escreva $p=\sum_{i=0}^n$. Então $a\mid p$ em $R[x]$ se, e somente se $a\mid a_i$ em $R$ para todo $i\leq n$.
+    \end{lemma}
+    \begin{proof}
+        Suponha que $a\mid p$. Existe $q\in R[x]$ tal que $p=aq$. Como $\gr a=0$, temos que $\gr p=\gr q$. Escreva $q=\sum_{i=0}^n b_i x^i$. Para todo $i\leq n$, $a_i=ab_i$, e, assim, $a|a_i$.
+        
+        Reciprocamente, suponha que para todo $i\leq n$, $a\mid a_i$. Para cada $i\leq n$, existe $b_i \in R$ tal que $a_i=ab_i$. Logo, $p=a\sum_{i=0}^n b_i x^i$, e, portanto, $a\mid p$.
+    \end{proof}
+
+    \begin{definition}[Conteúdo de um polinômio]
         Seja $R$ um domínio de MDC's e $p \in R[x]\setminus \{0\}$. Um \emph{conteúdo} de $p$ é um MDC se seus coeficientes. Explicitamente, se $p=\sum_{i=0}^n a_i x^i$ com $a_n\neq 0$, então um \emph{conteúdo} de $p$ é um elemento de $\MDC(a_0, \dots, a_n)$.
 
         O conjunto de todos os conteúdos de $p$ é denotado por $C(p)$.
@@ -623,12 +634,54 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
         Se $1 \in C(p)$, dizemos que $p$ é $\emph{primitivo}$.
     \end{definition}
 
-    Observação: se escrevermos $p=\sum_{i=0}^n a_i x^i$ com $n>\gr p$ adicionando coeficientes $0$ à escrita, então $\MDC(a_0, \dots, a_n)=C(p)$, pois para qualquer conjunto finito $A$, $\MDC(A)=\MDC(A\cup \{0\})$.
+    Façamos uma pausa para fazer algumas observações.
+    
+    \begin{itemize}
+        \item Se escrevermos $p=\sum_{i=0}^n a_i x^i$ com $n>\gr p$ (de modo que $a_i=0$ para $i=\gr p+1, \dots, n$), então $\MDC(a_0, \dots, a_n)=C(p)$, pois para quaisquer $a_0, \dots, a_k$, vale $\MDC(a_0, \dots, a_k, 0)=\MDC(a_0, \dots, a_k)$.
+        \item Como $C(p)$ é um conjunto MDC, se $a, b \in C(p)$, então $a, b$ são associados (em $R$), e, se $c\in R$ é associado à $a$, então $c\in C(p)$.
+        \item Em particular, $p$ é primitivo se, e somente se $C(p)=R^*$.
+    \end{itemize}
 
-    \begin{lemma}[Gauss]
-        Seja $R$ um domínio de fatoração única e $p, q \in R[x]\setminus\{0\}$. Então $C(pq)=\{ab: a \in C(p), b \in C(q)=C(p)C(q)$.
-        Em particular, um produto de polinômios primitivos é primitivo.
+    Em algum sentido, $C(p)$ é o conjunto dos MDCs de $p$ com relação à $R$, conforme sintetiza o lema a seguir.
+
+    \begin{lemma}
+        Seja $R$ um domínio de MDC, $p \in R[x]\setminus\{0\}$ e $a\in R$. São equivalentes:
+        \begin{enumerate}[label=(\alph*)]
+            \item $a\in C(p)$.
+            \item $a\mid p$ em $R[x]$ e para todo $b \in R$, se $b\mid p$ então $b\mid a$.
+        \end{enumerate}
     \end{lemma}
+    \begin{proof}
+        $(a)\rightarrow (b)$: como $a$ divide os coeficientes de $p$, temos que $a\mid p$. Se $b\mid p$, então $b$ divide todos os coeficientes de $p$, e, portanto, $a$, que é o MDC destes.
+
+        $(b)\rightarrow (a)$: Como $a$ divide $p$, $a$ divide os coeficientes de $p$. Além disso, se $b\in R$ divide os coeficientes de $p$, então $b\mid p$, e, por hipótese, $b\mid a$.
+    \end{proof}
+
+
+    \begin{lemma}
+        Seja $R$ um domínio de MDC e $p \in R[x]\setminus\{0\}$. Se $a\in R$, então $C(ap)=aC(p)$.
+    \end{lemma}
+    \begin{proof}
+        Seja $p=\sum_{i=0}^n a_i x^i$. Então $ap=\sum_{i=0}^n aa_i x^i$.
+        Dessa forma:
+        
+        \begin{equation*}
+            C(ap)=\MDC(aa_0, \dots, aa_n)=a\MDC(a_0, \dots, a_n)=aC(p).
+        \end{equation*}
+    \end{proof}
+    
+    \begin{corol}
+        Seja $R$ um domínio de MDC e $p \in R[x]\setminus\{0\}$. Se $a \in C(p)$, então $a\mid p$, e, se $p'\in R[x]$ é tal que $p=ap'$, então $p'$ é primitivo.
+    \end{corol}
+
+    \begin{proof}
+        Como já vimos $a\mid p$. Seja $p'$ tal que $p=ap'$. Como $a \in aC(p')$, existe $b \in C(p')$ tal que $ab=a$. Cancelando $a\neq 0$, temos que $b='\in C(p')$.
+    \end{proof}
+
+    \begin{prop}[Lema de Gauss]
+        Seja $R$ um domínio de fatoração única e $p, q \in R[x]\setminus\{0\}$. Então $C(pq)=C(p)C(q)$\footnote{Nesta notação, $C(p)C(q)=\{ab: a \in C(p), b \in C(q)\}$.}.
+        Em particular, um produto de polinômios primitivos é primitivo.
+    \end{prop}
 
     \begin{proof}
         Sejam $a \in C(p)$, $b \in C(q)$. Basta ver que $ab \in C(pq)$.
@@ -637,24 +690,79 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
 
         Seja, para $i\leq n+m$, $c_i=\sum_{j=0}^{i}a_{i-j}b_j$. Devemos ver que $ab \in \MDC(c_0, \dots, c_{n+m})$.
 
-        Dado $i\leq n+m$ e $j\leq i$, temos $j\leq 0$, temos que $a|a_{i-j}$ e $b|b_j$, logo, $ab|a_{i-j}b_j$, logo, $ab|\left(\sum_{j=0}^{i}a_{i-j}b_j\right)=c_i$.
+        Dados $i, j$ com $0\leq i\leq n+m$ e $0\leq j\leq i$, temos que $a|a_{i-j}$ e $b|b_j$, logo, $ab|a_{i-j}b_j$, logo, $ab\mid \left(\sum_{j=0}^{i}a_{i-j}b_j\right)=c_i$.
 
-        Para cada $i\leq m+n$, existe $a_i'$ e $b_i'$ tais que $a_i=aa_i'$ e $b_i=bb'_i$.
+        Para cada $i\leq m+n$, existem $a_i'$ e $b_i'$ tais que $a_i=aa_i'$ e $b_i=bb'_i$.
         Então, para cada $i\leq m+n$, $c_i=ab\sum_{i=0}^{n+m}a_{i-j}'b_j'$.
         Seja $c_i'=\sum_{i=0}^{n+m}a_{i-j}'b_j'$.
 
-        Segue que $\MDC(c_0, \dots, c_{n+m})=\MDC(abc'_0, \dots,abc_{n+m}')=ab\MDC(c'_0, \dots, c_{n+m}')$. Assim, basta ver que $1 \in \MDC(c'_0, \dots, c_{n+m}')$. Para tanto, basta ver que se $p \in R$ é primo, então $p$ não é divisor comum de $(c'_0, \dots, c'_{n+m})$.
-        Fixe $p$.
+        Segue que $\MDC(c_0, \dots, c_{n+m})=\MDC(abc'_0, \dots,abc_{n+m}')=ab\MDC(c'_0, \dots, c_{n+m}')$. Assim, basta ver que $1 \in \MDC(c'_0, \dots, c_{n+m}')$. Para tanto, basta ver que se $\alpha \in R$ é primo, então $\alpha$ não é divisor comum de $(c'_0, \dots, c'_{n+m})$.
+        Fixe $\alpha$.
 
-        Note que: 
-        \begin{equation*}
-        a\in \MDC(a_0, \dots, a_{n+m})=\MDC(a_0, \dots, a_n)=\MDC(aa_0', \dots, aa'_n)=a\MDC(a_0', \dots, a'_n).
-        \end{equation*}
-        Logo, $1 \in \MDC(a'_0, \dots, a'_n)$. Seja $r$ o primeiro inteiro tal que $p\nmid a'_r$.
-
-        Analogamente, $1 \in \MDC(b'_0, \dots, b'_m)$. Seja $s$ o primeiro inteiro tal que $p\nmid b'_s$.
+        Do lema anterior, como $a\sum_{i=0}^n a_i'x^i=p$, segue que $1\in \MDC(a_0, \dots, a_n)$.
+        Analogamente, $1 \in \MDC(b_0, \dots, b_m)$.
+        Seja $r\leq n$ o menor número que $\alpha\nmid a_i$ e $s\leq m$ o menor número que $\alpha \nmid b_j$.
 
         Temos que se $p\nmid c'_{r+s}$: com efeito, $c'_{r+s}=\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)+a_rb_s$. Temos que $p|\sum(a_{r+s-j}b_j:0\leq j\leq r+s, j\neq s)$, pois divide cada somando, mas $p\nmid a_rb_s$, pois $p$ é primo, deveríamos ter $p|a_r$ ou $p|a_s$. Assim, $p\nmid c'_{r+s}$.
+    \end{proof}
+
+
+
+    \begin{prop}
+        Seja $R$ um DFU, $K$ seu corpo de frações, e $p, q\in R[x]$ com $p$ primitivo. Então $p\mid q$ em $R[x]$ se, e somente se $p\mid q$ em $K[x]$.
+    \end{prop}
+    \begin{proof}
+        É claro que se $p\mid q$ em $R[x]$, então $p\mid q$ em $K[x]$.
+
+        Agora suponha que $p\mid q$ em $K[x]$. Existe $r \in K[x]$ tal que $q=rp$. Existe $b\in R$ tal que $br\in R[x]$. Seja $a \in C(br)$ e $r'$ primitivo tal que $br=ar'$. Então $bq=brp=ar'p$.
+
+        Do Lema de Gauss, fixado $m \in C(q)$, que $bm\in bC(q)=C(bq)=C(ar'p)=aC(r'p)\ni a$, logo, $a$ é associado à $bm$. Assim, existe $u \in R^*$ tal que $a=ubm$, e, portanto, $aq=ubmq=umar'p$. Cancelando $a$, temos que $q=umr'p$, e, portanto, $p|q$ em $R[x]$.
+    \end{proof}
+
+    \begin{corol}
+        Seja $R$ um DFU, $K$ seu corpo de frações e sejam $p, q \in R[x]$ primitivos.
+        Então $p, q$ são associados em $R[x]$ se, e somente se $p, q$ são associados em $K[x]$. 
+    \end{corol}
+
+    \begin{prop}
+        Seja $R$ um DFU, $K$ seu corpo de frações e seja $p\in R[x]$ primitivo de grau $k\geq 1$.
+        Então $p$ é irredutível em $R[x]$ se, e somente se $p$ é irredutível em $K[x]$, e, nesse caso, $p$ é primo em $K[x]$ e $R[x]$.
+    \end{prop}
+    \begin{proof}
+        Primeiro, suponha que $p$ é irredutível em $K[x]$. Como $K[x]$ é um domínio Euclidiano, temos que $p$ é primo em $K[x]$. Afirmamos que $p$ é primo em $R[x]$: se $p\mid ab$, com $a, b \in R[x]$, temos que $p\mid a$ ou $p\mid b$ em $K[x]$, e, portanto, em $R[x]$.
+
+        Reciprocamente, suponha que $p$ é redutível em $K[x]$ e escreva $p=qt$, com $q, t \in K[x]$ de modo que $n=\gr q$ e $m=\gr t$ são ambos $\geq 1$.
+
+        Existem $b, d\in R\setminus \{0\}$ com $bq, dt \in R[x]$. Tome $a \in C(bq)$ e $c \in C(dt)$, e $q', t'$ primitivos com $bq=aq'$ e $dt=ct'$.
+        Note que $\gr q'=\gr q=n$ e $\gr t'=\gr t=m$.
+
+        Segue que $bdp=bdqt=acq't'$. Pelo Lema de Gauss, $bd$ e $ac$ são associados, e, portanto, existe $u \in R^*$ tal que $bdu=ac$. Assim, $acp=bdup=acuq't'$. Cancelando $ac$, temos que $p=uq't'$, e, portanto, $uq'$, $t'$ são divisores não invertíveis de $p$.
+    \end{proof}
+    \begin{lemma}
+    Seja $R$ um DFU. Todo elemento primo de $R$ é um elemento primo de $R[x]$.
+    \end{lemma}
+    \begin{proof}
+        Seja $\alpha \in R$ primo. Então $\alpha$ é não nulo e não invertível em $R[x]$.
+
+        Suponha que $\alpha\mid pq$.
+        Se $p=0$ ou $q=0$, como $\alpha\mid 0$, segue a tese.
+        
+        Então suponha que $p, q \neq 0$. Seja $m\in C(p)$, $m'\in C(q)$. Pelo Lema de Gauss, $mm'\in C(pq)$. Assim, $\alpha\mid mm'$, logo, $\alpha\mid m$ ou $\alpha\mid m'$, logo, $\alpha\mid p$ ou $\alpha\mid q$.
+
+        Portanto, $\alpha$ é primo.
+    \end{proof}
+    \begin{prop}
+        Seja $R$ um DFU. Então $R[x]$ é um DFU.
+    \end{prop}
+    \begin{proof}
+        Basta ver que todo elemento não nulo, não invertível de $R[x]$ é um produto de fatores primos.
+
+        Dado $p \in R[x]$ não nulo e não invertível de grau $0$ ele é um produto de primos de $R$. Se $\gr p>0$, escreva $p=mp'$, onde $m \in C(p)$ e $p'$ é primitivo. Temos que $m$ é invertível ou um produto de fatores primos de $R$. Logo, basta ver que $p'$ é um produto de fatores primos de $R[x]$.
+
+        Seja $K$ o corpo de frações de $R$.
+
+        Em $K[x]$, escreva $p'=p_0\dots p_k$, com $p_0,\dots, p_k$ primos de $K[x]$. Para cada $i\leq k$, existe $b_i$ tal que $b_i p_i\in R[x]$.
+        Fixe $a_i \in C(b_ip_i)$ e $p_i'$ primitivo com $b_ip_i=a_ip_i'$. Temos que $b_0 \dots b_k p'= a_0\dots a_k p_0'\dots p_k'$. Pelo Lema de Gauss, $b_0 \dots b_k$ e $a_0\dots a_k$ são associados. Existe $u \in R^*$  tal que $u b_0 \dots b_k= a_0\dots a_k$. Segue que $p'=up_0'\dots p_k'$, que é um produto de primos de $R[x]$.
     \end{proof}
 \section{Exercícios}
 \begin{exer}
