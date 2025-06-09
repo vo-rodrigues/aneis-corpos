@@ -764,6 +764,31 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
         Em $K[x]$, escreva $p'=p_0\dots p_k$, com $p_0,\dots, p_k$ primos de $K[x]$. Para cada $i\leq k$, existe $b_i$ tal que $b_i p_i\in R[x]$.
         Fixe $a_i \in C(b_ip_i)$ e $p_i'$ primitivo com $b_ip_i=a_ip_i'$. Temos que $b_0 \dots b_k p'= a_0\dots a_k p_0'\dots p_k'$. Pelo Lema de Gauss, $b_0 \dots b_k$ e $a_0\dots a_k$ são associados. Existe $u \in R^*$  tal que $u b_0 \dots b_k= a_0\dots a_k$. Segue que $p'=up_0'\dots p_k'$, que é um produto de primos de $R[x]$.
     \end{proof}
+
+     \begin{theorem}
+        Seja $R$ um DFU e $K$ seu corpo de frações. Seja $p=\sum_{i=0}^n a_ix^i \in R[x]$. Se existe $\alpha \in R$ irredutível tal que $\alpha\nmid a_n$, $\alpha \mid a_i$ para $i<n$ e $\alpha^2\nmid a_0$, então $p$ é irredutível em $K[x]$.
+    \end{theorem}
+
+    \begin{proof}
+        Se tal $\alpha$ existe, então $\gr p>0$.
+        Escreva $p=p'm$, onde $m \in C(p)$ e $p'$ primitivo. Basta ver que $p'$ é irredutível em $R[x]$.
+        Escreva $p'=\sum_{i=0}^n a_i' x^i$.
+        
+        Temos que $a_i=m a_i'$ para todo $i\leq n$. Como $\alpha \not \mid m$, temos que  $\alpha\nmid a_n'$, $\alpha\mid a_i'$ para $i<n$ e $\alpha^2 \not \mid a_0$.
+
+        Suponha por absurdo que $p'$ é redutível em $R[x]$.
+        Então $p'=qt$, onde $\gr q=m>0$ e $\gr r=k>0$  (pois $p'$ é primitivo).
+
+        Escreva $q=\sum_{i=0}^m b_i x^i$ e $t=\sum_{i=0}^k c_i x^i$.
+
+        Temos que $a'_0=b_0c_0$, logo, $\alpha \mid b_0$ ou $\alpha \mid c_0$. Sem perda de generalidade, vamos supor que $\alpha \mid b_0$. Como $\alpha\nmid {a'_0}^2$, temos que $\alpha \nmid c_0$.
+
+        Existe $i\leq n$ tal que $\alpha \nmid b_i$ (caso contrário teríamos que $\alpha$ divide todos os coeficientes de $p'$). Seja $j$ o primeiro inteiro positivo tal que $\alpha\mid b_i$ para $i<j$.
+
+        Temos que $j\leq m<n$, então $\alpha\mid a_j=\sum_{i=0}^j c_{j-i}b_i$. Como $\alpha\mid \sum_{i=0}^{j-1} c_{j-i}b_i$, segue que $\alpha\mid c_0 b_j$.
+        
+        Porém, $\alpha \nmid b_j$ e $\alpha \nmid c_0$, um absurdo.
+    \end{proof}
 \section{Exercícios}
 \begin{exer}
     Seja $K$ um corpo. Demonstre, conforme o roteiro abaixo, que o ideal $\langle x-a\rangle$ é maximal no domínio $K[x]$.
