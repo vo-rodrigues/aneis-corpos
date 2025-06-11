@@ -1,4 +1,3 @@
-
 \chapter{Polinômios}
 Nesse capítulo, estudaremos os anéis de polinômios no contexto de anéis comutativos.
 
@@ -161,11 +160,51 @@ Assim, formalmente, o conjunto dos polinômios foi construído como sendo o conj
 \end{proof}
 
 Agora vamos trabalhar um pouco mais nossa notação.
-Vamos identificar o elemento $x \in R[x]$, bem como identificar uma cópia de $R$ dentro de $R[x]$.
+
+Ao tratar de polinômios, intuitivamente, estamos tratando de expressões do tipo $a_0+a_1x+\dots+a_nx^n$, onde $n\geq 0$ e $a_i \in R$ para cada $i\leq n$.
+De acordo com nosso formalismo até então, apesar de utilizarmos a notação de soma $\sum_{i=0}^\infty a_i x^i$ para tratar de séries formais e polinômios, os símbolos $\sum_{i=0}^\infty$ e $x^i$ são apenas, por ora, parte da notação, e não têm outro significado além deste. Porém, ao pensar em um polinômio $a_0+a_1x+\dots+a_nx^n$, pensamos que cada $a_i$ tem um significado individual, bem como $x$. A seguir, expandiremos a nossa notação a fim de formalizar essa ideia.
+
+Vamos definir o elemento $x \in R[x]$, bem como identificar uma cópia de $R$ dentro de $R[x]$.
 
 \begin{definition}
     Seja $R$ um anel comutativo. Em $R[x]$, seja $x=(0, 1, 0, 0, \dots)$ e, para cada $r \in R$, seja $\hat r=(r, 0, 0, \dots)$.
 \end{definition}
+
+Façamos uma pausa para discutir essa notação.
+
+Ao pensar intuitivamente em polinômios, pensa-se em $R$ como um subconjunto de $R[x]$.
+Porém, isso é, formalmente, falso: cada elemento de $R[x]$ é uma sequência de elementos de $R$, e, usualmente, uma sequência de elementos de $R$ não é um elemento de $R$.
+Logo, no geral, $R\not \subseteq R[x]$.
+
+Porém, conforme discutido acima, intuitivamente um polinômio é um objeto da forma $a_0+a_1x+\dots+a_nx^n$ onde cada $a_i \in R$.
+Pondo $n=0$ e $a_0=r$, intuitivamente, $r\in R[x]$, o que sabemos, conforme discutido no parágrafo anterior, ser (provavelmente) falso.
+Apesar disso, há uma identificação natural de $r$ em $R[x]$: o elemento $\hat r$, é o elemento de $R[x]$ que carrega o coeficiente $r$ na posição correspondente à potência $0$. Compare a definição formal de $\hat r$ com a ideia intuitiva de que $r$ ``deveria ser obtido'' pondo $n=0$ e $a_i=r$.
+
+Já o elemento $x$ é o elemento de $R[x]$ carrega o coeficiente $1$ na posição correspondente à potência $1$. Intuitivamente, $x$ ``deveria ser'' ele é obtido colocando-se $n=2$, $a_0=0$ e $a_1=1$ na expressão $a_0+\dots+a_nx^n$. Compare esse raciocínio intuitivo com a definição formal de $x$ apresentada.
+
+O lema abaixo mostra que os elementos $\hat r$ de fato agem como uma cópia de $R$ dentro de $R[x]$.
+Devido a ele, mais a frente, apesar de não ser verdade, formalmente, que $R$ é um subconjunto de $R[x]$, ``identifica-se'' $a \in R$ com $\hat a$, abandonando-se a notação $\hat r$ em favor de escrever simplesmente $r$, e considerando-se $R$ como um subconjunto de $R[x]$, mesmo não tendo sido construído de modo que isso valha.
+
+Um modo de melhor formalizar esse raciocínio é construir um novo anel $R[x]''$ isomorfo à $R[x]$ em que $R$ é, de fato, um subconjunto de $R[x]$.
+Para isso, toma-se um conjunto disjunto de $R$ que bijeta com $R[x]\setminus\{\hat r: r \in R\}$ e tranferimos a estrutura de $R[x]$ para $R\cup A$ preservando as operações de $R$, de modo a torná-los isomorfos.
+Não faremos esse trabalho aqui por envolver tecnicalidades que fogem do escopo deste texto e recomendamos ao leitor que, nesse momento, não se preocupe com tais tecnicalidades.
+
+\begin{lemma}
+    Na notação anterior, seja $\phi:R\rightarrow R[x]$ dada por $\phi(r)=\hat r$. Então $h$ é um homomorfismo injetor.
+\end{lemma}
+    
+\begin{proof}
+    Sejam $r, s \in R$. Então:
+    \begin{itemize}
+        \item $\phi(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=\phi(r)+\phi(s)$.
+        \item $\phi(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=\phi(r)\cdot \phi(s)$.
+        \item $\phi(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
+    \end{itemize}
+
+    A injetividade é óbvia.
+\end{proof}
+
+Agora vejamos que o elemento $x$ se comporta conforme esperado.
 
 \begin{lemma}
     Na notação anterior, para todo $r \in R$ e $n, i\geq 0$:
@@ -185,23 +224,6 @@ Vamos identificar o elemento $x \in R[x]$, bem como identificar uma cópia de $R
     \[\pi_i(\hat rx^{n+1})=\pi_i((\hat rx^n)\cdot x)=\sum_{j=0}^i\pi_{i-j}(\hat r x^n)\cdot \pi_j(x)=\pi_{i-1}(\hat r x^n).\]
 
     Assim, se $i=n+1$, temos que a coordenada é $r$, e $0$ caso contrário. Resta apenas verificar que a coordenada $0$ é $0$. Ora, a coordenada $0$ se dá por $\pi_0(\hat r x^n)\pi_0(x)=0$.
-\end{proof}
-
-O lema abaixo mostra que os elementos $\hat r$ de fato agem como uma cópia de $R$ dentro de $R[x]$.
-
-\begin{lemma}
-    Na notação anterior, seja $\phi:R\rightarrow R[x]$ dada por $\phi(r)=\hat r$. Então $h$ é um homomorfismo injetor.
-\end{lemma}
-    
-\begin{proof}
-    Sejam $r, s \in R$. Então:
-    \begin{itemize}
-        \item $\phi(r+s)=(r+s, 0, 0, \dots)=\hat r+\hat s=\phi(r)+\phi(s)$.
-        \item $\phi(rs)=(rs, 0, 0, \dots)=\hat r\cdot \hat s=\phi(r)\cdot \phi(s)$.
-        \item $\phi(1_R)=\hat 1=(1_R, 0, 0, \dots)=1_{R[x]}=1_{R[x]}$.
-    \end{itemize}
-
-    A injetividade é óbvia.
 \end{proof}
 
 Agora veremos que todo elemento de $R[x]$ se escreve como uma soma de elementos de $R$ e potências de $x$, que é o esperado quando pensamos em polinômios.
@@ -267,7 +289,9 @@ Para todo $s \in R$, existe um homomorfismo $\av_s:R[x]\rightarrow R$ tal que $\
 
 Esse homomorfismo é chamado de \emph{avaliação em $s$}, e escrevemos $p(s)=\av_s(p(x))$.
 \end{exemplo}
+Uma forma de definir um anel de polinômios sem se referir a nenhuma peculiaridade de alguma construção particular é a partir de alguma propriedade que tem dentro da categoria dos anéis que apenas ele possui (a menos de isomorfismos).
 
+Uma tal forma é a seguinte.
 \begin{definition}\label{definition:polinomio_propUniversal}
     Seja $R$ um anel comutativo e $X$ um conjunto.
     Um anel de polinômios sobre $R$ com variáveis em $X$ é uma tripla $(R[X], \phi, \alpha)$, onde $R[X]$ é um anel comutativo e $\phi:R\rightarrow R[X]$ é um homomorfismo e $\alpha:X\rightarrow R[X]$ é uma função que satisfazem a seguinte propriedade:
