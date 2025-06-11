@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1
+* Comentários motivacionais adicionados nas seções 9.2 e 9.3 acerca da propriedade universal de aneis de polinômios e de particularidades da nossa construção do anel de polinômios.
+* Exercício 9.8 adicionado.
+
+
 ## 0.3.0
 * Iniciada seção sobre corpos de decomposição. Não há muito além da definição por enquanto.
 * Capítulo 8 revisado e aprimorado.
