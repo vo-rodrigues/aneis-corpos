@@ -432,13 +432,13 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
     Resta ver que $K=\bigcup_{n \in \mathbb N}K_n$ é um subcorpo de $\mathbb R$. Para tanto, note que $1 \in K$. Se $b\in K\setminus \{0\}$, então existe $n \in K$ tal que $b\in K_n$. Logo, $b^{-1} \in K_{n+1}$. Similarmente, se- $b\geq 0$ e $b \in K$, então, $\sqrt b \in K$. Finalmente, se $a, b \in K$, existem $n, m$ com $a\in K_n$ e $b\in K_m$. Sendo $k=\max(n, m)$, temos que $a-b, ab \in K_{k+1}$.     
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:constritíveisSequencia}
     Todo elemento de $\mathbb K$ tem grau sobre $\mathbb Q$ igual a $2^i$ para algum $i\in \mathbb N$. Mais especificamente, se $a \in \mathbb K$, então existem $(a_0, \dots, a_n)\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
 \end{prop}
 \begin{proof}
-    Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência.
+    Primeiro, note que a primeira parte da proposição é implicada pela segunda, já que dado $a \in \mathbb K$, se existem $a_0, \dots, a_n\in \mathbb K$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$, então $[\mathbb Q(a_0, \dots, a_n):\mathbb Q]$ é uma potência de $2$, e $[\mathbb Q(a):\mathbb Q]$ divide esta potência, sendo também, portanto, uma potência de $2$.
 
-    Para provar a segunda afirmação, procederemos por indução em $n$ para mostrar que para todo $a \in K_n$, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$.
+    Para provar a segunda afirmação, procederemos por indução em $n$ para mostrar que para todo $a \in K_n$, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$.
 
     Base: que $K_0=\{1\}$, e $[\mathbb Q(1):\mathbb Q]=1$. Considere a sequência unitária $(1)$.
 
@@ -446,13 +446,13 @@ Finalmente, $(x, 0) \in \reta((x, -y), (x, y))\cap \reta((0, 0), (1, 0))$ e $(0,
 
     Seja $c \in K_{n+1}$. Se $a \in K_n$, segue da hipótese indutiva.
 
-    Caso $c=a-b$ ou $c=ab$, com $a, b \in K_n$, por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$. Similarmente para $b$, existem $b_0, \dots, b_m\in K_n$ com $b=b_m$, com $[\mathbb Q(b_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(b_0, \dots, b_i)(b_{i+1}):\mathbb Q(b_0, \dots, b_i)]\in \{0, 1\}$ para todo $i<m$.
+    Caso $c=a-b$ ou $c=ab$, com $a, b \in K_n$, por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$. Similarmente para $b$, existem $b_0, \dots, b_m\in K_n$ com $b=b_m$, com $[\mathbb Q(b_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(b_0, \dots, b_i)(b_{i+1}):\mathbb Q(b_0, \dots, b_i)]\in \{1, 2\}$ para todo $i<m$.
 
     Considere $(a_0, \dots, a_n, b_0, \dots, b_m, c)$. Temos que $[\mathbb Q(a_0, \dots, a_n)(b_0):\mathbb Q(a_0, \dots, a_n)]$ é o menor grau de um polinômio não nulo com coeficientes em $\mathbb Q(a_0, \dots, a_n)$ que anula $b_0$. Ora, como $[\mathbb Q(b_0):\mathbb Q]$ é $1$ ou $2$, segue que $[\mathbb Q(a_0, \dots, a_n)(b_0):\mathbb Q(a_0, \dots, a_n)]$ também é $1$ ou $2$.
     Similarmente, $[\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_{j+1}):\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_{j})]$ é $1$ ou $2$.
     Finalmente, note que $[\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)(c):\mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)]=1$,  pois $c \in \mathbb Q(a_0, \dots, a_n, b_0, \dots, b_m)$.
 
-    Se $c=a^{-1}$ (ou $c=\sqrt a$), com $a\in K_n\setminus\{0\}$ (respectivamente, $\sqrt a=c$). Por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{0, 1\}$ para todo $i<n$. Considere $a_{n+1}=a^{-1}$. Então, caso $c=a^{-1}$ $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]=1$, pois $a_{n+1}\in \mathbb Q(a_0, \dots, a_n)$, e, caso $c=\sqrt a$, temos que $x^2-a$ anula $c$, logo $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]$ é $1$ ou $2$.
+    Se $c=a^{-1}$ (ou $c=\sqrt a$), com $a\in K_n\setminus\{0\}$ (respectivamente, $\sqrt a=c$). Por hipótese indutiva, existem $a_0, \dots, a_n\in K_n$ com $a=a_n$, com $[\mathbb Q(a_0): \mathbb Q]\in \{1, 2\}$ e $[\mathbb Q(a_0, \dots, a_i)(a_{i+1}):\mathbb Q(a_0, \dots, a_i)]\in \{1, 2\}$ para todo $i<n$. Considere $a_{n+1}=a^{-1}$. Então, caso $c=a^{-1}$ $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]=1$, pois $a_{n+1}\in \mathbb Q(a_0, \dots, a_n)$, e, caso $c=\sqrt a$, temos que $x^2-a$ anula $c$, logo $[\mathbb Q(a_0, \dots, a_n)(a_{n+1}):\mathbb Q(a_0, \dots, a_n)]$ é $1$ ou $2$.
 \end{proof}
 
 \begin{definition}
