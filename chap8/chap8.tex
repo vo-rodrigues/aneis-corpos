@@ -654,7 +654,7 @@ Seja $R$ um domínio de ideais principais. Então todo elemento não nulo, não 
 
     Para cada $i\leq n$, $d|a_i$, logo, $a_i \in \langle d\rangle$, assim, segue que $\langle a_0, \dots, a_n\rangle \subseteq \langle d\rangle$.
 
-        Seja $d'$ um gerador do ideal $\langle a_0, \dots, a_n\rangle$. Temos que, para cada $i\leq n$, $d'|a_i$, logo, $d'|d$. Assim, $\langle d\rangle\subseteq \langle d'\rangle\subseteq = a_0, \dots, a_n\rangle$.
+        Seja $d'$ um gerador do ideal $\langle a_0, \dots, a_n\rangle$. Temos que, para cada $i\leq n$, $d'|a_i$, logo, $d'|d$. Assim, $\langle d\rangle\subseteq \langle d'\rangle\subseteq =\langle a_0, \dots, a_n\rangle$.
 
         Conclui-se que $\langle d\rangle = \langle a_0, \dots, a_n\rangle$. Em particular, $d \in \langle a_0, \dots, a_n\rangle$, o que nos dá a existência de $x_0, \dots, x_n \in R$ tais que $d=x_0a_0+\dots+x_na_n$.
 \end{proof}
@@ -796,4 +796,15 @@ Todo domínio Euclideano é um domínio de ideais principais.
 
 \begin{exer}
     Seja $R$ um domínio de fatoração única e $a_0, \dots, a_n \in R$ não todos nulos. Mostre que $1 \in \MDC(a_0, \dots, a_n)$ se, e somente se, para todo $p \in R$ irredutível existe $i \in \{0, \dots, n\}$ tal que $p\nmid a_i$.
+\end{exer}
+
+\begin{exer}
+    Considere $A=\mathbb Z[i\sqrt 3]=\{a+bi\sqrt 3: a, b \in \mathbb Z\}\subseteq \mathbb C$.
+    \begin{enumerate}[label=\alph*)]
+    \item Mostre que $A$ é um domínio de integridade.
+    \item Mostre explicitamente quem são os elementos invertíveis de $A$.
+    \item Prove que $2$ é irredutível em $A$.
+    \item Mostre que $\MDC(4, 2(1+i\sqrt 3))= \emptyset$ em $A$.
+    \item Mostre que $2$ não é primo em $A$.
+    \end{enumerate}
 \end{exer}
