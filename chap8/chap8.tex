@@ -453,7 +453,7 @@ Se $x$ é múltiplo comum de $a_1, \dots, a_{n+1}$, então $m\mid x$ e $a_{n+1}\
 Domínios de Fatoração Única, também conhecidos como Domínios Fatoriais, ou Anéis Fatoriais, são domínios de integridade que capturam outra propriedade dos números inteiros:
 a do Teorema Fundamental da Aritmética.
 
-\begin{definition}
+\begin{definition}\label{def:DFU}
     Um Domínio de Fatoração Única (DFU) é um domínio de integridade $R$ que satisfaz as condições abaixo.
     
     \begin{enumerate}
@@ -482,8 +482,19 @@ Em um DFU, todo elemento irredutível é primo.
 Assim, em um DFU, todo elemento não nulo e não invertível se escreve como um produto de primos.
 \end{corol}
 
+\begin{lemma}
+    Seja $R$ um DFU e $a, b \in R\setminus \{0\}$.
+    Se não existe $p \in R$ irredutível tal que $p\mid a$ e $p\mid b$, então $1 \in \MDC(a, b)$.
+\end{lemma}
+
+\begin{proof}
+    De fato, temos que $1\mid a$ e $1\mid b$. Além disso, se $x\in R$ é tal que $x\mid a$ e $x\mid b$, então $x\neq 0$, pois $a, b \neq 0$. Se $x$ é invertível, $x|1$, como queríamos. Por outro lado, se $x$ não é invertível, escreva $x=p_1\dots p_n$ com $p_1, \dots, p_n$ irredutíveis.
+
+    Segue que $p_1|a$ e $p_1|b$, o que é um absurdo.
+\end{proof}
+
 Para a próxima proposição, observe que se $R$ é um domínio, $a, b, c, d \in R\setminus \{0\}$ e se $a$ é associado à $b$ e $a\neq 0$, então $c\mid d$ se, e somente se $ac\mid ad$.
-\begin{prop}
+\begin{prop}\label{prop:DfuMdc}
     Todo DFU é um domínio de MDC.
 \end{prop}
 \begin{proof}
@@ -493,6 +504,10 @@ Assim, vamos supor que $a\nmid b$ e $b\nmid a$. Em particular, $a, b \neq 0$ e $
 
 Escreva $a=p_1\dots p_n$ e $b=q_1\dots q_m$ com $p_1, \dots, p_n$ e $q_1, \dots, q_m$ irredutíveis.
 
+Suponha que não existam $i, j$ tais que $p_i$ é associado à $c_j$, de modo que a sequência $c_1, \dots, c_k$ seja, na realidade, vazia. Então $1\in \MDC(a, b)$: de fato, temos que $a, b \neq 0$ e não existe $r \in R$ irredutível tal que $r\mid a$ e $r\mid b$, do contrário, existiriam $i, j$ tais que $r$ é associado a $p_i$ e $r$ é associado a $q_j$, de modo que $q_i$ é associado a $p_j$, um absurdo.
+
+Assim, suponha que existem $i, j$ tais que $p_i$ é associado a $q_j$.
+
 Reordenando, podemos transformar $(p_1, \dots, p_n)$ nas sequências $(c_1, \dots, c_k)$ e $(c_{k+1}, \dots, c_{k+l})$, e $(q_1, \dots, q_m)$ nas sequências $(c_1', \dots, c_k')$ e $(c_{k+1}', \dots, c_{k+l'}')$ de modo que:
 
 \[a=\prod_{i=1}^{k+l}c_i,\]
@@ -500,7 +515,6 @@ Reordenando, podemos transformar $(p_1, \dots, p_n)$ nas sequências $(c_1, \dot
 
 Onde cada $c_i$ é associado a $c_i'$ para $1\leq i\leq k$ e nenhum $c_i$ é associado a nenhum $c_j'$ para $k+1\leq i\leq k+l$ e $k+1\leq j\leq k+l'$.
 Note que $a\nmid b$ e $b\nmid  a$, temos que as famílias $(c_{k+1}, \dots, c_{k+l})$ e $(c_{k+1}', \dots, c_{k+l'}')$ são não vazias.
-
 
 Afirmamos que $c=\prod_{i \in I} c_i$ é um MDC de $a$ e $b$.
 
