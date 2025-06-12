@@ -1,9 +1,13 @@
 # Changelog
 
+## 0.3.2
+* Alguns poucos erros de digitação corrigidos.
+* Mais detalhes adicionados na prova de que todo DFU é um domínio de MDC.
+* Exercício 8.10 adicionado.
+
 ## 0.3.1
 * Comentários motivacionais adicionados nas seções 9.2 e 9.3 acerca da propriedade universal de aneis de polinômios e de particularidades da nossa construção do anel de polinômios.
 * Exercício 9.8 adicionado.
-
 
 ## 0.3.0
 * Iniciada seção sobre corpos de decomposição. Não há muito além da definição por enquanto.
