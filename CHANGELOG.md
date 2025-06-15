@@ -1,9 +1,9 @@
 # Changelog
 
 ## 0.3.3
-* Alguns poucos erros de digitação corrigidos.
-* Mais detalhes adicionados na prova de que todo DFU é um domínio de MDC.
-* Exercício 8.10 adicionado.
+* Novos exercícios.
+* Adicionado um apêndice com uma prova analítica do Teorema Fundamental da Álgebra.
+* Alguns erros de digitação corrigidos.
 
 ## 0.3.2
 * Alguns poucos erros de digitação corrigidos.

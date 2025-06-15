@@ -1,0 +1,48 @@
+\chapter{O Teorema Fundamental da Álgebra}
+
+Neste apêndice, esboçaremos uma prova do Teorema Fundamental da Álgebra.
+
+Abaixo, utilizaremos que se $a, b \in \mathbb C$, então $|a|-|b|\leq |a+b|\leq |a|+|b|$.
+
+Pela fórmula de Euler, para todo $\theta \in \mathbb R$, $e^{i\theta}=\cos\theta+i\sin \theta$. Desta forma, $|e^{i\theta}|=1$ para todo $\theta \in \mathbb R$. Vale ainda que para todo $z \in \mathbb C$, $z=|z|e^{i\theta}$. Intuitivamente, estamos escrevendo $z$ em coordenadas polares.
+
+ Vale ainda que para todo $k \in \mathbb Z$, $(e^{i\theta})^k=e^{i\theta k}$. Em particular, $e^{-i\theta}=\frac{1}{e^{i\theta}}$.
+\section{A demonstração}
+\begin{theorem}
+    Todo polinômio complexo não constante tem raiz em $\mathbb C$.
+\end{theorem}
+\begin{proof}
+    Seja $f(z)=\sum_{k=0}^n a_k z^k$ uma função polinomial em $\mathbb C$, com $n\geq 1$, $a_n\neq 0$ e $a_k\in \mathbb C$ para todo $k=0,\ldots,n$.
+    Basta ver que $f$ possui uma raiz em $\mathbb C$. Podemos supor que $n>1$.
+
+    Dividindo $f$ por $a_n$, podemos assumir que $a_n=1$.
+
+    Seja $R=\inf\{|f(z)|: z \in \mathbb Z\}$. Veremos que este ínfimo é $0$ e que é atingido, ou seja, que existe $z \in \mathbb C$ tal que $|f(z)|=R$.
+
+    Se $z\neq 0$, temos que
+    \begin{equation}
+    |f(z)|=\left|\sum_{k=0}^n a_k z^k\right|\geq |z^n|-\left|\sum_{k=0}^{n-1}a_k z^k\right|\geq|z|^n-\sum_{k=0}^{n-1}|a_k||z|^k.
+    \end{equation}
+    Seja $g:(0, \infty)\rightarrow \mathbb R$ dada por $g(\xi)=\xi^n-\sum_{k=0}^{n-1}|a_k|\xi^k=\xi^n(1-\sum_{k=0}^{n-1}|a_k|\xi^k)$.
+    Da teoria de limites de números reais, como $g(\xi)\to\infty$ quando $\xi\to \infty$, existe $M>0$ tal que para todo $\xi>M$, temos $g(\xi)>R+1$. Segue que se $z \in \mathbb C$ e $|z|>M$, então $|f(z)|>R+1$.
+
+    Pela definição de $R$, existe $(z_n: n\geq 1)$ uma sequência de números complexos tal que $|f(z_n)|\leq R+\frac{1}{n}$. Pelo Teorema do Confronto, temos que $|f(z_n)|\to R$ quando $n\to \infty$. Assim, para $n$ suficientemente grande, temos que $|f(z_n)|-R\leq 1$, e, portanto, que $|z|\leq M$.
+
+    O conjunto $D=\{z \in \mathbb C: |z|\leq M\}$ é fechado e limitado e $h:D\rightarrow R$ dada por $h(z)=|f(z)|$ é contínua, logo, pelo Teorema de Weierstrass, $f$ atinge mínimo. Pelo argumento precedente, este mínimo é menor ou igual a $R+\frac{1}{n}$ para todo $n$ suficientemente grande, assim, este mínimo deve ser $\leq R$. Por outro lado, este mínimo deve ser $\geq R=\inf\{|f(z)|: z \in \mathbb C\}$, logo, este mínimo é exatamente $R$. Portanto, existe $z_0 \in D$ tal que $|f(z_0)|=R$.
+
+    Agora veremos que $R=0$. Se $R\neq 0$, seja $q(z)=p(z+z_0)/p(z_0)$. Temos que $q$ é uma função polinomial não constante de grau $\leq n$, $q(z)\geq 1$ para todo $z$ e $q(0)=1$. Escreva $q(z)=1\sum_{k=l}^n b_k z^k$ com $l\geq 1$ tal que $b_{l}\neq 0$.
+
+    Escrevendo em coordenadas polares, existe $\theta\in \mathbb R$ tal que $-b_l=|b_l|e^{i\theta}$. Seja $r \in \mathbb R$ tal que $0<r<1$ e tal que $r^l|b_l|<1$. Então:
+
+    \begin{align*}
+        |q(re^{-i\theta})|=&\left|1+\sum_{k=l}^n r^k e^{-i\theta k}b_k\right|\\
+        \leq& |1+r^lb_le^{-i\theta l}|+ \left|\sum_{k=l+1}^n r^k e^{-i\theta k}b_k\right|\\
+        =& |1-r^l |b_l||+\left|\sum_{k=l+1}^n r^k e^{-i\theta k}b_k\right|\\
+        =& 1-r^l |b_l|+ \sum_{k=l+1}^n r^k |b_k|\\
+        =& 1-r^l\left(|b_l|- \sum_{k=l+1}^n r^{k-l} |b_k|\right)\\
+    \end{align*}
+
+    Como $r^l\left(|b_l|- \sum_{k=l+1}^n r^{k-l} |b_k|\right)$ converge para $0$ por valores positivos quando $r\to 0^+$, segue que, para $r$ suficientemente pequeno, tal expressão é menor que $1$, logo, $|q(re^{-i\theta})|<1$, o que é absurdo.
+
+    Assim, $R=0$ e $f(z_0)=0$.    
+\end{proof}
