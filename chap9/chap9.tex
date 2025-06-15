@@ -640,7 +640,7 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
 
     Para melhor estudar a reducibilidade em polinômios, definiremos a noção de conteúdo. Tal noção é motivada pelo seguinte lema:
 
-    \begin{lemma}
+    \begin{lemma}\label{lemma:preConteudo}
     Seja $R$ um domínio de integridade, $p \in R[x]\setminus \{0\}$ e $a \in R\setminus \{0\}$. Escreva $p=\sum_{i=0}^n a_i x^i$. Então $a\mid p$ em $R[x]$ se, e somente se $a\mid a_i$ em $R$ para todo $i\leq n$.
     \end{lemma}
     \begin{proof}
@@ -650,7 +650,7 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     \end{proof}
 
     \begin{definition}[Conteúdo de um polinômio]
-        Seja $R$ um domínio de MDC's e $p \in R[x]\setminus \{0\}$. Um \emph{conteúdo} de $p$ é um MDC se seus coeficientes. Explicitamente, se $p=\sum_{i=0}^n a_i x^i$ com $a_n\neq 0$, então um \emph{conteúdo} de $p$ é um elemento de $\MDC(a_0, \dots, a_n)$.
+        Seja $R$ um domínio de MDC's e $p \in R[x]\setminus \{0\}$. Um \emph{conteúdo} de $p$ é um MDC de seus coeficientes. Explicitamente, se $p=\sum_{i=0}^n a_i x^i$ com $a_n\neq 0$, então um \emph{conteúdo} de $p$ é um elemento de $\MDC(a_0, \dots, a_n)$.
 
         O conjunto de todos os conteúdos de $p$ é denotado por $C(p)$.
         Explicitamente, $C(p)=\MDC(a_0, \dots, a_n)$.
@@ -661,8 +661,8 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     Façamos uma pausa para fazer algumas observações.
     
     \begin{itemize}
-        \item Se escrevermos $p=\sum_{i=0}^n a_i x^i$ com $n>\gr p$ (de modo que $a_i=0$ para $i=\gr p+1, \dots, n$), então $\MDC(a_0, \dots, a_n)=C(p)$, pois para quaisquer $a_0, \dots, a_k$, vale $\MDC(a_0, \dots, a_k, 0)=\MDC(a_0, \dots, a_k)$.
-        \item Como $C(p)$ é um conjunto MDC, se $a, b \in C(p)$, então $a, b$ são associados (em $R$), e, se $c\in R$ é associado à $a$, então $c\in C(p)$.
+        \item Se escrevermos $p=\sum_{i=0}^n a_i x^i$ com $n>\gr p$ (de modo que $a_i=0$ para $i\in\{\gr p+1, \dots, n\}$), então $\MDC(a_0, \dots, a_n)=C(p)$, pois para quaisquer $a_0, \dots, a_k$, vale $\MDC(a_0, \dots, a_k, 0)=\MDC(a_0, \dots, a_k)$.
+        \item Como $C(p)$ é um conjunto de MDCs, se $a, b \in C(p)$, então $a, b$ são associados (em $R$), e, se $c\in R$ é associado à $a$, então $c\in C(p)$.
         \item Em particular, $p$ é primitivo se, e somente se $C(p)=R^*$.
     \end{itemize}
 
@@ -699,7 +699,7 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
     \end{corol}
 
     \begin{proof}
-        Como já vimos $a\mid p$. Seja $p'$ tal que $p=ap'$. Como $a \in aC(p')$, existe $b \in C(p')$ tal que $ab=a$. Cancelando $a\neq 0$, temos que $b='\in C(p')$.
+        Como já vimos $a\mid p$. Seja $p'$ tal que $p=ap'$. Como $a \in aC(p')$, existe $b \in C(p')$ tal que $ab=a$. Cancelando $a\neq 0$, temos que $b=1\in C(p')$.
     \end{proof}
 
     \begin{prop}[Lema de Gauss]
