@@ -775,6 +775,8 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
 
         Portanto, $\alpha$ é primo.
     \end{proof}
+
+    Observação: o lema acima também vale para domínios de integridade. Ver Exercício~\ref{exer:irredutivelPrimo}.
     \begin{prop}
         Seja $R$ um DFU. Então $R[x]$ é um DFU.
     \end{prop}
@@ -798,7 +800,7 @@ Se $R$ é um domínio infinito, então tal anel é isomorfo à $R[x]$.
         Escreva $p=p'm$, onde $m \in C(p)$ e $p'$ primitivo. Basta ver que $p'$ é irredutível em $R[x]$.
         Escreva $p'=\sum_{i=0}^n a_i' x^i$.
         
-        Temos que $a_i=m a_i'$ para todo $i\leq n$. Como $\alpha \not \mid m$, temos que  $\alpha\nmid a_n'$, $\alpha\mid a_i'$ para $i<n$ e $\alpha^2 \not \mid a_0$.
+        Temos que $a_i=m a_i'$ para todo $i\leq n$. Como $\alpha \nmid m$, temos que  $\alpha\nmid a_n'$, $\alpha\mid a_i'$ para $i<n$ e $\alpha^2 \nmid a_0$.
 
         Suponha por absurdo que $p'$ é redutível em $R[x]$.
         Então $p'=qt$, onde $\gr q=m>0$ e $\gr r=k>0$  (pois $p'$ é primitivo).
@@ -870,4 +872,12 @@ Considere $R=\mathbb Z_4^\mathbb N$ com a estrutura de anel produto. Seja $a \in
 
 \begin{exer}
     Seja $K$ um corpo. Mostre que todo $p \in K[x]$ não nulo é primitivo.
+\end{exer}
+
+\begin{exer}\label{exer:irredutivelPrimo}
+    Seja $R$ um domínio de integridade e $\alpha \in R$.
+    \begin{enumerate}
+        \item Mostre que se $\alpha$ é irredutível em $R$, então $\alpha$ é irredutível em $R[x]$.
+        \item Mostre que se $\alpha$ é primo em $R$, então $\alpha$ é primo em $R[x]$.
+    \end{enumerate}
 \end{exer}
