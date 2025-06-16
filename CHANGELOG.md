@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.4
+* Novo exercício.
+* Erros de digitação corrigidos.
+
 ## 0.3.3
 * Novos exercícios.
 * Adicionado um apêndice com uma prova analítica do Teorema Fundamental da Álgebra.
