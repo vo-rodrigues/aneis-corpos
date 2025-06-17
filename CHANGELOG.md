@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.5
+* Vários novos exercícios nos capítulos 9 e 10.
+
 ## 0.3.4
 * Novo exercício.
 * Erros de digitação corrigidos.
