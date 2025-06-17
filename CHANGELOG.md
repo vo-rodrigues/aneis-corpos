@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.5a
+* Pequenas imprecisões corrigidas.
+
 ## 0.3.5
 * Vários novos exercícios nos capítulos 9 e 10.
 
