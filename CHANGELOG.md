@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.6
+* Novos exercícios.
+* Typos corrigidos.
+* Seção 10.5 reformulada.
+
 ## 0.3.5a
 * Pequenas imprecisões corrigidas.
 
