@@ -100,11 +100,15 @@ Seja $F/E$ uma extensão de corpos e $A, B \subseteq F$. Então $E[A\cup B]=E[A]
 \end{lemma}
 
 \begin{proof}
-    Se $A, B\subseteq C$ são finitos, então $E(A)\cup (B)\subseteq E(A\cup B)$. Logo, $K=\{E(A): A \in [C]^{<\infty}\}$ é uma união dirigida de corpos, e, portanto, um corpo.
+    Se $A, B\subseteq C$ são finitos, então $E(A)\cup (B)\subseteq E(A\cup B)$. Logo, $K=\bigcup \{E(A): A \in [C]^{<\infty}\}$ é uma união dirigida de corpos, e, portanto, um corpo.
 
     Como cada $E(A)$ com $A\in [C]^{<\infty}$ é tal que $E(A)\subseteq E(C)$, então $K\subseteq F=E(C)$.
     Por outro lado, para todo $c \in C$, temos que $c \in E(c)\subseteq E(C)$.
-    Assim, $E(C)\subseteq K$.
+    Assim, $C\subseteq K$.
+
+    Resta ver que $E\subseteq K$. Note que $\emptyset$ é um subconjunto finito de $C$ e $E(\emptyset)=E$. Logo, $E=E(\emptyset)\subseteq K$.
+
+    Como $K$ é um corpo e $E\cup C\subseteq K$, segue que $E(C)\subseteq K$.
 
     A outra afirmação é similar.
 \end{proof}
