@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.7
+* Typos corrigidos.
+
 ## 0.3.6
 * Novos exercícios.
 * Typos corrigidos.
